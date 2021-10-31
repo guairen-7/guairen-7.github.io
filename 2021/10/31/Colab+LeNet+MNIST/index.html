@@ -6,13 +6,26 @@
   
   <title>AXDLMG7&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
+  <meta name="description" content="@[TOC]Colab 官网初始界面 1.介绍英伟达官网谷歌将原来K80换成了T4 2.查看基本配置2.1查看pytorch版本123import torchprint(torch)   2.2查看是否可以使用cuda1print(torch.cuda.device_count())  修改-&gt;笔记本设置-&gt;GPU 2.3查看显卡配置12!nvidia-smi&#x2F;&#x2F;注意英文感叹号   3">
+<meta property="og:type" content="article">
 <meta property="og:title" content="AXDLMG7&#39;s Blog">
-<meta property="og:url" content="https://guairen-7.github.io/index.html">
+<meta property="og:url" content="https://guairen-7.github.io/2021/10/31/Colab+LeNet+MNIST/index.html">
 <meta property="og:site_name" content="AXDLMG7&#39;s Blog">
+<meta property="og:description" content="@[TOC]Colab 官网初始界面 1.介绍英伟达官网谷歌将原来K80换成了T4 2.查看基本配置2.1查看pytorch版本123import torchprint(torch)   2.2查看是否可以使用cuda1print(torch.cuda.device_count())  修改-&gt;笔记本设置-&gt;GPU 2.3查看显卡配置12!nvidia-smi&#x2F;&#x2F;注意英文感叹号   3">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/7975074e2ece4cdc8be72e96851fd996.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAQVhETE1H,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/b08a271c94da4d0293ac0dbc8ff3cc25.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAQVhETE1H,size_13,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/cce0d37208584800922981b38136b11f.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/38bcb5ea6f724e1a8a120bd71614efcc.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAQVhETE1H,size_19,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/a222ea06ae0c44ce8f34592494dca1c3.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAQVhETE1H,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/a96be368c2ef4298af8e0fae94d4f61d.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAQVhETE1H,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/14edcf10c0d446a189f4a6fc44fba1ce.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/f396f9c673a24d719516dd5abc055ba1.png">
+<meta property="article:published_time" content="2021-10-31T12:04:52.457Z">
+<meta property="article:modified_time" content="2021-10-31T12:05:39.792Z">
 <meta property="article:author" content="AXDLMG7">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/7975074e2ece4cdc8be72e96851fd996.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAQVhETE1H,size_20,color_FFFFFF,t_70,g_se,x_16">
   
     <link rel="alternate" href="/atom.xml" title="AXDLMG7's Blog" type="application/atom+xml">
   
@@ -69,9 +82,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Colab+LeNet+MNIST" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-Colab+LeNet+MNIST" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/10/31/Colab+LeNet+MNIST/" class="article-date">
   <time class="dt-published" datetime="2021-10-31T12:04:52.457Z" itemprop="datePublished">2021-10-31</time>
@@ -128,108 +139,19 @@
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-10月文章分享" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/10/30/10%E6%9C%88%E6%96%87%E7%AB%A0%E5%88%86%E4%BA%AB/" class="article-date">
-  <time class="dt-published" datetime="2021-10-30T09:07:40.033Z" itemprop="datePublished">2021-10-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/10/30/10%E6%9C%88%E6%96%87%E7%AB%A0%E5%88%86%E4%BA%AB/">10月文章分享</a>
-    </h1>
+    <a href="/2021/10/30/10%E6%9C%88%E6%96%87%E7%AB%A0%E5%88%86%E4%BA%AB/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">10月文章分享</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="1-演讲"><a href="#1-演讲" class="headerlink" title="1.演讲"></a>1.演讲</h1><h2 id="1-1Steven-Chu：Life-is-too-short-to-go-through-it-without-caring-deeply-about-something"><a href="#1-1Steven-Chu：Life-is-too-short-to-go-through-it-without-caring-deeply-about-something" class="headerlink" title="1.1Steven Chu：Life is too short to go through it without caring deeply about something."></a>1.1Steven Chu：Life is too short to go through it without caring deeply about something.</h2><p><a target="_blank" rel="noopener" href="https://news.harvard.edu/gazette/story/2009/06/u-s-energy-secretary-steven-chus-address-at-harvards-afternoon-exercises/">Stenven Chu in_Harvard Commencement 2009</a></p>
-<p><a target="_blank" rel="noopener" href="https://ruanyifeng.com/blog/2009/06/remarks_of_stenven_chu_in_harvard_commencement_2009.html">ruanyifeng’s blog:Remarks of Stenven Chu in harvard commencement</a></p>
-<h2 id="1-2李彦宏：创新、跨界、开放的新工科人才"><a href="#1-2李彦宏：创新、跨界、开放的新工科人才" class="headerlink" title="1.2李彦宏：创新、跨界、开放的新工科人才"></a>1.2李彦宏：创新、跨界、开放的新工科人才</h2><p><a target="_blank" rel="noopener" href="http://www.pku.org.cn/people/xyjy/1350143.htm">1987级校友李彦宏在北大新工科国际论坛上的演讲</a></p>
-<h2 id="1-3丘成桐-中学数学教育"><a href="#1-3丘成桐-中学数学教育" class="headerlink" title="1.3丘成桐 中学数学教育"></a>1.3丘成桐 中学数学教育</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/FnqTyr45/article/details/80490984">丘成桐：中国学生基础真的比欧美学生好吗？</a></p>
-<p>ps：找了一些相同内容的文章，标题太刺眼，感谢这位博主的文章~</p>
-<h1 id="2-人物"><a href="#2-人物" class="headerlink" title="2.人物"></a>2.人物</h1><h2 id="2-1-Klaus-Hasselmann：I-did-not-have-a-real-supervisor"><a href="#2-1-Klaus-Hasselmann：I-did-not-have-a-real-supervisor" class="headerlink" title="2.1 Klaus Hasselmann：I did not have a real supervisor"></a>2.1 Klaus Hasselmann：I did not have a real supervisor</h2><p><a target="_blank" rel="noopener" href="https://www.aip.org/history-programs/niels-bohr-library/oral-histories/33645">Oral History Interviews about Klaus Hasselmann on February 15, 2006</a></p>
-<h2 id="2-2-施一公-如何做一名优秀的博士生？"><a href="#2-2-施一公-如何做一名优秀的博士生？" class="headerlink" title="2.2 施一公 如何做一名优秀的博士生？"></a>2.2 施一公 如何做一名优秀的博士生？</h2><p><a target="_blank" rel="noopener" href="http://blog.sciencenet.cn/blog-46212-484416.html">（一）时间的付出</a></p>
-<p><a target="_blank" rel="noopener" href="http://blog.sciencenet.cn/blog-46212-486270.html">（二）方法论的转变</a></p>
-<h2 id="2-3-Matt-Might：10-easy-ways-to-fail-a-Ph-D"><a href="#2-3-Matt-Might：10-easy-ways-to-fail-a-Ph-D" class="headerlink" title="2.3 Matt Might：10 easy ways to fail a Ph.D."></a>2.3 Matt Might：10 easy ways to fail a Ph.D.</h2><p><a target="_blank" rel="noopener" href="https://matt.might.net/articles/ways-to-fail-a-phd/">Matt Might：ways to fail a Ph.D.</a></p>
-<h2 id="2-4-跟李沐学AI"><a href="#2-4-跟李沐学AI" class="headerlink" title="2.4 跟李沐学AI"></a>2.4 跟李沐学AI</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv13335461/">李沐：用随机梯度下降来优化人生</a></p>
-<p>沐神的b站：<a target="_blank" rel="noopener" href="https://space.bilibili.com/1567748478">跟李沐学AI</a></p>
-<h2 id="2-5-LShang001"><a href="#2-5-LShang001" class="headerlink" title="2.5 LShang001"></a>2.5 LShang001</h2><p>LShang001的b站：<a target="_blank" rel="noopener" href="https://i0.hdslb.com/bfs/space/cb1c3ef50e22b6096fde67febe863494caefebad.png">LShang001</a></p>
-<h2 id="2-6-稚晖君"><a href="#2-6-稚晖君" class="headerlink" title="2.6 稚晖君"></a>2.6 稚晖君</h2><p>稚晖君的b站：<a target="_blank" rel="noopener" href="https://space.bilibili.com/20259914?from=search&seid=1336220716890113133&spm_id_from=333.337.0.0">稚晖君</a></p>
-<h2 id="2-7-张焕晨-读博，你真的想好了吗？"><a href="#2-7-张焕晨-读博，你真的想好了吗？" class="headerlink" title="2.7 张焕晨 读博，你真的想好了吗？"></a>2.7 张焕晨 读博，你真的想好了吗？</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/372884253">张焕晨：读博，你真的想好了吗？</a></p>
-<p>ps：根据个人需求有选择地阅读，尽量不要受到他人评论影响~</p>
-<h1 id="3-前沿新闻"><a href="#3-前沿新闻" class="headerlink" title="3.前沿新闻"></a>3.前沿新闻</h1><h2 id="3-1-Ghost-Robotics-CEO-Jiren-Parikh：If-our-robot-had-tracks-on-it-instead-of-legs-nobody-would-be-paying-attention"><a href="#3-1-Ghost-Robotics-CEO-Jiren-Parikh：If-our-robot-had-tracks-on-it-instead-of-legs-nobody-would-be-paying-attention" class="headerlink" title="3.1 Ghost Robotics CEO Jiren Parikh：If our robot had tracks on it instead of legs, nobody would be paying attention."></a>3.1 Ghost Robotics CEO Jiren Parikh：If our robot had tracks on it instead of legs, nobody would be paying attention.</h2><p><a target="_blank" rel="noopener" href="https://spectrum.ieee.org/ghost-robotics-armed-military-robots">Interview with Jiren Parikh, CEO of Ghost Robotics by IEEE Spectrum.</a></p>
-<h2 id="3-2中科院脑智卓越中心徐波、蒲慕明联合研究团队近期借助生物网络中发现的介观尺度自组织反向传播机制（Self-backpropagation，SBP）"><a href="#3-2中科院脑智卓越中心徐波、蒲慕明联合研究团队近期借助生物网络中发现的介观尺度自组织反向传播机制（Self-backpropagation，SBP）" class="headerlink" title="3.2中科院脑智卓越中心徐波、蒲慕明联合研究团队近期借助生物网络中发现的介观尺度自组织反向传播机制（Self-backpropagation，SBP）"></a>3.2中科院脑智卓越中心徐波、蒲慕明联合研究团队近期借助生物网络中发现的介观尺度自组织反向传播机制（Self-backpropagation，SBP）</h2><p><a target="_blank" rel="noopener" href="https://www.science.org/doi/10.1126/sciadv.abh0146">Self-backpropagation of synaptic modifications elevates the efficiency of spiking and artificial neural networks</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://guairen-7.github.io/2021/10/30/10%E6%9C%88%E6%96%87%E7%AB%A0%E5%88%86%E4%BA%AB/" data-id="ckvf6tnr80000zwtf3qci0rdu" data-title="10月文章分享" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-
-  
-    <article id="post-我的博客" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/10/30/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/" class="article-date">
-  <time class="dt-published" datetime="2021-10-30T04:14:25.673Z" itemprop="datePublished">2021-10-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/10/30/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/">这篇博客的诞生</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_52034760/article/details/121047628">Hexo+Github搭建blog</a></p>
-<p>这里为了不熟悉Markdown语法，挂上官方连接：<br><a target="_blank" rel="noopener" href="https://markdown.com.cn/basic-syntax/">Markdown基本语法</a></p>
-<p>02 Apr，2021&lt;<br>1.小白<br>2.不适应Shell<br>3.不了解Markdown及HTML</p>
-<p>30 Oct，2021<br>1.逐渐适应Shell<br>2.Markdown基础语法<br>3.Git原理未了解<br>4.GitHub使用增多，Gist、论文源代码、开源项目（少）<br>5.SSH原理未了解<br>6.URL原理未了解<br>7.Github中的master暂未了解<br>8.默认主题</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://guairen-7.github.io/2021/10/30/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/" data-id="ckvf6tnrn0001zwtfffeeb7lq" data-title="这篇博客的诞生" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
 </section>
