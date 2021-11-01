@@ -1,630 +1,199 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-
-    <!--[if lt IE 9]>
-        <style>body {display: none; background: none !important} </style>
-        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
-    <![endif]-->
-
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="format-detection" content="telephone=no" />
-<meta name="author" content="AXDLMG7" />
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="google-site-verification" content="TZE0rZyIqLl10trYu3BWBWa1Vmz6HFwhb2OcNEK4u-s" />
+     <link rel="shortcut icon" href= /img/favicon.ico >
+    <title>
+        AXDLMG7&#39;s Blog
+    </title>
+    <meta name="description" content= 嘿，我是刘训灼～这是我的子站，用于展示写的Hexo主题：Coder。欢迎访问！ >
+    <meta name="keywords" content= Blog,Hexo,Theme,刘训灼,LiuXunzhuo >
+    
+<link rel="stylesheet" href="/libs/highlight/styles/monokai-sublime.css">
 
     
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
     
-
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="AXDLMG7&#39;s Blog">
-<meta property="og:url" content="https://guairen-7.github.io/index.html">
-<meta property="og:site_name" content="AXDLMG7&#39;s Blog">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="AXDLMG7">
-<meta name="twitter:card" content="summary">
-
-<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
-
-
-    <link rel="alternate" href="/atom.xml" title="AXDLMG7&#39;s Blog" type="application/atom+xml">
-
-
-
-    <link rel="shortcut icon" href="/favicon.png">
-
-
-
-    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
-
-
-
-    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
-
-
-
-    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
-
-
-
 <link rel="stylesheet" href="/css/style.css">
 
-
-
-    <style> .article { opacity: 0;} </style>
-
-
-<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-
-
-<title>AXDLMG7&#39;s Blog</title>
-
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
-
-<script>
-    var yiliaConfig = {
-        fancybox: true,
-        animate: true,
-        isHome: true,
-        isPost: false,
-        isArchive: false,
-        isTag: false,
-        isCategory: false,
-        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
-        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: 
-    }
-</script>
-
-
-    <script> yiliaConfig.jquery_ui = [false]; </script>
-
-
-
-    <script> yiliaConfig.rootUrl = "\/";</script>
-
-
-
-
-
-
 <meta name="generator" content="Hexo 5.4.0"></head>
-<body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-    <header id="header" class="inner">
-        <a href="/" class="profilepic">
-            <img src="/img/avatar.png" class="animated zoomIn">
+<body id="bodyx">
+    <div class="hd logodiv">
+    <img src="/img/tx.png" class="logopng" alt="logo">
+    <p class="logot">
+         AXDLMG7&#39;s Blog 
+         <span class="logo_2"></span>
+        <h3 class="words" style="font-weight: bold;font-family: Georgia;"> 
+            Attitude is Altitude! 
+        </h3>
+    </p>
+</div>
+
+
+<div class="hd">
+    <ol class="breadcrumb">
+        
+            <li><a class="ba" target="_blank" rel="noopener" href="https://github.com/guairen-7">GitHub</a></li>
+        
+            <li><a class="ba" target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_52034760?spm=1000.2115.3001.5343">CSDN</a></li>
+        
+
+            
+<script src="/libs/jquery.min.js"></script>
+
+            
+<script src="/js/search.js"></script>
+
+            
+            <script type="text/javascript" id="local.search.active">
+                var inputArea       = document.querySelector("#local-search-input");
+                var getSearchFile = function(){
+                    var path = "/search.xml";
+                    searchFunc(path, 'local-search-input', 'local-search-result');
+                }
+                inputArea.onfocus = function(){ getSearchFile() }
+
+                var $resetButton = $("#search-form .fa-times");
+                var $resultArea = $("#local-search-result");
+
+                inputArea.oninput = function(){ $resetButton.show(); }
+                resetSearch = function(){
+                    $resultArea.html("");
+                    document.querySelector("#search-form").reset();
+                    $resetButton.hide();
+                    $(".no-result").hide();
+                }
+                inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+                //No search result
+                $resultArea.bind("DOMNodeRemoved DOMNodeInserted", function(e) {
+                    if (!$(e.target).text()) {
+                        $(".no-result").show(100);
+                    } else {
+                        $(".no-result").hide();
+                    }
+                })
+            </script>
+
+    </ol>
+    <hr>
+</div>
+<div class="hd">
+    
+    
+        
+        
+            <div class="titlex">
+                <p><span class="jing"></span><span style="color: #6d9ee7;"> 公元</span> 
+                 2021年 🕛
+                </p>
+            </div>
+            
+        
+        <a class="flink" href="/2021/11/01/%E5%86%B3%E8%B5%9B%E8%A7%81/">
+            <div class="list">
+                <div class="postname">
+                    决赛见！
+                </div>
+                <div class="posttime">
+                    November 1st
+                </div>
+            </div>
         </a>
-        <hgroup>
-          <h1 class="header-author"><a href="/"></a></h1>
-        </hgroup>
-
+    
         
-
         
-
-
-        
-            <div id="switch-btn" class="switch-btn">
-                <div class="icon">
-                    <div class="icon-ctn">
-                        <div class="icon-wrap icon-house" data-idx="0">
-                            <div class="birdhouse"></div>
-                            <div class="birdhouse_holes"></div>
-                        </div>
-                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
-                            <div class="ribbon"></div>
-                        </div>
-                        
-                        <div class="icon-wrap icon-link hide" data-idx="2">
-                            <div class="loopback_l"></div>
-                            <div class="loopback_r"></div>
-                        </div>
-                        
-                        
-                        <div class="icon-wrap icon-me hide" data-idx="3">
-                            <div class="user"></div>
-                            <div class="shoulder"></div>
-                        </div>
-                        
-                    </div>
-                    
+        <a class="flink" href="/2021/10/31/Colab+LeNet+MNIST/">
+            <div class="list">
+                <div class="postname">
+                    【Colab】基本操作【LeNet】【MNIST】训练测试
                 </div>
-                <div class="tips-box hide">
-                    <div class="tips-arrow"></div>
-                    <ul class="tips-inner">
-                        <li>Menu</li>
-                        <li>Tags</li>
-                        
-                        <li>Friends</li>
-                        
-                        
-                        <li>About Me</li>
-                        
-                    </ul>
+                <div class="posttime">
+                    October 31st
                 </div>
             </div>
+        </a>
+    
         
-
-        <div id="switch-area" class="switch-area">
-            <div class="switch-wrap">
-                <section class="switch-part switch-part1">
-                    <nav class="header-menu">
-                        <ul>
-                        
-                            <li><a href="/">主页</a></li>
-                        
-                            <li><a href="/archives/">所有文章</a></li>
-                        
-                            <li><a href="/tags/">标签云</a></li>
-                        
-                            <li><a href="/about/">关于我</a></li>
-                        
-                        </ul>
-                    </nav>
-                    <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
-                            
-                                <a class="fa GitHub" href="#" title="GitHub"></a>
-                            
-                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
-                            
-                        </ul>
-                    </nav>
-                </section>
-                
-                
-                <section class="switch-part switch-part2">
-                    <div class="widget tagcloud" id="js-tagcloud">
-                        
-                    </div>
-                </section>
-                
-                
-                
-                <section class="switch-part switch-part3">
-                    <div id="js-friends">
-                    
-                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a>
-                    
-                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="https://pages.github.com/">GitHub</a>
-                    
-                      <a class="main-nav-link switch-friends-link" target="_blank" rel="noopener" href="http://moxfive.xyz/">MOxFIVE</a>
-                    
-                    </div>
-                </section>
-                
-
-                
-                
-                <section class="switch-part switch-part4">
-                
-                    <div id="js-aboutme">专注于前端</div>
-                </section>
-                
+        
+        <a class="flink" href="/2021/10/30/10%E6%9C%88%E6%96%87%E7%AB%A0%E5%88%86%E4%BA%AB/">
+            <div class="list">
+                <div class="postname">
+                    10月文章分享
+                </div>
+                <div class="posttime">
+                    October 30th
+                </div>
             </div>
-        </div>
-    </header>                
+        </a>
+    
+        
+        
+        <a class="flink" href="/2021/10/30/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/">
+            <div class="list">
+                <div class="postname">
+                    这篇博客的诞生
+                </div>
+                <div class="posttime">
+                    October 30th
+                </div>
+            </div>
+        </a>
+    
 </div>
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-      <div class="overlay">
-          <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页"></a></h1>
-      </div>
-    <div class="intrude-less">
-        <header id="header" class="inner">
-            <a href="/" class="profilepic">
-                <img src="/img/avatar.png" class="animated zoomIn">
-            </a>
-            <hgroup>
-              <h1 class="header-author"><a href="/" title="回到主页"></a></h1>
-            </hgroup>
-            
-            <nav class="header-menu">
-                <ul>
-                
-                    <li><a href="/">主页</a></li>
-                
-                    <li><a href="/archives/">所有文章</a></li>
-                
-                    <li><a href="/tags/">标签云</a></li>
-                
-                    <li><a href="/about/">关于我</a></li>
-                
-                <div class="clearfix"></div>
-                </ul>
-            </nav>
-            <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
-                            
-                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
-                            
-                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
-                            
-                        </ul>
-            </nav>
-        </header>                
-    </div>
-    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
-</nav>
-      <div class="body-wrap">
-  
-    <article id="post-决赛见" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/11/01/%E5%86%B3%E8%B5%9B%E8%A7%81/" class="article-date">
-      <time datetime="2021-10-31T16:45:00.450Z" itemprop="datePublished">2021-11-01</time>
-</a>
 
-
-    </div>
-  
-  <div class="article-inner">
+    <div class="footer" id="footer">
+    <p><h4>Copyright © 2020 | Author: AXDLMG | Theme By <a class="theme-author" target="_blank" rel="noopener" href="https://github.com/Xunzhuo/hexo-theme-coder" style="font-size:14px; color: #969696">Coder</a></h4>
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/11/01/%E5%86%B3%E8%B5%9B%E8%A7%81/">决赛见！</a>
-    </h1>
-  
+    <label class="el-switch el-switch-blue el-switch-sm" style="vertical-align: sub;">
+        <input type="checkbox" name="switch" id="update_style">
+        <span class="el-switch-style"></span>
+    </label>
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Colab+LeNet+MNIST" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/10/31/Colab+LeNet+MNIST/" class="article-date">
-      <time datetime="2021-10-31T12:04:52.457Z" itemprop="datePublished">2021-10-31</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/10/31/Colab+LeNet+MNIST/">【Colab】基本操作【LeNet】【MNIST】训练测试</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p><a target="_blank" rel="noopener" href="https://colab.research.google.com/notebooks/welcome.ipynb">Colab 官网初始界面</a></p>
-<h1 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1.介绍"></a>1.介绍</h1><p><a target="_blank" rel="noopener" href="https://developer.nvidia.com/zh-cn/cuda-gpus">英伟达官网</a><br>谷歌将原来K80换成了T4<br><img src="https://img-blog.csdnimg.cn/7975074e2ece4cdc8be72e96851fd996.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAQVhETE1H,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
-<h1 id="2-查看基本配置"><a href="#2-查看基本配置" class="headerlink" title="2.查看基本配置"></a>2.查看基本配置</h1><h3 id="2-1查看pytorch版本"><a href="#2-1查看pytorch版本" class="headerlink" title="2.1查看pytorch版本"></a>2.1查看pytorch版本</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(torch)</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://img-blog.csdnimg.cn/b08a271c94da4d0293ac0dbc8ff3cc25.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAQVhETE1H,size_13,color_FFFFFF,t_70,g_se,x_16"></p>
-<h3 id="2-2查看是否可以使用cuda"><a href="#2-2查看是否可以使用cuda" class="headerlink" title="2.2查看是否可以使用cuda"></a>2.2查看是否可以使用cuda</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(torch.cuda.device_count())</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://img-blog.csdnimg.cn/cce0d37208584800922981b38136b11f.png"><br>修改-&gt;笔记本设置-&gt;GPU<br><img src="https://img-blog.csdnimg.cn/38bcb5ea6f724e1a8a120bd71614efcc.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAQVhETE1H,size_19,color_FFFFFF,t_70,g_se,x_16"></p>
-<h3 id="2-3查看显卡配置"><a href="#2-3查看显卡配置" class="headerlink" title="2.3查看显卡配置"></a>2.3查看显卡配置</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!nvidia-smi</span><br><span class="line">//注意英文感叹号</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://img-blog.csdnimg.cn/a222ea06ae0c44ce8f34592494dca1c3.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAQVhETE1H,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
-<h1 id="3-挂载"><a href="#3-挂载" class="headerlink" title="3.挂载"></a>3.挂载</h1><h3 id="31-挂载谷歌云盘"><a href="#31-挂载谷歌云盘" class="headerlink" title="31.挂载谷歌云盘"></a>31.挂载谷歌云盘</h3><p>Colab的运行原理实际上就是给你分配一台远程的带GPU的主机，所以它的原始路径不是你的谷歌云盘（也就是你的代码文件）所在的路径。所以第一步我们先要把谷歌云盘挂载带到那台远程主机上：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> google.colab <span class="keyword">import</span> drive</span><br><span class="line">drive.mount(<span class="string">&quot;/content/drive&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p>登录谷歌账号并将验证码粘到框中</p>
-<h3 id="3-2更改运行目录"><a href="#3-2更改运行目录" class="headerlink" title="3.2更改运行目录"></a>3.2更改运行目录</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.path.append(<span class="string">&quot;/content/drive/MyDrive/Colab Notebooks/LeNet_MNIST_train_test&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p>下面是我的目录结构<br><img src="https://img-blog.csdnimg.cn/a96be368c2ef4298af8e0fae94d4f61d.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAQVhETE1H,size_20,color_FFFFFF,t_70,g_se,x_16"></p>
-<h1 id="4-训练"><a href="#4-训练" class="headerlink" title="4.训练"></a>4.训练</h1><p>【LeNet】+【MNIST】</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torchvision</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn</span><br><span class="line"><span class="keyword">from</span> torch.utils.data <span class="keyword">import</span> DataLoader</span><br><span class="line"><span class="keyword">from</span> torchvision <span class="keyword">import</span> transforms</span><br><span class="line"><span class="keyword">import</span> time</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LeNet</span>(<span class="params">nn.Module</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>(LeNet, self).__init__()</span><br><span class="line">        self.model = nn.Sequential(</span><br><span class="line">            nn.Conv2d(<span class="number">1</span>, <span class="number">6</span>, kernel_size=<span class="number">5</span>),</span><br><span class="line">            nn.MaxPool2d(kernel_size=<span class="number">2</span>),</span><br><span class="line">            nn.Conv2d(<span class="number">6</span>, <span class="number">16</span>, kernel_size=<span class="number">5</span>),</span><br><span class="line">            nn.MaxPool2d(kernel_size=<span class="number">2</span>),</span><br><span class="line">            nn.Flatten(),</span><br><span class="line">            nn.Linear(<span class="number">16</span>*<span class="number">4</span>*<span class="number">4</span>, <span class="number">120</span>),</span><br><span class="line">            nn.Linear(<span class="number">120</span>, <span class="number">84</span>),</span><br><span class="line">            nn.Linear(<span class="number">84</span>, <span class="number">10</span>)</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        output = self.model(x)</span><br><span class="line">        <span class="keyword">return</span> output</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">train_datasets = torchvision.datasets.MNIST(</span><br><span class="line">    root = <span class="string">r&#x27;../data&#x27;</span>,</span><br><span class="line">    download=<span class="literal">True</span>,</span><br><span class="line">    train=<span class="literal">True</span>,</span><br><span class="line">    transform=transforms.ToTensor()</span><br><span class="line">)</span><br><span class="line">train_dataloader = DataLoader(</span><br><span class="line">    dataset=train_datasets,</span><br><span class="line">    batch_size=<span class="number">64</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">test_datasets = torchvision.datasets.MNIST(</span><br><span class="line">    root = <span class="string">r&#x27;../data&#x27;</span>,</span><br><span class="line">    train=<span class="literal">False</span>,</span><br><span class="line">    download=<span class="literal">True</span>,</span><br><span class="line">    transform=transforms.ToTensor()</span><br><span class="line">)</span><br><span class="line">test_dataloader = DataLoader(</span><br><span class="line">    dataset=test_datasets,</span><br><span class="line">    batch_size=<span class="number">64</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">train_datasets_size = <span class="built_in">len</span>(train_datasets)</span><br><span class="line">test_datasets_size = <span class="built_in">len</span>(test_datasets)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;训练集数量为：&#123;&#125;&quot;</span>.<span class="built_in">format</span>(train_datasets_size))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;测试集数量为：&#123;&#125;&quot;</span>.<span class="built_in">format</span>(test_datasets_size))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">runing_mode = <span class="string">&quot;gpu&quot;</span> <span class="comment"># cpu,gpu, gpus</span></span><br><span class="line"><span class="keyword">if</span> runing_mode == <span class="string">&quot;gpu&quot;</span> <span class="keyword">and</span> torch.cuda.is_available():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;use cuda&quot;</span>)</span><br><span class="line">    device = torch.device(<span class="string">&quot;cuda&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;use cpu&quot;</span>)</span><br><span class="line">    device = torch.device(<span class="string">&quot;cpu&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">model = LeNet()</span><br><span class="line">model.to(device)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">loss_fn = nn.CrossEntropyLoss()</span><br><span class="line">loss_fn.to(device)</span><br><span class="line">learning_rate = <span class="number">1e-2</span></span><br><span class="line">optim = torch.optim.SGD(model.parameters(), lr=learning_rate)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">epoch = <span class="number">10</span></span><br><span class="line">train_step, test_step = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(epoch):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;~~~~~~~~~~~~第&#123;&#125;轮训练开始~~~~~~~~~~~&quot;</span>.<span class="built_in">format</span>(i+<span class="number">1</span>))</span><br><span class="line">    start = time.time()</span><br><span class="line">    model.train()</span><br><span class="line">    <span class="keyword">for</span> data <span class="keyword">in</span> train_dataloader:</span><br><span class="line">        imgs, targets = data</span><br><span class="line">        imgs, targets = imgs.to(device), targets.to(device)</span><br><span class="line">        output = model(imgs)</span><br><span class="line">        loss = loss_fn(output, targets)</span><br><span class="line"></span><br><span class="line">        optim.zero_grad()</span><br><span class="line">        loss.backward()</span><br><span class="line">        optim.step()</span><br><span class="line"></span><br><span class="line">        train_step += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> train_step % <span class="number">200</span> == <span class="number">0</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;第&#123;&#125;次训练，loss=&#123;:.3f&#125;&quot;</span>.<span class="built_in">format</span>(train_step, loss.item()))</span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    model.<span class="built_in">eval</span>()</span><br><span class="line">    <span class="keyword">with</span> torch.no_grad():</span><br><span class="line">        test_loss, true_num = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> data <span class="keyword">in</span> test_dataloader:</span><br><span class="line">            imgs, targets = data</span><br><span class="line">            imgs, targets = imgs.to(device), targets.to(device)</span><br><span class="line">            output = model(imgs)</span><br><span class="line">            test_loss += loss_fn(output, targets)</span><br><span class="line">            true_num += (output.argmax(<span class="number">1</span>) == targets).<span class="built_in">sum</span>()</span><br><span class="line">    end = time.time()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;第&#123;&#125;轮测试集上的loss:&#123;:.3f&#125;, 正确率为:&#123;:.3f&#125;%,耗时:&#123;:.3f&#125;&quot;</span>.<span class="built_in">format</span>(test_step+<span class="number">1</span>, test_loss.item(), <span class="number">100</span> * true_num / test_datasets_size, end-start))</span><br><span class="line">    test_step += <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p>运行结果：<br>1.CPU<br><img src="https://img-blog.csdnimg.cn/14edcf10c0d446a189f4a6fc44fba1ce.png"><br>2.GPU<br><img src="https://img-blog.csdnimg.cn/f396f9c673a24d719516dd5abc055ba1.png"></p>
-<h1 id="5-Reference"><a href="#5-Reference" class="headerlink" title="5.Reference"></a>5.Reference</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u010881576/article/details/120919330">《Colab使用训练指南》 坚强的羊脂球</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-10月文章分享" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/10/30/10%E6%9C%88%E6%96%87%E7%AB%A0%E5%88%86%E4%BA%AB/" class="article-date">
-      <time datetime="2021-10-30T09:07:40.033Z" itemprop="datePublished">2021-10-30</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/10/30/10%E6%9C%88%E6%96%87%E7%AB%A0%E5%88%86%E4%BA%AB/">10月文章分享</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h1 id="1-演讲"><a href="#1-演讲" class="headerlink" title="1.演讲"></a>1.演讲</h1><h2 id="1-1Steven-Chu：Life-is-too-short-to-go-through-it-without-caring-deeply-about-something"><a href="#1-1Steven-Chu：Life-is-too-short-to-go-through-it-without-caring-deeply-about-something" class="headerlink" title="1.1Steven Chu：Life is too short to go through it without caring deeply about something."></a>1.1Steven Chu：Life is too short to go through it without caring deeply about something.</h2><p><a target="_blank" rel="noopener" href="https://news.harvard.edu/gazette/story/2009/06/u-s-energy-secretary-steven-chus-address-at-harvards-afternoon-exercises/">Stenven Chu in_Harvard Commencement 2009</a></p>
-<p><a target="_blank" rel="noopener" href="https://ruanyifeng.com/blog/2009/06/remarks_of_stenven_chu_in_harvard_commencement_2009.html">ruanyifeng’s blog:Remarks of Stenven Chu in harvard commencement</a></p>
-<h2 id="1-2李彦宏：创新、跨界、开放的新工科人才"><a href="#1-2李彦宏：创新、跨界、开放的新工科人才" class="headerlink" title="1.2李彦宏：创新、跨界、开放的新工科人才"></a>1.2李彦宏：创新、跨界、开放的新工科人才</h2><p><a target="_blank" rel="noopener" href="http://www.pku.org.cn/people/xyjy/1350143.htm">1987级校友李彦宏在北大新工科国际论坛上的演讲</a></p>
-<h2 id="1-3丘成桐-中学数学教育"><a href="#1-3丘成桐-中学数学教育" class="headerlink" title="1.3丘成桐 中学数学教育"></a>1.3丘成桐 中学数学教育</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/FnqTyr45/article/details/80490984">丘成桐：中国学生基础真的比欧美学生好吗？</a></p>
-<p>ps：找了一些相同内容的文章，标题太刺眼，感谢这位博主的文章~</p>
-<h1 id="2-人物"><a href="#2-人物" class="headerlink" title="2.人物"></a>2.人物</h1><h2 id="2-1-Klaus-Hasselmann：I-did-not-have-a-real-supervisor"><a href="#2-1-Klaus-Hasselmann：I-did-not-have-a-real-supervisor" class="headerlink" title="2.1 Klaus Hasselmann：I did not have a real supervisor"></a>2.1 Klaus Hasselmann：I did not have a real supervisor</h2><p><a target="_blank" rel="noopener" href="https://www.aip.org/history-programs/niels-bohr-library/oral-histories/33645">Oral History Interviews about Klaus Hasselmann on February 15, 2006</a></p>
-<h2 id="2-2-施一公-如何做一名优秀的博士生？"><a href="#2-2-施一公-如何做一名优秀的博士生？" class="headerlink" title="2.2 施一公 如何做一名优秀的博士生？"></a>2.2 施一公 如何做一名优秀的博士生？</h2><p><a target="_blank" rel="noopener" href="http://blog.sciencenet.cn/blog-46212-484416.html">（一）时间的付出</a></p>
-<p><a target="_blank" rel="noopener" href="http://blog.sciencenet.cn/blog-46212-486270.html">（二）方法论的转变</a></p>
-<h2 id="2-3-Matt-Might：10-easy-ways-to-fail-a-Ph-D"><a href="#2-3-Matt-Might：10-easy-ways-to-fail-a-Ph-D" class="headerlink" title="2.3 Matt Might：10 easy ways to fail a Ph.D."></a>2.3 Matt Might：10 easy ways to fail a Ph.D.</h2><p><a target="_blank" rel="noopener" href="https://matt.might.net/articles/ways-to-fail-a-phd/">Matt Might：ways to fail a Ph.D.</a></p>
-<h2 id="2-4-跟李沐学AI"><a href="#2-4-跟李沐学AI" class="headerlink" title="2.4 跟李沐学AI"></a>2.4 跟李沐学AI</h2><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv13335461/">李沐：用随机梯度下降来优化人生</a></p>
-<p>沐神的b站：<a target="_blank" rel="noopener" href="https://space.bilibili.com/1567748478">跟李沐学AI</a></p>
-<h2 id="2-5-LShang001"><a href="#2-5-LShang001" class="headerlink" title="2.5 LShang001"></a>2.5 LShang001</h2><p>LShang001的b站：<a target="_blank" rel="noopener" href="https://i0.hdslb.com/bfs/space/cb1c3ef50e22b6096fde67febe863494caefebad.png">LShang001</a></p>
-<h2 id="2-6-稚晖君"><a href="#2-6-稚晖君" class="headerlink" title="2.6 稚晖君"></a>2.6 稚晖君</h2><p>稚晖君的b站：<a target="_blank" rel="noopener" href="https://space.bilibili.com/20259914?from=search&seid=1336220716890113133&spm_id_from=333.337.0.0">稚晖君</a></p>
-<p>稚晖君的Github：<a target="_blank" rel="noopener" href="https://github.com/peng-zhihui">稚晖</a></p>
-<h2 id="2-7-张焕晨-读博，你真的想好了吗？"><a href="#2-7-张焕晨-读博，你真的想好了吗？" class="headerlink" title="2.7 张焕晨 读博，你真的想好了吗？"></a>2.7 张焕晨 读博，你真的想好了吗？</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/372884253">张焕晨：读博，你真的想好了吗？</a></p>
-<p>ps：根据个人需求有选择地阅读，尽量不要受到他人评论影响~</p>
-<h1 id="3-前沿新闻"><a href="#3-前沿新闻" class="headerlink" title="3.前沿新闻"></a>3.前沿新闻</h1><h2 id="3-1-Ghost-Robotics-CEO-Jiren-Parikh：If-our-robot-had-tracks-on-it-instead-of-legs-nobody-would-be-paying-attention"><a href="#3-1-Ghost-Robotics-CEO-Jiren-Parikh：If-our-robot-had-tracks-on-it-instead-of-legs-nobody-would-be-paying-attention" class="headerlink" title="3.1 Ghost Robotics CEO Jiren Parikh：If our robot had tracks on it instead of legs, nobody would be paying attention."></a>3.1 Ghost Robotics CEO Jiren Parikh：If our robot had tracks on it instead of legs, nobody would be paying attention.</h2><p><a target="_blank" rel="noopener" href="https://spectrum.ieee.org/ghost-robotics-armed-military-robots">Interview with Jiren Parikh, CEO of Ghost Robotics by IEEE Spectrum.</a></p>
-<h2 id="3-2中科院脑智卓越中心徐波、蒲慕明联合研究团队近期借助生物网络中发现的介观尺度自组织反向传播机制（Self-backpropagation，SBP）"><a href="#3-2中科院脑智卓越中心徐波、蒲慕明联合研究团队近期借助生物网络中发现的介观尺度自组织反向传播机制（Self-backpropagation，SBP）" class="headerlink" title="3.2中科院脑智卓越中心徐波、蒲慕明联合研究团队近期借助生物网络中发现的介观尺度自组织反向传播机制（Self-backpropagation，SBP）"></a>3.2中科院脑智卓越中心徐波、蒲慕明联合研究团队近期借助生物网络中发现的介观尺度自组织反向传播机制（Self-backpropagation，SBP）</h2><p><a target="_blank" rel="noopener" href="https://www.science.org/doi/10.1126/sciadv.abh0146">Self-backpropagation of synaptic modifications elevates the efficiency of spiking and artificial neural networks</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-我的博客" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/10/30/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/" class="article-date">
-      <time datetime="2021-10-30T04:14:25.673Z" itemprop="datePublished">2021-10-30</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/10/30/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/">这篇博客的诞生</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_52034760/article/details/121047628">Hexo+Github搭建blog</a></p>
-<p>这里为了不熟悉Markdown语法，挂上官方连接：<br><a target="_blank" rel="noopener" href="https://markdown.com.cn/basic-syntax/">Markdown基本语法</a></p>
-<p>02 Apr，2021&lt;<br>1.小白<br>2.不适应Shell<br>3.不了解Markdown及HTML</p>
-<p>30 Oct，2021<br>1.逐渐适应Shell<br>2.Markdown基础语法<br>3.Git原理未了解<br>4.GitHub使用增多，Gist、论文源代码、开源项目（少）<br>5.SSH原理未了解<br>6.URL原理未了解<br>7.Github中的master暂未了解<br>8.默认主题</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
+    <!--         <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_1278548644'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/stat.php%3Fid%3D1278548644%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script> -->
+</p>
 </div>
-      <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                <i class="fa fa-copyright"></i> 
-                2016-2021 AXDLMG7
-            </div>
-            <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
-            </div>
-        </div>
-        
-            <div class="visit">
-                
-                    <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
-                        </span>
-                    </span>
-                
-                
-                    <span>| </span>
-                
-                
-                    <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    </span>
-                
-            </div>
-        
-    </div>
-</footer>
-    </div>
-    
-<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
 
-    <script>
-        $(document).ready(function() {
-            var iPad = window.navigator.userAgent.indexOf('iPad');
-            if (iPad > -1 || $(".left-col").css("display") === "none") {
-                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
-                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
-                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
-            }
-            else {
-                var backgroundnum = 5;
-                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
-            }
-        })
-    </script>
+<input type="hidden" id="web_style" value="light">
+<input type="hidden" id="valine_appid" value="">
+<input type="hidden" id="valine_appKey" value="">
+
+<script src="/libs/jquery.min.js"></script>
 
 
+<script src="/libs/highlight/highlight.pack.js"></script>
 
+<script src='//cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
 
+<script src="/js/js.js"></script>
 
-<div class="scroll" id="scroll">
-    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
-</div>
-<script>
-    // Open in New Window
-    
-        var oOpenInNew = {
-            
-            
-            
-            
-            
-            
-             archives: ".archive-article-title", 
-             miniArchives: "a.post-list-link", 
-            
-             friends: "#js-friends a", 
-             socail: ".social a" 
-        }
-        for (var x in oOpenInNew) {
-            $(oOpenInNew[x]).attr("target", "_blank");
-        }
-    
-</script>
-
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-  </div>
+<style type="text/css">
+.v * {
+color: #698fca;
+}
+.v .vlist .vcard .vhead .vsys {
+color: #3a3e4a;
+}
+.v .vlist .vcard .vh .vmeta .vat {
+color: #638fd5;
+}
+.v .vlist .vcard .vhead .vnick {
+color: #6ba1ff;
+}
+.v a {
+color: #8696b1;
+}
+.v .vlist .vcard .vhead .vnick:hover {
+color: #669bfc;
+}
+</style>
+    <script type="text/javascript" color="173,174,173" opacity='1' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 </body>
 </html>
