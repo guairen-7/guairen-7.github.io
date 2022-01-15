@@ -4,6 +4,45 @@
   
     
     <entry>
+      <title>吴恩达来信：建立AI职业生涯的小tips</title>
+      <link href="/2022/01/15/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9D%A5%E4%BF%A1/"/>
+      <url>/2022/01/15/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9D%A5%E4%BF%A1/</url>
+      
+        <content type="html"><![CDATA[<font size=4>亲爱的朋友们,<p>人工智能持续创造着无数令人兴奋的工作机会，我知道你们中的许多人都希望在这个领域发展自己的职业生涯。虽然参加技术主题的网络课程是重要的一步，但成为一名人工智能专业人士需要的不仅仅是技术技能。最近，我一直在思考如何做更多的事情来支持所有想要在人工智能领域发展事业的人。</p><p>对于处在职业生涯不同阶段的人，成功的关键有哪些?</p><ul><li><p><strong>技术技能</strong>。通过参加网络课程或阅读课本来学习一项新技能。在这些课程中，专家将重要概念以易于理解的形式呈现出来，这是最有效的方法之一。</p></li><li><p><strong>实践经验</strong>。在掌握一项技能后，我们有必要通过将该技能应用于重要的项目来实践它，并学习有关的行业技巧。在实验室中表现良好的机器学习模型在现实世界中可能会遇到麻烦。在实际应用中获得的项目经验仍然是克服这些问题的重要组成部分。</p></li><li><p><strong>项目选择</strong>。选择要做的项目是人工智能中最难掌握的技能之一。我们在同时期只能做这么多项目，所以确定可行和有价值的项目——取得成功的可能性较大——是一个重要的步骤，必须在职业生涯中反复实践。</p></li><li><p><strong>团队合作</strong>。在处理大型项目时，团队合作比单打独斗更能取得成功。与他人合作、提供及听取建议的能力至关重要。这包括人际交往和沟通技巧。(顺便说一句，我以前也是个社恐。) </p></li><li><p><strong>网络</strong>。我讨厌网络！作为一个内向的人，当我不得不去参加聚会，微笑着和尽可能多的人握手是一种近乎恐怖的体验。我宁愿呆在家里看书。尽管如此，我还是很幸运地在人工智能领域找到了许多真正的朋友——我乐意为之辩护的人，以及我所依赖的人。没有人是孤立无援的，在你需要帮助或建议的时候，拥有一个强大的职业关系网可以帮助你前进。</p></li><li><p><strong>找工作</strong>。在建立事业的所有步骤中，这一步往往是最受关注的。不幸的是，我在网上看到很多关于这方面的不好的建议。(例如，很多文章似乎都在教唆你对未来的雇主采取敌对的态度，我认为这是没有帮助的)。尽管找工作似乎是最终目标，但它只是漫长职业生涯中的一小步。</p></li><li><p><strong>个人纪律</strong>。很少有人会知道你是把周末用来学习还是疯狂地看电视(除非你公布在社交媒体上！)，但随着时间的推移，他们就会注意到差异。许多成功人士在饮食、锻炼、睡眠、人际关系、工作、学习和自我照顾方面都养成了良好的习惯。这样的习惯可以帮助他们在保持健康的同时继续进步。</p></li><li><p><strong>利他主义</strong>。我发现，那些在自己人生旅途的每一步都致力于帮助他人的人，往往会得到更好的结果。我们如何在为自己打造一份令人兴奋的事业同时帮助他人呢?</p></li></ul><p>上述的每一项都是一个复杂的主题，值得写一整本书。我会继续思考我们如何共同努力，支持每个人的职业目标。同时，我也想听听你的想法。我漏掉了什么？我或我的团队能做些什么来支持你们的事业?</p><p>Keep learning!</p><p>Andrew<br></font></p><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.bilibili.com/read/cv14819658?spm_id_from=444.41.0.0">吴恩达来信：建立AI职业生涯的小tips by:deeplearning_ai from:bilibili</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Video Non-deletion Test</title>
+      <link href="/2022/01/15/Video%20Non-deletion%20Test/"/>
+      <url>/2022/01/15/Video%20Non-deletion%20Test/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Markdown-视频"><a href="#Markdown-视频" class="headerlink" title="Markdown 视频"></a>Markdown 视频</h1><p>由于 Markdown 支持 HTML 语法，会对相应的标签进行解析。所以我们可以通过 HTML 语法将视频放入到我们的 Markdown 中。</p><iframe     src="//player.bilibili.com/player.html?aid=677612560&bvid=BV1zm4y197Py&cid=467867782&page=1"     scrolling="no"     border="0"     frameborder="no"     framespacing="0"     allowfullscreen="true"     width="95%"     height="450"></iframe><h1 id="MP3"><a href="#MP3" class="headerlink" title="MP3"></a>MP3</h1><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p>(Markdown 插入视频 by:向往的那片海洋 from:CSDN)[<a href="https://blog.csdn.net/weixin_46229298/article/details/110271643]">https://blog.csdn.net/weixin_46229298/article/details/110271643]</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Elon Musk Tesla, SpaceX, and the Quest for a Fantastic Future by Ashlee Vance</title>
+      <link href="/2022/01/03/Elon%20Musk/"/>
+      <url>/2022/01/03/Elon%20Musk/</url>
+      
+        <content type="html"><![CDATA[<p>关于作者Ashlee Vance：<br><a href="http://www.ashleevance.com/">Ashlee Vance</a></p><p>本书注释中的链接：</p><p>2.<a href="https://www.queensu.ca/gazette/alumnireview/stories/rocket-man">Rocket man published on Queen’s ALUMNI REVIEW</a></p><p>3.<a href="https://www.marieclaire.com/sex-love/a5380/millionaire-starter-wife/">Justine Musk:”I Was a Starter Wife”: Inside America’s Messiest Divorce</a></p><p>5.<a href="https://www.wired.com/2007/05/ff-space-musk/?currentPage=all">The Falcon系列发射报导 published on Wired</a></p><p>6.<a href="https://www.cnet.com/roadshow/news/electric-sports-car-packs-a-punch-but-will-it-sell/">Roadster初出茅庐的声音</a></p><p>7.<a href="http://www.nytimes.com/2006/07/19/business/19electric.xhtml.">已失效</a></p><p>9.<a href="https://www.mercurynews.com/2007/12/05/co-founder-martin-eberhard-leaves-tesla/">Co-founder Martin Eberhard leaves Tesla</a></p><p>10.<a href="https://www.telegraph.co.uk/culture/3666994/One-more-giant-leap.html">One more giant leap</a></p><p>11.<a href="https://sia.org/wp-content/uploads/2013/06/2013_SSIR_">已失效</a></p><p>13.<a href="https://www.space.com/15874-private-dragon-capsule-space-station-arrival.html">Private Dragon Capsule Arrives at Space Station in Historic First</a></p><p>20.<a href="http://www.sandia.gov/~jytsao/Solar%20FAQs.pdf.">已失效</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Andrew Ng&#39;s development advice for students in AI field</title>
       <link href="/2022/01/02/Andrew%20Ng&#39;s%20development%20advice%20for%20students%20in%20AI%20field/"/>
       <url>/2022/01/02/Andrew%20Ng&#39;s%20development%20advice%20for%20students%20in%20AI%20field/</url>
