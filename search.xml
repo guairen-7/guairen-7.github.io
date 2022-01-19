@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>NEWMEN（新贵）GM610键盘说明书</title>
+      <link href="/2022/01/19/keyboard/"/>
+      <url>/2022/01/19/keyboard/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://img-blog.csdnimg.cn/903aee01f4c44dc9916249dab58e1ee4.png" alt="NEWMEN（新贵）GM610"></p><font size=4><h1 id="官方参数"><a href="#官方参数" class="headerlink" title="官方参数"></a>官方参数</h1><p>产品名称：GM610<br>产品颜色：白红<br>产品类型：蓝牙&amp;有线双模机械键盘<br>背光模式：RGB混光<br>按键数量：61键<br>轴体寿命：≥5000万次<br>轴体类型：黑<br>线材长度：1.6米PVC Type-C接口<br>按键无冲：全键无冲<br>产品重量：601g（不含线材）<br>键帽材质：PBT键帽<br>电池容量：1600mAh<br>键盘尺寸：291.5×101.5×38.5mm<br>工作电流：≤150mA（发光状态）；≤18mA（蓝牙无发光状态）</p><p><a href="http://newmen.com.cn/desc.php?id=129">Newmen-GM610</a></p><h1 id="我的参数"><a href="#我的参数" class="headerlink" title="我的参数"></a>我的参数</h1><p>型号Model：NEWMEN（新贵）GM610<br>轴体：黑轴<br>USB供电：电压5V  电流&lt;150mA<br>锂电池供电：电压3.7伏  电流&lt;150mA<br>产品序列号：KB948-210403938</p><h1 id="生产信息"><a href="#生产信息" class="headerlink" title="生产信息"></a>生产信息</h1><p>东莞市新贵电子科技有限公司<br>广东省东莞市塘厦镇林村西发路5号<br>网址：<a href="http://www.newmen.com.cn/">www.newmen.com.cn</a><br>客服热线：400-8866-811<br>执行标准号：键盘：GB/T 14081-2010</p><h1 id="FN快捷键"><a href="#FN快捷键" class="headerlink" title="FN快捷键"></a>FN快捷键</h1><p><strong>有线/蓝牙切换</strong><br>长按Fn+Tab三秒<br>红色-有线模式<br>蓝色-蓝牙模式  Q键闪烁绿色指示灯</p><p>Q-设备1<br>W-设备2<br>E-设备3</p><h1 id="2021-12-24固件升级后"><a href="#2021-12-24固件升级后" class="headerlink" title="2021.12.24固件升级后"></a>2021.12.24固件升级后</h1><p><img src="https://img-blog.csdnimg.cn/813fcc7608494d3f971a738b7ad20e9a.png" alt="2021.12.24更新"><br>1、增加FN多媒体等组合键，如图（ASDZXCVB）<br>2、增加MAC系统切换，如图（FN+P）<br>3、TAB指示灯修改，原为红或蓝色常亮，现改为每次切换后闪烁5次后变回主灯效<br>4、FN指示灯修改，原为五种颜色指示电量，现改为只有低电时FN闪烁红色指示灯<br>5、FN+ENTER将“？/alt/菜单/右CTRL”键切换为固定的方向键，其它按键功能只能按FN+组合</p><p><a href="http://newmen.com.cn/download.php?cid=92###">新贵中国官方网站-下载中心</a></p><h1 id="规格参数"><a href="#规格参数" class="headerlink" title="规格参数"></a>规格参数</h1><p>有线及蓝牙工作电流≤150mA（发光状态）<br>蓝牙：无发光工作电流≤18mA<br>2min待机电流≤0.8mA<br>30min休眠电流≤0.5mA</p><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>无线设备名：NEWMEN 3.0/NEWMEN 5.0<br>有线设备名：Newmen Bluetooth Keyboard<br>VID：12C9<br>PID：6001<br>Fn键电量指示灯：从低到高：红-黄-绿-蓝-白</p></font>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>吴恩达来信：建立AI职业生涯的小tips</title>
       <link href="/2022/01/15/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9D%A5%E4%BF%A1/"/>
       <url>/2022/01/15/%E5%90%B4%E6%81%A9%E8%BE%BE%E6%9D%A5%E4%BF%A1/</url>
@@ -21,7 +34,7 @@
       <link href="/2022/01/15/Video%20Non-deletion%20Test/"/>
       <url>/2022/01/15/Video%20Non-deletion%20Test/</url>
       
-        <content type="html"><![CDATA[<h1 id="Markdown-视频"><a href="#Markdown-视频" class="headerlink" title="Markdown 视频"></a>Markdown 视频</h1><p>由于 Markdown 支持 HTML 语法，会对相应的标签进行解析。所以我们可以通过 HTML 语法将视频放入到我们的 Markdown 中。</p><iframe     src="//player.bilibili.com/player.html?aid=677612560&bvid=BV1zm4y197Py&cid=467867782&page=1"     scrolling="no"     border="0"     frameborder="no"     framespacing="0"     allowfullscreen="true"     width="95%"     height="450"></iframe><h1 id="MP3"><a href="#MP3" class="headerlink" title="MP3"></a>MP3</h1><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p>(Markdown 插入视频 by:向往的那片海洋 from:CSDN)[<a href="https://blog.csdn.net/weixin_46229298/article/details/110271643]">https://blog.csdn.net/weixin_46229298/article/details/110271643]</a></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="Markdown-视频"><a href="#Markdown-视频" class="headerlink" title="Markdown 视频"></a>Markdown 视频</h1><p>由于 Markdown 支持 HTML 语法，会对相应的标签进行解析。所以我们可以通过 HTML 语法将视频放入到我们的 Markdown 中。</p><iframe     width="800"     height="450"     src="//player.bilibili.com/player.html?aid=677612560&bvid=BV1zm4y197Py&cid=467867782&page=1"    frameborder="0"     allowfullscreen></iframe><h1 id="MP3"><a href="#MP3" class="headerlink" title="MP3"></a>MP3</h1><iframe     frameborder="no"     border="0"     marginwidth="0"     marginheight="0"     width="100%"     height=86     src="//music.163.com/outchain/player?type=2&id=1295824647&auto=1&height=66"></iframe><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p>(Markdown 插入视频 by:向往的那片海洋 from:CSDN)[<a href="https://blog.csdn.net/weixin_46229298/article/details/110271643]">https://blog.csdn.net/weixin_46229298/article/details/110271643]</a></p>]]></content>
       
       
       
