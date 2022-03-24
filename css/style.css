@@ -1590,69 +1590,61 @@ article .content .caption {
   content: ")";
 }
 .highlight {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  color: #b1e7e7;
-  background: #282c34;
+  background: #272822;
+  color: #ddd;
 }
-.highlight .comment,
-.highlight .quote {
-  color: #969896;
-  font-style: italic;
+.highlight .code .tag,
+.highlight .code .keyword,
+.highlight .code .selector-tag,
+.highlight .code .literal,
+.highlight .code .strong,
+.highlight .code .name {
+  color: #f92672;
 }
-.highlight .doctag,
-.highlight .keyword,
-.highlight .formula {
-  color: #c678dd;
+.highlight .code .code {
+  color: #66d9ef;
 }
-.highlight .section,
-.highlight .name,
-.highlight .selector-tag,
-.highlight .deletion,
-.highlight .subst {
-  color: #e06c75;
+.highlight .code .class .title {
+  color: #fff;
 }
-.highlight .literal {
-  color: #56b6c2;
+.highlight .code .attribute,
+.highlight .code .symbol,
+.highlight .code .regexp,
+.highlight .code .link {
+  color: #bf79db;
 }
-.highlight .string,
-.highlight .regexp,
-.highlight .addition,
-.highlight .attribute,
-.highlight .meta-string {
-  color: #98c379;
+.highlight .code .string,
+.highlight .code .bullet,
+.highlight .code .subst,
+.highlight .code .title,
+.highlight .code .section,
+.highlight .code .emphasis,
+.highlight .code .type,
+.highlight .code .built_in,
+.highlight .code .builtin-name,
+.highlight .code .selector-attr,
+.highlight .code .selector-pseudo,
+.highlight .code .addition,
+.highlight .code .variable,
+.highlight .code .template-tag,
+.highlight .code .template-variable {
+  color: #a6e22e;
 }
-.highlight .built_in,
-.highlight .class .title {
-  color: #e6c07b;
+.highlight .code .comment,
+.highlight .code .quote,
+.highlight .code .deletion,
+.highlight .code .meta {
+  color: #75715e;
 }
-.highlight .attr,
-.highlight .variable,
-.highlight .template-variable,
-.highlight .type,
-.highlight .selector-class,
-.highlight .selector-attr,
-.highlight .selector-pseudo,
-.highlight .number {
-  color: #d19a66;
-}
-.highlight .symbol,
-.highlight .bullet,
-.highlight .link,
-.highlight .meta,
-.highlight .selector-id,
-.highlight .title {
-  color: #969896;
-}
-.highlight .emphasis {
-  font-style: italic;
-}
-.highlight .strong {
+.highlight .code .keyword,
+.highlight .code .selector-tag,
+.highlight .code .literal,
+.highlight .code .doctag,
+.highlight .code .title,
+.highlight .code .section,
+.highlight .code .type,
+.highlight .code .selector-id {
   font-weight: bold;
-}
-.highlight .link {
-  text-decoration: underline;
 }
 pre {
   overflow-x: auto;

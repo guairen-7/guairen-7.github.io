@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>【Coggle drive】【Colab】引用同级下的.py文件</title>
+      <link href="/2022/03/24/%E3%80%90Google%20drive%E3%80%91%E3%80%90Colab%E3%80%91%E5%BC%95%E7%94%A8%E5%90%8C%E7%BA%A7%E4%B8%8B%E7%9A%84-py%E6%96%87%E4%BB%B6/"/>
+      <url>/2022/03/24/%E3%80%90Google%20drive%E3%80%91%E3%80%90Colab%E3%80%91%E5%BC%95%E7%94%A8%E5%90%8C%E7%BA%A7%E4%B8%8B%E7%9A%84-py%E6%96%87%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><img src="https://img-blog.csdnimg.cn/fa46e51cf95646e8a28eae01485abeff.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAQVhETE1H,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><p>1.drive后稍等片刻左侧目录会刷新</p><p>2.上传文件格式为.ipynb能够直接打开编辑，.py文件只读模式</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Colab </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Coggle drive </tag>
+            
+            <tag> Colab </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【R】【数据采集、抽样和预处理实验】</title>
       <link href="/2022/03/24/%E3%80%90R%E3%80%91%E3%80%90%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E3%80%81%E6%8A%BD%E6%A0%B7%E5%92%8C%E9%A2%84%E5%A4%84%E7%90%86%E5%AE%9E%E9%AA%8C%E3%80%91/"/>
       <url>/2022/03/24/%E3%80%90R%E3%80%91%E3%80%90%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E3%80%81%E6%8A%BD%E6%A0%B7%E5%92%8C%E9%A2%84%E5%A4%84%E7%90%86%E5%AE%9E%E9%AA%8C%E3%80%91/</url>
@@ -113,7 +140,7 @@
       <link href="/2022/03/17/%E3%80%90%E9%9F%B3%E4%B9%90%E6%8F%92%E4%BB%B6%E6%B5%8B%E8%AF%95%E3%80%91/"/>
       <url>/2022/03/17/%E3%80%90%E9%9F%B3%E4%B9%90%E6%8F%92%E4%BB%B6%E6%B5%8B%E8%AF%95%E3%80%91/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><iframe     frameborder="no"     border="0"     marginwidth="0"     marginheight="0"     width='100%'     height=86     src="//music.163.com/outchain/player?type=2&id=20110049&auto=1&height=66"></iframe>    <div id="aplayer-TTJyjJsx" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="3141330048" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="1000px" data-preload="auto" data-theme="#555" data-volume="0.2"    ></div><p>type：playlist<br>必须值    song, playlist, album, search, artist</p><p>theme：#    555<br>播放器风格色彩设置</p><p>mutex：true<br>该选项开启时，如果同页面有其他 aplayer 播放，该播放器会暂停</p><p>listmaxheight：1000px<br>播放列表的最大长度</p><p>preload：auto<br>音乐文件预载入模式，可选项： none, metadata, auto</p><p>音量20%</p><p>id号不知从哪里找，用的<a href="https://y.qq.com/n/ryqq/playlist/3141330048">QQ Music 歌单链接</a>里面的id</p><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://blog.csdn.net/weixin_58068682/article/details/116612364">Hexo博客技巧：为博客插入音乐 by:Amnesia_Fu from:CSDN</a></p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><iframe     frameborder="no"     border="0"     marginwidth="0"     marginheight="0"     width='100%'     height=86     src="//music.163.com/outchain/player?type=2&id=20110049&auto=1&height=66"></iframe>    <div id="aplayer-NtDKwHBE" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="3141330048" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="1000px" data-preload="auto" data-theme="#555" data-volume="0.2"    ></div><p>type：playlist<br>必须值    song, playlist, album, search, artist</p><p>theme：#    555<br>播放器风格色彩设置</p><p>mutex：true<br>该选项开启时，如果同页面有其他 aplayer 播放，该播放器会暂停</p><p>listmaxheight：1000px<br>播放列表的最大长度</p><p>preload：auto<br>音乐文件预载入模式，可选项： none, metadata, auto</p><p>音量20%</p><p>id号不知从哪里找，用的<a href="https://y.qq.com/n/ryqq/playlist/3141330048">QQ Music 歌单链接</a>里面的id</p><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://blog.csdn.net/weixin_58068682/article/details/116612364">Hexo博客技巧：为博客插入音乐 by:Amnesia_Fu from:CSDN</a></p>]]></content>
       
       
       

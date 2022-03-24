@@ -25,7 +25,7 @@
         
     
     <!-- title -->
-    <title>search</title>
+    <title>归档: 2022/3</title>
     <!-- styles -->
     
 <link rel="stylesheet" href="/css/style.css">
@@ -72,20 +72,47 @@
     </div>
 </header>
     
-    <article class="post page" itemscope itemtype="http://schema.org/BlogPosting">
-    
-    <div class="content" itemprop="articleBody">
+    <div id="archive">
+    <ul class="post-list">
         
-            <section id="search">
-    <form>
-        <input type="text" class="search-input" id="search-input" placeholder="搜索...">
-    </form>
-    <div id="search-result"></div>
-    <p class="search-no-result">抱歉，没有符合您搜索条件的结果。请换其它关键词再试。</p>
-</section>
+        
+        
+        
+            
+            
+            
+            
+                <h2>2022</h2>
+            
+            <li class="post-item">
+                
+    <div class="meta">
+        
+            
+                <time datetime="2022-03-24T03:11:17.989Z"
+                      itemprop="dateModified">2022-03-24</time>
+            
         
     </div>
-</article>
+
+                <span>
+    
+        <a class="" href="/2022/03/16/%E3%80%90RStudio%E3%80%91%E6%9B%B4%E6%8D%A2%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91/">【RStudio】更换【镜像】</a>
+    
+</span>
+            </li>
+        
+    </ul>
+    
+    <div class="pagination">
+        
+            <a href="/archives/2022/03/"><i class="fas fa-angle-left"></i></a>
+        
+        <span class="page-number">第 2 页，共 2 页</span>
+        
+    </div>
+
+</div>
     
     <footer id="footer">
   <div class="footer-top">
@@ -119,43 +146,6 @@
 <script src="/js/main.js"></script>
 
 <!-- search -->
-
-    
-<script src="/js/search.js"></script>
-
-    <script type="text/javascript">
-        $(function () {
-
-            var $inputArea = $("input#search-input");
-            var $resultArea = document.querySelector("div#search-result");
-
-            $inputArea.focus(function () {
-                var search_path = "search.xml";
-                if (search_path.length == 0) {
-                    search_path = "search.xml";
-                }
-                var path = "/" + search_path;
-                searchFunc(path, 'search-input', 'search-result');
-            });
-
-            $inputArea.keydown(function (e) {
-                if (e.which == 13) {
-                    e.preventDefault();
-                }
-            });
-
-            var observer = new MutationObserver(function (mutationsList, observer) {
-                if (mutationsList[0].addedNodes) {
-                    $(".search-no-result").show(200);
-                } else {
-                    $(".search-no-result").hide();
-                }
-            });
-
-            observer.observe($resultArea, {childList: true});
-
-        });
-    </script>
 
 </body>
 
