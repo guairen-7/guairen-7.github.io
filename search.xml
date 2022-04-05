@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>【Data Mining】【第三章作业】</title>
+      <link href="/2022/04/05/%E3%80%90Data%20Mining%E3%80%91%E3%80%90%E7%AC%AC%E4%B8%89%E7%AB%A0%E4%BD%9C%E4%B8%9A%E3%80%91/"/>
+      <url>/2022/04/05/%E3%80%90Data%20Mining%E3%80%91%E3%80%90%E7%AC%AC%E4%B8%89%E7%AB%A0%E4%BD%9C%E4%B8%9A%E3%80%91/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="一-单选题"><a href="#一-单选题" class="headerlink" title="一. 单选题"></a>一. 单选题</h1><p>1.下面属于维归约常用的线性代数技术的有( )<br>A. 主成分分析<br>B. 特征提取;<br>C. 特征加权<br>D. 离散化<br>正确答案: A</p><p>2.假设12个销售价格记录组已经排序如下:5, 10, 11, 13, 15, 35, 50, 55, 72, 92, 204, 215 使用如下每种方法将它们划分成四个箱。等频(等深)划分时,15在第几个箱子内( )<br>A. 第一个<br>B. 第二个<br>C. 第三个<br>D. 第四个<br>正确答案: B</p><p>3.数据规范化方法包括( )<br>A. 数据归约<br>B. 数据泛化<br>C. 数据集成<br>D. 最小最大规范化<br>正确答案: D</p><p>4.已知某工厂车间工人的年终奖,其均值为34 349元,标准差为16 928元,对于观测值为57 000元,使用z-score方法对其进行规范化为( )<br>A. 1.34<br>B. 1.43<br>C. 0.35<br>D. 0.57<br>正确答案: A</p><h1 id="二-多选题"><a href="#二-多选题" class="headerlink" title="二. 多选题"></a>二. 多选题</h1><p>1.下列数据变换类型及方法正确的是( )<br>A. 数据平滑:去噪,将连续数据离散化,增加粒度<br>B. 数据聚集:对数值属性进行监督或无监督离散化<br>C. 特征构造:构造出新的属性<br>D. 数据规范化:使数据按照比例缩放,落入特定区域<br>正确答案: ACD</p><p>2.数据归约技术包括( )<br>A. 维归约<br>B. 数量归约<br>C. 数据压缩<br>D. 数据清理<br>正确答案: ABC</p><p>3.在现实世界的数据中,元组在某些属性上缺少值是常有的。描述处理该问题的各方法正确的有( )<br>A. 忽略元组<br>B. 从数据中挑选一个数据填写<br>C. 使用属性的平均值填充空缺值<br>D. 用与给定元组属同一类的所有样本的平均值<br>正确答案: ACD</p><h1 id="三-填空题"><a href="#三-填空题" class="headerlink" title="三. 填空题"></a>三. 填空题</h1><p>1.数据预处理的技术手段包括____、____、____、____。<br>正确答案：<br>(1) 数据清理<br>(2) 数据集成<br>(3) 数据变换<br>(4) 数据归约</p><p>2.在现实世界的数据中,元组在某些属性上的缺失值是常有的。处理该问题的常用方法有____、____、____。<br>正确答案：<br>(1) 删除数据对象或属性<br>(2) 估计遗漏值<br>(3) 忽略遗漏值</p><p>3.数据归约技术包括____、____、____。<br>正确答案：<br>(1) 维归约<br>(2) 数量归约<br>(3) 数据压缩</p><p>4.在使用分箱法实现特征离散化时,可以用每个箱中的____或____替换箱中所有的值。<br>正确答案：<br>(1) 中位数<br>(2) 平均值</p><p>5.数据清理一般需要对 ____ 和____ 进行处理。<br>正确答案：<br>(1) 缺失值<br>(2) 噪声数据</p><p>6.数据平滑的方法包括 ____ 、____ 和 ____ 。<br>正确答案：<br>(1) 分箱<br>(2) 回归<br>(3) 聚类</p><h1 id="四-判断题"><a href="#四-判断题" class="headerlink" title="四. 判断题"></a>四. 判断题</h1><p>1.噪声是指被测量的变量产生的错误或误差。( )<br> 正确答案: 错</p><p>2.数据变换是通过平滑聚集、数据概化、规范化等方式将数据转换成适用于数据挖掘的形式。( )<br>正确答案: 对</p><p>3.唯一性原则是指一个属性的每个值都是唯一的,不能和这个属性的其他值相同。( )<br>正确答案: 对</p><p>4.每个属性的最大值和最小值之间没有缺失值既满足连续性原则。( )<br>正确答案: 错</p><p>5.数据规约就是指对数据集进行简化表示。( )<br>正确答案: 对</p><p>6.在确定数据中的离群点时,一般不必检查整个数据集( )<br>正确答案: 对</p><h1 id="五-简答题"><a href="#五-简答题" class="headerlink" title="五. 简答题"></a>五. 简答题</h1><p>1.熟悉和掌握卡方分布、卡方检验的原理和步骤。利用卡方检验确定：喝牛奶对感冒发病率有没有影响<br><img src="https://img-blog.csdnimg.cn/271e9429be3c4a7f89a0533f3c7e199a.png" alt="在这里插入图片描述"><br>正确答案：<br><img src="https://img-blog.csdnimg.cn/d047bcbd510d450ea766e4ba3379189c.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/1be04a3380914eada0932eb82d19fd6f.png" alt="在这里插入图片描述"><br>2.试着探索一下：卡方检验临界值表中，显著水平a为0.05，自由度为1时，临界值3.84是怎么计算出来的。<br><img src="https://img-blog.csdnimg.cn/e3d560c85ccd44c6b349262fabb68120.png" alt="在这里插入图片描述"><br>我的答案：<br>《概率论与数理统计》第六版P172<br>5.3章：数理统计中的某些常用分布<br>X²分布：<br>当k=10，α=0.05时临界值为3.84<br><img src="https://img-blog.csdnimg.cn/a9af464bf22f426a90b0a974f35531db.png" alt="在这里插入图片描述"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Data Mining </category>
+          
+          <category> Homework </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 作业 </tag>
+            
+            <tag> Data Mining </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【Data Mining】【第二章作业】</title>
       <link href="/2022/04/05/%E3%80%90Data%20Mining%E3%80%91%E3%80%90%E7%AC%AC%E4%BA%8C%E7%AB%A0%E4%BD%9C%E4%B8%9A%E3%80%91/"/>
       <url>/2022/04/05/%E3%80%90Data%20Mining%E3%80%91%E3%80%90%E7%AC%AC%E4%BA%8C%E7%AB%A0%E4%BD%9C%E4%B8%9A%E3%80%91/</url>
@@ -446,7 +475,7 @@
       <link href="/2022/03/17/%E3%80%90%E9%9F%B3%E4%B9%90%E6%8F%92%E4%BB%B6%E6%B5%8B%E8%AF%95%E3%80%91/"/>
       <url>/2022/03/17/%E3%80%90%E9%9F%B3%E4%B9%90%E6%8F%92%E4%BB%B6%E6%B5%8B%E8%AF%95%E3%80%91/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><iframe     frameborder="no"     border="0"     marginwidth="0"     marginheight="0"     width='100%'     height=86     src="//music.163.com/outchain/player?type=2&id=20110049&auto=1&height=66"></iframe>    <div id="aplayer-GQXlZswu" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="3141330048" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="1000px" data-preload="auto" data-theme="#555" data-volume="0.2"    ></div><p>type：playlist<br>必须值    song, playlist, album, search, artist</p><p>theme：#    555<br>播放器风格色彩设置</p><p>mutex：true<br>该选项开启时，如果同页面有其他 aplayer 播放，该播放器会暂停</p><p>listmaxheight：1000px<br>播放列表的最大长度</p><p>preload：auto<br>音乐文件预载入模式，可选项： none, metadata, auto</p><p>音量20%</p><p>id号不知从哪里找，用的<a href="https://y.qq.com/n/ryqq/playlist/3141330048">QQ Music 歌单链接</a>里面的id</p><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://blog.csdn.net/weixin_58068682/article/details/116612364">Hexo博客技巧：为博客插入音乐 by:Amnesia_Fu from:CSDN</a></p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><iframe     frameborder="no"     border="0"     marginwidth="0"     marginheight="0"     width='100%'     height=86     src="//music.163.com/outchain/player?type=2&id=20110049&auto=1&height=66"></iframe>    <div id="aplayer-aiPUTfYx" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="3141330048" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="1000px" data-preload="auto" data-theme="#555" data-volume="0.2"    ></div><p>type：playlist<br>必须值    song, playlist, album, search, artist</p><p>theme：#    555<br>播放器风格色彩设置</p><p>mutex：true<br>该选项开启时，如果同页面有其他 aplayer 播放，该播放器会暂停</p><p>listmaxheight：1000px<br>播放列表的最大长度</p><p>preload：auto<br>音乐文件预载入模式，可选项： none, metadata, auto</p><p>音量20%</p><p>id号不知从哪里找，用的<a href="https://y.qq.com/n/ryqq/playlist/3141330048">QQ Music 歌单链接</a>里面的id</p><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://blog.csdn.net/weixin_58068682/article/details/116612364">Hexo博客技巧：为博客插入音乐 by:Amnesia_Fu from:CSDN</a></p>]]></content>
       
       
       <categories>
