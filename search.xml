@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>【R】【lm()】初理解</title>
+      <link href="/2022/04/06/%E3%80%90R%E3%80%91%E3%80%90lm()%E3%80%91%E5%88%9D%E7%90%86%E8%A7%A3/"/>
+      <url>/2022/04/06/%E3%80%90R%E3%80%91%E3%80%90lm()%E3%80%91%E5%88%9D%E7%90%86%E8%A7%A3/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="浅试lm"><a href="#浅试lm" class="headerlink" title="浅试lm()"></a>浅试lm()</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a&lt;-<span class="built_in">c</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br><span class="line">b&lt;-<span class="built_in">c</span>(<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">10</span>)</span><br><span class="line">mydata&lt;-data.frame(a,b)</span><br></pre></td></tr></table></figure><p><img src="https://img-blog.csdnimg.cn/c46b16ecf0b04690b9aa5b257918172f.png" alt="在这里插入图片描述"></p><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">myfit&lt;-lm(a~b,mydata)</span><br><span class="line"><span class="comment">#myfit&lt;-lm(formula,data)</span></span><br></pre></td></tr></table></figure><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">summary.lm(myfit)</span><br></pre></td></tr></table></figure><p><img src="https://img-blog.csdnimg.cn/7325ea4723314f469067456331773515.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQVhETE1H,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p><h1 id="警告"><a href="#警告" class="headerlink" title="警告"></a>警告</h1><blockquote><p>In summary.lm(myfit) : essentially perfect fit: summary may be unreliable</p></blockquote><blockquote><p>msgid “essentially perfect fit: summary may be unreliable”<br>msgstr “对几乎是完全拟合进行ANOVA F-检验的结果不会可靠”</p></blockquote><blockquote><p>可能存在的问题数据格式符合但不足以拟合导致结果不够理想</p></blockquote><p><a href="https://blog.csdn.net/bahui7562/article/details/102195341?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522164917529016780271992346%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=164917529016780271992346&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-2-102195341.142%5Ev5%5Econtrol,157%5Ev4%5Enew_style&utm_term=+essentially+perfect+fit:+summary+may+be+unreliable&spm=1018.2226.3001.4187">R语言错误的提示（中英文翻译）–bahui7562–CSDN</a></p><p><a href="https://blog.csdn.net/qq_43544188/article/details/105448380?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522164914749016780357255407%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=164914749016780357255407&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-105448380.142%5Ev5%5Econtrol,157%5Ev4%5Enew_style&utm_term=+essentially+perfect+fit:+summary+may+be+unreliable&spm=1018.2226.3001.4187">R语言填坑–丶L–CSDN</a></p><h1 id="文档示例（暂未精读）"><a href="#文档示例（暂未精读）" class="headerlink" title="文档示例（暂未精读）"></a>文档示例（暂未精读）</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ctl &lt;- <span class="built_in">c</span>(<span class="number">4.17</span>,<span class="number">5.58</span>,<span class="number">5.18</span>,<span class="number">6.11</span>,<span class="number">4.50</span>,<span class="number">4.61</span>,<span class="number">5.17</span>,<span class="number">4.53</span>,<span class="number">5.33</span>,<span class="number">5.14</span>)</span><br><span class="line">trt &lt;- <span class="built_in">c</span>(<span class="number">4.81</span>,<span class="number">4.17</span>,<span class="number">4.41</span>,<span class="number">3.59</span>,<span class="number">5.87</span>,<span class="number">3.83</span>,<span class="number">6.03</span>,<span class="number">4.89</span>,<span class="number">4.32</span>,<span class="number">4.69</span>)</span><br><span class="line">group &lt;- gl(<span class="number">2</span>, <span class="number">10</span>, <span class="number">20</span>, labels = <span class="built_in">c</span>(<span class="string">&quot;Ctl&quot;</span>,<span class="string">&quot;Trt&quot;</span>))</span><br><span class="line">weight &lt;- <span class="built_in">c</span>(ctl, trt)</span><br><span class="line">lm.D9 &lt;- lm(weight ~ group)</span><br><span class="line">lm.D90 &lt;- lm(weight ~ group - <span class="number">1</span>) <span class="comment"># omitting intercept</span></span><br><span class="line"></span><br><span class="line">anova(lm.D9)</span><br><span class="line">summary(lm.D90)</span><br><span class="line"></span><br><span class="line">opar &lt;- par(mfrow = <span class="built_in">c</span>(<span class="number">2</span>,<span class="number">2</span>), oma = <span class="built_in">c</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">1.1</span>, <span class="number">0</span>))</span><br><span class="line">plot(lm.D9, las = <span class="number">1</span>)      <span class="comment"># Residuals, Fitted, ...</span></span><br><span class="line">par(opar)</span><br></pre></td></tr></table></figure><p><img src="https://img-blog.csdnimg.cn/9401842ea15441e4aa9e9bc114efbbce.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQVhETE1H,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Data Mining </category>
+          
+          <category> function </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Data Mining </tag>
+            
+            <tag> function </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【Data Mining】【第三章作业】</title>
       <link href="/2022/04/05/%E3%80%90Data%20Mining%E3%80%91%E3%80%90%E7%AC%AC%E4%B8%89%E7%AB%A0%E4%BD%9C%E4%B8%9A%E3%80%91/"/>
       <url>/2022/04/05/%E3%80%90Data%20Mining%E3%80%91%E3%80%90%E7%AC%AC%E4%B8%89%E7%AB%A0%E4%BD%9C%E4%B8%9A%E3%80%91/</url>
@@ -306,9 +335,9 @@
       
         <tags>
             
-            <tag> Coggle drive </tag>
-            
             <tag> Colab </tag>
+            
+            <tag> Coggle drive </tag>
             
         </tags>
       
@@ -504,7 +533,7 @@
       <link href="/2022/03/17/%E3%80%90%E9%9F%B3%E4%B9%90%E6%8F%92%E4%BB%B6%E6%B5%8B%E8%AF%95%E3%80%91/"/>
       <url>/2022/03/17/%E3%80%90%E9%9F%B3%E4%B9%90%E6%8F%92%E4%BB%B6%E6%B5%8B%E8%AF%95%E3%80%91/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><iframe     frameborder="no"     border="0"     marginwidth="0"     marginheight="0"     width='100%'     height=86     src="//music.163.com/outchain/player?type=2&id=20110049&auto=1&height=66"></iframe>    <div id="aplayer-JnLqKQXk" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="3141330048" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="1000px" data-preload="auto" data-theme="#555" data-volume="0.2"    ></div><p>type：playlist<br>必须值    song, playlist, album, search, artist</p><p>theme：#    555<br>播放器风格色彩设置</p><p>mutex：true<br>该选项开启时，如果同页面有其他 aplayer 播放，该播放器会暂停</p><p>listmaxheight：1000px<br>播放列表的最大长度</p><p>preload：auto<br>音乐文件预载入模式，可选项： none, metadata, auto</p><p>音量20%</p><p>id号不知从哪里找，用的<a href="https://y.qq.com/n/ryqq/playlist/3141330048">QQ Music 歌单链接</a>里面的id</p><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://blog.csdn.net/weixin_58068682/article/details/116612364">Hexo博客技巧：为博客插入音乐 by:Amnesia_Fu from:CSDN</a></p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><iframe     frameborder="no"     border="0"     marginwidth="0"     marginheight="0"     width='100%'     height=86     src="//music.163.com/outchain/player?type=2&id=20110049&auto=1&height=66"></iframe>    <div id="aplayer-NBKIKDLB" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="3141330048" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="1000px" data-preload="auto" data-theme="#555" data-volume="0.2"    ></div><p>type：playlist<br>必须值    song, playlist, album, search, artist</p><p>theme：#    555<br>播放器风格色彩设置</p><p>mutex：true<br>该选项开启时，如果同页面有其他 aplayer 播放，该播放器会暂停</p><p>listmaxheight：1000px<br>播放列表的最大长度</p><p>preload：auto<br>音乐文件预载入模式，可选项： none, metadata, auto</p><p>音量20%</p><p>id号不知从哪里找，用的<a href="https://y.qq.com/n/ryqq/playlist/3141330048">QQ Music 歌单链接</a>里面的id</p><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://blog.csdn.net/weixin_58068682/article/details/116612364">Hexo博客技巧：为博客插入音乐 by:Amnesia_Fu from:CSDN</a></p>]]></content>
       
       
       <categories>
