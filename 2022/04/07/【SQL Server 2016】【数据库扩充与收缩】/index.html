@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    
+    
+        
+            
+                <link rel="shortcut icon" href="/images/%E5%A4%B4%E5%83%8F.jpg">
+            
+        
+        
+            
+                <link rel="icon" type="image/png" href="/images/%E5%A4%B4%E5%83%8F.jpg" sizes="192x192">
+            
+        
+        
+            
+                <link rel="apple-touch-icon" sizes="180x180" href="/images/%E5%A4%B4%E5%83%8F.jpg">
+            
+        
+    
+    <!-- title -->
+    <title>【SQL Server 2016】【数据库扩充与收缩】</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@2/distr/fira_code.css" rel="stylesheet">
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+<body class="max-width mx-auto px3 ltr">
+
+    <div id="header-post">
+    <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+    <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+    <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i
+                class="fas fa-chevron-up fa-lg"></i></a>
+    <span id="menu">
+    <span id="nav">
+      <ul>
+          
+              <li><a href="/">首页</a></li>
+          
+              <li><a href="/archives/">归档</a></li>
+          
+              <li><a href="/categories/">分类</a></li>
+          
+              <li><a href="/tags/">标签</a></li>
+          
+              <li><a href="/about/">关于</a></li>
+          
+              <li><a href="/search/">搜索</a></li>
+          
+              <li><a target="_blank" rel="noopener" href="https://github.com/guairen-7">Projects</a></li>
+          
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+          
+          
+              <li><a class="icon" href="/2022/04/06/%E3%80%90R%E3%80%91%E3%80%90%E6%8A%A5%E9%94%99%E5%A1%AB%E5%9D%91%E3%80%91%E3%80%90%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E3%80%91%20/"><i class="fas fa-chevron-right"
+                                                                           aria-hidden="true"
+                                                                           onmouseover="$('#i-next').toggle();"
+                                                                           onmouseout="$('#i-next').toggle();"></i></a></li>
+          
+          <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i
+                          class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();"
+                          onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true"
+                                        onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();"
+                                        onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+    <li><a class="icon"
+           target="_blank" rel="noopener" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://guairen-7.github.io/2022/04/07/%E3%80%90SQL%20Server%202016%E3%80%91%E3%80%90%E6%95%B0%E6%8D%AE%E5%BA%93%E6%89%A9%E5%85%85%E4%B8%8E%E6%94%B6%E7%BC%A9%E3%80%91/&title=【SQL Server 2016】【数据库扩充与收缩】"><i
+                    class="fab fa-qq " aria-hidden="true"></i></a></li>
+    <li><a class="icon"
+           target="_blank" rel="noopener" href="https://service.weibo.com/share/share.php?url=https://guairen-7.github.io/2022/04/07/%E3%80%90SQL%20Server%202016%E3%80%91%E3%80%90%E6%95%B0%E6%8D%AE%E5%BA%93%E6%89%A9%E5%85%85%E4%B8%8E%E6%94%B6%E7%BC%A9%E3%80%91/&title=【SQL Server 2016】【数据库扩充与收缩】"><i
+                    class="fab fa-weibo " aria-hidden="true"></i></a></li>
+    <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://guairen-7.github.io/2022/04/07/%E3%80%90SQL%20Server%202016%E3%80%91%E3%80%90%E6%95%B0%E6%8D%AE%E5%BA%93%E6%89%A9%E5%85%85%E4%B8%8E%E6%94%B6%E7%BC%A9%E3%80%91/&text=【SQL Server 2016】【数据库扩充与收缩】"><i
+                    class="fab fa-twitter " aria-hidden="true"></i></a></li>
+    <li><a class="icon" href="mailto:?subject=【SQL Server 2016】【数据库扩充与收缩】&body=Check out this article: https://guairen-7.github.io/2022/04/07/%E3%80%90SQL%20Server%202016%E3%80%91%E3%80%90%E6%95%B0%E6%8D%AE%E5%BA%93%E6%89%A9%E5%85%85%E4%B8%8E%E6%94%B6%E7%BC%A9%E3%80%91/"><i
+                    class="fas fa-envelope " aria-hidden="true"></i></a></li>
+</ul>
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.</span> <span class="toc-text">新建数据库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SSMS"><span class="toc-number">2.</span> <span class="toc-text">SSMS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%89%A9%E5%85%85"><span class="toc-number">2.1.</span> <span class="toc-text">数据库扩充</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%95%B0%E6%8D%AE%E6%96%87%E4%BB%B6"><span class="toc-number">2.2.</span> <span class="toc-text">添加数据文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%B6%E7%BC%A9"><span class="toc-number">2.3.</span> <span class="toc-text">数据库收缩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%B6%E7%BC%A9%E6%95%B0%E6%8D%AE%E6%96%87%E4%BB%B6"><span class="toc-number">2.4.</span> <span class="toc-text">收缩数据文件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#T-SQL"><span class="toc-number">3.</span> <span class="toc-text">T-SQL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%89%A9%E5%85%85-1"><span class="toc-number">3.1.</span> <span class="toc-text">数据库扩充</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%95%B0%E6%8D%AE%E6%96%87%E4%BB%B6-1"><span class="toc-number">3.2.</span> <span class="toc-text">添加数据文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%B6%E7%BC%A9-1"><span class="toc-number">3.3.</span> <span class="toc-text">数据库收缩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%B6%E7%BC%A9%E6%95%B0%E6%8D%AE%E6%96%87%E4%BB%B6-1"><span class="toc-number">3.4.</span> <span class="toc-text">收缩数据文件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-number">4.</span> <span class="toc-text">Reference</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+<div class="content index py4">
+    
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        
+    <h1 class="posttitle" itemprop="name headline">
+        【SQL Server 2016】【数据库扩充与收缩】
+    </h1>
+
+        <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">
+            AXDLMG7
+            
+        </span>
+      </span>
+            
+    <div class="postdate">
+        
+            <time datetime="2022-04-07T05:38:35.368Z"
+                  itemprop="datePublished">2022-04-07</time>
+            
+                (Updated:
+                <time datetime="2022-04-07T07:39:10.296Z"
+                      itemprop="dateModified">2022-04-07</time>)
+            
+        
+    </div>
+
+            
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/DataBase/">DataBase</a>
+    </div>
+
+            
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/SQL-Server-2016/" rel="tag">SQL Server 2016</a>, <a class="tag-link-link" href="/tags/SSMS-17/" rel="tag">SSMS 17</a>
+    </div>
+
+        </div>
+    </header>
+    
+    <div class="content" itemprop="articleBody">
+        <h1 id="新建数据库"><a href="#新建数据库" class="headerlink" title="新建数据库"></a>新建数据库</h1><p><img src="https://img-blog.csdnimg.cn/a1ba05ced67343ef8e41db8fa5445319.png" alt="在这里插入图片描述"></p>
+<h1 id="SSMS"><a href="#SSMS" class="headerlink" title="SSMS"></a>SSMS</h1><h2 id="数据库扩充"><a href="#数据库扩充" class="headerlink" title="数据库扩充"></a>数据库扩充</h2><p>右键需要扩充的数据库$\rightarrow$“属性”$\rightarrow$“文件”$\rightarrow$“初始大小”&amp;“自动增长/最大大小”分别修改数据库文件的初始大小&amp;数据库文件的增长方式$\rightarrow$“确定”<br><img src="https://img-blog.csdnimg.cn/6489659321524419a99bb2d8511646b2.png" alt="在这里插入图片描述"></p>
+<h2 id="添加数据文件"><a href="#添加数据文件" class="headerlink" title="添加数据文件"></a>添加数据文件</h2><p>右键需要扩充的数据库$\rightarrow$“属性”$\rightarrow$“文件”$\rightarrow$“添加”$\rightarrow$设置数据文件$\rightarrow$“确定”<br><img src="https://img-blog.csdnimg.cn/5a33368dda4444c2ac7470408294da04.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/afa4ef5a484a4caa842d830741b67746.png" alt="在这里插入图片描述"></p>
+<h2 id="数据库收缩"><a href="#数据库收缩" class="headerlink" title="数据库收缩"></a>数据库收缩</h2><p>右键需要收缩的数据库$\rightarrow$“任务”$\rightarrow$“收缩”$\rightarrow$“数据库”$\rightarrow$勾选“在释放未使用的空间前重新组织文件”选项，在“收缩后文件中的最大可用空间”填写收缩比例$\rightarrow$“确定”<br><img src="https://img-blog.csdnimg.cn/990aa3df02fe493ca6e912e85a9038d9.png" alt="在这里插入图片描述"><br>注意：收缩后的数据库不能小于数据库创建时的初始大小</p>
+<p>右击需要收缩的数据库$\rightarrow$“任务”$\rightarrow$“收缩”$\rightarrow$“数据库”$\rightarrow$查看收缩<br><img src="https://img-blog.csdnimg.cn/349468debd5949a189044e8ca8c621bf.png" alt="在这里插入图片描述"></p>
+<h2 id="收缩数据文件"><a href="#收缩数据文件" class="headerlink" title="收缩数据文件"></a>收缩数据文件</h2><p>右键需要收缩的数据库$\rightarrow$“任务”$\rightarrow$“收缩”$\rightarrow$“文件”右键需要收缩的数据库$\rightarrow$“任务”$\rightarrow$“收缩”$\rightarrow$“文件”$\rightarrow$修改文件类型、文件组、文件名、收缩大小$\rightarrow$“确定”<br><img src="https://img-blog.csdnimg.cn/e68fe3cd807a43c1983dbf672cba263e.png" alt="在这里插入图片描述"><br>注意：收缩后的主数据文件不能收缩小于model数据库的主数据文件大小</p>
+<p>右键需要收缩的数据库$\rightarrow$“任务”$\rightarrow$“收缩”$\rightarrow$“文件”$\rightarrow$查看收缩<br><img src="https://img-blog.csdnimg.cn/fe9175829e76444bbf699b3a6791f6bd.png" alt="在这里插入图片描述"></p>
+<h1 id="T-SQL"><a href="#T-SQL" class="headerlink" title="T-SQL"></a>T-SQL</h1><p>ps：<br>点击“分析”按钮，或按住Ctrl+F5，对SQL代码进行语法分析，确保SQL语句语法正确<br>点击“执行”按钮，或按住F5，执行SQL代码</p>
+<h2 id="数据库扩充-1"><a href="#数据库扩充-1" class="headerlink" title="数据库扩充"></a>数据库扩充</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> DATABASE TEST   <span class="comment">--修改数据库</span></span><br><span class="line">MODIFY FILE  <span class="comment">--修改数据库文件</span></span><br><span class="line">(</span><br><span class="line">NAME <span class="operator">=</span> TEST,  <span class="comment">--数据文件名</span></span><br><span class="line">SIZE <span class="operator">=</span> <span class="number">20</span>MB,  <span class="comment">--初始大小</span></span><br><span class="line">FILEGROWTH <span class="operator">=</span> <span class="number">1</span>MB  <span class="comment">--增长方式</span></span><br><span class="line">)</span><br><span class="line">GO</span><br><span class="line"><span class="keyword">ALTER</span> DATABASE TEST    <span class="comment">--修改数据库</span></span><br><span class="line">MODIFY FILE  <span class="comment">--修改数据库文件</span></span><br><span class="line">(</span><br><span class="line">NAME <span class="operator">=</span> TEST_log,   <span class="comment">--数据文件名</span></span><br><span class="line">SIZE <span class="operator">=</span> <span class="number">10</span>MB,   <span class="comment">--初始大小</span></span><br><span class="line">FILEGROWTH<span class="operator">=</span><span class="number">15</span><span class="operator">%</span>    <span class="comment">--增长方式</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/0cd13b0982434b9d8311f56124d1a0c1.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/ea57b2ae22264590a3bc526f05509c6d.png" alt="在这里插入图片描述"></p>
+<h2 id="添加数据文件-1"><a href="#添加数据文件-1" class="headerlink" title="添加数据文件"></a>添加数据文件</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> DATABASE TEST <span class="comment">--修改数据库</span></span><br><span class="line"><span class="keyword">ADD</span> FILE   <span class="comment">--添加数据文件</span></span><br><span class="line"> (</span><br><span class="line">     NAME <span class="operator">=</span> TEST_1,  <span class="comment">--文件名称</span></span><br><span class="line">     FILENAME <span class="operator">=</span> <span class="string">&#x27;D:\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\DATA\TEST_1.ndf&#x27;</span>,  <span class="comment">--文件路径</span></span><br><span class="line">     SIZE <span class="operator">=</span> <span class="number">8</span>MB,  <span class="comment">--初始大小</span></span><br><span class="line">     FILEGROWTH <span class="operator">=</span> <span class="number">3</span>MB  <span class="comment">--增长方式</span></span><br><span class="line"> )</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/adce43188fbf4b7985f9d11045c8659d.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/c3768110ca124212b59a0c674e5f8b77.png" alt="在这里插入图片描述"><br>ps：<br>主要数据文件（扩展名.mdf是 primary data file 的缩写）<br>次要 （扩展名.ndf是Secondary data files的缩写）</p>
+<h2 id="数据库收缩-1"><a href="#数据库收缩-1" class="headerlink" title="数据库收缩"></a>数据库收缩</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">--使用数据库控制台命令，SHRINKDATABASE语句</span></span><br><span class="line"> <span class="comment">--第一个参数是数据库名称，第二个参数是收缩比例</span></span><br><span class="line">DBCC SHRINKDATABASE (TEST,<span class="number">50</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/5c0ea881e68f4dc5be6cafbca31e1c74.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/dea89669e0b94b4ba8b61ce84a56c7a3.png" alt="在这里插入图片描述"></p>
+<h2 id="收缩数据文件-1"><a href="#收缩数据文件-1" class="headerlink" title="收缩数据文件"></a>收缩数据文件</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">--使用数据库控制台命令，SHRINKFIILE语句</span></span><br><span class="line"> <span class="comment">--第一个参数是数据文件名称，第二个参数是到多少</span></span><br><span class="line">DBCC SHRINKFILE (TEST_1, <span class="number">5</span>)                                 </span><br><span class="line"> <span class="comment">--收缩数据文件TEST_1到5MB</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/8a90be94fef14f838d2296f8c3155600.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/3d4a90f9a43041828dd3af7ee2e3d6eb.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/fe2d976c4e4d4529b58f0a63dfea6c22.png" alt="在这里插入图片描述"><br>ps:注意查询语句在数据库‘TEST’中建立，</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/gengkui9897/article/details/89323457">SQL Server 2012 数据库扩充与收缩–柚子君.–CSDN</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yh_zeng2/article/details/72901825">SqlServer数据库MDF、NDF、LDF文件简介–曾燕辉–CSDN</a></p>
+
+    </div>
+</article>
+
+<div class="blog-post-comments">
+  <section id="comment">
+    <div id="valine_container" class="valine_thread"></div>
+  </section>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script>
+    var GUEST_INFO = ["nick", "mail", "link"];
+    var guest_info = "nick,mail,link"
+      .split(",")
+      .filter(function (item) {
+        return GUEST_INFO.indexOf(item) > -1;
+      });
+    var valine = new Valine();
+    valine.init({
+      el: "#valine_container",
+      appId: "iojTGuDT7eDBnTmn5wmswyYe-gzGzoHsz",
+      appKey: "allbvsvlNvxYN6O8zHwTDJmN",
+      placeholder: "说出你此刻的想法！",
+      pageSize: "10",
+      avatar: "Gravatar",
+      lang: "zh-cn",
+      emojiCDN: "https://mirrorcdn.bili33.top/",
+      // 表情title和图片映射
+      emojiMaps: {
+        Tieba2: "Tieba/i_f01.png",
+        Tieba3: "Tieba/i_f02.png",
+        Tieba4: "Tieba/i_f03.png",
+        Tieba5: "Tieba/i_f04.png",
+        Tieba6: "Tieba/i_f05.png",
+        Tieba7: "Tieba/i_f06.png",
+        Tieba8: "Tieba/i_f07.png",
+        Tieba9: "Tieba/i_f08.png",
+        Tieba10: "Tieba/i_f09.png",
+        Tieba11: "Tieba/i_f10.png",
+        Tieba12: "Tieba/i_f11.png",
+        Tieba13: "Tieba/i_f12.png",
+        Tieba14: "Tieba/i_f13.png",
+        Tieba15: "Tieba/i_f14.png",
+        Tieba16: "Tieba/i_f15.png",
+        Tieba17: "Tieba/i_f16.png",
+        Tieba18: "Tieba/i_f17.png",
+        Tieba19: "Tieba/i_f18.png",
+        Tieba20: "Tieba/i_f19.png",
+        Tieba21: "Tieba/i_f20.png",
+        Tieba22: "Tieba/i_f21.png",
+        Tieba23: "Tieba/i_f22.png",
+        Tieba24: "Tieba/i_f23.png",
+        Tieba25: "Tieba/i_f24.png",
+        Tieba26: "Tieba/i_f25.png",
+        Tieba27: "Tieba/i_f26.png",
+        Tieba28: "Tieba/i_f27.png",
+        Tieba29: "Tieba/i_f28.png",
+        Tieba30: "Tieba/i_f29.png",
+        Tieba31: "Tieba/i_f30.png",
+        Tieba32: "Tieba/i_f31.png",
+        Tieba33: "Tieba/i_f32.png",
+        Tieba34: "Tieba/i_f33.png",
+        bilibilitv2: "bilibilitv/[tv_doge].png",
+        bilibilitv3: "bilibilitv/[tv_亲亲].png",
+        bilibilitv4: "bilibilitv/[tv_偷笑].png",
+        bilibilitv5: "bilibilitv/[tv_再见].png",
+        bilibilitv6: "bilibilitv/[tv_冷漠].png",
+        bilibilitv7: "bilibilitv/[tv_发怒].png",
+        bilibilitv8: "bilibilitv/[tv_发财].png",
+        bilibilitv9: "bilibilitv/[tv_可爱].png",
+        bilibilitv10: "bilibilitv/[tv_吐血].png",
+        bilibilitv11: "bilibilitv/[tv_呆].png",
+        bilibilitv12: "bilibilitv/[tv_呕吐].png",
+        bilibilitv13: "bilibilitv/[tv_困].png",
+        bilibilitv14: "bilibilitv/[tv_坏笑].png",
+        bilibilitv15: "bilibilitv/[tv_大佬].png",
+        bilibilitv16: "bilibilitv/[tv_大哭].png",
+        bilibilitv17: "bilibilitv/[tv_委屈].png",
+        bilibilitv18: "bilibilitv/[tv_害羞].png",
+        bilibilitv19: "bilibilitv/[tv_尴尬].png",
+        bilibilitv20: "bilibilitv/[tv_微笑].png",
+        bilibilitv21: "bilibilitv/[tv_思考].png",
+        bilibilitv22: "bilibilitv/[tv_惊吓].png",
+        bilibilitv23: "bilibilitv/[tv_打脸].png",
+        bilibilitv24: "bilibilitv/[tv_抓狂].png",
+        bilibilitv25: "bilibilitv/[tv_抠鼻].png",
+        bilibilitv26: "bilibilitv/[tv_斜眼笑].png",
+        bilibilitv27: "bilibilitv/[tv_无奈].png",
+        bilibilitv28: "bilibilitv/[tv_晕].png",
+        bilibilitv29: "bilibilitv/[tv_流汗].png",
+        bilibilitv30: "bilibilitv/[tv_流泪].png",
+        bilibilitv31: "bilibilitv/[tv_流鼻血].png",
+        bilibilitv32: "bilibilitv/[tv_点赞].png",
+        bilibilitv33: "bilibilitv/[tv_生气].png",
+        bilibilitv34: "bilibilitv/[tv_生病].png",
+        bilibilitv35: "bilibilitv/[tv_疑问].png",
+        bilibilitv36: "bilibilitv/[tv_白眼].png",
+        bilibilitv37: "bilibilitv/[tv_皱眉].png",
+        bilibilitv38: "bilibilitv/[tv_目瞪口呆].png",
+        bilibilitv39: "bilibilitv/[tv_睡着].png",
+        bilibilitv40: "bilibilitv/[tv_笑哭].png",
+        bilibilitv41: "bilibilitv/[tv_腼腆].png",
+        bilibilitv42: "bilibilitv/[tv_色].png",
+        bilibilitv43: "bilibilitv/[tv_调侃].png",
+        bilibilitv44: "bilibilitv/[tv_调皮].png",
+        bilibilitv45: "bilibilitv/[tv_鄙视].png",
+        bilibilitv46: "bilibilitv/[tv_闭嘴].png",
+        bilibilitv47: "bilibilitv/[tv_难过].png",
+        bilibilitv48: "bilibilitv/[tv_馋].png",
+        bilibilitv49: "bilibilitv/[tv_鬼脸].png",
+        bilibilitv50: "bilibilitv/[tv_黑人问号].png",
+        bilibilitv51: "bilibilitv/[tv_鼓掌].png",
+        bilibili22332: "bilibili2233/[2233娘_卖萌].png",
+        bilibili22333: "bilibili2233/[2233娘_吃惊].png",
+        bilibili22334: "bilibili2233/[2233娘_吐魂].png",
+        bilibili22335: "bilibili2233/[2233娘_喝水].png",
+        bilibili22336: "bilibili2233/[2233娘_困惑].png",
+        bilibili22337: "bilibili2233/[2233娘_大哭].png",
+        bilibili22338: "bilibili2233/[2233娘_大笑].png",
+        bilibili22339: "bilibili2233/[2233娘_委屈].png",
+        bilibili223310: "bilibili2233/[2233娘_怒].png",
+        bilibili223311: "bilibili2233/[2233娘_无言].png",
+        bilibili223312: "bilibili2233/[2233娘_汗].png",
+        bilibili223313: "bilibili2233/[2233娘_疑问].png",
+        bilibili223314: "bilibili2233/[2233娘_第一].png",
+        bilibili223315: "bilibili2233/[2233娘_耶].png",
+        bilibili223316: "bilibili2233/[2233娘_郁闷].png",
+      },
+    });
+  </script>
+</div>
+
+
+
+<script>
+    //检测推送
+    var pushType = "";
+    var pushLink = "";
+    var siteName = "AXDLMG7&#39;s Blog";
+  
+    var ValineButton = document.getElementsByClassName("vsubmit vbtn")[0];
+    //分情况推送
+    if (pushType === "sc") {
+      var title = "text=" + siteName + "上又有新评论啦~!";
+      function send_valine_Server() {
+        //获取元素信息
+        var pagename = document.title;
+        var wz = pagename.indexOf("|");
+        var res = pagename.substring(0, wz);
+        var pageurl = document.URL;
+        var ptime = new Date();
+        var vnick = document.getElementsByClassName("vnick vinput")[0].value;
+        var vmail = document.getElementsByClassName("vmail vinput")[0].value;
+        var vlink = document.getElementsByClassName("vlink vinput")[0].value;
+        var veditor = document.getElementsByClassName("veditor vinput")[0].value;
+        var text = "desp=";
+        var data =
+          text +
+          "|昵称：" +
+          "|邮箱：" +
+          "|网站地址：" +
+          "|当前页面：" +
+          "|评论内容：" +
+          "|跳转链接：" +
+          "|评论时间" +
+          "\n" +
+          "|----|----|----|----|" +
+          "\n" +
+          "|   " +
+          vnick +
+          "   |   " +
+          vmail +
+          "  |  " +
+          vlink +
+          "|   " +
+          res +
+          "| " +
+          veditor +
+          "| " +
+          pageurl +
+          "|" +
+          ptime.toLocaleString() +
+          "|";
+        var httpRequest = new XMLHttpRequest(); //第一步：创建需要的对象
+        httpRequest.open("POST", pushLink, true); //第二步：打开连接
+        httpRequest.setRequestHeader(
+          "Content-type",
+          "application/x-www-form-urlencoded"
+        ); //设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+        httpRequest.send(title + "&" + data); //发送请求 将情头体写在send中
+      }
+      ValineButton.onclick = send_valine_Server;
+    } else if (pushType === "qmsg") {
+      var title = "msg=" + siteName + "上又有新评论啦~!\n";
+      function send_valine_Qmsg() {
+        //获取元素信息
+        var pagename = document.title;
+        var wz = pagename.indexOf("|");
+        var res = pagename.substring(0, wz);
+        var pageurl = document.URL;
+        var ptime = new Date();
+        var vnick = document.getElementsByClassName("vnick vinput")[0].value;
+        var vmail = document.getElementsByClassName("vmail vinput")[0].value;
+        var vlink = document.getElementsByClassName("vlink vinput")[0].value;
+        var veditor = document.getElementsByClassName("veditor vinput")[0].value;
+        var data =
+          "昵称：" +
+          vnick +
+          "\n邮箱：" +
+          vmail +
+          "\n网站地址：" +
+          vlink +
+          "\n当前页面：" +
+          pagename +
+          "\n评论内容：" +
+          veditor +
+          "\n跳转链接：" +
+          pageurl +
+          "\n评论时间" +
+          ptime.toLocaleString();
+        var httpRequest = new XMLHttpRequest(); //第一步：创建需要的对象
+        httpRequest.open("POST", pushLink, true); //第二步：打开连接
+        httpRequest.setRequestHeader(
+          "Content-type",
+          "application/x-www-form-urlencoded"
+        ); //设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+        httpRequest.send(title + data); //发送请求 将情头体写在send中
+      }
+      ValineButton.onclick = send_valine_Qmsg;
+    }
+  </script>
+    
+        <div id="footer-post-container">
+    <div id="footer-post">
+
+        <div id="nav-footer" style="display: none">
+            <ul>
+                
+                    <li><a href="/">首页</a></li>
+                
+                    <li><a href="/archives/">归档</a></li>
+                
+                    <li><a href="/categories/">分类</a></li>
+                
+                    <li><a href="/tags/">标签</a></li>
+                
+                    <li><a href="/about/">关于</a></li>
+                
+                    <li><a href="/search/">搜索</a></li>
+                
+                    <li><a target="_blank" rel="noopener" href="https://github.com/guairen-7">Projects</a></li>
+                
+            </ul>
+        </div>
+
+        <div id="toc-footer" style="display: none">
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.</span> <span class="toc-text">新建数据库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SSMS"><span class="toc-number">2.</span> <span class="toc-text">SSMS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%89%A9%E5%85%85"><span class="toc-number">2.1.</span> <span class="toc-text">数据库扩充</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%95%B0%E6%8D%AE%E6%96%87%E4%BB%B6"><span class="toc-number">2.2.</span> <span class="toc-text">添加数据文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%B6%E7%BC%A9"><span class="toc-number">2.3.</span> <span class="toc-text">数据库收缩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%B6%E7%BC%A9%E6%95%B0%E6%8D%AE%E6%96%87%E4%BB%B6"><span class="toc-number">2.4.</span> <span class="toc-text">收缩数据文件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#T-SQL"><span class="toc-number">3.</span> <span class="toc-text">T-SQL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%89%A9%E5%85%85-1"><span class="toc-number">3.1.</span> <span class="toc-text">数据库扩充</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%95%B0%E6%8D%AE%E6%96%87%E4%BB%B6-1"><span class="toc-number">3.2.</span> <span class="toc-text">添加数据文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%94%B6%E7%BC%A9-1"><span class="toc-number">3.3.</span> <span class="toc-text">数据库收缩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%B6%E7%BC%A9%E6%95%B0%E6%8D%AE%E6%96%87%E4%BB%B6-1"><span class="toc-number">3.4.</span> <span class="toc-text">收缩数据文件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-number">4.</span> <span class="toc-text">Reference</span></a></li></ol>
+        </div>
+
+        <div id="share-footer" style="display: none">
+            <ul>
+    <li><a class="icon"
+           target="_blank" rel="noopener" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://guairen-7.github.io/2022/04/07/%E3%80%90SQL%20Server%202016%E3%80%91%E3%80%90%E6%95%B0%E6%8D%AE%E5%BA%93%E6%89%A9%E5%85%85%E4%B8%8E%E6%94%B6%E7%BC%A9%E3%80%91/&title=【SQL Server 2016】【数据库扩充与收缩】"><i
+                    class="fab fa-qq fa-lg" aria-hidden="true"></i></a></li>
+    <li><a class="icon"
+           target="_blank" rel="noopener" href="https://service.weibo.com/share/share.php?url=https://guairen-7.github.io/2022/04/07/%E3%80%90SQL%20Server%202016%E3%80%91%E3%80%90%E6%95%B0%E6%8D%AE%E5%BA%93%E6%89%A9%E5%85%85%E4%B8%8E%E6%94%B6%E7%BC%A9%E3%80%91/&title=【SQL Server 2016】【数据库扩充与收缩】"><i
+                    class="fab fa-weibo fa-lg" aria-hidden="true"></i></a></li>
+    <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://guairen-7.github.io/2022/04/07/%E3%80%90SQL%20Server%202016%E3%80%91%E3%80%90%E6%95%B0%E6%8D%AE%E5%BA%93%E6%89%A9%E5%85%85%E4%B8%8E%E6%94%B6%E7%BC%A9%E3%80%91/&text=【SQL Server 2016】【数据库扩充与收缩】"><i
+                    class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+    <li><a class="icon" href="mailto:?subject=【SQL Server 2016】【数据库扩充与收缩】&body=Check out this article: https://guairen-7.github.io/2022/04/07/%E3%80%90SQL%20Server%202016%E3%80%91%E3%80%90%E6%95%B0%E6%8D%AE%E5%BA%93%E6%89%A9%E5%85%85%E4%B8%8E%E6%94%B6%E7%BC%A9%E3%80%91/"><i
+                    class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+        </div>
+
+        <div id="actions-footer">
+            <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i
+                        class="fas fa-bars fa-lg"
+                        aria-hidden="true"></i> 菜单</a>
+            <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i
+                        class="fas fa-list fa-lg"
+                        aria-hidden="true"></i> 目录</a>
+            <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i
+                        class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+            <a id="top" style="display:none" class="icon" href="#"
+               onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg"
+                                                                               aria-hidden="true"></i> 返回顶部
+            </a>
+        </div>
+
+    </div>
+</div>
+    
+    <footer id="footer">
+  <div class="footer-top">
+    &copy; 2022 <i class="fas fa-heart"></i>
+    AXDLMG7 
+  </div>
+
+  <div class="footer-bottom">
+     
+  </div>
+</footer>
+
+</div>
+<!-- styles -->
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css">
+
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/justifiedGallery/3.7.0/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+
+<script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+
+
+<script src="https://cdn.staticfile.org/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+    
+<script src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            // copy-btn HTML
+            var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+            btn += '<i class="far fa-clone"></i>';
+            btn += '</span>';
+            // mount it!
+            $(".highlight .code pre").before(btn);
+            var clip = new ClipboardJS('.btn-copy', {
+                target: function (trigger) {
+                    return trigger.nextElementSibling;
+                }
+            });
+            clip.on('success', function (e) {
+                e.trigger.setAttribute('aria-label', "复制成功!");
+                e.clearSelection();
+            })
+        })
+    </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+</body>
+
+</html>
