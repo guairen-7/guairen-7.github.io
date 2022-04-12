@@ -25,7 +25,7 @@
         
     
     <!-- title -->
-    <title>【RStudio】【install&amp;uninstall package】</title>
+    <title>【Mecanum wheel】初理解</title>
     <!-- styles -->
     
 <link rel="stylesheet" href="/css/style.css">
@@ -68,13 +68,13 @@
     <span id="actions">
       <ul>
           
-              <li><a class="icon" href="/2022/04/08/%E3%80%90Mecanum%20wheel%E3%80%91%E5%88%9D%E7%90%86%E8%A7%A3/"><i class="fas fa-chevron-left"
+              <li><a class="icon" href="/2022/04/12/%E3%80%90%E5%AE%9E%E9%AA%8C%E4%BA%8C%E3%80%91%E3%80%90%E5%88%9B%E5%BB%BA%E8%A1%A8%E5%B9%B6%E8%BE%93%E5%85%A5%E6%95%B0%E6%8D%AE%E3%80%91/"><i class="fas fa-chevron-left"
                                                                            aria-hidden="true"
                                                                            onmouseover="$('#i-prev').toggle();"
                                                                            onmouseout="$('#i-prev').toggle();"></i></a></li>
           
           
-              <li><a class="icon" href="/2022/04/07/%E3%80%90%E9%B2%81%E5%B8%83%C2%B7%E6%88%88%E5%BE%B7%E5%A0%A1%E6%9C%BA%E6%A2%B0%E3%80%91%E3%80%90%E4%BD%95%E5%90%8C%E5%AD%A6%E3%80%91/"><i class="fas fa-chevron-right"
+              <li><a class="icon" href="/2022/04/07/%E3%80%90RStudio%E3%80%91%E3%80%90install&uninstall%20package%E3%80%91/"><i class="fas fa-chevron-right"
                                                                            aria-hidden="true"
                                                                            onmouseover="$('#i-next').toggle();"
                                                                            onmouseout="$('#i-next').toggle();"></i></a></li>
@@ -95,19 +95,19 @@
     <div id="share" style="display: none">
       <ul>
     <li><a class="icon"
-           target="_blank" rel="noopener" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://guairen-7.github.io/2022/04/07/%E3%80%90RStudio%E3%80%91%E3%80%90install&amp;uninstall%20package%E3%80%91/&title=【RStudio】【install&amp;uninstall package】"><i
+           target="_blank" rel="noopener" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://guairen-7.github.io/2022/04/08/%E3%80%90Mecanum%20wheel%E3%80%91%E5%88%9D%E7%90%86%E8%A7%A3/&title=【Mecanum wheel】初理解"><i
                     class="fab fa-qq " aria-hidden="true"></i></a></li>
     <li><a class="icon"
-           target="_blank" rel="noopener" href="https://service.weibo.com/share/share.php?url=https://guairen-7.github.io/2022/04/07/%E3%80%90RStudio%E3%80%91%E3%80%90install&amp;uninstall%20package%E3%80%91/&title=【RStudio】【install&amp;uninstall package】"><i
+           target="_blank" rel="noopener" href="https://service.weibo.com/share/share.php?url=https://guairen-7.github.io/2022/04/08/%E3%80%90Mecanum%20wheel%E3%80%91%E5%88%9D%E7%90%86%E8%A7%A3/&title=【Mecanum wheel】初理解"><i
                     class="fab fa-weibo " aria-hidden="true"></i></a></li>
-    <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://guairen-7.github.io/2022/04/07/%E3%80%90RStudio%E3%80%91%E3%80%90install&amp;uninstall%20package%E3%80%91/&text=【RStudio】【install&amp;uninstall package】"><i
+    <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://guairen-7.github.io/2022/04/08/%E3%80%90Mecanum%20wheel%E3%80%91%E5%88%9D%E7%90%86%E8%A7%A3/&text=【Mecanum wheel】初理解"><i
                     class="fab fa-twitter " aria-hidden="true"></i></a></li>
-    <li><a class="icon" href="mailto:?subject=【RStudio】【install&amp;uninstall package】&body=Check out this article: https://guairen-7.github.io/2022/04/07/%E3%80%90RStudio%E3%80%91%E3%80%90install&amp;uninstall%20package%E3%80%91/"><i
+    <li><a class="icon" href="mailto:?subject=【Mecanum wheel】初理解&body=Check out this article: https://guairen-7.github.io/2022/04/08/%E3%80%90Mecanum%20wheel%E3%80%91%E5%88%9D%E7%90%86%E8%A7%A3/"><i
                     class="fas fa-envelope " aria-hidden="true"></i></a></li>
 </ul>
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E4%BB%A3%E7%A0%81"><span class="toc-number">1.</span> <span class="toc-text">1.代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E2%80%98Install-Packages%E2%80%99"><span class="toc-number">2.</span> <span class="toc-text">2.‘Install Packages’</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="toc-number">3.</span> <span class="toc-text">3.手动安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E7%A8%8B%E5%BA%8F%E5%8C%85%E4%B8%BB%E9%A1%B5"><span class="toc-number">4.</span> <span class="toc-text">4.程序包主页</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%AE%89%E8%A3%85%E5%8C%85%EF%BC%88%E4%BB%A5%E2%80%98h2o%E2%80%99%E7%A4%BA%E4%BE%8B%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">删除安装包（以‘h2o’示例）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%88%A0%E9%99%A4%E4%BB%A5%E5%89%8D%E7%89%88%E6%9C%AC"><span class="toc-number">5.1.</span> <span class="toc-text">1.删除以前版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96%E7%9A%84%E5%BA%93"><span class="toc-number">5.2.</span> <span class="toc-text">2.安装依赖的库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%AE%89%E8%A3%85h2o"><span class="toc-number">5.3.</span> <span class="toc-text">3.下载及安装h2o</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%94%A8%E4%B8%8B%E8%BD%BD%E8%BD%AF%E4%BB%B6%EF%BC%88%E5%A6%82%E8%BF%85%E9%9B%B7%EF%BC%89%E5%88%B0%E6%9C%AC%E5%9C%B0"><span class="toc-number">5.4.</span> <span class="toc-text">4.用下载软件（如迅雷）到本地</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%A3%80%E9%AA%8C"><span class="toc-number">5.5.</span> <span class="toc-text">5.检验</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-number">6.</span> <span class="toc-text">Reference</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Mecanum-wheel"><span class="toc-number">1.</span> <span class="toc-text">Mecanum wheel</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%9A%E4%B9%89"><span class="toc-number">1.1.</span> <span class="toc-text">1.定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%8F%97%E5%8A%9B%E5%88%86%E6%9E%90"><span class="toc-number">1.2.</span> <span class="toc-text">2.受力分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%BD%AE%E5%AD%90%E5%B8%83%E5%B1%80"><span class="toc-number">1.3.</span> <span class="toc-text">3.轮子布局</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%83%E5%B1%80%E7%89%B9%E7%82%B9%E5%88%86%E6%9E%90"><span class="toc-number">1.3.1.</span> <span class="toc-text">布局特点分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%BA%95%E7%9B%98%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.4.</span> <span class="toc-text">4.底盘设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%BA%A6%E5%85%8B%E7%BA%B3%E5%A7%86%E8%BD%AE%E5%B0%BA%E5%AF%B8"><span class="toc-number">1.4.1.</span> <span class="toc-text">1.麦克纳姆轮尺寸</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%94%B5%E6%9C%BA%E8%BF%9E%E6%8E%A5%E5%8F%82%E8%80%83%EF%BC%88%E8%BE%83%E9%80%9A%E7%94%A8%EF%BC%89"><span class="toc-number">1.4.2.</span> <span class="toc-text">2.电机连接参考（较通用）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%BA%95%E7%9B%98%E8%AE%BE%E8%AE%A1%E5%8F%82%E8%80%83%EF%BC%88%E6%82%AC%E6%8C%82%E3%80%81%E9%81%BF%E9%9C%87%E5%99%A8%EF%BC%89"><span class="toc-number">1.4.3.</span> <span class="toc-text">3.底盘设计参考（悬挂、避震器）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E7%BC%BA%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text">5.缺点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-number">3.</span> <span class="toc-text">Reference</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -118,7 +118,7 @@
     <header>
         
     <h1 class="posttitle" itemprop="name headline">
-        【RStudio】【install&amp;uninstall package】
+        【Mecanum wheel】初理解
     </h1>
 
         <div class="meta">
@@ -131,12 +131,12 @@
             
     <div class="postdate">
         
-            <time datetime="2022-04-07T14:14:43.414Z"
-                  itemprop="datePublished">2022-04-07</time>
+            <time datetime="2022-04-08T14:48:27.506Z"
+                  itemprop="datePublished">2022-04-08</time>
             
                 (Updated:
-                <time datetime="2022-04-08T02:03:29.573Z"
-                      itemprop="dateModified">2022-04-08</time>)
+                <time datetime="2022-04-12T05:21:18.663Z"
+                      itemprop="dateModified">2022-04-12</time>)
             
         
     </div>
@@ -144,41 +144,109 @@
             
     <div class="article-category">
         <i class="fas fa-archive"></i>
-        <a class="category-link" href="/categories/RStudio/">RStudio</a>
+        <a class="category-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%99%BA%E8%83%BD%E8%BD%A6/">深度学习智能车</a> › <a class="category-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%99%BA%E8%83%BD%E8%BD%A6/Mecanum-wheel/">Mecanum wheel</a>
     </div>
 
             
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link-link" href="/tags/install/" rel="tag">install</a>, <a class="tag-link-link" href="/tags/package/" rel="tag">package</a>, <a class="tag-link-link" href="/tags/uninstall/" rel="tag">uninstall</a>
+        <a class="tag-link-link" href="/tags/Mecanum-wheel/" rel="tag">Mecanum wheel</a>
     </div>
 
         </div>
     </header>
     
     <div class="content" itemprop="articleBody">
-        <p>以下操作以‘h2o’程序包为例子：<br>查看是否安装了‘h2o’程序包：</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">library()  <span class="comment">#查看当前镜像下的所有程序包</span></span><br><span class="line">library(h2o)  <span class="comment">#也可以通过加载h2o程序包检验是否安装</span></span><br><span class="line"><span class="comment">#可以在代码区域也可以在控制台输入代码</span></span><br></pre></td></tr></table></figure>
+        <h1 id="Mecanum-wheel"><a href="#Mecanum-wheel" class="headerlink" title="Mecanum wheel"></a>Mecanum wheel</h1><iframe 
+    src="https://vdn3.vzuu.com/LD/901786f4-a4a2-11e9-9053-0a580a40e2db.mp4?disable_local_cache=1&c=avc.0.0&auth_key=1649738351-0-0-ac406c5e8612104f57235413f597564a&f=mp4&bu=http-com&expiration=1649738351&v=tx" 
+    scrolling="no" 
+    border="0" 
+    frameborder="no" 
+    framespacing="0" 
+    allowfullscreen="true"
+    weigh="640" 
+    height="360" > 
+</iframe>
 
-<h1 id="1-代码"><a href="#1-代码" class="headerlink" title="1.代码"></a>1.代码</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">install.packages(<span class="string">&quot;h2o&quot;</span>)</span><br><span class="line">library(h2o)  <span class="comment">#加载程序包</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/db727e4be09946b28508c7b5cad810a6.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/fe03800e6cea42f1bfe5559f036939c9.png" alt="在这里插入图片描述"></p>
-<h1 id="2-‘Install-Packages’"><a href="#2-‘Install-Packages’" class="headerlink" title="2.‘Install Packages’"></a>2.‘Install Packages’</h1><p>这一步原理同代码安装程序包<br><img src="https://img-blog.csdnimg.cn/b8d92d7dc575409382ff7cf07ea5f23c.png" alt="在这里插入图片描述"></p>
-<h1 id="3-手动安装"><a href="#3-手动安装" class="headerlink" title="3.手动安装"></a>3.手动安装</h1><p><a target="_blank" rel="noopener" href="https://www.r-project.org/">R Project</a>$\rightarrow$<a target="_blank" rel="noopener" href="https://cran.r-project.org/mirrors.html">CRAN Mirrors</a>$\rightarrow$<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/CRAN/">清华镜像源</a>$\rightarrow$“Download R for Windows”$\rightarrow$“contrib”$\rightarrow$选择自己R镜像的版本$\rightarrow$‘Ctrl+F’搜索并下载安装包<br><img src="https://img-blog.csdnimg.cn/57b0d1c9c6db4a8888c2b05d38168658.png" alt="在这里插入图片描述"></p>
-<h1 id="4-程序包主页"><a href="#4-程序包主页" class="headerlink" title="4.程序包主页"></a>4.程序包主页</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">packageurl &lt;- <span class="string">&quot;https://mirrors.tuna.tsinghua.edu.cn/CRAN/bin/windows/contrib/4.1/h2o_3.36.0.4.zip&quot;</span></span><br><span class="line"><span class="comment">#这里其实不是程序包的主页，而是根据上一步在镜像中找到程序包的链接</span></span><br><span class="line">install.packages(packageurl, repos=<span class="literal">NULL</span>, type=<span class="string">&quot;source&quot;</span>)</span><br><span class="line"><span class="comment">#repos=NULL即无需选择镜像，type=&quot;source&quot;即跨越了安装器的版本等</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">install.packages(<span class="string">&quot;h2o&quot;</span>, type=<span class="string">&quot;source&quot;</span>, repos=(<span class="built_in">c</span>(<span class="string">&quot;http://h2o-release.s3.amazonaws.com/h2o/latest_stable_R&quot;</span>)))</span><br><span class="line"><span class="comment">#这个是h2o程序包的官网链接</span></span><br></pre></td></tr></table></figure>
-
-<p>找到包的下载地址，需要进入包的主页<br>这样安装的就不需要选择镜像了，也跨越了安装器的版本！</p>
-<h1 id="删除安装包（以‘h2o’示例）"><a href="#删除安装包（以‘h2o’示例）" class="headerlink" title="删除安装包（以‘h2o’示例）"></a>删除安装包（以‘h2o’示例）</h1><h2 id="1-删除以前版本"><a href="#1-删除以前版本" class="headerlink" title="1.删除以前版本"></a>1.删除以前版本</h2><p>如果安装过，在R中运行以下命令，删除以前安装的版本：</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="string">&quot;package:h2o&quot;</span> %in% search()) &#123; detach(<span class="string">&quot;package:h2o&quot;</span>, unload=<span class="literal">TRUE</span>) &#125;</span><br><span class="line"><span class="keyword">if</span> (<span class="string">&quot;h2o&quot;</span> %in% rownames(installed.packages())) &#123; remove.packages(<span class="string">&quot;h2o&quot;</span>) &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="2-安装依赖的库"><a href="#2-安装依赖的库" class="headerlink" title="2.安装依赖的库"></a>2.安装依赖的库</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pkgs &lt;- <span class="built_in">c</span>(<span class="string">&quot;RCurl&quot;</span>,<span class="string">&quot;jsonlite&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> (pkg <span class="keyword">in</span> pkgs) &#123;</span><br><span class="line">  <span class="keyword">if</span> (! (pkg %in% rownames(installed.packages()))) &#123; install.packages(pkg) &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="3-下载及安装h2o"><a href="#3-下载及安装h2o" class="headerlink" title="3.下载及安装h2o"></a>3.下载及安装h2o</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">install.packages(<span class="string">&quot;h2o&quot;</span>, type=<span class="string">&quot;source&quot;</span>, repos=(<span class="built_in">c</span>(<span class="string">&quot;http://h2o-release.s3.amazonaws.com/h2o/latest_stable_R&quot;</span>)))</span><br></pre></td></tr></table></figure>
-<h2 id="4-用下载软件（如迅雷）到本地"><a href="#4-用下载软件（如迅雷）到本地" class="headerlink" title="4.用下载软件（如迅雷）到本地"></a>4.用下载软件（如迅雷）到本地</h2><p>或是先在其他下载软件（如迅雷）中输入<a target="_blank" rel="noopener" href="http://h2o-release.s3.amazonaws.com/h2o/latest_stable_R">http://h2o-release.s3.amazonaws.com/h2o/latest_stable_R</a>下载h2o到本地，再用以下代码安装</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">install.packages(<span class="string">&quot;~/Desktop/h2o_3.30.0.2.tar.gz&quot;</span>, repos = <span class="literal">NULL</span>, type = <span class="string">&quot;source&quot;</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="5-检验"><a href="#5-检验" class="headerlink" title="5.检验"></a>5.检验</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">library(h2o)</span><br><span class="line">h2o.init()</span><br></pre></td></tr></table></figure>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/brown-birds/p/8031734.html">在R中查看已经安装了的包–褐色鸟群–博客园</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ARPOSPF/article/details/84997200">【R语言】4种R包安装方式–镰刀韭菜–CSDN</a></p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/137665344">[R]R中安装h2o的方法–johnmy–知乎</a></p>
+<h2 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h2><p>麦克纳姆轮外形结构下图，瑞典麦克那姆公司发明的一种<strong>全方位移动</strong>轮式结构，由基于主体轮辋和一组均匀排布在轮毂周围的回转辊（gǔn）子组成，且辊子轴线与轮毂轴线呈一定角度(一般为 45°)，小辊子的母线是等速螺旋线或椭圆弧近似而成，当轮子绕着轮毂轴线转动时，周边各小辊子的外包络线为圆柱面，因此该轮可以连续地向前滚动。<br><img src="https://img-blog.csdnimg.cn/c34ac795f01248f1bdb00b3785e02911.png" alt="在这里插入图片描述"><br>由轮毂，辊子构成，部分含有减震环（或减震装置），轮毂轴线与辊子轴线成45度夹角。内部结构图如下<br><img src="https://img-blog.csdnimg.cn/ffab6c24304e48429004fdce20814c30.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2cbde8f2e4144c0296ee365f2f645e54.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/a28d9a8e90404de69d7288cc867b5159.png" alt="在这里插入图片描述"></p>
+<h2 id="2-受力分析"><a href="#2-受力分析" class="headerlink" title="2.受力分析"></a>2.受力分析</h2><p>麦克纳姆轮根据夹角45°，可以分为互为镜像关系的A轮和B轮。由速度的正向分解，A轮可以分解为轴向向左和向前的力。<strong>A轮辊子轴与轮毂轴夹角＋45°，B轮辊子轴与轮毂轴夹角-45°</strong><br><img src="https://img-blog.csdnimg.cn/c99ad40f7abf41aaa6b460a193e3bf45.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/b18e26eeff8041d895af6208235aa0da.png" alt="在这里插入图片描述"></p>
+<h2 id="3-轮子布局"><a href="#3-轮子布局" class="headerlink" title="3.轮子布局"></a>3.轮子布局</h2><p>实现万向轮需要<strong>满足（逆时针）‘ABAB’（X型布局）或‘BABA’（O型布局）的排列，即对角线相同</strong><br><img src="https://img-blog.csdnimg.cn/b525f794832c49d182da4bc9dbab6c07.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/7ca5f3e23aa14e96a7b6941d0729bc24.png" alt="在这里插入图片描述"><br>麦克纳姆轮的布局主要分为：<br>X-正方形（X-square）、X-长方形（X-rectangle）、O-正方形（O-square）、O-长方形（O-rectangle）<br>其中 X 和 O 表示的是与四个轮子地面接触的辊子所形成的图形；正方形与长方形指的是四个轮子与地面接触点所围成的形状<br><img src="https://img-blog.csdnimg.cn/688825889fae43e3af31a93b1c1cfc73.png" alt="在这里插入图片描述"></p>
+<h3 id="布局特点分析"><a href="#布局特点分析" class="headerlink" title="布局特点分析"></a>布局特点分析</h3><p><strong>X-正方形</strong>：当主轮在电机转矩的驱动下，主轮转动产生的力矩经摩擦力分解后，辊子分解力一部分垂直于辊子，一部分沿辊子轴线，这两部分摩擦力垂直方向的另辊子空转，浪费力，而沿着辊子轴线的力则可以起到驱动小车运动，因此在X-正方形中，红色箭头表示有效摩擦力，因此在水平方向的摩擦力会被抵消，而向前的摩擦力则驱动整个底盘向前运动。<br><img src="https://img-blog.csdnimg.cn/88c34404124145a590c3df3b14104f84.png" alt="在这里插入图片描述"><br>当进行旋转运动时，发现无论摩擦力朝向怎么排布，摩擦力始终都会经过会经过同一个点，所以无法保证底盘可以绕中心旋转一定的角度，这很大程度限制了麦轮的活动特性，因此很少使用这种排布方式</p>
+<p><strong>X-长方形</strong>：轮子转动可以产生 yaw 轴转动力矩，但转动力矩的力臂一般会比较短。这种安装方式也不多见。</p>
+<p><strong>O-正方形</strong>：四个轮子位于正方形的四个顶点，平移和旋转都没有任何问题。受限于机器人底盘的形状、尺寸等因素，这种安装方式虽然理想，但可遇而不可求。</p>
+<p><strong>O-长方形</strong>：轮子转动可以产生 yaw 轴转动力矩，而且转动力矩的力臂也比较长。是<strong>最常见的安装方式</strong></p>
+<h2 id="4-底盘设计"><a href="#4-底盘设计" class="headerlink" title="4.底盘设计"></a>4.底盘设计</h2><h3 id="1-麦克纳姆轮尺寸"><a href="#1-麦克纳姆轮尺寸" class="headerlink" title="1.麦克纳姆轮尺寸"></a>1.麦克纳姆轮尺寸</h3><p>QMA系列全向轮是轻负载的45°全向轮。轮毂使用钢板冲压成型，坚固而轻便，每个小轮子内嵌两个轴承，滚动平稳顺滑。参数及链接如下</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><a target="_blank" rel="noopener" href="http://www.hangfa.com/EN/omniwheel/QMA10.html">QMA-10</a></th>
+<th><a target="_blank" rel="noopener" href="http://www.hangfa.com/EN/omniwheel/QMA15.html">QMA-15</a></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>外径（mm）</td>
+<td>101.6（4寸）</td>
+<td>152.4（6寸）</td>
+</tr>
+<tr>
+<td>宽度（mm）</td>
+<td>45.7</td>
+<td>53</td>
+</tr>
+<tr>
+<td>细分数</td>
+<td>10</td>
+<td>14</td>
+</tr>
+<tr>
+<td>轴承数</td>
+<td>20</td>
+<td>28</td>
+</tr>
+<tr>
+<td>轮毂材料</td>
+<td>钢</td>
+<td>钢</td>
+</tr>
+<tr>
+<td>小轮材料</td>
+<td>橡胶</td>
+<td>橡胶</td>
+</tr>
+<tr>
+<td>内孔直径（mm）</td>
+<td>12</td>
+<td>20</td>
+</tr>
+<tr>
+<td>连接方式</td>
+<td>法兰盘M5×6</td>
+<td>法兰盘M6×6</td>
+</tr>
+<tr>
+<td>自重</td>
+<td>360 g</td>
+<td>800 g</td>
+</tr>
+<tr>
+<td>承载力（KG）</td>
+<td>45</td>
+<td>70</td>
+</tr>
+</tbody></table>
+<h3 id="2-电机连接参考（较通用）"><a href="#2-电机连接参考（较通用）" class="headerlink" title="2.电机连接参考（较通用）"></a>2.电机连接参考（较通用）</h3><p>轮组与电机之间直接连接，连接法兰2固定在底盘上，电机通过端部的螺栓孔与连接法固定。电机输出轴与连接法兰之间通过轴承连接，末端与麦轮法兰连接，麦轮法兰与麦克纳姆轮固定。电机输出轴端部带有螺纹孔，在麦轮的另一端通过加挡片，用螺栓连接挡片和电机轴，以充当电机轴的轴向定位。<br><img src="https://img-blog.csdnimg.cn/0c290c2442b2420ca08e3d0e7a43ec80.png" alt="在这里插入图片描述"><br>1-电机  2-连接法兰  3-连接螺钉  4-滚动轴承  5-麦轮法兰  6-挡片  7-固定螺钉  8-紧定螺钉</p>
+<h3 id="3-底盘设计参考（悬挂、避震器）"><a href="#3-底盘设计参考（悬挂、避震器）" class="headerlink" title="3.底盘设计参考（悬挂、避震器）"></a>3.底盘设计参考（悬挂、避震器）</h3><p><img src="https://img-blog.csdnimg.cn/ba867adbb1b44aa0a9972c0b282cb675.png" alt="在这里插入图片描述"><br>为保证在地面不平整或装配误差存在情况下，<strong>四个轮子能够同时着地</strong>，底盘整体结构为<strong>底盘前架为悬挂摇摆式，后架与底盘整体固定</strong>，从而前轮可以绕中心轴左右摆动，在任何情况下总可以保证四个轮子同时着地。</p>
+<p>底盘由<strong>四组麦克纳姆轮、四个驱动电机、悬挂前车架、底盘固定支架、2525铝型材及部件固定件和连接件</strong>组成。悬挂前车架通过轴承座和中心轴连接到底盘底板上，并在前轮组两侧各放置两对弹簧阻尼器充当避震，以保持底盘搭载部件的稳定性。</p>
+<p>为保护系统结构免受振动的损伤和提高越障能力，在底盘上安装弹簧避震器。<strong>弹簧避震器的作用是减少外界的震动或冲击对设备、控制元件等的影响</strong>，并凭借其材料、结构的特点，如弹簧器件，吸收外界的振动或冲击的能量，然后缓慢地释放，从而起到减震缓冲的作用。</p>
+<p>为避免避震器局部受力而导致断裂，避震器与安装座之间均应留有缝隙<br><img src="https://img-blog.csdnimg.cn/5a16c7e772d84966ba91b1a951e1841b.png" alt="在这里插入图片描述"></p>
+<p><strong>底盘支架采用碳纤板</strong>作为材料<br>碳纤板是一种由碳纤维、金属、陶瓷、树脂、等基体复合制成的结构材料<br>根据与碳纤维复合的材料种类不同，可以将碳纤维复合材料分为四类：金属基、陶瓷基、树脂基、混凝土基碳纤维复合材料，具有抗冲击性、拉伸强度高、抗震性、耐腐蚀性等良好性能</p>
+<h1 id="5-缺点"><a href="#5-缺点" class="headerlink" title="5.缺点"></a>5.缺点</h1><p>1.爬坡能力差，触地面积小<br>2.应用到汽车上，出现颠簸现象；轮毂停止但辊子没有立刻停止，溜车现象；油耗大，用于克服不必要的摩擦力</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Mecanum_wheel">Mecanum wheel/Wikipedia</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.guyuehome.com/34367">详谈麦克纳姆轮（一）/文古月居@挽风</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.guyuehome.com/34376">详谈麦克纳姆轮（二）/文古月居@挽风</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.guyuehome.com/34385">详谈麦克纳姆轮（三）/文古月居@挽风</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/73359979">【大疆机甲大师】麦克纳姆轮工作原理/文知乎@大疆机甲大师</a></p>
 
     </div>
 </article>
@@ -435,20 +503,20 @@
         </div>
 
         <div id="toc-footer" style="display: none">
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E4%BB%A3%E7%A0%81"><span class="toc-number">1.</span> <span class="toc-text">1.代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E2%80%98Install-Packages%E2%80%99"><span class="toc-number">2.</span> <span class="toc-text">2.‘Install Packages’</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="toc-number">3.</span> <span class="toc-text">3.手动安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E7%A8%8B%E5%BA%8F%E5%8C%85%E4%B8%BB%E9%A1%B5"><span class="toc-number">4.</span> <span class="toc-text">4.程序包主页</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%AE%89%E8%A3%85%E5%8C%85%EF%BC%88%E4%BB%A5%E2%80%98h2o%E2%80%99%E7%A4%BA%E4%BE%8B%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">删除安装包（以‘h2o’示例）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%88%A0%E9%99%A4%E4%BB%A5%E5%89%8D%E7%89%88%E6%9C%AC"><span class="toc-number">5.1.</span> <span class="toc-text">1.删除以前版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96%E7%9A%84%E5%BA%93"><span class="toc-number">5.2.</span> <span class="toc-text">2.安装依赖的库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%AE%89%E8%A3%85h2o"><span class="toc-number">5.3.</span> <span class="toc-text">3.下载及安装h2o</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%94%A8%E4%B8%8B%E8%BD%BD%E8%BD%AF%E4%BB%B6%EF%BC%88%E5%A6%82%E8%BF%85%E9%9B%B7%EF%BC%89%E5%88%B0%E6%9C%AC%E5%9C%B0"><span class="toc-number">5.4.</span> <span class="toc-text">4.用下载软件（如迅雷）到本地</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%A3%80%E9%AA%8C"><span class="toc-number">5.5.</span> <span class="toc-text">5.检验</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-number">6.</span> <span class="toc-text">Reference</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Mecanum-wheel"><span class="toc-number">1.</span> <span class="toc-text">Mecanum wheel</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%9A%E4%B9%89"><span class="toc-number">1.1.</span> <span class="toc-text">1.定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%8F%97%E5%8A%9B%E5%88%86%E6%9E%90"><span class="toc-number">1.2.</span> <span class="toc-text">2.受力分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%BD%AE%E5%AD%90%E5%B8%83%E5%B1%80"><span class="toc-number">1.3.</span> <span class="toc-text">3.轮子布局</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%83%E5%B1%80%E7%89%B9%E7%82%B9%E5%88%86%E6%9E%90"><span class="toc-number">1.3.1.</span> <span class="toc-text">布局特点分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%BA%95%E7%9B%98%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.4.</span> <span class="toc-text">4.底盘设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%BA%A6%E5%85%8B%E7%BA%B3%E5%A7%86%E8%BD%AE%E5%B0%BA%E5%AF%B8"><span class="toc-number">1.4.1.</span> <span class="toc-text">1.麦克纳姆轮尺寸</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%94%B5%E6%9C%BA%E8%BF%9E%E6%8E%A5%E5%8F%82%E8%80%83%EF%BC%88%E8%BE%83%E9%80%9A%E7%94%A8%EF%BC%89"><span class="toc-number">1.4.2.</span> <span class="toc-text">2.电机连接参考（较通用）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%BA%95%E7%9B%98%E8%AE%BE%E8%AE%A1%E5%8F%82%E8%80%83%EF%BC%88%E6%82%AC%E6%8C%82%E3%80%81%E9%81%BF%E9%9C%87%E5%99%A8%EF%BC%89"><span class="toc-number">1.4.3.</span> <span class="toc-text">3.底盘设计参考（悬挂、避震器）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E7%BC%BA%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text">5.缺点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-number">3.</span> <span class="toc-text">Reference</span></a></li></ol>
         </div>
 
         <div id="share-footer" style="display: none">
             <ul>
     <li><a class="icon"
-           target="_blank" rel="noopener" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://guairen-7.github.io/2022/04/07/%E3%80%90RStudio%E3%80%91%E3%80%90install&amp;uninstall%20package%E3%80%91/&title=【RStudio】【install&amp;uninstall package】"><i
+           target="_blank" rel="noopener" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://guairen-7.github.io/2022/04/08/%E3%80%90Mecanum%20wheel%E3%80%91%E5%88%9D%E7%90%86%E8%A7%A3/&title=【Mecanum wheel】初理解"><i
                     class="fab fa-qq fa-lg" aria-hidden="true"></i></a></li>
     <li><a class="icon"
-           target="_blank" rel="noopener" href="https://service.weibo.com/share/share.php?url=https://guairen-7.github.io/2022/04/07/%E3%80%90RStudio%E3%80%91%E3%80%90install&amp;uninstall%20package%E3%80%91/&title=【RStudio】【install&amp;uninstall package】"><i
+           target="_blank" rel="noopener" href="https://service.weibo.com/share/share.php?url=https://guairen-7.github.io/2022/04/08/%E3%80%90Mecanum%20wheel%E3%80%91%E5%88%9D%E7%90%86%E8%A7%A3/&title=【Mecanum wheel】初理解"><i
                     class="fab fa-weibo fa-lg" aria-hidden="true"></i></a></li>
-    <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://guairen-7.github.io/2022/04/07/%E3%80%90RStudio%E3%80%91%E3%80%90install&amp;uninstall%20package%E3%80%91/&text=【RStudio】【install&amp;uninstall package】"><i
+    <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://guairen-7.github.io/2022/04/08/%E3%80%90Mecanum%20wheel%E3%80%91%E5%88%9D%E7%90%86%E8%A7%A3/&text=【Mecanum wheel】初理解"><i
                     class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-    <li><a class="icon" href="mailto:?subject=【RStudio】【install&amp;uninstall package】&body=Check out this article: https://guairen-7.github.io/2022/04/07/%E3%80%90RStudio%E3%80%91%E3%80%90install&amp;uninstall%20package%E3%80%91/"><i
+    <li><a class="icon" href="mailto:?subject=【Mecanum wheel】初理解&body=Check out this article: https://guairen-7.github.io/2022/04/08/%E3%80%90Mecanum%20wheel%E3%80%91%E5%88%9D%E7%90%86%E8%A7%A3/"><i
                     class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
 </ul>
         </div>
