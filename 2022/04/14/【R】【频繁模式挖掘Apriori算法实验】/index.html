@@ -135,8 +135,8 @@
                   itemprop="datePublished">2022-04-14</time>
             
                 (Updated:
-                <time datetime="2022-04-19T08:43:45.581Z"
-                      itemprop="dateModified">2022-04-19</time>)
+                <time datetime="2022-04-20T10:30:00.530Z"
+                      itemprop="dateModified">2022-04-20</time>)
             
         
     </div>
@@ -160,7 +160,7 @@
         <h1 id="实验描述"><a href="#实验描述" class="headerlink" title="实验描述"></a>实验描述</h1><h2 id="数据集介绍"><a href="#数据集介绍" class="headerlink" title="数据集介绍"></a>数据集介绍</h2><p>使用 arnles 软件包中的 Groceries 数据集进行算法演示<br>该数据集是某一食品杂货店一个月的真实交易数据，每一行数据记录一个交易，每个交易中记录了当次交易的商品名称。</p>
 <h2 id="重点程序包"><a href="#重点程序包" class="headerlink" title="重点程序包"></a>重点程序包</h2><p>Apriori 关联规则算法借助 arules 中的一系列函数实现<br>arulesViz 包可以实现关联规则的可视化</p>
 <h2 id="关联规则分析"><a href="#关联规则分析" class="headerlink" title="关联规则分析"></a>关联规则分析</h2><p>关联规则分析主要包括对频繁数据集的探索、关联规则的建立、查看和分析过程<br>通过 Apriori 关联规则中 apriori 方法和 Eclat 方法实现为例</p>
-<h1 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h1><p><img src="https://img-blog.csdnimg.cn/92242a28892746e1a509a5ccf288015c.png" alt="在这里插入图片描述"></p>
+<h1 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h1><p><img src="https://img-blog.csdnimg.cn/ec401413a7df4f709ccececb5365e1b8.png" alt="在这里插入图片描述"></p>
 <h1 id="1-下载并加载arules包"><a href="#1-下载并加载arules包" class="headerlink" title="1.下载并加载arules包"></a>1.下载并加载arules包</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">install.packages(<span class="string">&quot;arules&quot;</span>)</span><br><span class="line"><span class="comment">#下载安装 arules 包</span></span><br><span class="line">library(arules)</span><br><span class="line"><span class="comment">#加载 arules 软件包</span></span><br></pre></td></tr></table></figure>
 <h1 id="2-查看Groceries数据集的概要信息"><a href="#2-查看Groceries数据集的概要信息" class="headerlink" title="2.查看Groceries数据集的概要信息"></a>2.查看Groceries数据集的概要信息</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">data(<span class="string">&quot;Groceries&quot;</span>)</span><br><span class="line"><span class="comment">#获取数据集 Groceries</span></span><br><span class="line">summary(Groceries)</span><br><span class="line"><span class="comment">#获取数据集 Groceries 数据集的概括信息</span></span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/7b087e2ed1914b81a79c860fb649fcda.png" alt="在这里插入图片描述"></p>
