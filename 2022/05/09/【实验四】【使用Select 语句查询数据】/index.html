@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    
+    
+        
+            
+                <link rel="shortcut icon" href="/images/%E5%A4%B4%E5%83%8F.jpg">
+            
+        
+        
+            
+                <link rel="icon" type="image/png" href="/images/%E5%A4%B4%E5%83%8F.jpg" sizes="192x192">
+            
+        
+        
+            
+                <link rel="apple-touch-icon" sizes="180x180" href="/images/%E5%A4%B4%E5%83%8F.jpg">
+            
+        
+    
+    <!-- title -->
+    <title>【实验四】【使用Select 语句查询数据】</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@2/distr/fira_code.css" rel="stylesheet">
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+<body class="max-width mx-auto px3 ltr">
+
+    <div id="header-post">
+    <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+    <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+    <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i
+                class="fas fa-chevron-up fa-lg"></i></a>
+    <span id="menu">
+    <span id="nav">
+      <ul>
+          
+              <li><a href="/">首页</a></li>
+          
+              <li><a href="/archives/">归档</a></li>
+          
+              <li><a href="/categories/">分类</a></li>
+          
+              <li><a href="/tags/">标签</a></li>
+          
+              <li><a href="/about/">关于</a></li>
+          
+              <li><a href="/search/">搜索</a></li>
+          
+              <li><a target="_blank" rel="noopener" href="https://github.com/guairen-7">Projects</a></li>
+          
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+          
+          
+              <li><a class="icon" href="/2022/05/06/%E3%80%90%E4%B9%A0%E9%A2%98%E5%9B%9B%E3%80%91%E3%80%90%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E3%80%91/"><i class="fas fa-chevron-right"
+                                                                           aria-hidden="true"
+                                                                           onmouseover="$('#i-next').toggle();"
+                                                                           onmouseout="$('#i-next').toggle();"></i></a></li>
+          
+          <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i
+                          class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();"
+                          onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true"
+                                        onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();"
+                                        onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+    <li><a class="icon"
+           target="_blank" rel="noopener" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://guairen-7.github.io/2022/05/09/%E3%80%90%E5%AE%9E%E9%AA%8C%E5%9B%9B%E3%80%91%E3%80%90%E4%BD%BF%E7%94%A8Select%20%E8%AF%AD%E5%8F%A5%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E3%80%91/&title=【实验四】【使用Select 语句查询数据】"><i
+                    class="fab fa-qq " aria-hidden="true"></i></a></li>
+    <li><a class="icon"
+           target="_blank" rel="noopener" href="https://service.weibo.com/share/share.php?url=https://guairen-7.github.io/2022/05/09/%E3%80%90%E5%AE%9E%E9%AA%8C%E5%9B%9B%E3%80%91%E3%80%90%E4%BD%BF%E7%94%A8Select%20%E8%AF%AD%E5%8F%A5%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E3%80%91/&title=【实验四】【使用Select 语句查询数据】"><i
+                    class="fab fa-weibo " aria-hidden="true"></i></a></li>
+    <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://guairen-7.github.io/2022/05/09/%E3%80%90%E5%AE%9E%E9%AA%8C%E5%9B%9B%E3%80%91%E3%80%90%E4%BD%BF%E7%94%A8Select%20%E8%AF%AD%E5%8F%A5%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E3%80%91/&text=【实验四】【使用Select 语句查询数据】"><i
+                    class="fab fa-twitter " aria-hidden="true"></i></a></li>
+    <li><a class="icon" href="mailto:?subject=【实验四】【使用Select 语句查询数据】&body=Check out this article: https://guairen-7.github.io/2022/05/09/%E3%80%90%E5%AE%9E%E9%AA%8C%E5%9B%9B%E3%80%91%E3%80%90%E4%BD%BF%E7%94%A8Select%20%E8%AF%AD%E5%8F%A5%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E3%80%91/"><i
+                    class="fas fa-envelope " aria-hidden="true"></i></a></li>
+</ul>
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE"><span class="toc-number">1.</span> <span class="toc-text">数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E5%8D%95%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.</span> <span class="toc-text">一、简单查询</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%B1%87%E6%80%BB%E6%9F%A5%E8%AF%A2"><span class="toc-number">3.</span> <span class="toc-text">二、汇总查询</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2%E5%92%8C%E5%AD%90%E6%9F%A5%E8%AF%A2"><span class="toc-number">4.</span> <span class="toc-text">三、连接查询和子查询</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+<div class="content index py4">
+    
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        
+    <h1 class="posttitle" itemprop="name headline">
+        【实验四】【使用Select 语句查询数据】
+    </h1>
+
+        <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">
+            AXDLMG7
+            
+        </span>
+      </span>
+            
+    <div class="postdate">
+        
+            <time datetime="2022-05-09T04:25:24.461Z"
+                  itemprop="datePublished">2022-05-09</time>
+            
+                (Updated:
+                <time datetime="2022-05-09T04:26:21.035Z"
+                      itemprop="dateModified">2022-05-09</time>)
+            
+        
+    </div>
+
+            
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/DataBase/">DataBase</a> › <a class="category-link" href="/categories/DataBase/Practice/">Practice</a>
+    </div>
+
+            
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/SSMS/" rel="tag">SSMS</a>, <a class="tag-link-link" href="/tags/T-SQL/" rel="tag">T-SQL</a>
+    </div>
+
+        </div>
+    </header>
+    
+    <div class="content" itemprop="articleBody">
+        <h1 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h1><p>这里为了体现查询语句的效果，下面根据查询语句的要求设计数据，结果如下：</p>
+<p>KC表：<br><img src="https://img-blog.csdnimg.cn/fc6a4d265ebd44019ce0e03c1888ab80.png" alt="在这里插入图片描述"></p>
+<p>XSQK表：<br><img src="https://img-blog.csdnimg.cn/5717881a16c74156b5022b9b7108014e.png" alt="在这里插入图片描述"></p>
+<p>XS_KC表：<br><img src="https://img-blog.csdnimg.cn/4675f71999244586a8797e3d2951a128.png" alt="在这里插入图片描述"></p>
+<ol>
+<li>打开“SQL Server Management Studio”窗口。</li>
+<li>单击“标准”工具栏的“新建查询”按钮，打开“查询编辑器”窗口</li>
+<li>在窗口中输入以下SQL查询命令并执行：<h1 id="一、简单查询"><a href="#一、简单查询" class="headerlink" title="一、简单查询"></a>一、简单查询</h1>a.在KC表中，查询第2学期开课的课程、授课教师<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  课程名, 授课教师, 开课学期</span><br><span class="line"><span class="keyword">from</span>  kc</span><br><span class="line"><span class="keyword">where</span>  开课学期<span class="operator">=</span><span class="number">2</span></span><br></pre></td></tr></table></figure>
+<img src="https://img-blog.csdnimg.cn/7467004fc99e433585d62a24bafebad4.png" alt="在这里插入图片描述"></li>
+</ol>
+<p>b.在XSQK表中，查询女同学的姓名和电话号码</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  姓名, 性别, 联系电话</span><br><span class="line"><span class="keyword">from</span>  xsqk</span><br><span class="line"><span class="keyword">where</span>  性别<span class="operator">=</span><span class="string">&#x27;女&#x27;</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/ad4341308b174e149f77264f2d01f095.png" alt="在这里插入图片描述"></p>
+<p>c.在XS_KC表中，查询成绩在80分以上的学号、课程号和成绩</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  学号, 课程号, 成绩</span><br><span class="line"><span class="keyword">from</span>  xs_kc</span><br><span class="line"><span class="keyword">where</span>  成绩<span class="operator">&gt;=</span><span class="number">80</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/e6ce1db621b84cbc9d8307a58877c2af.png" alt="在这里插入图片描述"></p>
+<p>d.在XS_KC表中，查询在80以上和不及格学生的信息</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  学号, 课程号, 成绩</span><br><span class="line"><span class="keyword">from</span>  xs_kc</span><br><span class="line"><span class="keyword">where</span>  成绩<span class="operator">&gt;=</span><span class="number">80</span>  <span class="keyword">or</span> 成绩<span class="operator">&lt;</span><span class="number">60</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/96dadb6635fa4114ac919a1219578d21.png" alt="在这里插入图片描述"></p>
+<p>e.在XSQK表中，查询不在1980年7、8、9月出生的学生信息</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  学号, 姓名, 出生日期</span><br><span class="line"><span class="keyword">from</span>  xsqk</span><br><span class="line"><span class="keyword">where</span>  出生日期 <span class="keyword">not</span>  <span class="keyword">between</span> <span class="string">&#x27;1980-07-07&#x27;</span> <span class="keyword">and</span> <span class="string">&#x27;1980-09-30&#x27;</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/0b329ba9e5484087af2cc875db7d0923.png" alt="在这里插入图片描述"></p>
+<p>f. 在XSQK表中，查询陈姓且单名的信息</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span>  xsqk</span><br><span class="line"><span class="keyword">where</span>  姓名  <span class="keyword">like</span>  <span class="string">&#x27;陈_&#x27;</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/6e1e7031e77540a986b7f5858cbe1b00.png" alt="在这里插入图片描述"></p>
+<p>g.在XSQK表中，查询学号中含有1的记录信息</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span>  xsqk</span><br><span class="line"><span class="keyword">where</span>  学号 <span class="keyword">like</span> <span class="string">&#x27;%1%&#x27;</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/cef4f9640fb8451ca3c0c4400b8416aa.png" alt="在这里插入图片描述"></p>
+<p>h.在XSQK表中，查询电话号码中非末位含有4或6的记录信息</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span>  xsqk</span><br><span class="line"><span class="keyword">where</span>  联系电话  <span class="keyword">like</span>  <span class="string">&#x27;%[4,6]%[^4,6]&#x27;</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/a6e02085acaf4a3280a3656554e3ee3c.png" alt="在这里插入图片描述"></p>
+<p>i.在KC表中，查询第一、三、五学期开设的课程信息</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span>  kc</span><br><span class="line"><span class="keyword">where</span>  开课学期 <span class="keyword">in</span> (<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/a8e13f3540a14bbba1633da52d41f8d3.png" alt="在这里插入图片描述"></p>
+<p>j.查询XSQK表，输出学号、姓名、出生日期、并使查询结构按出生日期升序排列</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 学号, 姓名, 出生日期</span><br><span class="line"><span class="keyword">from</span>  xsqk    <span class="keyword">order</span>  <span class="keyword">by</span>  出生日期</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/1399385dfc7040a695400b962d60f9ca.png" alt="在这里插入图片描述"></p>
+<h1 id="二、汇总查询"><a href="#二、汇总查询" class="headerlink" title="二、汇总查询"></a>二、汇总查询</h1><p>a.在KC表中，统计每学期的总分数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  开课学期, <span class="built_in">sum</span>(学分)  <span class="keyword">as</span>  <span class="string">&#x27;各学期的学分合计&#x27;</span></span><br><span class="line"><span class="keyword">from</span>  kc</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span>  开课学期</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/3b9cecf0e6ba4087b7d6d859a40f5064.png" alt="在这里插入图片描述"></p>
+<p>b.在XS_KC表中，统计每个学生的选修课程的门数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  学号, <span class="built_in">count</span>(<span class="operator">*</span>)  <span class="keyword">as</span>  <span class="string">&#x27;每个学生选修的课程门数&#x27;</span></span><br><span class="line"><span class="keyword">from</span>  xs_kc</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span>  学号</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/b4b5d80e5c9a43efbad02f71ce78ee75.png" alt="在这里插入图片描述"></p>
+<p>c.将XS_KC表中的数据记录按学号分类汇总，输出学号和平均分</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 学号, <span class="built_in">avg</span>(成绩)  <span class="keyword">as</span>  <span class="string">&#x27;学生的平均分&#x27;</span></span><br><span class="line"><span class="keyword">from</span>  xs_kc</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span>  学号</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/c7e79f10bb044418ac766f630d47795e.png" alt="在这里插入图片描述"></p>
+<p>d.查询平均分大于70且小于80的学生学号和平均分</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  学号, <span class="built_in">avg</span>(成绩)  <span class="keyword">as</span>  <span class="string">&#x27;学生的平均分&#x27;</span></span><br><span class="line"><span class="keyword">from</span>  xs_kc</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span>  学号</span><br><span class="line"><span class="keyword">having</span>  <span class="built_in">avg</span>(成绩)  <span class="keyword">between</span>  <span class="number">70</span>  <span class="keyword">and</span>  <span class="number">80</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/23f4687a30624ad6a4e4117435719a36.png" alt="在这里插入图片描述"></p>
+<p>e.查询XS_KC表，输出学号、课程号、成绩，并使查询结果首先按照课程号的升序排列，当课程号相同时再按照成绩降序排列，并将查询结果保存到新表TEMP_KC中</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  学号, 课程号, 成绩</span><br><span class="line"><span class="keyword">into</span>  temp_kc</span><br><span class="line"><span class="keyword">from</span>  xs_kc</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span>  课程号, 成绩 <span class="keyword">desc</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/53fd9b1835494d7ba86f0f20ef861196.png" alt="在这里插入图片描述"><br>这里因为数据没有考虑周全，<strong>暂时没有体现</strong>“当课程号相同时再按照成绩降序排列”。</p>
+<p>f.查询选修了“101”课程的学生的最高分和最低分</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  <span class="built_in">max</span>(成绩)  <span class="keyword">as</span>  <span class="string">&#x27;101课程的最高分&#x27;</span>, <span class="built_in">min</span>(成绩)  <span class="keyword">as</span>  <span class="string">&#x27;101课程的最低分&#x27;</span></span><br><span class="line"><span class="keyword">from</span>  xs_kc</span><br><span class="line"><span class="keyword">where</span>  课程号<span class="operator">=</span><span class="string">&#x27;101&#x27;</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/fe4f1bdcfc7c49b4894d7bef5f2e1d76.png" alt="在这里插入图片描述"></p>
+<p>g.统计每个学期所开设的课程门数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  开课学期, <span class="built_in">count</span>(<span class="operator">*</span>)  <span class="keyword">as</span>  <span class="string">&#x27;每学期开设的课程门数&#x27;</span></span><br><span class="line"><span class="keyword">from</span>  kc</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span>  开课学期</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/aa897084859e402cb0e0c110c75baed6.png" alt="在这里插入图片描述"></p>
+<p>h.查询各专业的学生人数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  专业名, <span class="built_in">count</span>(专业名)  <span class="keyword">as</span>  <span class="string">&#x27;各专业人数&#x27;</span></span><br><span class="line"><span class="keyword">from</span>  xsqk</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span>  专业名</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/e465ce2fb8d14a788297b5ccd2ca4873.png" alt="在这里插入图片描述"></p>
+<h1 id="三、连接查询和子查询"><a href="#三、连接查询和子查询" class="headerlink" title="三、连接查询和子查询"></a>三、连接查询和子查询</h1><p>a.查询不及格学生的学号、课程名、授课教师、开课学期的信息</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  学号, xs_kc.课程号, 授课教师, 开课学期, 成绩</span><br><span class="line"><span class="keyword">from</span>  kc, xs_kc</span><br><span class="line"><span class="keyword">where</span>  kc.课程号<span class="operator">=</span>xs_kc.课程号  <span class="keyword">and</span> 成绩<span class="operator">&lt;</span><span class="number">60</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/1cea0fac98b74262a7544837f61d2f76.png" alt="在这里插入图片描述"></p>
+<p>b.按学号分组汇总总分高于100的学生记录，并按总分的降序排列</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  学号, <span class="built_in">sum</span>(成绩)  <span class="keyword">as</span>  <span class="string">&#x27;各学生的总分&#x27;</span></span><br><span class="line"><span class="keyword">from</span>  xs_kc</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span>  学号</span><br><span class="line"><span class="keyword">having</span>  <span class="built_in">sum</span>(成绩)<span class="operator">&gt;=</span><span class="number">100</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span>  <span class="built_in">sum</span>(成绩)  <span class="keyword">desc</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/3140de8a9cb342fab6c880133bf5376a.png" alt="在这里插入图片描述"></p>
+<p>c.使用子查询求恰好有两门课程不及格的学生信息</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  学号, 姓名</span><br><span class="line"><span class="keyword">from</span>  xsqk</span><br><span class="line"><span class="keyword">where</span>  (<span class="keyword">select</span>  <span class="built_in">count</span>(课程号)</span><br><span class="line"><span class="keyword">from</span>  xs_kc</span><br><span class="line"><span class="keyword">where</span>   xsqk.学号<span class="operator">=</span>xs_kc.学号 <span class="keyword">and</span> 成绩<span class="operator">&lt;=</span><span class="number">60</span> )<span class="operator">=</span><span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/4b8d52493b9e42b4b8ae80cfbdbc5758.png" alt="在这里插入图片描述"></p>
+<p>d.使用子查询查询每门课程的最高分的学生记录</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span>  xs_kc  a</span><br><span class="line"><span class="keyword">where</span> 成绩<span class="operator">=</span>(<span class="keyword">select</span>  <span class="built_in">max</span>(成绩)</span><br><span class="line"><span class="keyword">from</span>  xs_kc  b</span><br><span class="line"><span class="keyword">where</span>  b.课程号<span class="operator">=</span>a.课程号)</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/c6f8c8c66efa4398a2f687e9a82984fc.png" alt="在这里插入图片描述"></p>
+<p>e.使用子查询查询每个学生的最低分的课程记录</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span>  xs_kc  a</span><br><span class="line"><span class="keyword">where</span> 成绩<span class="operator">=</span>(<span class="keyword">select</span>  <span class="built_in">min</span>(成绩)</span><br><span class="line"><span class="keyword">from</span>  xs_kc  b</span><br><span class="line"><span class="keyword">where</span>  b.学号<span class="operator">=</span>a.学号)</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/7d967cb09c09421a8a65d825202467e0.png" alt="在这里插入图片描述"></p>
+
+    </div>
+</article>
+
+<div class="blog-post-comments">
+  <section id="comment">
+    <div id="valine_container" class="valine_thread"></div>
+  </section>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script>
+    var GUEST_INFO = ["nick", "mail", "link"];
+    var guest_info = "nick,mail,link"
+      .split(",")
+      .filter(function (item) {
+        return GUEST_INFO.indexOf(item) > -1;
+      });
+    var valine = new Valine();
+    valine.init({
+      el: "#valine_container",
+      appId: "iojTGuDT7eDBnTmn5wmswyYe-gzGzoHsz",
+      appKey: "allbvsvlNvxYN6O8zHwTDJmN",
+      placeholder: "说出你此刻的想法！",
+      pageSize: "10",
+      avatar: "Gravatar",
+      lang: "zh-cn",
+      emojiCDN: "https://mirrorcdn.bili33.top/",
+      // 表情title和图片映射
+      emojiMaps: {
+        Tieba2: "Tieba/i_f01.png",
+        Tieba3: "Tieba/i_f02.png",
+        Tieba4: "Tieba/i_f03.png",
+        Tieba5: "Tieba/i_f04.png",
+        Tieba6: "Tieba/i_f05.png",
+        Tieba7: "Tieba/i_f06.png",
+        Tieba8: "Tieba/i_f07.png",
+        Tieba9: "Tieba/i_f08.png",
+        Tieba10: "Tieba/i_f09.png",
+        Tieba11: "Tieba/i_f10.png",
+        Tieba12: "Tieba/i_f11.png",
+        Tieba13: "Tieba/i_f12.png",
+        Tieba14: "Tieba/i_f13.png",
+        Tieba15: "Tieba/i_f14.png",
+        Tieba16: "Tieba/i_f15.png",
+        Tieba17: "Tieba/i_f16.png",
+        Tieba18: "Tieba/i_f17.png",
+        Tieba19: "Tieba/i_f18.png",
+        Tieba20: "Tieba/i_f19.png",
+        Tieba21: "Tieba/i_f20.png",
+        Tieba22: "Tieba/i_f21.png",
+        Tieba23: "Tieba/i_f22.png",
+        Tieba24: "Tieba/i_f23.png",
+        Tieba25: "Tieba/i_f24.png",
+        Tieba26: "Tieba/i_f25.png",
+        Tieba27: "Tieba/i_f26.png",
+        Tieba28: "Tieba/i_f27.png",
+        Tieba29: "Tieba/i_f28.png",
+        Tieba30: "Tieba/i_f29.png",
+        Tieba31: "Tieba/i_f30.png",
+        Tieba32: "Tieba/i_f31.png",
+        Tieba33: "Tieba/i_f32.png",
+        Tieba34: "Tieba/i_f33.png",
+        bilibilitv2: "bilibilitv/[tv_doge].png",
+        bilibilitv3: "bilibilitv/[tv_亲亲].png",
+        bilibilitv4: "bilibilitv/[tv_偷笑].png",
+        bilibilitv5: "bilibilitv/[tv_再见].png",
+        bilibilitv6: "bilibilitv/[tv_冷漠].png",
+        bilibilitv7: "bilibilitv/[tv_发怒].png",
+        bilibilitv8: "bilibilitv/[tv_发财].png",
+        bilibilitv9: "bilibilitv/[tv_可爱].png",
+        bilibilitv10: "bilibilitv/[tv_吐血].png",
+        bilibilitv11: "bilibilitv/[tv_呆].png",
+        bilibilitv12: "bilibilitv/[tv_呕吐].png",
+        bilibilitv13: "bilibilitv/[tv_困].png",
+        bilibilitv14: "bilibilitv/[tv_坏笑].png",
+        bilibilitv15: "bilibilitv/[tv_大佬].png",
+        bilibilitv16: "bilibilitv/[tv_大哭].png",
+        bilibilitv17: "bilibilitv/[tv_委屈].png",
+        bilibilitv18: "bilibilitv/[tv_害羞].png",
+        bilibilitv19: "bilibilitv/[tv_尴尬].png",
+        bilibilitv20: "bilibilitv/[tv_微笑].png",
+        bilibilitv21: "bilibilitv/[tv_思考].png",
+        bilibilitv22: "bilibilitv/[tv_惊吓].png",
+        bilibilitv23: "bilibilitv/[tv_打脸].png",
+        bilibilitv24: "bilibilitv/[tv_抓狂].png",
+        bilibilitv25: "bilibilitv/[tv_抠鼻].png",
+        bilibilitv26: "bilibilitv/[tv_斜眼笑].png",
+        bilibilitv27: "bilibilitv/[tv_无奈].png",
+        bilibilitv28: "bilibilitv/[tv_晕].png",
+        bilibilitv29: "bilibilitv/[tv_流汗].png",
+        bilibilitv30: "bilibilitv/[tv_流泪].png",
+        bilibilitv31: "bilibilitv/[tv_流鼻血].png",
+        bilibilitv32: "bilibilitv/[tv_点赞].png",
+        bilibilitv33: "bilibilitv/[tv_生气].png",
+        bilibilitv34: "bilibilitv/[tv_生病].png",
+        bilibilitv35: "bilibilitv/[tv_疑问].png",
+        bilibilitv36: "bilibilitv/[tv_白眼].png",
+        bilibilitv37: "bilibilitv/[tv_皱眉].png",
+        bilibilitv38: "bilibilitv/[tv_目瞪口呆].png",
+        bilibilitv39: "bilibilitv/[tv_睡着].png",
+        bilibilitv40: "bilibilitv/[tv_笑哭].png",
+        bilibilitv41: "bilibilitv/[tv_腼腆].png",
+        bilibilitv42: "bilibilitv/[tv_色].png",
+        bilibilitv43: "bilibilitv/[tv_调侃].png",
+        bilibilitv44: "bilibilitv/[tv_调皮].png",
+        bilibilitv45: "bilibilitv/[tv_鄙视].png",
+        bilibilitv46: "bilibilitv/[tv_闭嘴].png",
+        bilibilitv47: "bilibilitv/[tv_难过].png",
+        bilibilitv48: "bilibilitv/[tv_馋].png",
+        bilibilitv49: "bilibilitv/[tv_鬼脸].png",
+        bilibilitv50: "bilibilitv/[tv_黑人问号].png",
+        bilibilitv51: "bilibilitv/[tv_鼓掌].png",
+        bilibili22332: "bilibili2233/[2233娘_卖萌].png",
+        bilibili22333: "bilibili2233/[2233娘_吃惊].png",
+        bilibili22334: "bilibili2233/[2233娘_吐魂].png",
+        bilibili22335: "bilibili2233/[2233娘_喝水].png",
+        bilibili22336: "bilibili2233/[2233娘_困惑].png",
+        bilibili22337: "bilibili2233/[2233娘_大哭].png",
+        bilibili22338: "bilibili2233/[2233娘_大笑].png",
+        bilibili22339: "bilibili2233/[2233娘_委屈].png",
+        bilibili223310: "bilibili2233/[2233娘_怒].png",
+        bilibili223311: "bilibili2233/[2233娘_无言].png",
+        bilibili223312: "bilibili2233/[2233娘_汗].png",
+        bilibili223313: "bilibili2233/[2233娘_疑问].png",
+        bilibili223314: "bilibili2233/[2233娘_第一].png",
+        bilibili223315: "bilibili2233/[2233娘_耶].png",
+        bilibili223316: "bilibili2233/[2233娘_郁闷].png",
+      },
+    });
+  </script>
+</div>
+
+
+
+<script>
+    //检测推送
+    var pushType = "";
+    var pushLink = "";
+    var siteName = "AXDLMG7&#39;s Blog";
+  
+    var ValineButton = document.getElementsByClassName("vsubmit vbtn")[0];
+    //分情况推送
+    if (pushType === "sc") {
+      var title = "text=" + siteName + "上又有新评论啦~!";
+      function send_valine_Server() {
+        //获取元素信息
+        var pagename = document.title;
+        var wz = pagename.indexOf("|");
+        var res = pagename.substring(0, wz);
+        var pageurl = document.URL;
+        var ptime = new Date();
+        var vnick = document.getElementsByClassName("vnick vinput")[0].value;
+        var vmail = document.getElementsByClassName("vmail vinput")[0].value;
+        var vlink = document.getElementsByClassName("vlink vinput")[0].value;
+        var veditor = document.getElementsByClassName("veditor vinput")[0].value;
+        var text = "desp=";
+        var data =
+          text +
+          "|昵称：" +
+          "|邮箱：" +
+          "|网站地址：" +
+          "|当前页面：" +
+          "|评论内容：" +
+          "|跳转链接：" +
+          "|评论时间" +
+          "\n" +
+          "|----|----|----|----|" +
+          "\n" +
+          "|   " +
+          vnick +
+          "   |   " +
+          vmail +
+          "  |  " +
+          vlink +
+          "|   " +
+          res +
+          "| " +
+          veditor +
+          "| " +
+          pageurl +
+          "|" +
+          ptime.toLocaleString() +
+          "|";
+        var httpRequest = new XMLHttpRequest(); //第一步：创建需要的对象
+        httpRequest.open("POST", pushLink, true); //第二步：打开连接
+        httpRequest.setRequestHeader(
+          "Content-type",
+          "application/x-www-form-urlencoded"
+        ); //设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+        httpRequest.send(title + "&" + data); //发送请求 将情头体写在send中
+      }
+      ValineButton.onclick = send_valine_Server;
+    } else if (pushType === "qmsg") {
+      var title = "msg=" + siteName + "上又有新评论啦~!\n";
+      function send_valine_Qmsg() {
+        //获取元素信息
+        var pagename = document.title;
+        var wz = pagename.indexOf("|");
+        var res = pagename.substring(0, wz);
+        var pageurl = document.URL;
+        var ptime = new Date();
+        var vnick = document.getElementsByClassName("vnick vinput")[0].value;
+        var vmail = document.getElementsByClassName("vmail vinput")[0].value;
+        var vlink = document.getElementsByClassName("vlink vinput")[0].value;
+        var veditor = document.getElementsByClassName("veditor vinput")[0].value;
+        var data =
+          "昵称：" +
+          vnick +
+          "\n邮箱：" +
+          vmail +
+          "\n网站地址：" +
+          vlink +
+          "\n当前页面：" +
+          pagename +
+          "\n评论内容：" +
+          veditor +
+          "\n跳转链接：" +
+          pageurl +
+          "\n评论时间" +
+          ptime.toLocaleString();
+        var httpRequest = new XMLHttpRequest(); //第一步：创建需要的对象
+        httpRequest.open("POST", pushLink, true); //第二步：打开连接
+        httpRequest.setRequestHeader(
+          "Content-type",
+          "application/x-www-form-urlencoded"
+        ); //设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+        httpRequest.send(title + data); //发送请求 将情头体写在send中
+      }
+      ValineButton.onclick = send_valine_Qmsg;
+    }
+  </script>
+    
+        <div id="footer-post-container">
+    <div id="footer-post">
+
+        <div id="nav-footer" style="display: none">
+            <ul>
+                
+                    <li><a href="/">首页</a></li>
+                
+                    <li><a href="/archives/">归档</a></li>
+                
+                    <li><a href="/categories/">分类</a></li>
+                
+                    <li><a href="/tags/">标签</a></li>
+                
+                    <li><a href="/about/">关于</a></li>
+                
+                    <li><a href="/search/">搜索</a></li>
+                
+                    <li><a target="_blank" rel="noopener" href="https://github.com/guairen-7">Projects</a></li>
+                
+            </ul>
+        </div>
+
+        <div id="toc-footer" style="display: none">
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE"><span class="toc-number">1.</span> <span class="toc-text">数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E5%8D%95%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.</span> <span class="toc-text">一、简单查询</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%B1%87%E6%80%BB%E6%9F%A5%E8%AF%A2"><span class="toc-number">3.</span> <span class="toc-text">二、汇总查询</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2%E5%92%8C%E5%AD%90%E6%9F%A5%E8%AF%A2"><span class="toc-number">4.</span> <span class="toc-text">三、连接查询和子查询</span></a></li></ol>
+        </div>
+
+        <div id="share-footer" style="display: none">
+            <ul>
+    <li><a class="icon"
+           target="_blank" rel="noopener" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://guairen-7.github.io/2022/05/09/%E3%80%90%E5%AE%9E%E9%AA%8C%E5%9B%9B%E3%80%91%E3%80%90%E4%BD%BF%E7%94%A8Select%20%E8%AF%AD%E5%8F%A5%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E3%80%91/&title=【实验四】【使用Select 语句查询数据】"><i
+                    class="fab fa-qq fa-lg" aria-hidden="true"></i></a></li>
+    <li><a class="icon"
+           target="_blank" rel="noopener" href="https://service.weibo.com/share/share.php?url=https://guairen-7.github.io/2022/05/09/%E3%80%90%E5%AE%9E%E9%AA%8C%E5%9B%9B%E3%80%91%E3%80%90%E4%BD%BF%E7%94%A8Select%20%E8%AF%AD%E5%8F%A5%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E3%80%91/&title=【实验四】【使用Select 语句查询数据】"><i
+                    class="fab fa-weibo fa-lg" aria-hidden="true"></i></a></li>
+    <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://guairen-7.github.io/2022/05/09/%E3%80%90%E5%AE%9E%E9%AA%8C%E5%9B%9B%E3%80%91%E3%80%90%E4%BD%BF%E7%94%A8Select%20%E8%AF%AD%E5%8F%A5%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E3%80%91/&text=【实验四】【使用Select 语句查询数据】"><i
+                    class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+    <li><a class="icon" href="mailto:?subject=【实验四】【使用Select 语句查询数据】&body=Check out this article: https://guairen-7.github.io/2022/05/09/%E3%80%90%E5%AE%9E%E9%AA%8C%E5%9B%9B%E3%80%91%E3%80%90%E4%BD%BF%E7%94%A8Select%20%E8%AF%AD%E5%8F%A5%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E3%80%91/"><i
+                    class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+        </div>
+
+        <div id="actions-footer">
+            <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i
+                        class="fas fa-bars fa-lg"
+                        aria-hidden="true"></i> 菜单</a>
+            <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i
+                        class="fas fa-list fa-lg"
+                        aria-hidden="true"></i> 目录</a>
+            <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i
+                        class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+            <a id="top" style="display:none" class="icon" href="#"
+               onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg"
+                                                                               aria-hidden="true"></i> 返回顶部
+            </a>
+        </div>
+
+    </div>
+</div>
+    
+    <footer id="footer">
+  <div class="footer-top">
+    &copy; 2022 <i class="fas fa-heart"></i>
+    AXDLMG7 
+  </div>
+
+  <div class="footer-bottom">
+     
+  </div>
+</footer>
+
+</div>
+<!-- styles -->
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css">
+
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/justifiedGallery/3.7.0/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+
+<script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+
+
+<script src="https://cdn.staticfile.org/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+    
+<script src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            // copy-btn HTML
+            var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+            btn += '<i class="far fa-clone"></i>';
+            btn += '</span>';
+            // mount it!
+            $(".highlight .code pre").before(btn);
+            var clip = new ClipboardJS('.btn-copy', {
+                target: function (trigger) {
+                    return trigger.nextElementSibling;
+                }
+            });
+            clip.on('success', function (e) {
+                e.trigger.setAttribute('aria-label', "复制成功!");
+                e.clearSelection();
+            })
+        })
+    </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+</body>
+
+</html>
