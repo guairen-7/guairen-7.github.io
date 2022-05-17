@@ -135,7 +135,7 @@
                   itemprop="datePublished">2022-05-17</time>
             
                 (Updated:
-                <time datetime="2022-05-17T07:42:22.411Z"
+                <time datetime="2022-05-17T07:51:10.485Z"
                       itemprop="dateModified">2022-05-17</time>)
             
         
@@ -157,8 +157,7 @@
     </header>
     
     <div class="content" itemprop="articleBody">
-        <p>@[TOC]</p>
-<h1 id="一、应用转换函数"><a href="#一、应用转换函数" class="headerlink" title="一、应用转换函数"></a>一、应用转换函数</h1><p>①打开“SQL　Server Manageement Studio” 窗口。</p>
+        <h1 id="一、应用转换函数"><a href="#一、应用转换函数" class="headerlink" title="一、应用转换函数"></a>一、应用转换函数</h1><p>①打开“SQL　Server Manageement Studio” 窗口。</p>
 <p>②单击“标准”工具栏上的“新建查询”按钮，打开“查询编辑器”窗口。</p>
 <p>③在窗口内直接输入以下语句，求KC表中课程号为“105”的课程名称的长度，并输入结果。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">USE  XSCJ</span><br><span class="line"><span class="keyword">DECLARE</span>　　<span class="variable">@length</span>  <span class="type">int</span></span><br><span class="line"><span class="keyword">SELECT</span>  <span class="variable">@length</span><span class="operator">=</span>LEN(课程名)  <span class="keyword">FROM</span>  KC  <span class="keyword">WHERE</span>　课程号　<span class="operator">=</span><span class="string">&#x27;105&#x27;</span></span><br><span class="line">PRINT　<span class="string">&#x27;105号课程名称的长度为：&#x27;</span><span class="operator">+</span> <span class="keyword">CONVERT</span>(<span class="type">varchar</span>(<span class="number">4</span>),<span class="variable">@length</span>)</span><br></pre></td></tr></table></figure>
