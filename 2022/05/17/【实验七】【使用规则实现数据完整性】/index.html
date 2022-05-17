@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    
+    
+        
+            
+                <link rel="shortcut icon" href="/images/%E5%A4%B4%E5%83%8F.jpg">
+            
+        
+        
+            
+                <link rel="icon" type="image/png" href="/images/%E5%A4%B4%E5%83%8F.jpg" sizes="192x192">
+            
+        
+        
+            
+                <link rel="apple-touch-icon" sizes="180x180" href="/images/%E5%A4%B4%E5%83%8F.jpg">
+            
+        
+    
+    <!-- title -->
+    <title>【实验七】【使用规则实现数据完整性】</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/tonsky/FiraCode@2/distr/fira_code.css" rel="stylesheet">
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+<body class="max-width mx-auto px3 ltr">
+
+    <div id="header-post">
+    <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+    <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+    <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i
+                class="fas fa-chevron-up fa-lg"></i></a>
+    <span id="menu">
+    <span id="nav">
+      <ul>
+          
+              <li><a href="/">首页</a></li>
+          
+              <li><a href="/archives/">归档</a></li>
+          
+              <li><a href="/categories/">分类</a></li>
+          
+              <li><a href="/tags/">标签</a></li>
+          
+              <li><a href="/about/">关于</a></li>
+          
+              <li><a href="/search/">搜索</a></li>
+          
+              <li><a target="_blank" rel="noopener" href="https://github.com/guairen-7">Projects</a></li>
+          
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+          
+          
+              <li><a class="icon" href="/2022/05/17/%E3%80%90%E5%AE%9E%E9%AA%8C%E5%85%AD%E3%80%91%E3%80%90%E4%B8%BA%E7%94%A8%E6%88%B7%E8%AE%BE%E7%BD%AE%E6%9D%83%E9%99%90%E3%80%91/"><i class="fas fa-chevron-right"
+                                                                           aria-hidden="true"
+                                                                           onmouseover="$('#i-next').toggle();"
+                                                                           onmouseout="$('#i-next').toggle();"></i></a></li>
+          
+          <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i
+                          class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();"
+                          onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true"
+                                        onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();"
+                                        onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+    <li><a class="icon"
+           target="_blank" rel="noopener" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://guairen-7.github.io/2022/05/17/%E3%80%90%E5%AE%9E%E9%AA%8C%E4%B8%83%E3%80%91%E3%80%90%E4%BD%BF%E7%94%A8%E8%A7%84%E5%88%99%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7%E3%80%91/&title=【实验七】【使用规则实现数据完整性】"><i
+                    class="fab fa-qq " aria-hidden="true"></i></a></li>
+    <li><a class="icon"
+           target="_blank" rel="noopener" href="https://service.weibo.com/share/share.php?url=https://guairen-7.github.io/2022/05/17/%E3%80%90%E5%AE%9E%E9%AA%8C%E4%B8%83%E3%80%91%E3%80%90%E4%BD%BF%E7%94%A8%E8%A7%84%E5%88%99%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7%E3%80%91/&title=【实验七】【使用规则实现数据完整性】"><i
+                    class="fab fa-weibo " aria-hidden="true"></i></a></li>
+    <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://guairen-7.github.io/2022/05/17/%E3%80%90%E5%AE%9E%E9%AA%8C%E4%B8%83%E3%80%91%E3%80%90%E4%BD%BF%E7%94%A8%E8%A7%84%E5%88%99%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7%E3%80%91/&text=【实验七】【使用规则实现数据完整性】"><i
+                    class="fab fa-twitter " aria-hidden="true"></i></a></li>
+    <li><a class="icon" href="mailto:?subject=【实验七】【使用规则实现数据完整性】&body=Check out this article: https://guairen-7.github.io/2022/05/17/%E3%80%90%E5%AE%9E%E9%AA%8C%E4%B8%83%E3%80%91%E3%80%90%E4%BD%BF%E7%94%A8%E8%A7%84%E5%88%99%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7%E3%80%91/"><i
+                    class="fas fa-envelope " aria-hidden="true"></i></a></li>
+</ul>
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="toc-number">1.</span> <span class="toc-text">数据完整性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%A6%E6%9D%9F%E7%9A%84%E5%BD%A2%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">约束的形式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%84%E5%88%99%E4%B8%8E%E9%BB%98%E8%AE%A4%E5%80%BC%E7%9A%84SQL%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.2.</span> <span class="toc-text">规则与默认值的SQL语句</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%85%B3%E4%BA%8E%E5%BC%80%E8%AF%BE%E5%AD%A6%E6%9C%9F%E7%9A%84%E8%A7%84%E5%88%99"><span class="toc-number">2.</span> <span class="toc-text">一、创建一个关于开课学期的规则</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%85%B3%E4%BA%8E%E6%80%A7%E5%88%AB%E7%9A%84%E8%A7%84%E5%88%99"><span class="toc-number">3.</span> <span class="toc-text">二、创建一个关于性别的规则</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%85%B3%E4%BA%8E%E5%AD%A6%E5%88%86%E7%9A%84%E8%A7%84%E5%88%99"><span class="toc-number">4.</span> <span class="toc-text">三、创建一个关于学分的规则</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-number">6.</span> <span class="toc-text">Reference</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+<div class="content index py4">
+    
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        
+    <h1 class="posttitle" itemprop="name headline">
+        【实验七】【使用规则实现数据完整性】
+    </h1>
+
+        <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">
+            AXDLMG7
+            
+        </span>
+      </span>
+            
+    <div class="postdate">
+        
+            <time datetime="2022-05-17T03:48:07.711Z"
+                  itemprop="datePublished">2022-05-17</time>
+            
+                (Updated:
+                <time datetime="2022-05-17T03:49:31.514Z"
+                      itemprop="dateModified">2022-05-17</time>)
+            
+        
+    </div>
+
+            
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/DataBase/">DataBase</a> › <a class="category-link" href="/categories/DataBase/Practice/">Practice</a>
+    </div>
+
+            
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7-T-SQL-SSMS/" rel="tag">数据完整性 - T-SQL - SSMS</a>
+    </div>
+
+        </div>
+    </header>
+    
+    <div class="content" itemprop="articleBody">
+        <h1 id="数据完整性"><a href="#数据完整性" class="headerlink" title="数据完整性"></a>数据完整性</h1><h2 id="约束的形式"><a href="#约束的形式" class="headerlink" title="约束的形式"></a>约束的形式</h2><p>下边通过一个总体说明约束怎样保证数据完整性的：<br>|名称| 作用 | 体现的完整性 |<br>|–|–|–|<br>| Primary key | 定义外键，保证被设定的列内不出现重复值 | 实体完整性 |<br>| Unique | 不出现重复 | 实体完整性 |<br>| Foreign key | 定义外键，保证表和表之间的一致性 | 参照完整性 |<br>| Check | 定义列中数据的范围 | 自定义完整性 |<br>| default | 为列的数据设定默认值 | 自定义完整性 |</p>
+<p>1.主键<br>一个表中只能有<strong>一个主键</strong>，定义主键可以设定，也可以在代码中需要的时候加在相应的字段</p>
+<p>2.unique（不重复）<br>数据表中非主键列在各行记录中<strong>不能出现相同的非空值</strong>，这时就需要有unique的特性，用法和主键一样</p>
+<p>3.外键<br>是<strong>不同的表之间的关系</strong>，当其中有一些数据存在关系是可以建立外键，（可以避免出错）</p>
+<p>用法：[constraint 约束名] foreign key (列名)   reference 表名（列名）</p>
+<p>4.check<br><strong>限定列之间数据的参照关系</strong> ，比如一个表中包含学生的“出生日期”和“入校日期”，入校日期肯定要晚于出生日期，这个时候可以用check来限定</p>
+<p>用法：[constraint 约束名]  check  (关系式)</p>
+<p>5.default（默认值）<br>当有非常多的相同数据要输入到数据表中的时候，可以设定一个<strong>默认值</strong>，这样减少工作量</p>
+<p>用法：[constraint 约束名]  default 常量表达式    for   字段名</p>
+<p>说明：<strong>在没有单独拿出定义约束的时候可以省略“[constraint  约束名]”</strong></p>
+<h2 id="规则与默认值的SQL语句"><a href="#规则与默认值的SQL语句" class="headerlink" title="规则与默认值的SQL语句"></a>规则与默认值的SQL语句</h2><p>1.规则</p>
+<p>规则的用途：验证数据的值是否处于一定的范围内，是否和特定格式相匹配   是否与制定列表中的输入相匹配</p>
+<ul>
+<li><p>创建规则：create  rule 　规则名　as   规则的表达式（如果表达式中含有参数要加上@）</p>
+</li>
+<li><p>使用规则：sp_bindrule   规则名, ‘表名.列名’</p>
+</li>
+<li><p>查看规则：sp_helptext  规则名</p>
+</li>
+<li><p>解除规则: sp_unbindrule  规则名, ‘表名.列名’</p>
+</li>
+<li><p>删除规则：drop rule  规则名组</p>
+</li>
+</ul>
+<p>2.默认值</p>
+<ul>
+<li><p>创建默认值：create default  默认名  as   表达式</p>
+</li>
+<li><p>使用默认值：sp_bindefault  默认名, ‘表名.列名’（注意英文字符）</p>
+</li>
+<li><p>查看默认值：sp_helpconstraint  表名</p>
+</li>
+<li><p>解除默认值：sp_unbindefault  默认名, ‘表名.列名’</p>
+</li>
+<li><p>删除默认值：drop_default   默认值名</p>
+</li>
+</ul>
+<h1 id="一、创建一个关于开课学期的规则"><a href="#一、创建一个关于开课学期的规则" class="headerlink" title="一、创建一个关于开课学期的规则"></a>一、创建一个关于开课学期的规则</h1><p><strong>每次设置规则前需要在对象资源管理器中选中“XSCJ”为当前数据库。</strong></p>
+<p>①打开“SQL Server Management Studio”窗口。</p>
+<p>②单击“标准”工具栏上的“新建查询”按钮，打开“查询编辑器”窗口。</p>
+<p>③在窗口内直接输入以下语句，创建规则，将“开课学期”列的值约束在1~8之间。</p>
+<p>在<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_52034760/article/details/124115562">【实验二】【创建表并输入数据】</a>中可以看到当时通过SSMS设置过CHECK约束：<br><img src="https://img-blog.csdnimg.cn/1b45b3a3f0bd432b8093980057b725c2.png" alt="在这里插入图片描述"></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span>  RULE  kkxq_rule  </span><br><span class="line"><span class="keyword">AS</span> @开课学期<span class="operator">&gt;=</span><span class="number">1</span> <span class="keyword">AND</span> @开课学期<span class="operator">&lt;=</span><span class="number">8</span></span><br><span class="line">GO</span><br></pre></td></tr></table></figure>
+
+<p>④单击“SQL编辑器”工具栏上的“分析”按钮，检查输入的T-SQL语句是否有语法错误。如果有语法错误，则进行修改。</p>
+<p>⑤确保无语法错误后，单击“SQL编辑器”工具栏上的“执行”按钮。<br><img src="https://img-blog.csdnimg.cn/2199353fb4f141fa906b5fed3cf4c078.png" alt="在这里插入图片描述"></p>
+<p>⑥在“查询编辑器”窗口内输入以下语句，将所创建的规则绑定到“开课学期”列。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">EXEC</span>  Sp_bindrule  <span class="string">&#x27;kkxq_rule&#x27;</span>, <span class="string">&#x27;KC.开课学期&#x27;</span></span><br><span class="line">GO</span><br></pre></td></tr></table></figure>
+
+<p>⑦单击“SQL编辑器”工具栏上的“执行”按钮。<br><img src="https://img-blog.csdnimg.cn/3cdcea5fce5646b2a9c075642abde344.png" alt="在这里插入图片描述"></p>
+<p>⑧在“对象资源管理器”中，展开目标数据库中的“表”节点，鼠标右键单击目标表“KC”，在弹出的快捷菜单中选择“编辑前200行”命令，输入一行新记录，检验“开课学期”列值的约束情况。</p>
+<p>查看约束：<br><img src="https://img-blog.csdnimg.cn/7b47d219b085412fa2accba92acfda54.png" alt="在这里插入图片描述"></p>
+<p>因为在<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_52034760/article/details/124115562">【实验二】【创建表并输入数据】</a>中曾经设置过“开课学期”的约束，这里的效果不明显，<strong>添加数据检查约束</strong>：</p>
+<p><img src="https://img-blog.csdnimg.cn/79c599c2d5db4b54af21ac68330b0c41.png" alt="在这里插入图片描述"></p>
+<p><strong>注意数据中不要出现空格。</strong></p>
+<p>⑨使用SQL语句查看规则：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">EXECUTE</span> sp_helptext kkxq_rule</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/7edbbc6fd2174d018b93e6f227f1a846.png" alt="在这里插入图片描述"></p>
+<h1 id="二、创建一个关于性别的规则"><a href="#二、创建一个关于性别的规则" class="headerlink" title="二、创建一个关于性别的规则"></a>二、创建一个关于性别的规则</h1><p>①在“查询编辑器”窗口内直接输入以下语句，为XSQK表的“性别”列创建规则，约束其值只能是“男”或“女”。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span>  RULE  sex_rule  </span><br><span class="line"><span class="keyword">AS</span> @性别 <span class="keyword">in</span>(<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;女&#x27;</span>)</span><br><span class="line">GO</span><br></pre></td></tr></table></figure>
+
+<p>②单击“SQL编辑器”工具栏上的“执行”按钮。<br><img src="https://img-blog.csdnimg.cn/a781845424bd463f99c57d61dd2f19df.png" alt="在这里插入图片描述"></p>
+<p>③在“查询编辑器”窗口内输入以下语句，将所创建的规则绑定到“性别”列。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">EXEC</span>  Sp_bindrule  <span class="string">&#x27;sex_rule&#x27;</span>,<span class="string">&#x27;XSQK.性别&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>④单击“SQL编辑器”工具栏上的“执行”按钮。<br><img src="https://img-blog.csdnimg.cn/429f672ceea84580a9ab737fa0204f24.png" alt="在这里插入图片描述"></p>
+<p>⑤在“对象资源管理器”中，展开目标数据库中的“表”节点，鼠标右键单击目标表“XSQK”,在弹出的快捷菜单中选择“编辑前200行”命令，输入一行新记录，检验“性别”列值的约束情况。</p>
+<p>这里查看<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_52034760/article/details/124115562">【实验二】【创建表并输入数据】</a>，当时并没有对性别进行约束。所以这里通过查看性别的属性进行检验：<br><img src="https://img-blog.csdnimg.cn/3c7b631efe224492b89230dbe9bd2724.png" alt="在这里插入图片描述"><br>在“常规”与“CHECK约束”并不能看到创建的规则，说明上面的查看方式也不对。这里依然通过<strong>添加数据检查约束</strong>：<br><img src="https://img-blog.csdnimg.cn/2d1633d5fe0140ddbb388502eaba3a64.png" alt="在这里插入图片描述"><br>⑥使用SQL语句查看规则：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">EXECUTE</span> sp_helptext sex_rule</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/7ccb7c4da92240e783d01d4d7a059a95.png" alt="在这里插入图片描述"></p>
+<h1 id="三、创建一个关于学分的规则"><a href="#三、创建一个关于学分的规则" class="headerlink" title="三、创建一个关于学分的规则"></a>三、创建一个关于学分的规则</h1><p>①在“查询编辑器”窗口内直接输入以下语句，创建规则，要求“学分”列的值只能输入1~6之间的数字。实现步骤如下所述。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span>  RULE  xf_rule  </span><br><span class="line"><span class="keyword">AS</span> @学分 <span class="keyword">like</span>  <span class="string">&#x27;[1-6]&#x27;</span></span><br><span class="line">GO</span><br></pre></td></tr></table></figure>
+
+<p>②单击“SQL编辑器”工具栏上的“执行”按钮。<br><img src="https://img-blog.csdnimg.cn/4c5e24a6457d45a6a268256597e1990d.png" alt="在这里插入图片描述"></p>
+<p>③在“查询编辑器”窗口内输入以下语句，将所创建的规则绑定到“学分”列。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">EXEC</span>  sp_bindrule  <span class="string">&#x27;xf_rule&#x27;</span>,<span class="string">&#x27;KC.学分&#x27;</span></span><br><span class="line">GO</span><br></pre></td></tr></table></figure>
+
+<p>④单击” 执行”按钮。<br><img src="https://img-blog.csdnimg.cn/45dba45d74434adc84fd519563a56885.png" alt="在这里插入图片描述"></p>
+<p>⑤在“对象资源管理器”中，展开目标数据库中的“表”节点，鼠标右键单击目标表“KC”，在弹出的快捷菜单中选择“编辑前200行或者打开表”菜单项，输入一行新记录，检验“学分”列值的约束情况。</p>
+<p>通过<strong>添加数据检查约束</strong>：<br><img src="https://img-blog.csdnimg.cn/4261c2874ec44e0ca21d404fabc7c265.png" alt="在这里插入图片描述"><br>这里因为前五条数据是以前创建的，不受新规则影响。从“107”课程的“70”学分可以看出约束生效。<br>改进：针对实验五创建的数据将SQL语言改为如下，显示效果更佳。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span>  RULE  xf_rule  </span><br><span class="line"><span class="keyword">AS</span> @学分 <span class="keyword">like</span>  <span class="string">&#x27;[10-60]&#x27;</span></span><br><span class="line">GO</span><br></pre></td></tr></table></figure>
+<p>⑥使用SQL语句查看规则：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">EXECUTE</span> sp_helptext xf_rule</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/9add1639ebb4487a9a262360e737816e.png" alt="在这里插入图片描述"></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>规则和约束都可以保证数据完整性，二者的区别：</p>
+<p>1：约束是<strong>基于表</strong>的操作<br>规则和默认值在创建了以后，他不属于某个表，只有在<strong>绑定了命令了以后</strong>才会发生关系。</p>
+<p>2：一个约束只能对<strong>一个表的一个列</strong>产生作用，<br>规则和默认值可以绑定到多个表多个列中。</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40951833/article/details/80718519">SQL Server学习进程（六）–数据完整性（规则、默认、完整性约束）/文CSDN@f斗牛士</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/tk55/p/6084045.html">数据库SQL server规则的创建、查看、修改和规则的绑定与松绑、删除/文博客园@Stay Hungry, Stay Foolish</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/doumengyuancsdn/article/details/46391107">数据库——怎样实现数据完整性/文CSDN@窦孟园</a></p>
+
+    </div>
+</article>
+
+<div class="blog-post-comments">
+  <section id="comment">
+    <div id="valine_container" class="valine_thread"></div>
+  </section>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  <script>
+    var GUEST_INFO = ["nick", "mail", "link"];
+    var guest_info = "nick,mail,link"
+      .split(",")
+      .filter(function (item) {
+        return GUEST_INFO.indexOf(item) > -1;
+      });
+    var valine = new Valine();
+    valine.init({
+      el: "#valine_container",
+      appId: "iojTGuDT7eDBnTmn5wmswyYe-gzGzoHsz",
+      appKey: "allbvsvlNvxYN6O8zHwTDJmN",
+      placeholder: "说出你此刻的想法！",
+      pageSize: "10",
+      avatar: "Gravatar",
+      lang: "zh-cn",
+      emojiCDN: "https://mirrorcdn.bili33.top/",
+      // 表情title和图片映射
+      emojiMaps: {
+        Tieba2: "Tieba/i_f01.png",
+        Tieba3: "Tieba/i_f02.png",
+        Tieba4: "Tieba/i_f03.png",
+        Tieba5: "Tieba/i_f04.png",
+        Tieba6: "Tieba/i_f05.png",
+        Tieba7: "Tieba/i_f06.png",
+        Tieba8: "Tieba/i_f07.png",
+        Tieba9: "Tieba/i_f08.png",
+        Tieba10: "Tieba/i_f09.png",
+        Tieba11: "Tieba/i_f10.png",
+        Tieba12: "Tieba/i_f11.png",
+        Tieba13: "Tieba/i_f12.png",
+        Tieba14: "Tieba/i_f13.png",
+        Tieba15: "Tieba/i_f14.png",
+        Tieba16: "Tieba/i_f15.png",
+        Tieba17: "Tieba/i_f16.png",
+        Tieba18: "Tieba/i_f17.png",
+        Tieba19: "Tieba/i_f18.png",
+        Tieba20: "Tieba/i_f19.png",
+        Tieba21: "Tieba/i_f20.png",
+        Tieba22: "Tieba/i_f21.png",
+        Tieba23: "Tieba/i_f22.png",
+        Tieba24: "Tieba/i_f23.png",
+        Tieba25: "Tieba/i_f24.png",
+        Tieba26: "Tieba/i_f25.png",
+        Tieba27: "Tieba/i_f26.png",
+        Tieba28: "Tieba/i_f27.png",
+        Tieba29: "Tieba/i_f28.png",
+        Tieba30: "Tieba/i_f29.png",
+        Tieba31: "Tieba/i_f30.png",
+        Tieba32: "Tieba/i_f31.png",
+        Tieba33: "Tieba/i_f32.png",
+        Tieba34: "Tieba/i_f33.png",
+        bilibilitv2: "bilibilitv/[tv_doge].png",
+        bilibilitv3: "bilibilitv/[tv_亲亲].png",
+        bilibilitv4: "bilibilitv/[tv_偷笑].png",
+        bilibilitv5: "bilibilitv/[tv_再见].png",
+        bilibilitv6: "bilibilitv/[tv_冷漠].png",
+        bilibilitv7: "bilibilitv/[tv_发怒].png",
+        bilibilitv8: "bilibilitv/[tv_发财].png",
+        bilibilitv9: "bilibilitv/[tv_可爱].png",
+        bilibilitv10: "bilibilitv/[tv_吐血].png",
+        bilibilitv11: "bilibilitv/[tv_呆].png",
+        bilibilitv12: "bilibilitv/[tv_呕吐].png",
+        bilibilitv13: "bilibilitv/[tv_困].png",
+        bilibilitv14: "bilibilitv/[tv_坏笑].png",
+        bilibilitv15: "bilibilitv/[tv_大佬].png",
+        bilibilitv16: "bilibilitv/[tv_大哭].png",
+        bilibilitv17: "bilibilitv/[tv_委屈].png",
+        bilibilitv18: "bilibilitv/[tv_害羞].png",
+        bilibilitv19: "bilibilitv/[tv_尴尬].png",
+        bilibilitv20: "bilibilitv/[tv_微笑].png",
+        bilibilitv21: "bilibilitv/[tv_思考].png",
+        bilibilitv22: "bilibilitv/[tv_惊吓].png",
+        bilibilitv23: "bilibilitv/[tv_打脸].png",
+        bilibilitv24: "bilibilitv/[tv_抓狂].png",
+        bilibilitv25: "bilibilitv/[tv_抠鼻].png",
+        bilibilitv26: "bilibilitv/[tv_斜眼笑].png",
+        bilibilitv27: "bilibilitv/[tv_无奈].png",
+        bilibilitv28: "bilibilitv/[tv_晕].png",
+        bilibilitv29: "bilibilitv/[tv_流汗].png",
+        bilibilitv30: "bilibilitv/[tv_流泪].png",
+        bilibilitv31: "bilibilitv/[tv_流鼻血].png",
+        bilibilitv32: "bilibilitv/[tv_点赞].png",
+        bilibilitv33: "bilibilitv/[tv_生气].png",
+        bilibilitv34: "bilibilitv/[tv_生病].png",
+        bilibilitv35: "bilibilitv/[tv_疑问].png",
+        bilibilitv36: "bilibilitv/[tv_白眼].png",
+        bilibilitv37: "bilibilitv/[tv_皱眉].png",
+        bilibilitv38: "bilibilitv/[tv_目瞪口呆].png",
+        bilibilitv39: "bilibilitv/[tv_睡着].png",
+        bilibilitv40: "bilibilitv/[tv_笑哭].png",
+        bilibilitv41: "bilibilitv/[tv_腼腆].png",
+        bilibilitv42: "bilibilitv/[tv_色].png",
+        bilibilitv43: "bilibilitv/[tv_调侃].png",
+        bilibilitv44: "bilibilitv/[tv_调皮].png",
+        bilibilitv45: "bilibilitv/[tv_鄙视].png",
+        bilibilitv46: "bilibilitv/[tv_闭嘴].png",
+        bilibilitv47: "bilibilitv/[tv_难过].png",
+        bilibilitv48: "bilibilitv/[tv_馋].png",
+        bilibilitv49: "bilibilitv/[tv_鬼脸].png",
+        bilibilitv50: "bilibilitv/[tv_黑人问号].png",
+        bilibilitv51: "bilibilitv/[tv_鼓掌].png",
+        bilibili22332: "bilibili2233/[2233娘_卖萌].png",
+        bilibili22333: "bilibili2233/[2233娘_吃惊].png",
+        bilibili22334: "bilibili2233/[2233娘_吐魂].png",
+        bilibili22335: "bilibili2233/[2233娘_喝水].png",
+        bilibili22336: "bilibili2233/[2233娘_困惑].png",
+        bilibili22337: "bilibili2233/[2233娘_大哭].png",
+        bilibili22338: "bilibili2233/[2233娘_大笑].png",
+        bilibili22339: "bilibili2233/[2233娘_委屈].png",
+        bilibili223310: "bilibili2233/[2233娘_怒].png",
+        bilibili223311: "bilibili2233/[2233娘_无言].png",
+        bilibili223312: "bilibili2233/[2233娘_汗].png",
+        bilibili223313: "bilibili2233/[2233娘_疑问].png",
+        bilibili223314: "bilibili2233/[2233娘_第一].png",
+        bilibili223315: "bilibili2233/[2233娘_耶].png",
+        bilibili223316: "bilibili2233/[2233娘_郁闷].png",
+      },
+    });
+  </script>
+</div>
+
+
+
+<script>
+    //检测推送
+    var pushType = "";
+    var pushLink = "";
+    var siteName = "AXDLMG7&#39;s Blog";
+  
+    var ValineButton = document.getElementsByClassName("vsubmit vbtn")[0];
+    //分情况推送
+    if (pushType === "sc") {
+      var title = "text=" + siteName + "上又有新评论啦~!";
+      function send_valine_Server() {
+        //获取元素信息
+        var pagename = document.title;
+        var wz = pagename.indexOf("|");
+        var res = pagename.substring(0, wz);
+        var pageurl = document.URL;
+        var ptime = new Date();
+        var vnick = document.getElementsByClassName("vnick vinput")[0].value;
+        var vmail = document.getElementsByClassName("vmail vinput")[0].value;
+        var vlink = document.getElementsByClassName("vlink vinput")[0].value;
+        var veditor = document.getElementsByClassName("veditor vinput")[0].value;
+        var text = "desp=";
+        var data =
+          text +
+          "|昵称：" +
+          "|邮箱：" +
+          "|网站地址：" +
+          "|当前页面：" +
+          "|评论内容：" +
+          "|跳转链接：" +
+          "|评论时间" +
+          "\n" +
+          "|----|----|----|----|" +
+          "\n" +
+          "|   " +
+          vnick +
+          "   |   " +
+          vmail +
+          "  |  " +
+          vlink +
+          "|   " +
+          res +
+          "| " +
+          veditor +
+          "| " +
+          pageurl +
+          "|" +
+          ptime.toLocaleString() +
+          "|";
+        var httpRequest = new XMLHttpRequest(); //第一步：创建需要的对象
+        httpRequest.open("POST", pushLink, true); //第二步：打开连接
+        httpRequest.setRequestHeader(
+          "Content-type",
+          "application/x-www-form-urlencoded"
+        ); //设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+        httpRequest.send(title + "&" + data); //发送请求 将情头体写在send中
+      }
+      ValineButton.onclick = send_valine_Server;
+    } else if (pushType === "qmsg") {
+      var title = "msg=" + siteName + "上又有新评论啦~!\n";
+      function send_valine_Qmsg() {
+        //获取元素信息
+        var pagename = document.title;
+        var wz = pagename.indexOf("|");
+        var res = pagename.substring(0, wz);
+        var pageurl = document.URL;
+        var ptime = new Date();
+        var vnick = document.getElementsByClassName("vnick vinput")[0].value;
+        var vmail = document.getElementsByClassName("vmail vinput")[0].value;
+        var vlink = document.getElementsByClassName("vlink vinput")[0].value;
+        var veditor = document.getElementsByClassName("veditor vinput")[0].value;
+        var data =
+          "昵称：" +
+          vnick +
+          "\n邮箱：" +
+          vmail +
+          "\n网站地址：" +
+          vlink +
+          "\n当前页面：" +
+          pagename +
+          "\n评论内容：" +
+          veditor +
+          "\n跳转链接：" +
+          pageurl +
+          "\n评论时间" +
+          ptime.toLocaleString();
+        var httpRequest = new XMLHttpRequest(); //第一步：创建需要的对象
+        httpRequest.open("POST", pushLink, true); //第二步：打开连接
+        httpRequest.setRequestHeader(
+          "Content-type",
+          "application/x-www-form-urlencoded"
+        ); //设置请求头 注：post方式必须设置请求头（在建立连接后设置请求头）
+        httpRequest.send(title + data); //发送请求 将情头体写在send中
+      }
+      ValineButton.onclick = send_valine_Qmsg;
+    }
+  </script>
+    
+        <div id="footer-post-container">
+    <div id="footer-post">
+
+        <div id="nav-footer" style="display: none">
+            <ul>
+                
+                    <li><a href="/">首页</a></li>
+                
+                    <li><a href="/archives/">归档</a></li>
+                
+                    <li><a href="/categories/">分类</a></li>
+                
+                    <li><a href="/tags/">标签</a></li>
+                
+                    <li><a href="/about/">关于</a></li>
+                
+                    <li><a href="/search/">搜索</a></li>
+                
+                    <li><a target="_blank" rel="noopener" href="https://github.com/guairen-7">Projects</a></li>
+                
+            </ul>
+        </div>
+
+        <div id="toc-footer" style="display: none">
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="toc-number">1.</span> <span class="toc-text">数据完整性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%A6%E6%9D%9F%E7%9A%84%E5%BD%A2%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">约束的形式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%84%E5%88%99%E4%B8%8E%E9%BB%98%E8%AE%A4%E5%80%BC%E7%9A%84SQL%E8%AF%AD%E5%8F%A5"><span class="toc-number">1.2.</span> <span class="toc-text">规则与默认值的SQL语句</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%85%B3%E4%BA%8E%E5%BC%80%E8%AF%BE%E5%AD%A6%E6%9C%9F%E7%9A%84%E8%A7%84%E5%88%99"><span class="toc-number">2.</span> <span class="toc-text">一、创建一个关于开课学期的规则</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%85%B3%E4%BA%8E%E6%80%A7%E5%88%AB%E7%9A%84%E8%A7%84%E5%88%99"><span class="toc-number">3.</span> <span class="toc-text">二、创建一个关于性别的规则</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%85%B3%E4%BA%8E%E5%AD%A6%E5%88%86%E7%9A%84%E8%A7%84%E5%88%99"><span class="toc-number">4.</span> <span class="toc-text">三、创建一个关于学分的规则</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-number">6.</span> <span class="toc-text">Reference</span></a></li></ol>
+        </div>
+
+        <div id="share-footer" style="display: none">
+            <ul>
+    <li><a class="icon"
+           target="_blank" rel="noopener" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://guairen-7.github.io/2022/05/17/%E3%80%90%E5%AE%9E%E9%AA%8C%E4%B8%83%E3%80%91%E3%80%90%E4%BD%BF%E7%94%A8%E8%A7%84%E5%88%99%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7%E3%80%91/&title=【实验七】【使用规则实现数据完整性】"><i
+                    class="fab fa-qq fa-lg" aria-hidden="true"></i></a></li>
+    <li><a class="icon"
+           target="_blank" rel="noopener" href="https://service.weibo.com/share/share.php?url=https://guairen-7.github.io/2022/05/17/%E3%80%90%E5%AE%9E%E9%AA%8C%E4%B8%83%E3%80%91%E3%80%90%E4%BD%BF%E7%94%A8%E8%A7%84%E5%88%99%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7%E3%80%91/&title=【实验七】【使用规则实现数据完整性】"><i
+                    class="fab fa-weibo fa-lg" aria-hidden="true"></i></a></li>
+    <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://guairen-7.github.io/2022/05/17/%E3%80%90%E5%AE%9E%E9%AA%8C%E4%B8%83%E3%80%91%E3%80%90%E4%BD%BF%E7%94%A8%E8%A7%84%E5%88%99%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7%E3%80%91/&text=【实验七】【使用规则实现数据完整性】"><i
+                    class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+    <li><a class="icon" href="mailto:?subject=【实验七】【使用规则实现数据完整性】&body=Check out this article: https://guairen-7.github.io/2022/05/17/%E3%80%90%E5%AE%9E%E9%AA%8C%E4%B8%83%E3%80%91%E3%80%90%E4%BD%BF%E7%94%A8%E8%A7%84%E5%88%99%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7%E3%80%91/"><i
+                    class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+        </div>
+
+        <div id="actions-footer">
+            <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i
+                        class="fas fa-bars fa-lg"
+                        aria-hidden="true"></i> 菜单</a>
+            <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i
+                        class="fas fa-list fa-lg"
+                        aria-hidden="true"></i> 目录</a>
+            <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i
+                        class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+            <a id="top" style="display:none" class="icon" href="#"
+               onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg"
+                                                                               aria-hidden="true"></i> 返回顶部
+            </a>
+        </div>
+
+    </div>
+</div>
+    
+    <footer id="footer">
+  <div class="footer-top">
+    &copy; 2022 <i class="fas fa-heart"></i>
+    AXDLMG7 
+  </div>
+
+  <div class="footer-bottom">
+     
+  </div>
+</footer>
+
+</div>
+<!-- styles -->
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css">
+
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/justifiedGallery/3.7.0/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+
+<script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+
+
+<script src="https://cdn.staticfile.org/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+    
+<script src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            // copy-btn HTML
+            var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+            btn += '<i class="far fa-clone"></i>';
+            btn += '</span>';
+            // mount it!
+            $(".highlight .code pre").before(btn);
+            var clip = new ClipboardJS('.btn-copy', {
+                target: function (trigger) {
+                    return trigger.nextElementSibling;
+                }
+            });
+            clip.on('success', function (e) {
+                e.trigger.setAttribute('aria-label', "复制成功!");
+                e.clearSelection();
+            })
+        })
+    </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+</body>
+
+</html>
