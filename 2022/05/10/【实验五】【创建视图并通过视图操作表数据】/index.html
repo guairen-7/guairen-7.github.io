@@ -107,7 +107,7 @@
 </ul>
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%86%E5%9B%BE"><span class="toc-number">1.</span> <span class="toc-text">视图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8E%9F%E8%A1%A8"><span class="toc-number">2.</span> <span class="toc-text">原表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%88%9B%E5%BB%BA%E8%A7%86%E5%9B%BE"><span class="toc-number">3.</span> <span class="toc-text">一、创建视图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-number">4.</span> <span class="toc-text">二、插入数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%9B%B4%E6%96%B0%E6%95%B0%E6%8D%AE"><span class="toc-number">5.</span> <span class="toc-text">三、更新数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE"><span class="toc-number">6.</span> <span class="toc-text">四、删除数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-number">7.</span> <span class="toc-text">Reference</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%86%E5%9B%BE"><span class="toc-number">1.</span> <span class="toc-text">视图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E8%A1%A8"><span class="toc-number">2.</span> <span class="toc-text">原表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%88%9B%E5%BB%BA%E8%A7%86%E5%9B%BE"><span class="toc-number">3.</span> <span class="toc-text">一、创建视图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-number">4.</span> <span class="toc-text">二、插入数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%9B%B4%E6%96%B0%E6%95%B0%E6%8D%AE"><span class="toc-number">5.</span> <span class="toc-text">三、更新数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE"><span class="toc-number">6.</span> <span class="toc-text">四、删除数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">7.</span> <span class="toc-text">Reference</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -135,7 +135,7 @@
                   itemprop="datePublished">2022-05-10</time>
             
                 (Updated:
-                <time datetime="2022-05-17T07:50:46.744Z"
+                <time datetime="2022-05-17T07:59:52.219Z"
                       itemprop="dateModified">2022-05-17</time>)
             
         
@@ -157,7 +157,7 @@
     </header>
     
     <div class="content" itemprop="articleBody">
-        <h1 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h1><p>简介：</p>
+        <h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><p>简介：</p>
 <ul>
 <li>视图可以看作定义在SQL Server上的<strong>虚拟表</strong>。视图正如其名字的含义一样，是另一种查看数据的入口。</li>
 <li>常规视图本身<strong>并不存储实际的数据</strong>，而仅仅是由SELECT语句组成的查询定义的虚拟表 。</li>
@@ -177,8 +177,8 @@
 <li><p>适当的利用视图可以更清晰地表达查询<br>如下实验</p>
 </li>
 </ul>
-<h1 id="原表"><a href="#原表" class="headerlink" title="原表"></a>原表</h1><p>KC表：<br><img src="https://img-blog.csdnimg.cn/8da69b2adde54e93b2830b939c27481f.png" alt="在这里插入图片描述"><br>XSQK表：<br><img src="https://img-blog.csdnimg.cn/76ec4b6160944674b4600c86590393ef.png" alt="在这里插入图片描述"><br>XS_KC表：<br><img src="https://img-blog.csdnimg.cn/d0a2e392b43741c4bdbcd5238d6ff83a.png" alt="在这里插入图片描述"></p>
-<h1 id="一、创建视图"><a href="#一、创建视图" class="headerlink" title="一、创建视图"></a>一、创建视图</h1><p>1.打开SSMS</p>
+<h2 id="原表"><a href="#原表" class="headerlink" title="原表"></a>原表</h2><p>KC表：<br><img src="https://img-blog.csdnimg.cn/8da69b2adde54e93b2830b939c27481f.png" alt="在这里插入图片描述"><br>XSQK表：<br><img src="https://img-blog.csdnimg.cn/76ec4b6160944674b4600c86590393ef.png" alt="在这里插入图片描述"><br>XS_KC表：<br><img src="https://img-blog.csdnimg.cn/d0a2e392b43741c4bdbcd5238d6ff83a.png" alt="在这里插入图片描述"></p>
+<h2 id="一、创建视图"><a href="#一、创建视图" class="headerlink" title="一、创建视图"></a>一、创建视图</h2><p>1.打开SSMS</p>
 <p>2.“标准”工具栏“新建查询”，选择“XSCJ”数据库</p>
 <p>3.输入以下语句</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span>  <span class="keyword">VIEW</span>  v_开课信息</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">SELECT</span>  课程号,课程名,开课学期,学时</span><br><span class="line"><span class="keyword">FROM</span>  KC</span><br><span class="line"><span class="keyword">WHERE</span>  开课学期<span class="operator">&gt;=</span><span class="number">3</span></span><br></pre></td></tr></table></figure>
@@ -186,7 +186,7 @@
 <p>在XSCJ数据库中，基于KC表创建一个名为”v_开课信息”的视图，要求该视图中包含列“课程号”、“课程名”、“开课学期”和“学时”、并且限定视图中返回的行中只包括<strong>第3学期及以后开课的课程</strong>信息。</p>
 <p>4.分析<br>单击“SQL编辑器”工具栏上的“分析”按钮，检查输入的T-SQL语句是否有语法错误。<br>如果有语法错误，则进行修改。</p>
 <p>5.无语法错误后，在XSCJ数据库“视图”中就会出现一个名为“v_开课信息”的视图<br><img src="https://img-blog.csdnimg.cn/3dd2f7936fe049268737be9bd22cf087.png" alt="在这里插入图片描述"></p>
-<h1 id="二、插入数据"><a href="#二、插入数据" class="headerlink" title="二、插入数据"></a>二、插入数据</h1><p>输入以下语句，在视图中插入一行数据</p>
+<h2 id="二、插入数据"><a href="#二、插入数据" class="headerlink" title="二、插入数据"></a>二、插入数据</h2><p>输入以下语句，在视图中插入一行数据</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span>  <span class="keyword">INTO</span>  v_开课信息  <span class="keyword">VALUES</span>(<span class="string">&#x27;022&#x27;</span>,<span class="string">&#x27;ASP&#x27;</span>,<span class="number">4</span>,<span class="number">40</span>)</span><br></pre></td></tr></table></figure>
 <p>v_开课信息：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> v_开课信息</span><br></pre></td></tr></table></figure>
@@ -194,7 +194,7 @@
 <p>KC表：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> KC</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/ac5e3229e59a455fb8647def41c0f0be.png" alt="在这里插入图片描述"></p>
-<h1 id="三、更新数据"><a href="#三、更新数据" class="headerlink" title="三、更新数据"></a>三、更新数据</h1><p>输入以下语句，修改途中的数据</p>
+<h2 id="三、更新数据"><a href="#三、更新数据" class="headerlink" title="三、更新数据"></a>三、更新数据</h2><p>输入以下语句，修改途中的数据</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">UPDATE  v_开课信息</span><br><span class="line"><span class="keyword">SET</span>  开课学期<span class="operator">=</span><span class="number">5</span>,学时<span class="operator">=</span><span class="number">80</span></span><br><span class="line"><span class="keyword">WHERE</span>  课程号<span class="operator">=</span><span class="string">&#x27;105&#x27;</span></span><br></pre></td></tr></table></figure>
 <p>v_开课信息：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> v_开课信息</span><br></pre></td></tr></table></figure>
@@ -202,7 +202,7 @@
 <p>KC表：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> KC</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/3bacdadefe44430bbf24bd509f2bf862.png" alt="在这里插入图片描述"></p>
-<h1 id="四、删除数据"><a href="#四、删除数据" class="headerlink" title="四、删除数据"></a>四、删除数据</h1><p>输入以下语句，删除视图中的数据。</p>
+<h2 id="四、删除数据"><a href="#四、删除数据" class="headerlink" title="四、删除数据"></a>四、删除数据</h2><p>输入以下语句，删除视图中的数据。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span>  <span class="keyword">FROM</span>  v_开课信息</span><br><span class="line"><span class="keyword">WHERE</span>  课程号<span class="operator">=</span><span class="string">&#x27;022&#x27;</span></span><br></pre></td></tr></table></figure>
 <p>v_开课信息：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> v_开课信息</span><br></pre></td></tr></table></figure>
@@ -210,7 +210,7 @@
 <p>KC表：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> KC</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/947f20a2cc764abba370b88d22bfb9b3.png" alt="在这里插入图片描述"></p>
-<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Brambling/p/6731386.html">SQL Server创建视图——视图的作用/文CSDN@Brambling</a></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Brambling/p/6731386.html">SQL Server创建视图——视图的作用/文CSDN@Brambling</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Alex19961223/article/details/81284670">数据库中视图的作用/文CSDN@MazenChan</a></p>
 
     </div>
@@ -468,7 +468,7 @@
         </div>
 
         <div id="toc-footer" style="display: none">
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A7%86%E5%9B%BE"><span class="toc-number">1.</span> <span class="toc-text">视图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8E%9F%E8%A1%A8"><span class="toc-number">2.</span> <span class="toc-text">原表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%88%9B%E5%BB%BA%E8%A7%86%E5%9B%BE"><span class="toc-number">3.</span> <span class="toc-text">一、创建视图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-number">4.</span> <span class="toc-text">二、插入数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%9B%B4%E6%96%B0%E6%95%B0%E6%8D%AE"><span class="toc-number">5.</span> <span class="toc-text">三、更新数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE"><span class="toc-number">6.</span> <span class="toc-text">四、删除数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-number">7.</span> <span class="toc-text">Reference</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%86%E5%9B%BE"><span class="toc-number">1.</span> <span class="toc-text">视图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E8%A1%A8"><span class="toc-number">2.</span> <span class="toc-text">原表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%88%9B%E5%BB%BA%E8%A7%86%E5%9B%BE"><span class="toc-number">3.</span> <span class="toc-text">一、创建视图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-number">4.</span> <span class="toc-text">二、插入数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%9B%B4%E6%96%B0%E6%95%B0%E6%8D%AE"><span class="toc-number">5.</span> <span class="toc-text">三、更新数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE"><span class="toc-number">6.</span> <span class="toc-text">四、删除数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">7.</span> <span class="toc-text">Reference</span></a></li></ol>
         </div>
 
         <div id="share-footer" style="display: none">

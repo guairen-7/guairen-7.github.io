@@ -107,7 +107,7 @@
 </ul>
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE"><span class="toc-number">1.</span> <span class="toc-text">数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E5%8D%95%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.</span> <span class="toc-text">一、简单查询</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%B1%87%E6%80%BB%E6%9F%A5%E8%AF%A2"><span class="toc-number">3.</span> <span class="toc-text">二、汇总查询</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2%E5%92%8C%E5%AD%90%E6%9F%A5%E8%AF%A2"><span class="toc-number">4.</span> <span class="toc-text">三、连接查询和子查询</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE"><span class="toc-number">1.</span> <span class="toc-text">数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E5%8D%95%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.</span> <span class="toc-text">一、简单查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%B1%87%E6%80%BB%E6%9F%A5%E8%AF%A2"><span class="toc-number">3.</span> <span class="toc-text">二、汇总查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2%E5%92%8C%E5%AD%90%E6%9F%A5%E8%AF%A2"><span class="toc-number">4.</span> <span class="toc-text">三、连接查询和子查询</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -135,7 +135,7 @@
                   itemprop="datePublished">2022-05-09</time>
             
                 (Updated:
-                <time datetime="2022-05-17T07:50:39.516Z"
+                <time datetime="2022-05-17T08:00:21.588Z"
                       itemprop="dateModified">2022-05-17</time>)
             
         
@@ -157,14 +157,14 @@
     </header>
     
     <div class="content" itemprop="articleBody">
-        <h1 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h1><p>这里为了体现查询语句的效果，下面根据查询语句的要求设计数据，结果如下：</p>
+        <h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><p>这里为了体现查询语句的效果，下面根据查询语句的要求设计数据，结果如下：</p>
 <p>KC表：<br><img src="https://img-blog.csdnimg.cn/fc6a4d265ebd44019ce0e03c1888ab80.png" alt="在这里插入图片描述"></p>
 <p>XSQK表：<br><img src="https://img-blog.csdnimg.cn/5717881a16c74156b5022b9b7108014e.png" alt="在这里插入图片描述"></p>
 <p>XS_KC表：<br><img src="https://img-blog.csdnimg.cn/4675f71999244586a8797e3d2951a128.png" alt="在这里插入图片描述"></p>
 <ol>
 <li>打开“SQL Server Management Studio”窗口。</li>
 <li>单击“标准”工具栏的“新建查询”按钮，打开“查询编辑器”窗口</li>
-<li>在窗口中输入以下SQL查询命令并执行：<h1 id="一、简单查询"><a href="#一、简单查询" class="headerlink" title="一、简单查询"></a>一、简单查询</h1>a.在KC表中，查询第2学期开课的课程、授课教师<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  课程名, 授课教师, 开课学期</span><br><span class="line"><span class="keyword">from</span>  kc</span><br><span class="line"><span class="keyword">where</span>  开课学期<span class="operator">=</span><span class="number">2</span></span><br></pre></td></tr></table></figure>
+<li>在窗口中输入以下SQL查询命令并执行：<h2 id="一、简单查询"><a href="#一、简单查询" class="headerlink" title="一、简单查询"></a>一、简单查询</h2>a.在KC表中，查询第2学期开课的课程、授课教师<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  课程名, 授课教师, 开课学期</span><br><span class="line"><span class="keyword">from</span>  kc</span><br><span class="line"><span class="keyword">where</span>  开课学期<span class="operator">=</span><span class="number">2</span></span><br></pre></td></tr></table></figure>
 <img src="https://img-blog.csdnimg.cn/7467004fc99e433585d62a24bafebad4.png" alt="在这里插入图片描述"></li>
 </ol>
 <p>b.在XSQK表中，查询女同学的姓名和电话号码</p>
@@ -194,7 +194,7 @@
 <p>j.查询XSQK表，输出学号、姓名、出生日期、并使查询结构按出生日期升序排列</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 学号, 姓名, 出生日期</span><br><span class="line"><span class="keyword">from</span>  xsqk    <span class="keyword">order</span>  <span class="keyword">by</span>  出生日期</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/1399385dfc7040a695400b962d60f9ca.png" alt="在这里插入图片描述"></p>
-<h1 id="二、汇总查询"><a href="#二、汇总查询" class="headerlink" title="二、汇总查询"></a>二、汇总查询</h1><p>a.在KC表中，统计每学期的总分数</p>
+<h2 id="二、汇总查询"><a href="#二、汇总查询" class="headerlink" title="二、汇总查询"></a>二、汇总查询</h2><p>a.在KC表中，统计每学期的总分数</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  开课学期, <span class="built_in">sum</span>(学分)  <span class="keyword">as</span>  <span class="string">&#x27;各学期的学分合计&#x27;</span></span><br><span class="line"><span class="keyword">from</span>  kc</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span>  开课学期</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/3b9cecf0e6ba4087b7d6d859a40f5064.png" alt="在这里插入图片描述"></p>
 <p>b.在XS_KC表中，统计每个学生的选修课程的门数</p>
@@ -218,7 +218,7 @@
 <p>h.查询各专业的学生人数</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  专业名, <span class="built_in">count</span>(专业名)  <span class="keyword">as</span>  <span class="string">&#x27;各专业人数&#x27;</span></span><br><span class="line"><span class="keyword">from</span>  xsqk</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span>  专业名</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/e465ce2fb8d14a788297b5ccd2ca4873.png" alt="在这里插入图片描述"></p>
-<h1 id="三、连接查询和子查询"><a href="#三、连接查询和子查询" class="headerlink" title="三、连接查询和子查询"></a>三、连接查询和子查询</h1><p>a.查询不及格学生的学号、课程名、授课教师、开课学期的信息</p>
+<h2 id="三、连接查询和子查询"><a href="#三、连接查询和子查询" class="headerlink" title="三、连接查询和子查询"></a>三、连接查询和子查询</h2><p>a.查询不及格学生的学号、课程名、授课教师、开课学期的信息</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  学号, xs_kc.课程号, 授课教师, 开课学期, 成绩</span><br><span class="line"><span class="keyword">from</span>  kc, xs_kc</span><br><span class="line"><span class="keyword">where</span>  kc.课程号<span class="operator">=</span>xs_kc.课程号  <span class="keyword">and</span> 成绩<span class="operator">&lt;</span><span class="number">60</span></span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/1cea0fac98b74262a7544837f61d2f76.png" alt="在这里插入图片描述"></p>
 <p>b.按学号分组汇总总分高于100的学生记录，并按总分的降序排列</p>
@@ -489,7 +489,7 @@
         </div>
 
         <div id="toc-footer" style="display: none">
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE"><span class="toc-number">1.</span> <span class="toc-text">数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E5%8D%95%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.</span> <span class="toc-text">一、简单查询</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%B1%87%E6%80%BB%E6%9F%A5%E8%AF%A2"><span class="toc-number">3.</span> <span class="toc-text">二、汇总查询</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2%E5%92%8C%E5%AD%90%E6%9F%A5%E8%AF%A2"><span class="toc-number">4.</span> <span class="toc-text">三、连接查询和子查询</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE"><span class="toc-number">1.</span> <span class="toc-text">数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E5%8D%95%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.</span> <span class="toc-text">一、简单查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%B1%87%E6%80%BB%E6%9F%A5%E8%AF%A2"><span class="toc-number">3.</span> <span class="toc-text">二、汇总查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2%E5%92%8C%E5%AD%90%E6%9F%A5%E8%AF%A2"><span class="toc-number">4.</span> <span class="toc-text">三、连接查询和子查询</span></a></li></ol>
         </div>
 
         <div id="share-footer" style="display: none">
