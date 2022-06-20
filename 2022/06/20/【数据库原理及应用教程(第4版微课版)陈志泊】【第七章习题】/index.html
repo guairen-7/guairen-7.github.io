@@ -107,7 +107,7 @@
 </ul>
     </div>
     <div id="toc">
-      
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E9%80%89%E6%8B%A9%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">一、选择题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%A1%AB%E7%A9%BA%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">二、填空题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%AE%80%E7%AD%94%E9%A2%98"><span class="toc-number">3.</span> <span class="toc-text">三、简答题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-number">4.</span> <span class="toc-text">Reference</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -135,7 +135,7 @@
                   itemprop="datePublished">2022-06-20</time>
             
                 (Updated:
-                <time datetime="2022-06-20T14:19:18.799Z"
+                <time datetime="2022-06-20T14:26:01.607Z"
                       itemprop="dateModified">2022-06-20</time>)
             
         
@@ -157,7 +157,88 @@
     </header>
     
     <div class="content" itemprop="articleBody">
-        
+        <h1 id="一、选择题"><a href="#一、选择题" class="headerlink" title="一、选择题"></a>一、选择题</h1><table>
+<thead>
+<tr>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>B</td>
+<td>C</td>
+<td>B</td>
+<td>D</td>
+<td>A</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>1．在 SQL Server 中不是对象的是（ ）。 </p>
+<p>A）用户<br>B）数据<br>C）表<br>D）数据类型</p>
+<p>2．声明了变量：DECLARE @i int,@c char(4)，现在为@i 赋值 10，为@c 赋值’abcd’，正确的语<br>句是（ ）。 </p>
+<p>A）SET @i=10, @c=’abcd’<br>B）SET @i=10, SET @c=’abcd’<br>C）SELECT @i=10, @c=’abcd’<br>D）SELECT @i=10, SELECT @c=’abcd’ </p>
+<p>3．在 SQL Server 服务器上，存储过程是一组预先定义并（ ）的 Transact-SQL 语句。</p>
+<p>A）保存<br>B）编译<br>C）解释<br>D）编写</p>
+<p>4．可以用（ ）来声明游标。</p>
+<p>A）CREATE CURSOR<br>B）ALTER CURSOR<br>C）SET CURSOR<br>D）DECLARE CURSOR </p>
+<p>5．当以下代码中的【】位置分别为 BREAK，CONTINUE 或 RETURN 时，输出的值为（ ）。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DECLARE</span> <span class="variable">@n</span> <span class="type">int</span> </span><br><span class="line"><span class="keyword">SET</span> <span class="variable">@n</span><span class="operator">=</span><span class="number">3</span> </span><br><span class="line">WHILE <span class="variable">@n</span><span class="operator">&gt;</span><span class="number">0</span> </span><br><span class="line">    <span class="keyword">BEGIN</span> </span><br><span class="line">        <span class="keyword">SET</span> <span class="variable">@n</span><span class="operator">=</span><span class="variable">@n</span><span class="number">-1</span> </span><br><span class="line">        IF <span class="variable">@n</span><span class="operator">=</span><span class="number">1</span> []</span><br><span class="line">    <span class="keyword">END</span> </span><br><span class="line">PRINT <span class="variable">@n</span></span><br></pre></td></tr></table></figure>
+<p>A）1，0，不输出<br>B）1，1，_<br>C）0，0，0<br>D）0，1，2</p>
+<h1 id="二、填空题"><a href="#二、填空题" class="headerlink" title="二、填空题"></a>二、填空题</h1><p>1．Transact-SQL 中可以使用局部变量和全局变量两种变量。</p>
+<p>2．在 Transact-SQL 中可以使用两类注释符：单行注释 <strong>- -</strong> 和多行注释 **/<em>… …</em>/**。 </p>
+<p>3．用于声明一个或多个局部变量的命令是DECLARE。 </p>
+<p>4．无论是存储过程还是触发器，都是SQL语句和流程控制语句的集合。</p>
+<p>5．SQL Server 2012 支持DML触发器 、DDL触发器和登录触发器三种类型的触发器。（仅供参考）</p>
+<p>6．每个触发器有插入表和删除表两个特殊的表在数据库中。</p>
+<p>7．在 SQL Server 2012 中有数据库备份、事务日志备份、差异备份和文件和文件组备份四种备份类型。</p>
+<p>8．在 SQL Server 2012 中有简单还原、完全还原和批日志还原三种数据库还原模式。</p>
+<p>9．备份设备可以是硬盘、磁带或管道。</p>
+<h1 id="三、简答题"><a href="#三、简答题" class="headerlink" title="三、简答题"></a>三、简答题</h1><blockquote>
+<p>1．什么是触发器？触发器的作用有哪些？ </p>
+</blockquote>
+<ul>
+<li><p>触发器是一种特殊的存储过程，其中包含一系列的 T-SQL 语句，但它的执行不是用EXECUTE命令显式调用，而是在满足一定条件下自动激活而执行，如向表中插入记录﹑更新记录或者删除记录时被系统自动地激活并执行。</p>
+</li>
+<li><p>使用触发器主要有以下优点:<br>（1）触发器是在某个事件发生时自动激活而执行的。如，在数据库中定义了某个对象之后，或对表中的数据做了某种修改之后立即被激活并自动执行。<br>（2）触发器可以实现比约束更为复杂的完整性要求，比如 CHECK 约束中不能引用其他表中的列，而触发器可以引用；CHECK 约束只是由逻辑符号连接的条件表达式，不能完成复杂的逻辑判断功能。<br>（3）触发器可以根据表数据修改前后的状态，根据其差异采取相应的措施。<br>（4）触发器可以防止恶意的或错误的 INSERT、UPDATE 和 DELETE 操作。</p>
+</li>
+</ul>
+<blockquote>
+<p>2．简述在 SQL Server 2012 中进行数据备份的 4 种类型。</p>
+</blockquote>
+<ul>
+<li>（1）数据库完整备份<br>数据库完整备份（Database Backup）是指对数据库内的所有对象都进行备份，包括事务日志。<br>该备份类型需要比较大的存储空间来存储备份文件，备份时间也比较长，在还原数据时，也只要还原一个备份文件。</li>
+</ul>
+<ul>
+<li><p>（2）差异备份<br>数据库差异备份（Differential Database Backup）是完整备份的补充，只备份自从上次数据库<br>完整备份后（注意：不是上一次差异备份后）数据库变动的部分。相对于完整备份来说，差异备份的数据量比完整备份小，备份的速度也比完整备份要快。因此，差异备份通常作为常用的备份方式。</p>
+</li>
+<li><p>（3）事务日志备份。<br>事务日志备份（Transaction Log Backup）只备份数据库的事务日志内容。事务日志备份是以事务日志文件作为备份对象，相当于将数据库里的每一个操作都记录下来了。<br>事务日志记录的是某一段时间内的数据库变动情况，因此在进行事务日志备份之前，必须要进<br>行完整备份。与差异备份类似，事务日志备份生成的文件较小、占用时间较短，但是在还原数据时，</p>
+</li>
+<li><p>（4）文件及文件组备份<br>文件及文件组备份是针对单一数据库文件或者是文件组做备份，它的好处是便利和具有弹性，<br>而且在还原时可以仅仅针对受损的数据库文件做还原。 </p>
+</li>
+</ul>
+<blockquote>
+<p>3．SQL Server 提供了哪几种方法来减少备份或还原操作的执行时间。</p>
+</blockquote>
+<ul>
+<li>（1）使用多个备份设备来同时进行备份处理。同理，可以从多个备份设备上同时进行数据库还原操作处理。</li>
+<li>（2）综合使用数据库完整备份、差异备份或事务日志备份来减少每次需要备份的数据量。</li>
+<li>（3）使用文件或文件组备份和事务日志备份，这样可以只备份或还原那些包含相关数据的文件，而不是整个数据库。</li>
+</ul>
+<p><strong>PS：仅供参考，因个人能力有限，如有错误，请不吝赐教~</strong></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a target="_blank" rel="noopener" href="https://www.docin.com/p-2210297996.html">数据库原理及应用教程第4版习题参考答案/文豆丁网@lh2468lh</a></p>
+
     </div>
 </article>
 
@@ -413,7 +494,7 @@
         </div>
 
         <div id="toc-footer" style="display: none">
-            
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E9%80%89%E6%8B%A9%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">一、选择题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%A1%AB%E7%A9%BA%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">二、填空题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%AE%80%E7%AD%94%E9%A2%98"><span class="toc-number">3.</span> <span class="toc-text">三、简答题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-number">4.</span> <span class="toc-text">Reference</span></a></li></ol>
         </div>
 
         <div id="share-footer" style="display: none">
