@@ -947,33 +947,6 @@
     
     
     <entry>
-      <title>【R】【报错填坑】【持续更新】</title>
-      <link href="/2022/04/06/%E3%80%90R%E3%80%91%E3%80%90%E6%8A%A5%E9%94%99%E5%A1%AB%E5%9D%91%E3%80%91%E3%80%90%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E3%80%91%20/"/>
-      <url>/2022/04/06/%E3%80%90R%E3%80%91%E3%80%90%E6%8A%A5%E9%94%99%E5%A1%AB%E5%9D%91%E3%80%91%E3%80%90%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E3%80%91%20/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="具体报错"><a href="#具体报错" class="headerlink" title="具体报错"></a>具体报错</h1><p>1.以UTF-8格式保存代码后打开变成乱码</p><p>解决：save以默认第一个格式保存，文件名输入后缀**.R**</p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1>]]></content>
-      
-      
-      <categories>
-          
-          <category> Error </category>
-          
-          <category> R </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> R - Error </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>【Python】【报错填坑】【持续更新】</title>
       <link href="/2022/04/06/%E3%80%90Python%E3%80%91%E3%80%90%E6%8A%A5%E9%94%99%E5%A1%AB%E5%9D%91%E3%80%91%E3%80%90%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E3%80%91/"/>
       <url>/2022/04/06/%E3%80%90Python%E3%80%91%E3%80%90%E6%8A%A5%E9%94%99%E5%A1%AB%E5%9D%91%E3%80%91%E3%80%90%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%E3%80%91/</url>
