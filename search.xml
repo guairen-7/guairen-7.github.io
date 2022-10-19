@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>【Kaggle】【Spaceship Titanic】</title>
+      <link href="/2022/10/17/%E3%80%90Kaggle%E3%80%91%E3%80%90Spaceship%20Titanic%E3%80%91/"/>
+      <url>/2022/10/17/%E3%80%90Kaggle%E3%80%91%E3%80%90Spaceship%20Titanic%E3%80%91/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="Title"><a href="#Title" class="headerlink" title="Title:"></a>Title:</h1><p>Spaceship Titanic</p><h1 id="Link"><a href="#Link" class="headerlink" title="Link:"></a>Link:</h1><p><a href="https://www.kaggle.com/competitions/spaceship-titanic">https://www.kaggle.com/competitions/spaceship-titanic</a></p><h1 id="Synopsis"><a href="#Synopsis" class="headerlink" title="Synopsis"></a>Synopsis</h1><p>Predict which passengers are transported to an alternate dimension</p><p>译：预测哪些乘客被运送到另一个维度</p><h1 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h1><p>Welcome to the year 2912, where your data science skills are needed to solve a cosmic mystery. We’ve received a transmission from four lightyears away and things aren’t looking good.</p><p>The Spaceship Titanic was an interstellar passenger liner launched a month ago. With almost 13,000 passengers on board, the vessel set out on its maiden voyage transporting emigrants from our solar system to three newly habitable exoplanets orbiting nearby stars.</p><p>While rounding Alpha Centauri en route to its first destination—the torrid 55 Cancri E—the unwary Spaceship Titanic collided with a spacetime anomaly hidden within a dust cloud. Sadly, it met a similar fate as its namesake from 1000 years before. Though the ship stayed intact, almost half of the passengers were transported to an alternate dimension!</p><p>To help rescue crews and retrieve the lost passengers, you are challenged to predict which passengers were transported by the anomaly using records recovered from the spaceship’s damaged computer system.</p><p>Help save them and change history!</p><p>译：欢迎来到2912年，在那里需要你的数据科学技能来解决一个宇宙之谜。我们收到了来自四光年外的变速器，情况看起来并不好。</p><p>宇宙飞船泰坦尼克号是一个月前发射的星际客轮。船上有近13，000名乘客，这艘船开始了它的处女航，将移民从我们的太阳系运送到三颗新居住的系外行星<strong>（TRAPPIST-1e 55、Cancri e PSO、J318.5-22）</strong>，这些系外行星围绕着附近的恒星运行。</p><p>在绕着半人马座阿尔法星前往其第一个目的地 - the torrid 55 Cancri E - 的途中不小心的宇宙飞船泰坦尼克号与隐藏在尘埃云中的时空异常相撞。可悲的是，它遇到了与1000年前同名的命运相似的命运。虽然这艘船完好无损，但几乎一半的乘客被运送到另一个维度！</p><p>为了帮助救援人员并找回丢失的乘客，您面临的挑战是使用从宇宙飞船损坏的计算机系统中恢复的记录来预测哪些乘客被异常情况运送。</p><p>帮助保存它们并更改历史记录！</p><p><img src="https://img-blog.csdnimg.cn/3862be25753b41b2ad31460621e57088.png" alt="在这里插入图片描述"></p><h1 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h1><p><a href="https://www.kaggle.com/competitions/spaceship-titanic/data">https://www.kaggle.com/competitions/spaceship-titanic/data</a></p><p>In this competition your task is to predict whether a passenger was transported to an alternate dimension during the Spaceship Titanic’s collision with the spacetime anomaly. To help you make these predictions, you’re given a set of personal records recovered from the ship’s damaged computer system.</p><p>译：在这次比赛中，你的任务是预测在泰坦尼克号飞船与时空异常相撞期间，乘客是否被运送到另一个维度。为了帮助您做出这些预测，我们为您提供了一组从船上损坏的计算机系统中恢复的个人记录。</p><h2 id="train-csv"><a href="#train-csv" class="headerlink" title="train.csv"></a>train.csv</h2><p><strong>约三分之二（约8700条）名乘客的个人记录，用作训练数据。</strong></p><p>PassengerId:每位乘客的唯一ID。每个ID都采用表格，其中表示乘客与一起旅行的团体，并且是他们在团体中的号码。群体中的人通常是家庭成员，但并非总是如此。gggg_ppggggpp</p><p>HomePlanet:乘客离开的行星，通常是他们的永久居住行星</p><p>CryoSleep:指示乘客是否在航行期间被选择进入假死状态。处于冷冻睡眠状态的乘客被限制在他们的机舱内</p><p>Cabin:乘客居住的机舱号。采用采取”deck/num/side”即”甲板/编号/侧面”的形式，其中侧面可以是P代表左舷，S代表右舷。</p><p>Destination:乘客将要下船的星球</p><p>Age:乘客的年龄</p><p>VIP:乘客在航行期间是否支付了特殊VIP服务的费用</p><p>RoomService, FoodCourt, ShoppingMall, Spa, VRDeck:乘客在泰坦尼克号宇宙飞船的许多豪华设施中收取的费用（房间基础服务、食物、购物、Spa、VR）</p><p>Name:乘客的名字和姓氏</p><p>Transported:乘客是否被运送到另一个维度。这是目标，您尝试预测的列</p><h2 id="test-csv"><a href="#test-csv" class="headerlink" title="test.csv"></a>test.csv</h2><p><strong>剩余三分之一（约4300）乘客的个人记录，用作测试数据。您的任务是预测此集合中乘客的值。</strong></p><p>Transported</p><h2 id="sample-submission-csv"><a href="#sample-submission-csv" class="headerlink" title="sample_submission.csv"></a>sample_submission.csv</h2><p><strong>格式正确的提交文件。</strong></p><p>PassengerId:测试装置中每位乘客的 ID。<br>Transported:目标。对于每个乘客，预测或True/False</p><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://mp.weixin.qq.com/s/agWVoF-4Y4muOFlqilOjhw">https://mp.weixin.qq.com/s/agWVoF-4Y4muOFlqilOjhw</a><br>PS：好巧呀，周一的任务周三就在公众号看到了</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ML </category>
+          
+          <category> Spaceship Titanic </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Kaggle </tag>
+            
+            <tag> Spaceship Titanic </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【RStudio中文乱码】【两个方法】</title>
       <link href="/2022/10/05/%E3%80%90RStudio%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E3%80%91%E3%80%90%E4%B8%A4%E4%B8%AA%E6%96%B9%E6%B3%95%E3%80%91/"/>
       <url>/2022/10/05/%E3%80%90RStudio%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E3%80%91%E3%80%90%E4%B8%A4%E4%B8%AA%E6%96%B9%E6%B3%95%E3%80%91/</url>
