@@ -1,4 +1,127 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>【实验六】【为用户设置权限】 │ AXDLMG7's Blog</title><link rel="stylesheet" href="/css/oasis.css"><meta name="generator" content="Hexo 5.4.1"></head><body><div id="content"><h1 id="title">【实验六】【为用户设置权限】</h1><div id="menu-outer"><nav id="menu-inner"><a id="menu-back" href="javascript:history.back()">Back</a><time datetime="2022-05-17T01:49:55.536Z">2022-05-17</time></nav></div><div id="content-outer"><div id="content-inner"><article id="post"><h2 id="一、在“安全性”里设置用户权限"><a href="#一、在“安全性”里设置用户权限" class="headerlink" title="一、在“安全性”里设置用户权限"></a>一、在“安全性”里设置用户权限</h2><p>①打开“SQL Server Management Studio”的“对象资源管理器”窗口，即打开SSMS时自动连接的窗口。</p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="AXDLMG7" />
+  <meta name="description" content="" />
+  
+  
+  <title>
+    
+      【实验六】【为用户设置权限】 
+      
+      
+    
+  </title>
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+    <link rel="icon" href="/images/favicon.png">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,400italic,600|Roboto+Mono" rel="stylesheet">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/common.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+
+
+  
+
+  
+    
+<link rel="stylesheet" href="/css/post.css">
+
+  
+
+  <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+  <a href="/">LEEDOM</a>
+</div>
+
+
+      <p class="links">
+  
+    <a title="archives" target="" href="/archives/">
+      <i class="iconfont icon-bookmark"></i>
+    </a>
+  
+    <a title="github" target="_blank" href="https://github.com/leedom92/hexo-theme-leedom">
+      <i class="iconfont icon-github"></i>
+    </a>
+  
+    <a title="email" target="" href="">
+      <i class="iconfont icon-envelope"></i>
+    </a>
+  
+    <a title="facebook" target="" href="">
+      <i class="iconfont icon-facebooksquare"></i>
+    </a>
+  
+    <a title="twitter" target="" href="">
+      <i class="iconfont icon-twitter"></i>
+    </a>
+  
+    <a title="wechat" target="" href="">
+      <i class="iconfont icon-wechat"></i>
+    </a>
+  
+    <a title="weibo" target="" href="">
+      <i class="iconfont icon-weibo"></i>
+    </a>
+  
+    <a title="rss" target="_blank" href="/atom.xml">
+      <i class="iconfont icon-rss"></i>
+    </a>
+  
+</p>
+
+
+      <div class="main">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+<!-- LaTex Display -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+
+<div class="post">
+  <h3 class="date">
+    May 17, 2022
+  </h3>
+  <h1>
+    【实验六】【为用户设置权限】
+  </h1>
+  <div class="content markdown-body">
+    <h2 id="一、在“安全性”里设置用户权限"><a href="#一、在“安全性”里设置用户权限" class="headerlink" title="一、在“安全性”里设置用户权限"></a>一、在“安全性”里设置用户权限</h2><p>①打开“SQL Server Management Studio”的“对象资源管理器”窗口，即打开SSMS时自动连接的窗口。</p>
 <p>②选择“本地服务器”— “安全性”— “登录名”选项，<br>鼠标右键单击登录名，在弹出的快捷键菜单里选择“新建登录名”选项。<br><img src="https://img-blog.csdnimg.cn/0fe759ef2cc445f39e746a8ed4a69403.png" alt="在这里插入图片描述"><br>③在弹出的登录名对话框的常规页面，建立登录名“abc”。<br><img src="https://img-blog.csdnimg.cn/a75f29058d4540a08f47abf3ee2b52e6.png" alt="在这里插入图片描述"><br>④在选中数据库前的复选框之后，“数据库角色成员身份”区域里的“public”复选框里会被自动选择上。在每个数据库中，所有用户都会默认是public角色的成员，并且不能被删除。<br><img src="https://img-blog.csdnimg.cn/266b2070d848427d9c30a76fcd27e0c3.png" alt="在这里插入图片描述"><br>出现<strong>报错15407</strong>：<br><img src="https://img-blog.csdnimg.cn/983f0bd12de04d9d89cea5c4011b03af.png" alt="在这里插入图片描述"><br>身份验证选择“SQL Server 身份验证”并设置密码：<br><img src="https://img-blog.csdnimg.cn/f230a350ed274e5b8a70863c26ecfdfd.png" alt="在这里插入图片描述"></p>
 <h2 id="二、在数据库里设置用户权限"><a href="#二、在数据库里设置用户权限" class="headerlink" title="二、在数据库里设置用户权限"></a>二、在数据库里设置用户权限</h2><p><strong>sa用户与超级用户</strong>：<br>如果只启用了<strong>SQL身份验证模式</strong>，超级用户就是sa，密码是你安装时设的。<br>如果只启用了<strong>Windows集成验证模式</strong>，服务器上Administrators组的所有用户都是超级用户，即默认登录的用户即可。<br>如果启用了<strong>混合模式</strong>就包括了上面两种用户。</p>
 <p>①启动“SQL Server Management Stuido”，以sa用户或超级用户身份连上数据库实例。在“对象资源管理器”里选择“数据库实例名”— “XSCJ”— “安全性”— “用户”。鼠标右键单击用户，在弹出的快捷键菜单里选择“新建用户”选项。<br><img src="https://img-blog.csdnimg.cn/e5167b1fc78a4061ba7e72f2077d3cab.png" alt="在这里插入图片描述"><br>②在弹出的弹出“数据库用户”对话框的常规页面，建立用户“userl”。<br><img src="https://img-blog.csdnimg.cn/ace32042ee9a4c7796ac2f47b7b2115e.png" alt="在这里插入图片描述"><br>这里默认选择“带登录名的SQL用户”，输入用户名与登录名后，在新建用户时会出现<strong>报错15007</strong>，做以下修改：选择“不带登录名的SQL用户”<br><img src="https://img-blog.csdnimg.cn/ed44070ef04d4bccba8ae63ef6a6ba31.png" alt="在这里插入图片描述"><br>③在该对话框里选择“安全对象”标签，弹出对话框，单击“搜索”按钮，弹出 “添加对象”对话框，在该对话框里可以选择希望查看的对象类型的选择对话框。<br><img src="https://img-blog.csdnimg.cn/eea1e6cdea634dac92b217af67e20c60.png" alt="在这里插入图片描述"><br>④上一步点击<strong>“确定”</strong>后，弹出 “选择对象”对话框，在该对话框里单击“对象类型”按钮。</p>
@@ -7,4 +130,243 @@
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_30270561/article/details/97094455?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1-97094455-blog-46381185.pc_relevant_antiscanv2&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~CTRLIST~Rate-1-97094455-blog-46381185.pc_relevant_antiscanv2&utm_relevant_index=2">SqlServer 添加用户 添加角色 分配权限/文CSDN@weixin_30270561</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_46493091/article/details/105374496">sqlserver角色/用户创建，各种约束与权限/文CSDN@m0_46493091</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ren6370/article/details/73409989">SQL Server 如何启用sa账户/文CSDN@转身@未来</a></p>
-<div class="post-tags"><a class="post-tag-link" href="/tags/SSMS/" rel="tag">#SSMS</a>, <a class="post-tag-link" href="/tags/T-SQL/" rel="tag">#T-SQL</a>, <a class="post-tag-link" href="/tags/%E6%9D%83%E9%99%90/" rel="tag">#权限</a>, <a class="post-tag-link" href="/tags/%E7%94%A8%E6%88%B7/" rel="tag">#用户</a></div></article><div id="paginator"></div></div></div><div id="bottom-outer"><div id="bottom-inner"><hr><div><div><a>2022@ </a><a href="/atom.xml"><img src="/assets/rss.png"></a></div><div id="hexo"><a>Powered by&nbsp</a><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><a>&nbsp&&nbsp</a><a target="_blank" rel="noopener" href="https://github.com/qiantao94/hexo-theme-oasis">Oasis</a></div></div></div></div></div></body><script src="/js/oasis.js"></script></html>
+
+  </div>
+  
+    
+      <a id="older" class="blog-nav" href="/2022/05/10/%E3%80%90%E5%AE%9E%E9%AA%8C%E4%BA%94%E3%80%91%E3%80%90%E5%88%9B%E5%BB%BA%E8%A7%86%E5%9B%BE%E5%B9%B6%E9%80%9A%E8%BF%87%E8%A7%86%E5%9B%BE%E6%93%8D%E4%BD%9C%E8%A1%A8%E6%95%B0%E6%8D%AE%E3%80%91/">OLDER&nbsp;&gt;</a>
+      
+        
+          <a id="newer" class="blog-nav" href="/2022/05/17/%E3%80%90%E5%AE%9E%E9%AA%8C%E4%B8%83%E3%80%91%E3%80%90%E4%BD%BF%E7%94%A8%E8%A7%84%E5%88%99%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7%E3%80%91/">&lt;&nbsp;NEWER</a>
+          
+            
+</div>
+        <div class="footer">
+  
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/leedom92/hexo-theme-leedom">Copyright © Leedom 2021</a>
+        
+    </div>
+  
+    <div class="footer-more">
+      
+        <a target="_blank" rel="noopener" href="https://github.com/leedom92/hexo-theme-leedom">Theme by Leedom | Powered by Hexo</a>
+        
+    </div>
+  
+</div>
+
+      </div>
+
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+      
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-box">
+        <div class="search-title">
+          <!-- <span class="search-icon-input">
+            <a href="javascript: void(0)">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </span> -->
+          
+            <input type="text" class="search-input" id="search-input" placeholder="搜索...">
+          
+          <span class="search-close-icon" id="search-close-icon">
+            <a href="javascript: void(0)">
+              <i class="iconfont icon-close"></i>
+            </a>
+          </span>
+        </div>
+        <div class="search-result" id="search-result"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+    var searchOverlayArea = document.querySelector(".search-overlay")
+
+    // inputArea.onclick = function() {
+    //   getSearchFile()
+    //   this.onclick = null
+    // }
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        inputArea.focus()
+        getSearchFile()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+
+    function blurSearchContent(e) {
+      if (e.target === searchOverlayArea) {
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+
+    var searchFunc = function (path, search_id, content_id) {
+      'use strict';
+      var $input = document.getElementById(search_id);
+      var $resultContent = document.getElementById(content_id);
+      $resultContent.innerHTML = "<ul><span class='local-search-empty'><span></ul>";
+      // $resultContent.innerHTML = "<ul><span class='local-search-empty'>首次搜索，正在载入索引文件，请稍后……<span></ul>";
+      $.ajax({
+        // 0x01. load xml file
+        url: path,
+        dataType: "xml",
+        success: function (xmlResponse) {
+          // 0x02. parse xml file
+          var datas = $("entry", xmlResponse).map(function () {
+            return {
+              title: $("title", this).text(),
+              content: $("content", this).text(),
+              url: $("url", this).text()
+            };
+          }).get();
+          $resultContent.innerHTML = "";
+
+          $input.addEventListener('input', function () {
+            // 0x03. parse query to keywords list
+            var str = '<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length <= 0) {
+              return;
+            }
+            // 0x04. perform local searching
+            datas.forEach(function (data) {
+              var isMatch = true;
+              var content_index = [];
+              if (!data.title || data.title.trim() === '') {
+                data.title = "Untitled";
+              }
+              var orig_data_title = data.title.trim();
+              var data_title = orig_data_title.toLowerCase();
+              var orig_data_content = data.content.trim().replace(/<[^>]+>/g, "");
+              var data_content = orig_data_content.toLowerCase();
+              var data_url = data.url;
+              var index_title = -1;
+              var index_content = -1;
+              var first_occur = -1;
+              // only match artiles with not empty contents
+              if (data_content !== '') {
+                keywords.forEach(function (keyword, i) {
+                  index_title = data_title.indexOf(keyword);
+                  index_content = data_content.indexOf(keyword);
+
+                  if (index_title < 0 && index_content < 0) {
+                    isMatch = false;
+                  } else {
+                    if (index_content < 0) {
+                      index_content = 0;
+                    }
+                    if (i == 0) {
+                      first_occur = index_content;
+                    }
+                    // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                  }
+                });
+              } else {
+                isMatch = false;
+              }
+              // 0x05. show search results
+              if (isMatch) {
+                str += "<li><a href='/" + data_url + "' class='search-result-title'><h2>" + orig_data_title + "</h2></a>";
+                var content = orig_data_content;
+                if (first_occur >= 0) {
+                  // cut out 100 characters
+                  var start = first_occur - 20;
+                  var end = first_occur + 80;
+
+                  if (start < 0) {
+                    start = 0;
+                  }
+
+                  if (start == 0) {
+                    end = 100;
+                  }
+
+                  if (end > content.length) {
+                    end = content.length;
+                  }
+
+                  var match_content = content.substr(start, end);
+
+                  // highlight all keywords
+                  keywords.forEach(function (keyword) {
+                    var regS = new RegExp(keyword, "gi");
+                    match_content = match_content.replace(regS, "<span class=\"search-keyword\">" + keyword + "</span>");
+                  });
+
+                  str += "<h3 class=\"search-result-abstract\">" + match_content + "...</h3>"
+                }
+                str += "<hr></li>";
+              }
+            });
+            str += "</ul>";
+            if (str.indexOf('<li>') === -1) {
+              return $resultContent.innerHTML = "<ul><span class='local-search-empty'>没有找到内容，请尝试更换检索词。<span></ul>";
+            }
+            $resultContent.innerHTML = str;
+          });
+        },
+        error: function(xhr, status, error) {
+          $resultContent.innerHTML = ""
+          if (xhr.status === 404) {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>未找到search.xml文件，具体请参考：<a href='https://github.com/leedom92/hexo-theme-leedom#configuration' target='_black'>configuration</a><span></ul>";
+          } else {
+            $resultContent.innerHTML = "<ul><span class='local-search-empty'>请求失败，尝试重新刷新页面或稍后重试。<span></ul>";
+          }
+        }
+      });
+      $(document).on('click', '#search-close-icon', function() {
+        $('#search-input').val('');
+        $('#search-result').html('');
+      });
+    }
+
+    var getSearchFile = function() {
+        var path = "/search.xml";
+        searchFunc(path, 'search-input', 'search-result');
+    }
+  </script>
+
+
+
+
+    </div>
+  </body>
+</html>
