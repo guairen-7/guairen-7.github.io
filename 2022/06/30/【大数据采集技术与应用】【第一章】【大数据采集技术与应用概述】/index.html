@@ -1,166 +1,97 @@
 <!DOCTYPE html>
-<html lang=zh-CN>
+<html lang="zh-CN">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta name="description" content="">
-    <meta name="keyword"  content="">
-    <link rel="shortcut icon" href="/img/favicon.ico">
+  <meta charset="utf-8">
+  
+  <title>【大数据采集技术与应用】【第一章】【大数据采集技术与应用概述】 | AXDLMG7&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.1 大数据概述1.1.1 大数据时代 1.第三次信息化浪潮   IBM前首席执行官郭士纳的观点，IT领域每隔15年就会迎来一次重大变革。    信息化浪潮 发生时间 标志 解决的问题 代表企业    第一次浪潮 1980年前后 个人计算机 信息处理 Intel、AMD、IBM、苹果、微软、联想、戴尔、惠普等   第二次浪潮 1995年前后 互联网 信息传播 雅虎、谷歌、阿里巴巴、百度、腾讯等">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【大数据采集技术与应用】【第一章】【大数据采集技术与应用概述】">
+<meta property="og:url" content="https://guairen-7.github.io/2022/06/30/%E3%80%90%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8%E3%80%91%E3%80%90%E7%AC%AC%E4%B8%80%E7%AB%A0%E3%80%91%E3%80%90%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8%E6%A6%82%E8%BF%B0%E3%80%91/index.html">
+<meta property="og:site_name" content="AXDLMG7&#39;s Blog">
+<meta property="og:description" content="1.1 大数据概述1.1.1 大数据时代 1.第三次信息化浪潮   IBM前首席执行官郭士纳的观点，IT领域每隔15年就会迎来一次重大变革。    信息化浪潮 发生时间 标志 解决的问题 代表企业    第一次浪潮 1980年前后 个人计算机 信息处理 Intel、AMD、IBM、苹果、微软、联想、戴尔、惠普等   第二次浪潮 1995年前后 互联网 信息传播 雅虎、谷歌、阿里巴巴、百度、腾讯等">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/aeffab2a5703437b97a9d96f1d499c4d.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/0c96b730c1044a5792d5d3d5e4289f1a.png">
+<meta property="article:published_time" content="2022-06-30T04:36:13.588Z">
+<meta property="article:modified_time" content="2022-06-30T06:32:06.931Z">
+<meta property="article:author" content="AXDLMG7">
+<meta property="article:tag" content="Data Acquisition">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/aeffab2a5703437b97a9d96f1d499c4d.png">
+  
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/typing.css">
 
-    <title>
-        
-        【大数据采集技术与应用】【第一章】【大数据采集技术与应用概述】 - undefined
-        
-    </title>
+  
+<link rel="stylesheet" href="/css/donate.css">
 
-    <!-- Custom CSS -->
+  
+  
     
-<link rel="stylesheet" href="/css/aircloud.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
-    
-<link rel="stylesheet" href="/css/gitment.css">
-
-    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
-    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
-    <!-- ga & ba script hoook -->
-    <script></script>
-
-    
-
-
-
-
-
-
-
-
-
+  
 <meta name="generator" content="Hexo 5.4.1"></head>
 
-<body>
-
-<div class="site-nav-toggle" id="site-nav-toggle">
-    <button>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-    </button>
-</div>
-
-<div class="index-about">
-    <i>  </i>
-</div>
-
-<div class="index-container">
+  
     
-    <div class="index-left">
-        
-<div class="nav" id="nav">
-    <div class="avatar-name">
-        <div class="avatar ">
-            <img src="/" />
-        </div>
-        <div class="name">
-            <i>AXDLMG7</i>
-        </div>
-    </div>
-    <div class="contents" id="nav-content">
-        <ul>
-            <li >
-                <a href="/">
-                    <i class="iconfont icon-shouye1"></i>
-                    <span>主页</span>
-                </a>
-            </li>
-            <li >
-                <a href="/tags">
-                    <i class="iconfont icon-biaoqian1"></i>
-                    <span>标签</span>
-                </a>
-            </li>
-            <li >
-                <a href="/archives">
-                    <i class="iconfont icon-guidang2"></i>
-                    <span>存档</span>
-                </a>
-            </li>
-            <li >
-                <a href="/collect/">
-                    <i class="iconfont icon-shoucang1"></i>
-                    <span>收藏</span>
-                </a>
-            </li>
-            <li >
-                <a href="/about/">
-                    <i class="iconfont icon-guanyu2"></i>
-                    <span>关于</span>
-                </a>
-            </li>
-            
-            <li>
-                <a id="search">
-                    <i class="iconfont icon-sousuo1"></i>
-                    <span>搜索</span>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
+      <body>
     
-        <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-1-%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A6%82%E8%BF%B0"><span class="toc-text">1.1 大数据概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-1-%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%97%B6%E4%BB%A3"><span class="toc-text">1.1.1 大数据时代</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-2-%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">1.1.2 大数据的概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-3-%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%9A%84%E7%89%B9%E5%BE%81"><span class="toc-text">1.1.3 大数据的特征</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-4-%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">1.1.4 大数据的应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-5-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF"><span class="toc-text">1.1.5 大数据关键技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-6-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B"><span class="toc-text">1.1.6 大数据处理流程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-2-%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0"><span class="toc-text">1.2 大数据采集技术概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-1-%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E4%B8%8E%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86"><span class="toc-text">1.2.1 数据采集与大数据采集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-2-%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E6%B5%81%E7%A8%8B"><span class="toc-text">1.2.2 大数据采集流程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-3%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E6%8A%80%E6%9C%AF%E5%BA%94%E7%94%A8"><span class="toc-text">1.3大数据采集技术应用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-1-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%B9%B3%E5%8F%B0%E4%BB%8B%E7%BB%8D"><span class="toc-text">1.3.1 大数据处理平台介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%95%B0%E6%8D%AE%E9%9B%86%E6%88%90%E6%9C%8D%E5%8A%A1"><span class="toc-text">1.数据集成服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9C%8D%E5%8A%A1"><span class="toc-text">2.数据库服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%AD%98%E5%82%A8%E6%9C%8D%E5%8A%A1"><span class="toc-text">3.存储服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%9C%8D%E5%8A%A1"><span class="toc-text">4.大数据处理服务</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%BE%E5%90%8E%E4%BD%9C%E4%B8%9A"><span class="toc-text">课后作业</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="toc-text">一、名词解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%AE%80%E7%AD%94%E9%A2%98"><span class="toc-text">二、简答题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7"><span class="toc-text">常用工具</span></a></li></ol>
-</div>
+  
+      <div id="container" class="container">
+        <article id="post-【大数据采集技术与应用】【第一章】【大数据采集技术与应用概述】" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <header id="header" class="header">
+  <nav class="mobile-nav">
+    <h1 class="nickname">爱笑的冷面鬼7</h1>
+    <ul class="mobile-nav-menu">
+      <label for="mobile-menu-toggle"><a id="menu-button">&#9776; Menu</a></label>
+      <input type="checkbox" id="mobile-menu-toggle"/>
+      <ul class="mobile-nav-link">
+        
+        <a href="/">Home</a>
+        
+        <a href="/archives">Archives</a>
+        
+        <a href="/about">About</a>
+        
+      </ul>
+    </ul>
+  </nav>
+	
+		<nav id="main-nav" class="main-nav nav-left">
+	
+	
+	  <a class="main-nav-link" href="/">Home</a>
+	
+	  <a class="main-nav-link" href="/archives">Archives</a>
+	
+	  <a class="main-nav-link" href="/about">About</a>
+	
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
     
-</div>
 
-
-<div class="search-field" id="search-field">
-    <div class="search-bg" id="search-bg"></div>
-    <div class="search-container">
-        <div class="search-input">
-            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
-            <input id="search-input"/>
-            <span id="begin-search">搜索</span>
-        </div>
-        <div class="search-result-container" id="search-result-container">
-
-        </div>
-    </div>
-</div>
-
-        <div class="index-about-mobile">
-            <i>  </i>
-        </div>
-    </div>
     
-    <div class="index-middle">
-        <!-- Main Content -->
+      <header class="article-header">
         
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      【大数据采集技术与应用】【第一章】【大数据采集技术与应用概述】
+    </h1>
+  
 
-
-<div class="post-container">
-    <div class="post-title">
-        【大数据采集技术与应用】【第一章】【大数据采集技术与应用概述】
-    </div>
-
-    <div class="post-meta">
-        <span class="attr">发布于：<span>2022-06-30 12:36:13</span></span>
-        
-        <span class="attr">标签：/
-        
-        <a class="tag" href="/tags/#Data Acquisition" title="Data Acquisition">Data Acquisition</a>
-        <span>/</span>
-        
-        
-        </span>
-        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
-</span>
-</span>
-    </div>
-    <div class="post-content ">
+      </header>
+    
+    <div class="e-content article-entry typo" itemprop="articleBody">
+      
         <h1 id="1-1-大数据概述"><a href="#1-1-大数据概述" class="headerlink" title="1.1 大数据概述"></a>1.1 大数据概述</h1><h2 id="1-1-1-大数据时代"><a href="#1-1-1-大数据时代" class="headerlink" title="1.1.1 大数据时代"></a>1.1.1 大数据时代</h2><ul>
 <li><strong>1.第三次信息化浪潮</strong></li>
 </ul>
@@ -527,65 +458,122 @@
 <h1 id="常用工具"><a href="#常用工具" class="headerlink" title="常用工具"></a>常用工具</h1><p>日志采集工具：Flume、Kafka<br>关系数据库：MySQL、Oracle、Postgres<br>NoSQL：Redis、MongoDB<br>数据预处理：Sqoop、Flume<br>数据统计分析：Hadoop<br>数据挖掘：Hadoop的Mahout<br>日志采集系统：Flume（Apache Flume）、Scribe<br>网页爬虫系统、框架：Apache Nutch、Crawler4j、Scrapy<br>大数据采集分析技术：Hive<br>数据转换：Sqoop（Apache Sqoop）<br>HDFS（Hadoop Distributed File System）：Hadoop分布式文件系统<br>MapReduce：一个分布式运算程序的编程框架<br>HQL（Hive Query Language）：Hive的SQL语言</p>
 <p><strong>PS:仅供参考，因个人能力有限，如有错误，请不吝赐教~</strong></p>
 
-        
-        <br />
-        <div id="comment-container">
-        </div>
-        <div id="disqus_thread"></div>
-        <div id="lv-container"></div>
-        <div class="giscus"></div>
+      
+      
     </div>
-</div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2022/06/30/%E3%80%90%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8%E3%80%91%E3%80%90%E7%AC%AC%E4%B8%80%E7%AB%A0%E3%80%91%E3%80%90%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8%E6%A6%82%E8%BF%B0%E3%80%91/" class="article-date">
+  <time class="dt-published" datetime="2022-06-30T04:36:13.588Z" itemprop="datePublished">2022-06-30</time>
+</a>
 
-    </div>
-</div>
+        </li>
+        
+          <li>
+            <span class="label">Category:</span>
+            
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Data-Acquisition/">Data Acquisition</a>/<a class="article-category-link" href="/categories/Data-Acquisition/Chapter/">Chapter</a>
+  </div>
 
 
-<footer class="footer">
-    <ul class="list-inline text-center">
+          </li>
         
         
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Acquisition/" rel="tag">Data Acquisition</a></li></ul>
 
+
+          </li>
         
-
-        
-
-        
-
-        
-
-    </ul>
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
     
-    <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
-</footer>
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2022/06/30/%E3%80%90%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8%E3%80%91%E3%80%90%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0%E9%A2%98%E3%80%91/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          【大数据采集技术与应用】【期末复习题】
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/06/29/%E3%80%90%E4%B8%80%E5%89%AA%E6%A2%85%C2%B7%E9%9B%A8%E6%89%93%E6%A2%A8%E8%8A%B1%E6%B7%B1%E9%97%AD%E9%97%A8%E3%80%91/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">【一剪梅·雨打梨花深闭门】</div>
+    </a>
+  
+</nav>
 
 
-
-
-</body>
-
-<script>
-    // We expose some of the variables needed by the front end
-    window.hexo_search_path = "search.xml"
-    window.hexo_root = "/"
-    window.isPost = true
-</script>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-
-<script src="/js/index.js"></script>
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
+  
+</article>
 
 
 
 
 
+
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>ipsum dolor sit amet, <strong>consectetur adipiscing elit.</strong> Fusce eget urna vitae velit <em>eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque</em> penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/typing.js"></script>
+
+<!--[if lt IE 9]>
+<script src="https://cdn.jsdelivr.net/npm/html5shiv@3/dist/html5shiv.min.js"></script>
+<![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
 </html>

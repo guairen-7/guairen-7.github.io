@@ -1,172 +1,102 @@
 <!DOCTYPE html>
-<html lang=zh-CN>
+<html lang="zh-CN">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta name="description" content="">
-    <meta name="keyword"  content="">
-    <link rel="shortcut icon" href="/img/favicon.ico">
+  <meta charset="utf-8">
+  
+  <title>【实验九】【使用触发器实现数据完整性】 | AXDLMG7&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="触发器触发器（trigger）是用户定义在关系表上的一类由事件驱动的特殊过程。 触发器又叫做事件-条件-动作（event-condition-action）规则。 触发器功能很多，因为触发器规则中的动作体可以很复杂。通常是一段SQL存储过程。 触发器不仅可以用于数据库完整性检查，也可以用来实现数据库系统的其他功能，包括数据库安全性以及更加广泛的应用系统的一些业务流程和控制流程，基于规则的数据和业务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【实验九】【使用触发器实现数据完整性】">
+<meta property="og:url" content="https://guairen-7.github.io/2022/05/17/%E3%80%90%E5%AE%9E%E9%AA%8C%E4%B9%9D%E3%80%91%E3%80%90%E4%BD%BF%E7%94%A8%E8%A7%A6%E5%8F%91%E5%99%A8%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7%E3%80%91/index.html">
+<meta property="og:site_name" content="AXDLMG7&#39;s Blog">
+<meta property="og:description" content="触发器触发器（trigger）是用户定义在关系表上的一类由事件驱动的特殊过程。 触发器又叫做事件-条件-动作（event-condition-action）规则。 触发器功能很多，因为触发器规则中的动作体可以很复杂。通常是一段SQL存储过程。 触发器不仅可以用于数据库完整性检查，也可以用来实现数据库系统的其他功能，包括数据库安全性以及更加广泛的应用系统的一些业务流程和控制流程，基于规则的数据和业务">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/f0605188ea9b435bb95e5e8829a5cd3b.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/909a7073b2104eadb95b0c4bccdc51af.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/3fe964274b1d4ca99dbe0ce072bd116e.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/236dcb1f0151460892a4327e8ba0b6f1.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/1150fc813ba7406fa04fe610213283c5.png">
+<meta property="article:published_time" content="2022-05-17T07:41:10.240Z">
+<meta property="article:modified_time" content="2022-05-17T07:58:49.612Z">
+<meta property="article:author" content="AXDLMG7">
+<meta property="article:tag" content="触发器">
+<meta property="article:tag" content="T-SQL">
+<meta property="article:tag" content="SSMS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/f0605188ea9b435bb95e5e8829a5cd3b.png">
+  
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/typing.css">
 
-    <title>
-        
-        【实验九】【使用触发器实现数据完整性】 - undefined
-        
-    </title>
+  
+<link rel="stylesheet" href="/css/donate.css">
 
-    <!-- Custom CSS -->
+  
+  
     
-<link rel="stylesheet" href="/css/aircloud.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
-    
-<link rel="stylesheet" href="/css/gitment.css">
-
-    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
-    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
-    <!-- ga & ba script hoook -->
-    <script></script>
-
-    
-
-
-
-
-
-
-
-
-
+  
 <meta name="generator" content="Hexo 5.4.1"></head>
 
-<body>
-
-<div class="site-nav-toggle" id="site-nav-toggle">
-    <button>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-    </button>
-</div>
-
-<div class="index-about">
-    <i>  </i>
-</div>
-
-<div class="index-container">
+  
     
-    <div class="index-left">
-        
-<div class="nav" id="nav">
-    <div class="avatar-name">
-        <div class="avatar ">
-            <img src="/" />
-        </div>
-        <div class="name">
-            <i>AXDLMG7</i>
-        </div>
-    </div>
-    <div class="contents" id="nav-content">
-        <ul>
-            <li >
-                <a href="/">
-                    <i class="iconfont icon-shouye1"></i>
-                    <span>主页</span>
-                </a>
-            </li>
-            <li >
-                <a href="/tags">
-                    <i class="iconfont icon-biaoqian1"></i>
-                    <span>标签</span>
-                </a>
-            </li>
-            <li >
-                <a href="/archives">
-                    <i class="iconfont icon-guidang2"></i>
-                    <span>存档</span>
-                </a>
-            </li>
-            <li >
-                <a href="/collect/">
-                    <i class="iconfont icon-shoucang1"></i>
-                    <span>收藏</span>
-                </a>
-            </li>
-            <li >
-                <a href="/about/">
-                    <i class="iconfont icon-guanyu2"></i>
-                    <span>关于</span>
-                </a>
-            </li>
-            
-            <li>
-                <a id="search">
-                    <i class="iconfont icon-sousuo1"></i>
-                    <span>搜索</span>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
+      <body>
     
-        <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-text">触发器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%9E%E7%8E%B0%E5%9F%9F%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="toc-text">一、实现域完整性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%AE%9E%E7%8E%B0%E5%8F%82%E7%85%A7%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="toc-text">二、实现参照完整性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%AF%94%E8%BE%83%E7%BA%A6%E6%9D%9F%E4%B8%8E%E8%A7%A6%E5%8F%91%E5%99%A8%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F"><span class="toc-text">三、比较约束与触发器的执行顺序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-text">Reference</span></a></li></ol>
-</div>
+  
+      <div id="container" class="container">
+        <article id="post-【实验九】【使用触发器实现数据完整性】" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <header id="header" class="header">
+  <nav class="mobile-nav">
+    <h1 class="nickname">爱笑的冷面鬼7</h1>
+    <ul class="mobile-nav-menu">
+      <label for="mobile-menu-toggle"><a id="menu-button">&#9776; Menu</a></label>
+      <input type="checkbox" id="mobile-menu-toggle"/>
+      <ul class="mobile-nav-link">
+        
+        <a href="/">Home</a>
+        
+        <a href="/archives">Archives</a>
+        
+        <a href="/about">About</a>
+        
+      </ul>
+    </ul>
+  </nav>
+	
+		<nav id="main-nav" class="main-nav nav-left">
+	
+	
+	  <a class="main-nav-link" href="/">Home</a>
+	
+	  <a class="main-nav-link" href="/archives">Archives</a>
+	
+	  <a class="main-nav-link" href="/about">About</a>
+	
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
     
-</div>
 
-
-<div class="search-field" id="search-field">
-    <div class="search-bg" id="search-bg"></div>
-    <div class="search-container">
-        <div class="search-input">
-            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
-            <input id="search-input"/>
-            <span id="begin-search">搜索</span>
-        </div>
-        <div class="search-result-container" id="search-result-container">
-
-        </div>
-    </div>
-</div>
-
-        <div class="index-about-mobile">
-            <i>  </i>
-        </div>
-    </div>
     
-    <div class="index-middle">
-        <!-- Main Content -->
+      <header class="article-header">
         
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      【实验九】【使用触发器实现数据完整性】
+    </h1>
+  
 
-
-<div class="post-container">
-    <div class="post-title">
-        【实验九】【使用触发器实现数据完整性】
-    </div>
-
-    <div class="post-meta">
-        <span class="attr">发布于：<span>2022-05-17 15:41:10</span></span>
-        
-        <span class="attr">标签：/
-        
-        <a class="tag" href="/tags/#触发器" title="触发器">触发器</a>
-        <span>/</span>
-        
-        <a class="tag" href="/tags/#T-SQL" title="T-SQL">T-SQL</a>
-        <span>/</span>
-        
-        <a class="tag" href="/tags/#SSMS" title="SSMS">SSMS</a>
-        <span>/</span>
-        
-        
-        </span>
-        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
-</span>
-</span>
-    </div>
-    <div class="post-content ">
+      </header>
+    
+    <div class="e-content article-entry typo" itemprop="articleBody">
+      
         <h2 id="触发器"><a href="#触发器" class="headerlink" title="触发器"></a>触发器</h2><p><strong>触发器（trigger）是用户定义在关系表上的一类由事件驱动的特殊过程。</strong></p>
 <p>触发器又叫做事件-条件-动作（event-condition-action）规则。</p>
 <p>触发器功能很多，因为触发器规则中的动作体可以很复杂。<strong>通常是一段SQL存储过程</strong>。</p>
@@ -201,65 +131,122 @@
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/mzl87/article/details/100763470">什么是数据库触发器？/文CSDN@寒冰屋</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43776450/article/details/95633712?ops_request_misc=&request_id=&biz_id=102&utm_term=%E7%BA%A7%E8%81%94%E6%9B%B4%E6%96%B0XS_KC%E8%A1%A8%E4%B8%AD%E5%8E%9F%E8%AF%BE%E7%A8%8B%E5%8F%B7&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-95633712.142%5Ev10%5Epc_search_result_control_group,157%5Ev4%5Econtrol&spm=1018.2226.3001.4187">数据库实验——数据库的完整性约束/文CSDN@小王很nice</a></p>
 
-        
-        <br />
-        <div id="comment-container">
-        </div>
-        <div id="disqus_thread"></div>
-        <div id="lv-container"></div>
-        <div class="giscus"></div>
+      
+      
     </div>
-</div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2022/05/17/%E3%80%90%E5%AE%9E%E9%AA%8C%E4%B9%9D%E3%80%91%E3%80%90%E4%BD%BF%E7%94%A8%E8%A7%A6%E5%8F%91%E5%99%A8%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7%E3%80%91/" class="article-date">
+  <time class="dt-published" datetime="2022-05-17T07:41:10.240Z" itemprop="datePublished">2022-05-17</time>
+</a>
 
-    </div>
-</div>
+        </li>
+        
+          <li>
+            <span class="label">Category:</span>
+            
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/DataBase/">DataBase</a>/<a class="article-category-link" href="/categories/DataBase/Practice/">Practice</a>
+  </div>
 
 
-<footer class="footer">
-    <ul class="list-inline text-center">
+          </li>
         
         
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSMS/" rel="tag">SSMS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/T-SQL/" rel="tag">T-SQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%A7%A6%E5%8F%91%E5%99%A8/" rel="tag">触发器</a></li></ul>
 
+
+          </li>
         
-
-        
-
-        
-
-        
-
-    </ul>
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
     
-    <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
-</footer>
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2022/06/18/%E3%80%90%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E9%A2%98%E3%80%91/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          【数据库原理复习题】
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/05/17/%E3%80%90%E5%AE%9E%E9%AA%8C%E5%85%AB%E3%80%91%E3%80%90%E4%BD%BF%E7%94%A8%20T-SQL%E7%BC%96%E5%86%99%E7%A8%8B%E5%BA%8F%E3%80%91/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">【实验八】【使用 T-SQL编写程序】</div>
+    </a>
+  
+</nav>
 
 
-
-
-</body>
-
-<script>
-    // We expose some of the variables needed by the front end
-    window.hexo_search_path = "search.xml"
-    window.hexo_root = "/"
-    window.isPost = true
-</script>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-
-<script src="/js/index.js"></script>
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
+  
+</article>
 
 
 
 
 
+
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>ipsum dolor sit amet, <strong>consectetur adipiscing elit.</strong> Fusce eget urna vitae velit <em>eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque</em> penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/typing.js"></script>
+
+<!--[if lt IE 9]>
+<script src="https://cdn.jsdelivr.net/npm/html5shiv@3/dist/html5shiv.min.js"></script>
+<![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
 </html>

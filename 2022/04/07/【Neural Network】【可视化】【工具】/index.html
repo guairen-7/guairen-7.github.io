@@ -1,172 +1,111 @@
 <!DOCTYPE html>
-<html lang=zh-CN>
+<html lang="zh-CN">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta name="description" content="">
-    <meta name="keyword"  content="">
-    <link rel="shortcut icon" href="/img/favicon.ico">
+  <meta charset="utf-8">
+  
+  <title>【Neural Network】【可视化】【工具】 | AXDLMG7&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1. draw_convnetGitHub–draw_convnet 一个用于画卷积神经网络的Python脚本 2. NN-SVGAlexander Lenail–NN-SVG 3. PlotNeuralNetGitHub–PlotNeuralNet 使用latex 来展示神经网络 4. TensorboardTensorfFlow–TensorBoard–模型图 5. CaffeGitHub–C">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Neural Network】【可视化】【工具】">
+<meta property="og:url" content="https://guairen-7.github.io/2022/04/07/%E3%80%90Neural%20Network%E3%80%91%E3%80%90%E5%8F%AF%E8%A7%86%E5%8C%96%E3%80%91%E3%80%90%E5%B7%A5%E5%85%B7%E3%80%91/index.html">
+<meta property="og:site_name" content="AXDLMG7&#39;s Blog">
+<meta property="og:description" content="1. draw_convnetGitHub–draw_convnet 一个用于画卷积神经网络的Python脚本 2. NN-SVGAlexander Lenail–NN-SVG 3. PlotNeuralNetGitHub–PlotNeuralNet 使用latex 来展示神经网络 4. TensorboardTensorfFlow–TensorBoard–模型图 5. CaffeGitHub–C">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/6cb38cd2af294a5e9f5cb12106f90c12.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/07b637a2e5d04ce7a906a427e3f77697.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/a83b3ec8d78349589375b7ee718c3784.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/fa670e2c11f54709af14b2c025a0413c.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/e3311f24ff4446c0b2204502e9426b3d.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/77fe0e55662b49e4891e68efd0130280.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/bcdd70ad81554e15b05bc4a151a65693.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/c522cbaf819246e6bd799a7b61e7709a.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/7f83ee59ff814bcf9f0b2499c33e396e.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/f30e5b2b94674c8499dc8778785797e9.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/ef31c801aa304973bcda878fc98f6247.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/70448a2745eb4b649eaa750881dfc52b.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/19bfd7d3941642e793c334c438891a27.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/b96804ab314b4df489b71a2e1baf95f2.png">
+<meta property="article:published_time" content="2022-04-07T09:15:59.123Z">
+<meta property="article:modified_time" content="2022-04-07T09:44:30.475Z">
+<meta property="article:author" content="AXDLMG7">
+<meta property="article:tag" content="Deep Learning">
+<meta property="article:tag" content="Neural Network">
+<meta property="article:tag" content="Tools">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/6cb38cd2af294a5e9f5cb12106f90c12.png">
+  
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/typing.css">
 
-    <title>
-        
-        【Neural Network】【可视化】【工具】 - undefined
-        
-    </title>
+  
+<link rel="stylesheet" href="/css/donate.css">
 
-    <!-- Custom CSS -->
+  
+  
     
-<link rel="stylesheet" href="/css/aircloud.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
-    
-<link rel="stylesheet" href="/css/gitment.css">
-
-    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
-    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
-    <!-- ga & ba script hoook -->
-    <script></script>
-
-    
-
-
-
-
-
-
-
-
-
+  
 <meta name="generator" content="Hexo 5.4.1"></head>
 
-<body>
-
-<div class="site-nav-toggle" id="site-nav-toggle">
-    <button>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-    </button>
-</div>
-
-<div class="index-about">
-    <i>  </i>
-</div>
-
-<div class="index-container">
+  
     
-    <div class="index-left">
-        
-<div class="nav" id="nav">
-    <div class="avatar-name">
-        <div class="avatar ">
-            <img src="/" />
-        </div>
-        <div class="name">
-            <i>AXDLMG7</i>
-        </div>
-    </div>
-    <div class="contents" id="nav-content">
-        <ul>
-            <li >
-                <a href="/">
-                    <i class="iconfont icon-shouye1"></i>
-                    <span>主页</span>
-                </a>
-            </li>
-            <li >
-                <a href="/tags">
-                    <i class="iconfont icon-biaoqian1"></i>
-                    <span>标签</span>
-                </a>
-            </li>
-            <li >
-                <a href="/archives">
-                    <i class="iconfont icon-guidang2"></i>
-                    <span>存档</span>
-                </a>
-            </li>
-            <li >
-                <a href="/collect/">
-                    <i class="iconfont icon-shoucang1"></i>
-                    <span>收藏</span>
-                </a>
-            </li>
-            <li >
-                <a href="/about/">
-                    <i class="iconfont icon-guanyu2"></i>
-                    <span>关于</span>
-                </a>
-            </li>
-            
-            <li>
-                <a id="search">
-                    <i class="iconfont icon-sousuo1"></i>
-                    <span>搜索</span>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
+      <body>
     
-        <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-draw-convnet"><span class="toc-text">1. draw_convnet</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-NN-SVG"><span class="toc-text">2. NN-SVG</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-PlotNeuralNet"><span class="toc-text">3. PlotNeuralNet</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-Tensorboard"><span class="toc-text">4. Tensorboard</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-Caffe"><span class="toc-text">5. Caffe</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-Matlab"><span class="toc-text">6.Matlab</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-Keras-js"><span class="toc-text">7.Keras.js</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-DotNet"><span class="toc-text">8. DotNet</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-Graphviz"><span class="toc-text">9.  Graphviz</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-ConX"><span class="toc-text">10. ConX</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11-ENNUI"><span class="toc-text">11. ENNUI</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#12-Neataptic"><span class="toc-text">12.  Neataptic</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-text">Reference</span></a></li></ol>
-</div>
+  
+      <div id="container" class="container">
+        <article id="post-【Neural Network】【可视化】【工具】" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <header id="header" class="header">
+  <nav class="mobile-nav">
+    <h1 class="nickname">爱笑的冷面鬼7</h1>
+    <ul class="mobile-nav-menu">
+      <label for="mobile-menu-toggle"><a id="menu-button">&#9776; Menu</a></label>
+      <input type="checkbox" id="mobile-menu-toggle"/>
+      <ul class="mobile-nav-link">
+        
+        <a href="/">Home</a>
+        
+        <a href="/archives">Archives</a>
+        
+        <a href="/about">About</a>
+        
+      </ul>
+    </ul>
+  </nav>
+	
+		<nav id="main-nav" class="main-nav nav-left">
+	
+	
+	  <a class="main-nav-link" href="/">Home</a>
+	
+	  <a class="main-nav-link" href="/archives">Archives</a>
+	
+	  <a class="main-nav-link" href="/about">About</a>
+	
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
     
-</div>
 
-
-<div class="search-field" id="search-field">
-    <div class="search-bg" id="search-bg"></div>
-    <div class="search-container">
-        <div class="search-input">
-            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
-            <input id="search-input"/>
-            <span id="begin-search">搜索</span>
-        </div>
-        <div class="search-result-container" id="search-result-container">
-
-        </div>
-    </div>
-</div>
-
-        <div class="index-about-mobile">
-            <i>  </i>
-        </div>
-    </div>
     
-    <div class="index-middle">
-        <!-- Main Content -->
+      <header class="article-header">
         
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      【Neural Network】【可视化】【工具】
+    </h1>
+  
 
-
-<div class="post-container">
-    <div class="post-title">
-        【Neural Network】【可视化】【工具】
-    </div>
-
-    <div class="post-meta">
-        <span class="attr">发布于：<span>2022-04-07 17:15:59</span></span>
-        
-        <span class="attr">标签：/
-        
-        <a class="tag" href="/tags/#Deep Learning" title="Deep Learning">Deep Learning</a>
-        <span>/</span>
-        
-        <a class="tag" href="/tags/#Neural Network" title="Neural Network">Neural Network</a>
-        <span>/</span>
-        
-        <a class="tag" href="/tags/#Tools" title="Tools">Tools</a>
-        <span>/</span>
-        
-        
-        </span>
-        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
-</span>
-</span>
-    </div>
-    <div class="post-content ">
+      </header>
+    
+    <div class="e-content article-entry typo" itemprop="articleBody">
+      
         <h1 id="1-draw-convnet"><a href="#1-draw-convnet" class="headerlink" title="1. draw_convnet"></a>1. draw_convnet</h1><p><a target="_blank" rel="noopener" href="https://github.com/gwding/draw_convnet">GitHub–draw_convnet</a></p>
 <p>一个用于画卷积神经网络的Python脚本<br><img src="https://img-blog.csdnimg.cn/6cb38cd2af294a5e9f5cb12106f90c12.png" alt="请添加图片描述"></p>
 <h1 id="2-NN-SVG"><a href="#2-NN-SVG" class="headerlink" title="2. NN-SVG"></a>2. NN-SVG</h1><p><a target="_blank" rel="noopener" href="http://alexlenail.me/NN-SVG/LeNet.html">Alexander Lenail–NN-SVG</a><br><img src="https://img-blog.csdnimg.cn/07b637a2e5d04ce7a906a427e3f77697.png" alt="请添加图片描述"><br><img src="https://img-blog.csdnimg.cn/a83b3ec8d78349589375b7ee718c3784.png" alt="请添加图片描述"><br><img src="https://img-blog.csdnimg.cn/fa670e2c11f54709af14b2c025a0413c.png" alt="请添加图片描述"></p>
@@ -183,65 +122,122 @@
 <h1 id="12-Neataptic"><a href="#12-Neataptic" class="headerlink" title="12.  Neataptic"></a>12.  Neataptic</h1><p><a target="_blank" rel="noopener" href="https://wagenaartje.github.io/neataptic/">Neataptic.js</a><br><img src="https://img-blog.csdnimg.cn/b96804ab314b4df489b71a2e1baf95f2.png" alt="请添加图片描述"></p>
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p>公众号：<br>机器学习算法那些事<br>图灵人工智能</p>
 
-        
-        <br />
-        <div id="comment-container">
-        </div>
-        <div id="disqus_thread"></div>
-        <div id="lv-container"></div>
-        <div class="giscus"></div>
+      
+      
     </div>
-</div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2022/04/07/%E3%80%90Neural%20Network%E3%80%91%E3%80%90%E5%8F%AF%E8%A7%86%E5%8C%96%E3%80%91%E3%80%90%E5%B7%A5%E5%85%B7%E3%80%91/" class="article-date">
+  <time class="dt-published" datetime="2022-04-07T09:15:59.123Z" itemprop="datePublished">2022-04-07</time>
+</a>
 
-    </div>
-</div>
+        </li>
+        
+          <li>
+            <span class="label">Category:</span>
+            
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Deep-Learning/">Deep Learning</a>/<a class="article-category-link" href="/categories/Deep-Learning/Neural-Network/">Neural Network</a>
+  </div>
 
 
-<footer class="footer">
-    <ul class="list-inline text-center">
+          </li>
         
         
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deep-Learning/" rel="tag">Deep Learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Neural-Network/" rel="tag">Neural Network</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tools/" rel="tag">Tools</a></li></ul>
 
+
+          </li>
         
-
-        
-
-        
-
-        
-
-    </ul>
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
     
-    <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
-</footer>
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2022/04/07/%E3%80%90%E9%B2%81%E5%B8%83%C2%B7%E6%88%88%E5%BE%B7%E5%A0%A1%E6%9C%BA%E6%A2%B0%E3%80%91%E3%80%90%E4%BD%95%E5%90%8C%E5%AD%A6%E3%80%91/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          【鲁布·戈德堡机械】【何同学】
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/04/07/%E3%80%90SQL%20Server%202016%E3%80%91%E3%80%90%E6%95%B0%E6%8D%AE%E5%BA%93%E6%89%A9%E5%85%85%E4%B8%8E%E6%94%B6%E7%BC%A9%E3%80%91/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">【SQL Server 2016】【数据库扩充与收缩】</div>
+    </a>
+  
+</nav>
 
 
-
-
-</body>
-
-<script>
-    // We expose some of the variables needed by the front end
-    window.hexo_search_path = "search.xml"
-    window.hexo_root = "/"
-    window.isPost = true
-</script>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-
-<script src="/js/index.js"></script>
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
+  
+</article>
 
 
 
 
 
+
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>ipsum dolor sit amet, <strong>consectetur adipiscing elit.</strong> Fusce eget urna vitae velit <em>eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque</em> penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/typing.js"></script>
+
+<!--[if lt IE 9]>
+<script src="https://cdn.jsdelivr.net/npm/html5shiv@3/dist/html5shiv.min.js"></script>
+<![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
 </html>

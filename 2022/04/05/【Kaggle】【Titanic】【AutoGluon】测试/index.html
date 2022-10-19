@@ -1,172 +1,109 @@
 <!DOCTYPE html>
-<html lang=zh-CN>
+<html lang="zh-CN">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta name="description" content="">
-    <meta name="keyword"  content="">
-    <link rel="shortcut icon" href="/img/favicon.ico">
+  <meta charset="utf-8">
+  
+  <title>【Kaggle】【Titanic】【AutoGluon】测试 | AXDLMG7&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="安装12!pip install autogluon#安装autogluon 训练12345from autogluon.tabular import TabularDataset,TabularPredictor#训练train_data &#x3D; TabularDataset(&amp;#x27;..&#x2F;input&#x2F;titanic&#x2F;train.csv&amp;#x27;)id,label &#x3D; &amp;#x27;Passen">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Kaggle】【Titanic】【AutoGluon】测试">
+<meta property="og:url" content="https://guairen-7.github.io/2022/04/05/%E3%80%90Kaggle%E3%80%91%E3%80%90Titanic%E3%80%91%E3%80%90AutoGluon%E3%80%91%E6%B5%8B%E8%AF%95/index.html">
+<meta property="og:site_name" content="AXDLMG7&#39;s Blog">
+<meta property="og:description" content="安装12!pip install autogluon#安装autogluon 训练12345from autogluon.tabular import TabularDataset,TabularPredictor#训练train_data &#x3D; TabularDataset(&amp;#x27;..&#x2F;input&#x2F;titanic&#x2F;train.csv&amp;#x27;)id,label &#x3D; &amp;#x27;Passen">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/28ce70e9c67047728b402b947eee86d1.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/f4cccabb546943598b8723339531b1b7.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/a4ac17b900004b2bbd3f92f8671fc7d3.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/9f155a96df99420fafa8052588eb7fbe.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/0b7164c4091c4500877255e6069ba4cb.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2d40b29971e74ba39d5f66e4d1554400.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/c3217842b4324771a47491bd9357a559.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2b22af5988fc4289944ed6d6ef6922e5.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/349599b9ad914f5689448e0604920a38.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/4f852377dedd44529b4e9640752015e4.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/bb3d3d2a4ec143148191a6aaa47ec250.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/89d5b74c7beb44b9bca2c92072843fce.png">
+<meta property="article:published_time" content="2022-04-05T07:48:00.838Z">
+<meta property="article:modified_time" content="2022-07-09T01:39:36.701Z">
+<meta property="article:author" content="AXDLMG7">
+<meta property="article:tag" content="AutoGluon">
+<meta property="article:tag" content="Kaggle">
+<meta property="article:tag" content="Titanic">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/28ce70e9c67047728b402b947eee86d1.png">
+  
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/typing.css">
 
-    <title>
-        
-        【Kaggle】【Titanic】【AutoGluon】测试 - undefined
-        
-    </title>
+  
+<link rel="stylesheet" href="/css/donate.css">
 
-    <!-- Custom CSS -->
+  
+  
     
-<link rel="stylesheet" href="/css/aircloud.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
-    
-<link rel="stylesheet" href="/css/gitment.css">
-
-    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
-    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
-    <!-- ga & ba script hoook -->
-    <script></script>
-
-    
-
-
-
-
-
-
-
-
-
+  
 <meta name="generator" content="Hexo 5.4.1"></head>
 
-<body>
-
-<div class="site-nav-toggle" id="site-nav-toggle">
-    <button>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-    </button>
-</div>
-
-<div class="index-about">
-    <i>  </i>
-</div>
-
-<div class="index-container">
+  
     
-    <div class="index-left">
-        
-<div class="nav" id="nav">
-    <div class="avatar-name">
-        <div class="avatar ">
-            <img src="/" />
-        </div>
-        <div class="name">
-            <i>AXDLMG7</i>
-        </div>
-    </div>
-    <div class="contents" id="nav-content">
-        <ul>
-            <li >
-                <a href="/">
-                    <i class="iconfont icon-shouye1"></i>
-                    <span>主页</span>
-                </a>
-            </li>
-            <li >
-                <a href="/tags">
-                    <i class="iconfont icon-biaoqian1"></i>
-                    <span>标签</span>
-                </a>
-            </li>
-            <li >
-                <a href="/archives">
-                    <i class="iconfont icon-guidang2"></i>
-                    <span>存档</span>
-                </a>
-            </li>
-            <li >
-                <a href="/collect/">
-                    <i class="iconfont icon-shoucang1"></i>
-                    <span>收藏</span>
-                </a>
-            </li>
-            <li >
-                <a href="/about/">
-                    <i class="iconfont icon-guanyu2"></i>
-                    <span>关于</span>
-                </a>
-            </li>
-            
-            <li>
-                <a id="search">
-                    <i class="iconfont icon-sousuo1"></i>
-                    <span>搜索</span>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
+      <body>
     
-        <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%AD%E7%BB%83"><span class="toc-text">训练</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%84%E6%B5%8B"><span class="toc-text">预测</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8F%90%E4%BA%A4%E6%96%B9%E5%BC%8F"><span class="toc-text">提交方式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Competition%E9%A6%96%E9%A1%B5"><span class="toc-text">Competition首页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Notebook%E9%A6%96%E9%A1%B5"><span class="toc-text">Notebook首页</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C"><span class="toc-text">结果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-text">Reference</span></a></li></ol>
-</div>
+  
+      <div id="container" class="container">
+        <article id="post-【Kaggle】【Titanic】【AutoGluon】测试" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <header id="header" class="header">
+  <nav class="mobile-nav">
+    <h1 class="nickname">爱笑的冷面鬼7</h1>
+    <ul class="mobile-nav-menu">
+      <label for="mobile-menu-toggle"><a id="menu-button">&#9776; Menu</a></label>
+      <input type="checkbox" id="mobile-menu-toggle"/>
+      <ul class="mobile-nav-link">
+        
+        <a href="/">Home</a>
+        
+        <a href="/archives">Archives</a>
+        
+        <a href="/about">About</a>
+        
+      </ul>
+    </ul>
+  </nav>
+	
+		<nav id="main-nav" class="main-nav nav-left">
+	
+	
+	  <a class="main-nav-link" href="/">Home</a>
+	
+	  <a class="main-nav-link" href="/archives">Archives</a>
+	
+	  <a class="main-nav-link" href="/about">About</a>
+	
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
     
-</div>
 
-
-<div class="search-field" id="search-field">
-    <div class="search-bg" id="search-bg"></div>
-    <div class="search-container">
-        <div class="search-input">
-            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
-            <input id="search-input"/>
-            <span id="begin-search">搜索</span>
-        </div>
-        <div class="search-result-container" id="search-result-container">
-
-        </div>
-    </div>
-</div>
-
-        <div class="index-about-mobile">
-            <i>  </i>
-        </div>
-    </div>
     
-    <div class="index-middle">
-        <!-- Main Content -->
+      <header class="article-header">
         
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      【Kaggle】【Titanic】【AutoGluon】测试
+    </h1>
+  
 
-
-<div class="post-container">
-    <div class="post-title">
-        【Kaggle】【Titanic】【AutoGluon】测试
-    </div>
-
-    <div class="post-meta">
-        <span class="attr">发布于：<span>2022-04-05 15:48:00</span></span>
-        
-        <span class="attr">标签：/
-        
-        <a class="tag" href="/tags/#AutoGluon" title="AutoGluon">AutoGluon</a>
-        <span>/</span>
-        
-        <a class="tag" href="/tags/#Kaggle" title="Kaggle">Kaggle</a>
-        <span>/</span>
-        
-        <a class="tag" href="/tags/#Titanic" title="Titanic">Titanic</a>
-        <span>/</span>
-        
-        
-        </span>
-        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
-</span>
-</span>
-    </div>
-    <div class="post-content ">
+      </header>
+    
+    <div class="e-content article-entry typo" itemprop="articleBody">
+      
         <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!pip install autogluon</span><br><span class="line"><span class="comment">#安装autogluon</span></span><br></pre></td></tr></table></figure>
 <h1 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> autogluon.tabular <span class="keyword">import</span> TabularDataset,TabularPredictor</span><br><span class="line"><span class="comment">#训练</span></span><br><span class="line">train_data = TabularDataset(<span class="string">&#x27;../input/titanic/train.csv&#x27;</span>)</span><br><span class="line"><span class="built_in">id</span>,label = <span class="string">&#x27;PassengerId&#x27;</span>,<span class="string">&#x27;Survived&#x27;</span></span><br><span class="line">predictor = TabularPredictor(label=label).fit(train_data.drop(columns=[<span class="built_in">id</span>]))</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/28ce70e9c67047728b402b947eee86d1.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/f4cccabb546943598b8723339531b1b7.png" alt="在这里插入图片描述"></p>
@@ -198,65 +135,122 @@
     width="100%" 
     height="500">
  </iframe>
-        
-        <br />
-        <div id="comment-container">
-        </div>
-        <div id="disqus_thread"></div>
-        <div id="lv-container"></div>
-        <div class="giscus"></div>
+      
+      
     </div>
-</div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2022/04/05/%E3%80%90Kaggle%E3%80%91%E3%80%90Titanic%E3%80%91%E3%80%90AutoGluon%E3%80%91%E6%B5%8B%E8%AF%95/" class="article-date">
+  <time class="dt-published" datetime="2022-04-05T07:48:00.838Z" itemprop="datePublished">2022-04-05</time>
+</a>
 
-    </div>
-</div>
+        </li>
+        
+          <li>
+            <span class="label">Category:</span>
+            
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/AutoGluon/">AutoGluon</a>/<a class="article-category-link" href="/categories/AutoGluon/Kaggle/">Kaggle</a>
+  </div>
 
 
-<footer class="footer">
-    <ul class="list-inline text-center">
+          </li>
         
         
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AutoGluon/" rel="tag">AutoGluon</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Kaggle/" rel="tag">Kaggle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Titanic/" rel="tag">Titanic</a></li></ul>
 
+
+          </li>
         
-
-        
-
-        
-
-        
-
-    </ul>
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
     
-    <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
-</footer>
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2022/04/05/%E3%80%90Data%20Mining%E3%80%91%E3%80%90%E7%AC%AC%E4%B8%80%E7%AB%A0%E4%BD%9C%E4%B8%9A%E3%80%91/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          【Data Mining】【第一章作业】
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/04/04/%E3%80%90R%E3%80%91%E3%80%90%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E3%80%91%E3%80%90%E8%BF%90%E7%AE%97%E7%AC%A6%E5%8F%B7%E3%80%81%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E3%80%81%20%E7%BB%98%E5%9B%BE%E3%80%91/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">【R】【基本操作】【运算符号、常用函数、 绘图】</div>
+    </a>
+  
+</nav>
 
 
-
-
-</body>
-
-<script>
-    // We expose some of the variables needed by the front end
-    window.hexo_search_path = "search.xml"
-    window.hexo_root = "/"
-    window.isPost = true
-</script>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-
-<script src="/js/index.js"></script>
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
+  
+</article>
 
 
 
 
 
+
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>ipsum dolor sit amet, <strong>consectetur adipiscing elit.</strong> Fusce eget urna vitae velit <em>eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque</em> penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/typing.js"></script>
+
+<!--[if lt IE 9]>
+<script src="https://cdn.jsdelivr.net/npm/html5shiv@3/dist/html5shiv.min.js"></script>
+<![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
 </html>

@@ -1,169 +1,101 @@
 <!DOCTYPE html>
-<html lang=zh-CN>
+<html lang="zh-CN">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta name="description" content="">
-    <meta name="keyword"  content="">
-    <link rel="shortcut icon" href="/img/favicon.ico">
+  <meta charset="utf-8">
+  
+  <title>【R】【纽约人口数量分析】 | AXDLMG7&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1）实验说明从网址bank-additional-full.csv中下载数据到指定位置（D:\），然后解压到当前文件夹。 导入下载的数据 bank-additional-full.csv 到 R 软件。 通过时间序列分析方法对 1946 年 1 月到 1959 年 12 月的纽约每月出生人口数量进行时间序列分析，预测纽约每月人口数量的影响因素及相关规律。 2）实验环境R-3.6.0 3）实验目的①">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【R】【纽约人口数量分析】">
+<meta property="og:url" content="https://guairen-7.github.io/2022/03/08/%E3%80%90R%E3%80%91%E3%80%90%E7%BA%BD%E7%BA%A6%E4%BA%BA%E5%8F%A3%E6%95%B0%E9%87%8F%E5%88%86%E6%9E%90%E3%80%91/index.html">
+<meta property="og:site_name" content="AXDLMG7&#39;s Blog">
+<meta property="og:description" content="1）实验说明从网址bank-additional-full.csv中下载数据到指定位置（D:\），然后解压到当前文件夹。 导入下载的数据 bank-additional-full.csv 到 R 软件。 通过时间序列分析方法对 1946 年 1 月到 1959 年 12 月的纽约每月出生人口数量进行时间序列分析，预测纽约每月人口数量的影响因素及相关规律。 2）实验环境R-3.6.0 3）实验目的①">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2654b71acc7845f799916f5862f36f8c.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQVhETE1H,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/7c2836f79b4d4157ac1281ce02038e14.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/9ff8415155894e9e916a2a0e2ab4f9a8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQVhETE1H,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/0aca8aa70dd04fbda6d2303640c5e844.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQVhETE1H,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/082a0b55643e47c59e34978f60243c9b.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQVhETE1H,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="article:published_time" content="2022-03-08T15:06:26.199Z">
+<meta property="article:modified_time" content="2022-04-05T16:05:40.717Z">
+<meta property="article:author" content="AXDLMG7">
+<meta property="article:tag" content="Data Mining">
+<meta property="article:tag" content="实验">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/2654b71acc7845f799916f5862f36f8c.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQVhETE1H,size_20,color_FFFFFF,t_70,g_se,x_16">
+  
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/typing.css">
 
-    <title>
-        
-        【R】【纽约人口数量分析】 - undefined
-        
-    </title>
+  
+<link rel="stylesheet" href="/css/donate.css">
 
-    <!-- Custom CSS -->
+  
+  
     
-<link rel="stylesheet" href="/css/aircloud.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
-    
-<link rel="stylesheet" href="/css/gitment.css">
-
-    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
-    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
-    <!-- ga & ba script hoook -->
-    <script></script>
-
-    
-
-
-
-
-
-
-
-
-
+  
 <meta name="generator" content="Hexo 5.4.1"></head>
 
-<body>
-
-<div class="site-nav-toggle" id="site-nav-toggle">
-    <button>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-    </button>
-</div>
-
-<div class="index-about">
-    <i>  </i>
-</div>
-
-<div class="index-container">
+  
     
-    <div class="index-left">
-        
-<div class="nav" id="nav">
-    <div class="avatar-name">
-        <div class="avatar ">
-            <img src="/" />
-        </div>
-        <div class="name">
-            <i>AXDLMG7</i>
-        </div>
-    </div>
-    <div class="contents" id="nav-content">
-        <ul>
-            <li >
-                <a href="/">
-                    <i class="iconfont icon-shouye1"></i>
-                    <span>主页</span>
-                </a>
-            </li>
-            <li >
-                <a href="/tags">
-                    <i class="iconfont icon-biaoqian1"></i>
-                    <span>标签</span>
-                </a>
-            </li>
-            <li >
-                <a href="/archives">
-                    <i class="iconfont icon-guidang2"></i>
-                    <span>存档</span>
-                </a>
-            </li>
-            <li >
-                <a href="/collect/">
-                    <i class="iconfont icon-shoucang1"></i>
-                    <span>收藏</span>
-                </a>
-            </li>
-            <li >
-                <a href="/about/">
-                    <i class="iconfont icon-guanyu2"></i>
-                    <span>关于</span>
-                </a>
-            </li>
-            
-            <li>
-                <a id="search">
-                    <i class="iconfont icon-sousuo1"></i>
-                    <span>搜索</span>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
+      <body>
     
-        <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%EF%BC%89%E5%AE%9E%E9%AA%8C%E8%AF%B4%E6%98%8E"><span class="toc-text">1）实验说明</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%EF%BC%89%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83"><span class="toc-text">2）实验环境</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%EF%BC%89%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84"><span class="toc-text">3）实验目的</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4%EF%BC%89%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-text">4）实验内容</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5%EF%BC%89%E5%AE%9E%E9%AA%8C%E6%AD%A5%E9%AA%A4"><span class="toc-text">5）实验步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%91%A0-%E4%B8%8B%E8%BD%BD%E5%B9%B6%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="toc-text">① 下载并导入数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%91%A1-%E5%AF%B9%E7%94%9F%E6%88%90%E7%9A%84%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E5%AF%B9%E8%B1%A1%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="toc-text">② 对生成的时间序列对象可视化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#a-%E6%80%9D%E8%80%83"><span class="toc-text">a. 思考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#b-%E7%94%B1%E4%B8%8A%E8%BF%B0%E4%B8%89%E7%A7%8D%E5%8F%98%E9%87%8F%E6%9F%A5%E7%9C%8B%E5%90%84%E4%B8%AA%E6%B3%A2%E5%8A%A8%E8%B6%8B%E5%8A%BF%E6%95%B0%E6%8D%AE"><span class="toc-text">b. 由上述三种变量查看各个波动趋势数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#c-%E7%94%B1%E4%B8%8A%E8%BF%B0%E7%BB%93%E6%9E%9C%E5%8F%AF%E7%9F%A5%EF%BC%9A"><span class="toc-text">c. 由上述结果可知：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%91%A2-%E4%BD%BF%E7%94%A8-plot-%E5%87%BD%E6%95%B0"><span class="toc-text">③ 使用 plot()函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%91%A3-%E4%BF%AE%E6%AD%A3%E6%95%B0%E6%8D%AE"><span class="toc-text">④ 修正数据</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6%EF%BC%89%E5%AE%9E%E9%AA%8C%E5%88%86%E6%9E%90"><span class="toc-text">6）实验分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7%EF%BC%89ps"><span class="toc-text">7）ps</span></a></li></ol>
-</div>
+  
+      <div id="container" class="container">
+        <article id="post-【R】【纽约人口数量分析】" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <header id="header" class="header">
+  <nav class="mobile-nav">
+    <h1 class="nickname">爱笑的冷面鬼7</h1>
+    <ul class="mobile-nav-menu">
+      <label for="mobile-menu-toggle"><a id="menu-button">&#9776; Menu</a></label>
+      <input type="checkbox" id="mobile-menu-toggle"/>
+      <ul class="mobile-nav-link">
+        
+        <a href="/">Home</a>
+        
+        <a href="/archives">Archives</a>
+        
+        <a href="/about">About</a>
+        
+      </ul>
+    </ul>
+  </nav>
+	
+		<nav id="main-nav" class="main-nav nav-left">
+	
+	
+	  <a class="main-nav-link" href="/">Home</a>
+	
+	  <a class="main-nav-link" href="/archives">Archives</a>
+	
+	  <a class="main-nav-link" href="/about">About</a>
+	
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
     
-</div>
 
-
-<div class="search-field" id="search-field">
-    <div class="search-bg" id="search-bg"></div>
-    <div class="search-container">
-        <div class="search-input">
-            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
-            <input id="search-input"/>
-            <span id="begin-search">搜索</span>
-        </div>
-        <div class="search-result-container" id="search-result-container">
-
-        </div>
-    </div>
-</div>
-
-        <div class="index-about-mobile">
-            <i>  </i>
-        </div>
-    </div>
     
-    <div class="index-middle">
-        <!-- Main Content -->
+      <header class="article-header">
         
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      【R】【纽约人口数量分析】
+    </h1>
+  
 
-
-<div class="post-container">
-    <div class="post-title">
-        【R】【纽约人口数量分析】
-    </div>
-
-    <div class="post-meta">
-        <span class="attr">发布于：<span>2022-03-08 23:06:26</span></span>
-        
-        <span class="attr">标签：/
-        
-        <a class="tag" href="/tags/#Data Mining" title="Data Mining">Data Mining</a>
-        <span>/</span>
-        
-        <a class="tag" href="/tags/#实验" title="实验">实验</a>
-        <span>/</span>
-        
-        
-        </span>
-        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
-</span>
-</span>
-    </div>
-    <div class="post-content ">
+      </header>
+    
+    <div class="e-content article-entry typo" itemprop="articleBody">
+      
         <h1 id="1）实验说明"><a href="#1）实验说明" class="headerlink" title="1）实验说明"></a>1）实验说明</h1><p>从网址<a target="_blank" rel="noopener" href="http://robjhyndman.com/tsdldata/data/nybirths.dat">bank-additional-full.csv</a><br>中下载数据到指定位置（D:\），然后解压到当前文件夹。</p>
 <p>导入下载的数据 bank-additional-full.csv 到 R 软件。</p>
 <p>通过时间序列分析方法对 1946 年 1 月到 1959 年 12 月的纽约每月出生人口数量进行时间序列分析，预测纽约每月人口数量的影响因素及相关规律。</p>
@@ -194,65 +126,122 @@
 <p>本实验主要对时间序列数据进行了季节调整分析，运用 decompose 函数将数据分成趋势、季节、不规则波动三部分观察，并进一步对数据进行修正，剔除季节影响，以便更好地揭示数据本身的基本趋势，发现数据中隐藏的信息。</p>
 <h1 id="7）ps"><a href="#7）ps" class="headerlink" title="7）ps"></a>7）ps</h1><p>因数据丢失，该实验暂未复现，暂未精读</p>
 
-        
-        <br />
-        <div id="comment-container">
-        </div>
-        <div id="disqus_thread"></div>
-        <div id="lv-container"></div>
-        <div class="giscus"></div>
+      
+      
     </div>
-</div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2022/03/08/%E3%80%90R%E3%80%91%E3%80%90%E7%BA%BD%E7%BA%A6%E4%BA%BA%E5%8F%A3%E6%95%B0%E9%87%8F%E5%88%86%E6%9E%90%E3%80%91/" class="article-date">
+  <time class="dt-published" datetime="2022-03-08T15:06:26.199Z" itemprop="datePublished">2022-03-08</time>
+</a>
 
-    </div>
-</div>
+        </li>
+        
+          <li>
+            <span class="label">Category:</span>
+            
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Data-Mining/">Data Mining</a>/<a class="article-category-link" href="/categories/Data-Mining/RStudio/">RStudio</a>
+  </div>
 
 
-<footer class="footer">
-    <ul class="list-inline text-center">
+          </li>
         
         
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Mining/" rel="tag">Data Mining</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%9E%E9%AA%8C/" rel="tag">实验</a></li></ul>
 
+
+          </li>
         
-
-        
-
-        
-
-        
-
-    </ul>
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
     
-    <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
-</footer>
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2022/03/16/%E3%80%90RStudio%E3%80%91%E6%9B%B4%E6%8D%A2%E3%80%90%E9%95%9C%E5%83%8F%E3%80%91/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          【RStudio】更换【mirror】
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/02/01/%E3%80%90%E8%99%8E%E8%99%8E%E7%94%9F%E5%A8%81%E3%80%91/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">【虎虎生威】</div>
+    </a>
+  
+</nav>
 
 
-
-
-</body>
-
-<script>
-    // We expose some of the variables needed by the front end
-    window.hexo_search_path = "search.xml"
-    window.hexo_root = "/"
-    window.isPost = true
-</script>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-
-<script src="/js/index.js"></script>
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
+  
+</article>
 
 
 
 
 
+
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>ipsum dolor sit amet, <strong>consectetur adipiscing elit.</strong> Fusce eget urna vitae velit <em>eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque</em> penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/typing.js"></script>
+
+<!--[if lt IE 9]>
+<script src="https://cdn.jsdelivr.net/npm/html5shiv@3/dist/html5shiv.min.js"></script>
+<![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
 </html>

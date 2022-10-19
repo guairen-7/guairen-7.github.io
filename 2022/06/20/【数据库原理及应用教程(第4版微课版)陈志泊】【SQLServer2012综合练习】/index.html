@@ -1,169 +1,150 @@
 <!DOCTYPE html>
-<html lang=zh-CN>
+<html lang="zh-CN">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta name="description" content="">
-    <meta name="keyword"  content="">
-    <link rel="shortcut icon" href="/img/favicon.ico">
+  <meta charset="utf-8">
+  
+  <title>【数据库原理及应用教程(第4版|微课版)陈志泊】【SQLServer2012综合练习】 | AXDLMG7&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="0．本实验环境①SQL Server 2016②SSMS 17 1．创建数据库和数据表（1）利用资源管理器，在 D 盘建立以自己的姓名为名称的文件夹，以便保存数据库。 （2）登录并连接到 SQL Server 2012 服务器。 （3）利用对象资源管理器建立名称为 Study 的数据库文件，主文件名为 Study.mdf，日志文件名为 Study.ldf，它们的保存路径在第（1）步中建立的文件夹。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【数据库原理及应用教程(第4版|微课版)陈志泊】【SQLServer2012综合练习】">
+<meta property="og:url" content="https://guairen-7.github.io/2022/06/20/%E3%80%90%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8%E6%95%99%E7%A8%8B(%E7%AC%AC4%E7%89%88%E5%BE%AE%E8%AF%BE%E7%89%88)%E9%99%88%E5%BF%97%E6%B3%8A%E3%80%91%E3%80%90SQLServer2012%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0%E3%80%91/index.html">
+<meta property="og:site_name" content="AXDLMG7&#39;s Blog">
+<meta property="og:description" content="0．本实验环境①SQL Server 2016②SSMS 17 1．创建数据库和数据表（1）利用资源管理器，在 D 盘建立以自己的姓名为名称的文件夹，以便保存数据库。 （2）登录并连接到 SQL Server 2012 服务器。 （3）利用对象资源管理器建立名称为 Study 的数据库文件，主文件名为 Study.mdf，日志文件名为 Study.ldf，它们的保存路径在第（1）步中建立的文件夹。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/919d8d3e9f454656ada8c7a19432090d.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/b07ada68a5e9425f8194e7e070911d06.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/ec1aad644dc94f58a91d12b2d1dede40.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/b31d188faaa24354b31a47c477c67aba.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/a9fca330556642cca890833f2081de27.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/8834edb427c54405968b18f9ec31a9cd.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/71031793f348467aa136c085220113b9.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/db4521a105ca4ffa9515b26447f59904.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/faecd4b4d0a743eab9234886e2bf7b24.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/95980845e60f4549a7eeb3880e695833.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/351a3586d39741409c91f412030caf62.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/483672cc6b5f47549adce6d4485dec34.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/7947914319d9467ea7e410fdd3d17cfa.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/6598411f5ecb41a9a3e8705df15f136e.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2e41d5cb79fa4c3d8d5e8ea937696377.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/ea9c916cc7bd41e083a0a0a4fd24b3c4.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/08804934b9bc42a5a8684d29d9a097cf.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/40edcc19561b40468f3f2eae73cf060a.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/d22884e7f17246eda8fa205a6ac971ca.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/c0a9d19a2db442dab732a511d5615a9b.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/f143068b9d734b5c9a366c70540d6a49.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/ebe48e3194764bc7aa081aa1a1454232.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2176ab96392f4a06b81e98415fc12763.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/634b0fbaf4de482595a9d425570998f9.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/0421090b96664ba7affb63409054d4be.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/e1be2e2fb5be42638982f5f165807f98.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/3421e9d924f54b888cf60b028670d78d.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/7e85458a18ee40be86eb08e3a0c106f5.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/461e47d1519b42a0b9a37154491b7623.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/a0930ee072a842e3b17adf6ad55d8afd.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/f1340887a3224f03a61d6ab8432b7c56.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/39a819293e8f4d99877881710c41036d.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/1cc6a31885494910ab7ba540be321a26.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/63c3c12cf5ff41eea6ea33f86fcfa257.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/946457313b984bc9bf287d046fa8dd15.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/a697f6216ac4454794e65b5d84cc1e4b.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/afc55230844a4fd2866948bdede79521.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/1a2964b74e674f54a05d0da73c58a938.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/968dc949eb5d403ba4996e52de9c743a.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/3cf0cbcaa21d458b9b5933296aae2121.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/a91321dd2e624cf78ab7dfe12a66f7c1.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/93cc47c4f1954680b04aa4d7ee8fc40b.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/0b2987efd5fb44a4a2900c94d729ea29.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/98991f5daa914665979a37c378c3bcee.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/882b6cd5f2184d0999d6495d91e8b230.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/145887d49bcd4af188651a1169d90425.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/0c6b444ed3214ff88be581d07984318f.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/06dc0a223885430eb4e84b6989eee496.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/26fd4b923f344055a05f2473e201e93e.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/999fadbeacfe4445a7e1f24def2367af.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/3325259814444aa6b93a55f4112b0285.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/386c296234604666b008c89a122acf27.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/3c767ea8ac2149f4b0ea0d3c9dc5b578.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/9a54fbeca1424d2789babbd1427817d4.png">
+<meta property="article:published_time" content="2022-06-20T14:17:48.600Z">
+<meta property="article:modified_time" content="2022-06-20T14:26:56.713Z">
+<meta property="article:author" content="AXDLMG7">
+<meta property="article:tag" content="作业">
+<meta property="article:tag" content="DataBase">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/919d8d3e9f454656ada8c7a19432090d.png">
+  
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/typing.css">
 
-    <title>
-        
-        【数据库原理及应用教程(第4版|微课版)陈志泊】【SQLServer2012综合练习】 - undefined
-        
-    </title>
+  
+<link rel="stylesheet" href="/css/donate.css">
 
-    <!-- Custom CSS -->
+  
+  
     
-<link rel="stylesheet" href="/css/aircloud.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
-    
-<link rel="stylesheet" href="/css/gitment.css">
-
-    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
-    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
-    <!-- ga & ba script hoook -->
-    <script></script>
-
-    
-
-
-
-
-
-
-
-
-
+  
 <meta name="generator" content="Hexo 5.4.1"></head>
 
-<body>
-
-<div class="site-nav-toggle" id="site-nav-toggle">
-    <button>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-    </button>
-</div>
-
-<div class="index-about">
-    <i>  </i>
-</div>
-
-<div class="index-container">
+  
     
-    <div class="index-left">
-        
-<div class="nav" id="nav">
-    <div class="avatar-name">
-        <div class="avatar ">
-            <img src="/" />
-        </div>
-        <div class="name">
-            <i>AXDLMG7</i>
-        </div>
-    </div>
-    <div class="contents" id="nav-content">
-        <ul>
-            <li >
-                <a href="/">
-                    <i class="iconfont icon-shouye1"></i>
-                    <span>主页</span>
-                </a>
-            </li>
-            <li >
-                <a href="/tags">
-                    <i class="iconfont icon-biaoqian1"></i>
-                    <span>标签</span>
-                </a>
-            </li>
-            <li >
-                <a href="/archives">
-                    <i class="iconfont icon-guidang2"></i>
-                    <span>存档</span>
-                </a>
-            </li>
-            <li >
-                <a href="/collect/">
-                    <i class="iconfont icon-shoucang1"></i>
-                    <span>收藏</span>
-                </a>
-            </li>
-            <li >
-                <a href="/about/">
-                    <i class="iconfont icon-guanyu2"></i>
-                    <span>关于</span>
-                </a>
-            </li>
-            
-            <li>
-                <a id="search">
-                    <i class="iconfont icon-sousuo1"></i>
-                    <span>搜索</span>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
+      <body>
     
-        <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0%EF%BC%8E%E6%9C%AC%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83"><span class="toc-text">0．本实验环境</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1%EF%BC%8E%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8C%E6%95%B0%E6%8D%AE%E8%A1%A8"><span class="toc-text">1．创建数据库和数据表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%EF%BC%8E%E7%AE%80%E5%8D%95%E7%9A%84%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2"><span class="toc-text">2．简单的数据查询</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%EF%BC%8E%E5%A4%8D%E6%9D%82%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2"><span class="toc-text">3．复杂数据查询</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4%EF%BC%8E%E7%94%A8-Transact-SQL-%E8%AF%AD%E5%8F%A5%E5%AE%9A%E4%B9%89%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B"><span class="toc-text">4．用 Transact-SQL 语句定义存储过程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5%EF%BC%8ETransact-SQL-%E8%AF%AD%E5%8F%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-text">5．Transact-SQL 语句自定义触发器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-text">Reference</span></a></li></ol>
-</div>
+  
+      <div id="container" class="container">
+        <article id="post-【数据库原理及应用教程(第4版微课版)陈志泊】【SQLServer2012综合练习】" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <header id="header" class="header">
+  <nav class="mobile-nav">
+    <h1 class="nickname">爱笑的冷面鬼7</h1>
+    <ul class="mobile-nav-menu">
+      <label for="mobile-menu-toggle"><a id="menu-button">&#9776; Menu</a></label>
+      <input type="checkbox" id="mobile-menu-toggle"/>
+      <ul class="mobile-nav-link">
+        
+        <a href="/">Home</a>
+        
+        <a href="/archives">Archives</a>
+        
+        <a href="/about">About</a>
+        
+      </ul>
+    </ul>
+  </nav>
+	
+		<nav id="main-nav" class="main-nav nav-left">
+	
+	
+	  <a class="main-nav-link" href="/">Home</a>
+	
+	  <a class="main-nav-link" href="/archives">Archives</a>
+	
+	  <a class="main-nav-link" href="/about">About</a>
+	
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
     
-</div>
 
-
-<div class="search-field" id="search-field">
-    <div class="search-bg" id="search-bg"></div>
-    <div class="search-container">
-        <div class="search-input">
-            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
-            <input id="search-input"/>
-            <span id="begin-search">搜索</span>
-        </div>
-        <div class="search-result-container" id="search-result-container">
-
-        </div>
-    </div>
-</div>
-
-        <div class="index-about-mobile">
-            <i>  </i>
-        </div>
-    </div>
     
-    <div class="index-middle">
-        <!-- Main Content -->
+      <header class="article-header">
         
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      【数据库原理及应用教程(第4版|微课版)陈志泊】【SQLServer2012综合练习】
+    </h1>
+  
 
-
-<div class="post-container">
-    <div class="post-title">
-        【数据库原理及应用教程(第4版|微课版)陈志泊】【SQLServer2012综合练习】
-    </div>
-
-    <div class="post-meta">
-        <span class="attr">发布于：<span>2022-06-20 22:17:48</span></span>
-        
-        <span class="attr">标签：/
-        
-        <a class="tag" href="/tags/#作业" title="作业">作业</a>
-        <span>/</span>
-        
-        <a class="tag" href="/tags/#DataBase" title="DataBase">DataBase</a>
-        <span>/</span>
-        
-        
-        </span>
-        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
-</span>
-</span>
-    </div>
-    <div class="post-content ">
+      </header>
+    
+    <div class="e-content article-entry typo" itemprop="articleBody">
+      
         <h1 id="0．本实验环境"><a href="#0．本实验环境" class="headerlink" title="0．本实验环境"></a>0．本实验环境</h1><p><strong>①SQL Server 2016<br>②SSMS 17</strong></p>
 <h1 id="1．创建数据库和数据表"><a href="#1．创建数据库和数据表" class="headerlink" title="1．创建数据库和数据表"></a>1．创建数据库和数据表</h1><p>（1）利用资源管理器，在 D 盘建立以自己的姓名为名称的文件夹，以便保存数据库。</p>
 <p>（2）登录并连接到 SQL Server 2012 服务器。</p>
@@ -330,65 +311,122 @@
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a target="_blank" rel="noopener" href="https://wenku.baidu.com/view/44976523cf1755270722192e453610661ed95adf.html?fr=income2-doc-search">数据库原理及应用教程（第4版微课版）陈志泊-SQLServer2012综合练习/文百度文库@</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_58138734/article/details/124560796">数据库原理及安全技术教学实验报告SQL实践（四）/文CSDN@王陈锋</a></p>
 
-        
-        <br />
-        <div id="comment-container">
-        </div>
-        <div id="disqus_thread"></div>
-        <div id="lv-container"></div>
-        <div class="giscus"></div>
+      
+      
     </div>
-</div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2022/06/20/%E3%80%90%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8%E6%95%99%E7%A8%8B(%E7%AC%AC4%E7%89%88%E5%BE%AE%E8%AF%BE%E7%89%88)%E9%99%88%E5%BF%97%E6%B3%8A%E3%80%91%E3%80%90SQLServer2012%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0%E3%80%91/" class="article-date">
+  <time class="dt-published" datetime="2022-06-20T14:17:48.600Z" itemprop="datePublished">2022-06-20</time>
+</a>
 
-    </div>
-</div>
+        </li>
+        
+          <li>
+            <span class="label">Category:</span>
+            
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/DataBase/">DataBase</a>/<a class="article-category-link" href="/categories/DataBase/%E3%80%90%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8%E6%95%99%E7%A8%8B-%E7%AC%AC4%E7%89%88-%E5%BE%AE%E8%AF%BE%E7%89%88-%E9%99%88%E5%BF%97%E6%B3%8A%E3%80%91/">【数据库原理及应用教程(第4版|微课版)陈志泊】</a>
+  </div>
 
 
-<footer class="footer">
-    <ul class="list-inline text-center">
+          </li>
         
         
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DataBase/" rel="tag">DataBase</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%BD%9C%E4%B8%9A/" rel="tag">作业</a></li></ul>
 
+
+          </li>
         
-
-        
-
-        
-
-        
-
-    </ul>
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
     
-    <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
-</footer>
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2022/06/26/%E3%80%90%E4%B8%A4%E5%B9%B4%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B6%AF%E3%80%91/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          【两年大学生涯】
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/06/20/%E3%80%90%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8%E6%95%99%E7%A8%8B(%E7%AC%AC4%E7%89%88%E5%BE%AE%E8%AF%BE%E7%89%88)%E9%99%88%E5%BF%97%E6%B3%8A%E3%80%91%E3%80%90%E7%AC%AC%E4%B8%83%E7%AB%A0%E4%B9%A0%E9%A2%98%E3%80%91/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">【数据库原理及应用教程(第4版|微课版)陈志泊】【第七章习题】</div>
+    </a>
+  
+</nav>
 
 
-
-
-</body>
-
-<script>
-    // We expose some of the variables needed by the front end
-    window.hexo_search_path = "search.xml"
-    window.hexo_root = "/"
-    window.isPost = true
-</script>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-
-<script src="/js/index.js"></script>
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
+  
+</article>
 
 
 
 
 
+
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>ipsum dolor sit amet, <strong>consectetur adipiscing elit.</strong> Fusce eget urna vitae velit <em>eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque</em> penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/typing.js"></script>
+
+<!--[if lt IE 9]>
+<script src="https://cdn.jsdelivr.net/npm/html5shiv@3/dist/html5shiv.min.js"></script>
+<![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
 </html>

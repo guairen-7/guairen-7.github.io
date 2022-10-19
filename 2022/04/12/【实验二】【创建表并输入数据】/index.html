@@ -1,166 +1,128 @@
 <!DOCTYPE html>
-<html lang=zh-CN>
+<html lang="zh-CN">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta name="description" content="">
-    <meta name="keyword"  content="">
-    <link rel="shortcut icon" href="/img/favicon.ico">
+  <meta charset="utf-8">
+  
+  <title>【实验二】【创建表并输入数据】 | AXDLMG7&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在实验一的基础上：数据库XSCJ，初始大小20MB，自动增长&#x2F;最大大小1MB，收缩百分比50% 目的表XSQK–学生情况 KC–课程 XS_KC–学生_课程 T-SQL创建表1）新建查询单击“标准”工具栏“新建查询” 2）切换数据库在“SQL编辑器”工具栏单击“可用数据库”下拉按钮–&gt;将当前数据库切换成“XSCJ”  3）输入T-SQL查询语句创建表XSQK–学生情况123456789101">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【实验二】【创建表并输入数据】">
+<meta property="og:url" content="https://guairen-7.github.io/2022/04/12/%E3%80%90%E5%AE%9E%E9%AA%8C%E4%BA%8C%E3%80%91%E3%80%90%E5%88%9B%E5%BB%BA%E8%A1%A8%E5%B9%B6%E8%BE%93%E5%85%A5%E6%95%B0%E6%8D%AE%E3%80%91/index.html">
+<meta property="og:site_name" content="AXDLMG7&#39;s Blog">
+<meta property="og:description" content="在实验一的基础上：数据库XSCJ，初始大小20MB，自动增长&#x2F;最大大小1MB，收缩百分比50% 目的表XSQK–学生情况 KC–课程 XS_KC–学生_课程 T-SQL创建表1）新建查询单击“标准”工具栏“新建查询” 2）切换数据库在“SQL编辑器”工具栏单击“可用数据库”下拉按钮–&gt;将当前数据库切换成“XSCJ”  3）输入T-SQL查询语句创建表XSQK–学生情况123456789101">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/c5874006bb4f4bac8663d9da890549b5.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/0ce1cbaa3782462aa9df3c7638d72362.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/0f2b6cec1afa4d9f922af136769f6797.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/b86c76d4a030480dbe8e2df246a0686e.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/b7eb5bfe056f49169beac060f39cb26b.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/b8ebd6d19b634ee28c6bc5a053088464.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/7295721fe86844bd9170f87c1117e67b.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/7962bb3c62094babaebaec3d0007c8a7.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/ee5d3f5715e54a5da675ff50fd0b3edc.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/8b1cf5e804d246da9a681a6572cbe46c.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/4baf1514294f4d8587a2681977d5b2b8.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/a1fa402d40f249878a0b836460567037.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/681d3dc0d3ca4e908c29ef1b0a0dbaba.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/d36fa1e0f91c4e61bfac069fbb494105.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/b8728484b0504017bf67d7502ffd170a.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/5263eed0ba384fa08f6001253ce37d3e.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/0e97e5c24794439cb58726d72cdf4485.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/8bc62b00691c4dd784cdfc2cf071799d.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/56e10ea2b2154e778465c7b44218c267.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/85fc2e7a308644c492991af4d004b75d.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/71f0c22967884ec8bd337e45ff30aee5.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/bd69ba651fb64f8097f6fcaac6cea9c4.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/ea9d4925b0bb448ab4bd13571d6134a7.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/09b49e4430654bbc937fa99e47e7f622.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20d29a17f8af4c6b8a48d556c22e1c3f.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/f0045b23bea34437ad7a9f0ade7a1656.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/43b286920629437190b0a7ef4914f24e.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/782bbc520b424e3087f76b03c891c7d9.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/4e21762239aa464087b4b5f32ecc76cd.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/c0923bafc2a94b729865f38c6e6ff70e.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/6188ca60ff6e483295e8011248307812.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/579190b49872436c847e90c1cbec1433.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/c6a1689c464940bc92d8eef8c747a1ea.png">
+<meta property="article:published_time" content="2022-04-12T02:41:53.331Z">
+<meta property="article:modified_time" content="2022-05-17T08:01:10.772Z">
+<meta property="article:author" content="AXDLMG7">
+<meta property="article:tag" content="数据库基本操作 - T-SQL - SSMS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/c5874006bb4f4bac8663d9da890549b5.png">
+  
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/typing.css">
 
-    <title>
-        
-        【实验二】【创建表并输入数据】 - undefined
-        
-    </title>
+  
+<link rel="stylesheet" href="/css/donate.css">
 
-    <!-- Custom CSS -->
+  
+  
     
-<link rel="stylesheet" href="/css/aircloud.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
-    
-<link rel="stylesheet" href="/css/gitment.css">
-
-    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
-    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
-    <!-- ga & ba script hoook -->
-    <script></script>
-
-    
-
-
-
-
-
-
-
-
-
+  
 <meta name="generator" content="Hexo 5.4.1"></head>
 
-<body>
-
-<div class="site-nav-toggle" id="site-nav-toggle">
-    <button>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-    </button>
-</div>
-
-<div class="index-about">
-    <i>  </i>
-</div>
-
-<div class="index-container">
+  
     
-    <div class="index-left">
-        
-<div class="nav" id="nav">
-    <div class="avatar-name">
-        <div class="avatar ">
-            <img src="/" />
-        </div>
-        <div class="name">
-            <i>AXDLMG7</i>
-        </div>
-    </div>
-    <div class="contents" id="nav-content">
-        <ul>
-            <li >
-                <a href="/">
-                    <i class="iconfont icon-shouye1"></i>
-                    <span>主页</span>
-                </a>
-            </li>
-            <li >
-                <a href="/tags">
-                    <i class="iconfont icon-biaoqian1"></i>
-                    <span>标签</span>
-                </a>
-            </li>
-            <li >
-                <a href="/archives">
-                    <i class="iconfont icon-guidang2"></i>
-                    <span>存档</span>
-                </a>
-            </li>
-            <li >
-                <a href="/collect/">
-                    <i class="iconfont icon-shoucang1"></i>
-                    <span>收藏</span>
-                </a>
-            </li>
-            <li >
-                <a href="/about/">
-                    <i class="iconfont icon-guanyu2"></i>
-                    <span>关于</span>
-                </a>
-            </li>
-            
-            <li>
-                <a id="search">
-                    <i class="iconfont icon-sousuo1"></i>
-                    <span>搜索</span>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
+      <body>
     
-        <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E7%9A%84%E8%A1%A8"><span class="toc-text">目的表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#XSQK%E2%80%93%E5%AD%A6%E7%94%9F%E6%83%85%E5%86%B5"><span class="toc-text">XSQK–学生情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#KC%E2%80%93%E8%AF%BE%E7%A8%8B"><span class="toc-text">KC–课程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XS-KC%E2%80%93%E5%AD%A6%E7%94%9F-%E8%AF%BE%E7%A8%8B"><span class="toc-text">XS_KC–学生_课程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#T-SQL%E5%88%9B%E5%BB%BA%E8%A1%A8"><span class="toc-text">T-SQL创建表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%EF%BC%89%E6%96%B0%E5%BB%BA%E6%9F%A5%E8%AF%A2"><span class="toc-text">1）新建查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%EF%BC%89%E5%88%87%E6%8D%A2%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-text">2）切换数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%EF%BC%89%E8%BE%93%E5%85%A5T-SQL%E6%9F%A5%E8%AF%A2%E8%AF%AD%E5%8F%A5%E5%88%9B%E5%BB%BA%E8%A1%A8"><span class="toc-text">3）输入T-SQL查询语句创建表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#XSQK%E2%80%93%E5%AD%A6%E7%94%9F%E6%83%85%E5%86%B5-1"><span class="toc-text">XSQK–学生情况</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#KC%E2%80%93%E8%AF%BE%E7%A8%8B-1"><span class="toc-text">KC–课程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#XS-KC%E2%80%93%E5%AD%A6%E7%94%9F-%E8%AF%BE%E7%A8%8B-1"><span class="toc-text">XS_KC–学生_课程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%EF%BC%89%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4"><span class="toc-text">4）执行命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5%EF%BC%89%E6%9F%A5%E7%9C%8B%E8%A1%A8"><span class="toc-text">5）查看表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSMS%E5%88%9B%E5%BB%BA%E8%A1%A8"><span class="toc-text">SSMS创建表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#XSQK%E2%80%93%E5%AD%A6%E7%94%9F%E6%83%85%E5%86%B5-2"><span class="toc-text">XSQK–学生情况</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%94%AE"><span class="toc-text">设置主键</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#KC%E2%80%93%E8%AF%BE%E7%A8%8B-2"><span class="toc-text">KC–课程</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%88%97%E5%B1%9E%E6%80%A7"><span class="toc-text">设置列属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E7%BA%A6%E6%9D%9F"><span class="toc-text">设置约束</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#XS-KC%E2%80%93%E5%AD%A6%E7%94%9F-%E8%AF%BE%E7%A8%8B-2"><span class="toc-text">XS_KC–学生_课程</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E4%B8%BB%E9%94%AE%E5%A4%96%E9%94%AE"><span class="toc-text">设置主键外键</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E7%BA%A6%E6%9D%9F-1"><span class="toc-text">设置约束</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%88%9B%E5%BB%BA%E7%9A%84%E8%A1%A8%EF%BC%88SQL%E5%88%9B%E5%BB%BA%EF%BC%89"><span class="toc-text">查看创建的表（SQL创建）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#XSQK%E2%80%93%E5%AD%A6%E7%94%9F%E6%83%85%E5%86%B5-3"><span class="toc-text">XSQK–学生情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#KC%E2%80%93%E8%AF%BE%E7%A8%8B-3"><span class="toc-text">KC–课程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XS-KC%E2%80%93%E5%AD%A6%E7%94%9F-%E8%AF%BE%E7%A8%8B-3"><span class="toc-text">XS_KC–学生_课程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8%E6%B7%BB%E5%8A%A0%E6%95%B0%E6%8D%AE"><span class="toc-text">手动添加数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#XSQK%E2%80%93%E5%AD%A6%E7%94%9F%E6%83%85%E5%86%B5-4"><span class="toc-text">XSQK–学生情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#KC%E2%80%93%E8%AF%BE%E7%A8%8B-4"><span class="toc-text">KC–课程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XS-KC%E2%80%93%E5%AD%A6%E7%94%9F-%E8%AF%BE%E7%A8%8B-4"><span class="toc-text">XS_KC–学生_课程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-text">注意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E7%9A%84%E5%85%B6%E4%BB%96%E6%93%8D%E4%BD%9C"><span class="toc-text">表的其他操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE"><span class="toc-text">删除数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-text">Reference</span></a></li></ol>
-</div>
+  
+      <div id="container" class="container">
+        <article id="post-【实验二】【创建表并输入数据】" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <header id="header" class="header">
+  <nav class="mobile-nav">
+    <h1 class="nickname">爱笑的冷面鬼7</h1>
+    <ul class="mobile-nav-menu">
+      <label for="mobile-menu-toggle"><a id="menu-button">&#9776; Menu</a></label>
+      <input type="checkbox" id="mobile-menu-toggle"/>
+      <ul class="mobile-nav-link">
+        
+        <a href="/">Home</a>
+        
+        <a href="/archives">Archives</a>
+        
+        <a href="/about">About</a>
+        
+      </ul>
+    </ul>
+  </nav>
+	
+		<nav id="main-nav" class="main-nav nav-left">
+	
+	
+	  <a class="main-nav-link" href="/">Home</a>
+	
+	  <a class="main-nav-link" href="/archives">Archives</a>
+	
+	  <a class="main-nav-link" href="/about">About</a>
+	
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
     
-</div>
 
-
-<div class="search-field" id="search-field">
-    <div class="search-bg" id="search-bg"></div>
-    <div class="search-container">
-        <div class="search-input">
-            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
-            <input id="search-input"/>
-            <span id="begin-search">搜索</span>
-        </div>
-        <div class="search-result-container" id="search-result-container">
-
-        </div>
-    </div>
-</div>
-
-        <div class="index-about-mobile">
-            <i>  </i>
-        </div>
-    </div>
     
-    <div class="index-middle">
-        <!-- Main Content -->
+      <header class="article-header">
         
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      【实验二】【创建表并输入数据】
+    </h1>
+  
 
-
-<div class="post-container">
-    <div class="post-title">
-        【实验二】【创建表并输入数据】
-    </div>
-
-    <div class="post-meta">
-        <span class="attr">发布于：<span>2022-04-12 10:41:53</span></span>
-        
-        <span class="attr">标签：/
-        
-        <a class="tag" href="/tags/#数据库基本操作 - T-SQL - SSMS" title="数据库基本操作 - T-SQL - SSMS">数据库基本操作 - T-SQL - SSMS</a>
-        <span>/</span>
-        
-        
-        </span>
-        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
-</span>
-</span>
-    </div>
-    <div class="post-content ">
+      </header>
+    
+    <div class="e-content article-entry typo" itemprop="articleBody">
+      
         <p>在实验一的基础上：数据库XSCJ，初始大小20MB，自动增长/最大大小1MB，收缩百分比50%</p>
 <h2 id="目的表"><a href="#目的表" class="headerlink" title="目的表"></a>目的表</h2><h3 id="XSQK–学生情况"><a href="#XSQK–学生情况" class="headerlink" title="XSQK–学生情况"></a>XSQK–学生情况</h3><p><img src="https://img-blog.csdnimg.cn/c5874006bb4f4bac8663d9da890549b5.png" alt="在这里插入图片描述"></p>
 <h3 id="KC–课程"><a href="#KC–课程" class="headerlink" title="KC–课程"></a>KC–课程</h3><p><img src="https://img-blog.csdnimg.cn/0ce1cbaa3782462aa9df3c7638d72362.png" alt="在这里插入图片描述"></p>
@@ -214,65 +176,122 @@
 <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/masonlu/p/10634477.html">[SqlServer]SQL Server创建约束图解/文博客园@Masonlu</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Rm_and_Rf/article/details/106251558">mysql修改字段属性及修改是否非空/文CSDN@Rm_and_Rf</a></p>
 
-        
-        <br />
-        <div id="comment-container">
-        </div>
-        <div id="disqus_thread"></div>
-        <div id="lv-container"></div>
-        <div class="giscus"></div>
+      
+      
     </div>
-</div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2022/04/12/%E3%80%90%E5%AE%9E%E9%AA%8C%E4%BA%8C%E3%80%91%E3%80%90%E5%88%9B%E5%BB%BA%E8%A1%A8%E5%B9%B6%E8%BE%93%E5%85%A5%E6%95%B0%E6%8D%AE%E3%80%91/" class="article-date">
+  <time class="dt-published" datetime="2022-04-12T02:41:53.331Z" itemprop="datePublished">2022-04-12</time>
+</a>
 
-    </div>
-</div>
+        </li>
+        
+          <li>
+            <span class="label">Category:</span>
+            
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/DataBase/">DataBase</a>/<a class="article-category-link" href="/categories/DataBase/Practice/">Practice</a>
+  </div>
 
 
-<footer class="footer">
-    <ul class="list-inline text-center">
+          </li>
         
         
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C-T-SQL-SSMS/" rel="tag">数据库基本操作 - T-SQL - SSMS</a></li></ul>
 
+
+          </li>
         
-
-        
-
-        
-
-        
-
-    </ul>
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
     
-    <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
-</footer>
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2022/04/14/%E3%80%90R%E3%80%91%E3%80%90%E9%A2%91%E7%B9%81%E6%A8%A1%E5%BC%8F%E6%8C%96%E6%8E%98Apriori%E7%AE%97%E6%B3%95%E5%AE%9E%E9%AA%8C%E3%80%91/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          【R】【频繁模式挖掘Apriori算法实验】
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/04/08/%E3%80%90Mecanum%20wheel%E3%80%91%E5%88%9D%E7%90%86%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">【Mecanum wheel】初理解</div>
+    </a>
+  
+</nav>
 
 
-
-
-</body>
-
-<script>
-    // We expose some of the variables needed by the front end
-    window.hexo_search_path = "search.xml"
-    window.hexo_root = "/"
-    window.isPost = true
-</script>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-
-<script src="/js/index.js"></script>
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
+  
+</article>
 
 
 
 
 
+
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>ipsum dolor sit amet, <strong>consectetur adipiscing elit.</strong> Fusce eget urna vitae velit <em>eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque</em> penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/typing.js"></script>
+
+<!--[if lt IE 9]>
+<script src="https://cdn.jsdelivr.net/npm/html5shiv@3/dist/html5shiv.min.js"></script>
+<![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
 </html>

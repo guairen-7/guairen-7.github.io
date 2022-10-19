@@ -1,169 +1,118 @@
 <!DOCTYPE html>
-<html lang=zh-CN>
+<html lang="zh-CN">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta name="description" content="">
-    <meta name="keyword"  content="">
-    <link rel="shortcut icon" href="/img/favicon.ico">
+  <meta charset="utf-8">
+  
+  <title>【R】【决策树】【随机森林】 | AXDLMG7&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="实验思维导图 1.决策树–ctree()–iris1.1 数据1.1.1 程序包加载简洁安装程序包：将提供的程序包手动复制到R的镜像下的library下：例如我的路径：D:\R-4.1.3\library，将重复的程序包替换即可。底部提供资料 1234567891011121314library(ISLR)library(TH.data)library(MASS)library(multcomp)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【R】【决策树】【随机森林】">
+<meta property="og:url" content="https://guairen-7.github.io/2022/04/19/%E3%80%90R%E3%80%91%E3%80%90%E5%86%B3%E7%AD%96%E6%A0%91%E3%80%91%E3%80%90%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E3%80%91/index.html">
+<meta property="og:site_name" content="AXDLMG7&#39;s Blog">
+<meta property="og:description" content="实验思维导图 1.决策树–ctree()–iris1.1 数据1.1.1 程序包加载简洁安装程序包：将提供的程序包手动复制到R的镜像下的library下：例如我的路径：D:\R-4.1.3\library，将重复的程序包替换即可。底部提供资料 1234567891011121314library(ISLR)library(TH.data)library(MASS)library(multcomp)">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/808441d7c92d40d48204ccdc5b4438f3.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/5537ed985a8b4eac800eac566e0c6399.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/55b07dded52b4c91bd819bd5d2cb5516.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/34ce1651b5c34e06a2837227391ff4f3.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/d5ad5189b6a64d409d96aafaad589666.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/348ccad4045644fa9334df41da7cb674.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/e3330d8a3bf243fd8121ac57aac27ce7.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/3618ef0eb4bd40e48bfe85d81d776523.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/30b2b5b5c2514475b4601cd61dc56f96.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/56bd16dff5c7443dae2501d43c940b99.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/0a0df2c1fc504001b0338ed97a1ebf66.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/cc149eb768c74a7e9969b370513fc4de.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/b443f1a83c3f45d9876fd9ce941a3838.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/3e93d9c26b5c4965926ab499acf168dd.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/87a28d64976f40379d54823bccb641db.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/9e788246055d49358e4de2bd2a68f042.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/e6e2ec818289409b9616ed0f394e5146.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/fcde7eac24cd4624a6944876db6bfdd1.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/9f82cf3acd2b44889cf08c0d47f30ef1.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/828091b670cc4ba3b250b3a453208cfa.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/a4fb5e05fe1d4240ab7f05d6b286c18d.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/76b54e7a56ee440a8bb35254c0560eda.png">
+<meta property="article:published_time" content="2022-04-19T08:45:44.145Z">
+<meta property="article:modified_time" content="2022-04-19T14:11:28.164Z">
+<meta property="article:author" content="AXDLMG7">
+<meta property="article:tag" content="Data Mining">
+<meta property="article:tag" content="实验">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/808441d7c92d40d48204ccdc5b4438f3.png">
+  
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/typing.css">
 
-    <title>
-        
-        【R】【决策树】【随机森林】 - undefined
-        
-    </title>
+  
+<link rel="stylesheet" href="/css/donate.css">
 
-    <!-- Custom CSS -->
+  
+  
     
-<link rel="stylesheet" href="/css/aircloud.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
-    
-<link rel="stylesheet" href="/css/gitment.css">
-
-    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
-    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
-    <!-- ga & ba script hoook -->
-    <script></script>
-
-    
-
-
-
-
-
-
-
-
-
+  
 <meta name="generator" content="Hexo 5.4.1"></head>
 
-<body>
-
-<div class="site-nav-toggle" id="site-nav-toggle">
-    <button>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-    </button>
-</div>
-
-<div class="index-about">
-    <i>  </i>
-</div>
-
-<div class="index-container">
+  
     
-    <div class="index-left">
-        
-<div class="nav" id="nav">
-    <div class="avatar-name">
-        <div class="avatar ">
-            <img src="/" />
-        </div>
-        <div class="name">
-            <i>AXDLMG7</i>
-        </div>
-    </div>
-    <div class="contents" id="nav-content">
-        <ul>
-            <li >
-                <a href="/">
-                    <i class="iconfont icon-shouye1"></i>
-                    <span>主页</span>
-                </a>
-            </li>
-            <li >
-                <a href="/tags">
-                    <i class="iconfont icon-biaoqian1"></i>
-                    <span>标签</span>
-                </a>
-            </li>
-            <li >
-                <a href="/archives">
-                    <i class="iconfont icon-guidang2"></i>
-                    <span>存档</span>
-                </a>
-            </li>
-            <li >
-                <a href="/collect/">
-                    <i class="iconfont icon-shoucang1"></i>
-                    <span>收藏</span>
-                </a>
-            </li>
-            <li >
-                <a href="/about/">
-                    <i class="iconfont icon-guanyu2"></i>
-                    <span>关于</span>
-                </a>
-            </li>
-            
-            <li>
-                <a id="search">
-                    <i class="iconfont icon-sousuo1"></i>
-                    <span>搜索</span>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
+      <body>
     
-        <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE"><span class="toc-text">实验思维导图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%86%B3%E7%AD%96%E6%A0%91%E2%80%93ctree-%E2%80%93iris"><span class="toc-text">1.决策树–ctree()–iris</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E6%95%B0%E6%8D%AE"><span class="toc-text">1.1 数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1-%E7%A8%8B%E5%BA%8F%E5%8C%85%E5%8A%A0%E8%BD%BD"><span class="toc-text">1.1.1 程序包加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2-%E6%95%B0%E6%8D%AE%E9%9B%86%E6%8E%A2%E7%B4%A2"><span class="toc-text">1.1.2 数据集探索</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-3-%E6%95%B0%E6%8D%AE%E9%9B%86%E6%8B%86%E5%88%86"><span class="toc-text">1.1.3 数据集拆分</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E8%AE%AD%E7%BB%83"><span class="toc-text">1.2 训练</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-%E8%AE%BE%E7%BD%AE%E5%9B%A0%E5%8F%98%E9%87%8F%E3%80%81%E8%87%AA%E5%8F%98%E9%87%8F"><span class="toc-text">1.2.1 设置因变量、自变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-2-%E5%86%B3%E7%AD%96%E6%A0%91%E5%BB%BA%E6%A8%A1"><span class="toc-text">1.2.2 决策树建模</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-3-%E6%9F%A5%E7%9C%8B%E8%AE%AD%E7%BB%83%E7%BB%93%E6%9E%9C"><span class="toc-text">1.2.3 查看训练结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-4-%E7%BB%98%E5%88%B6%E5%86%B3%E7%AD%96%E6%A0%91"><span class="toc-text">1.2.4 绘制决策树</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%E9%A2%84%E6%B5%8B"><span class="toc-text">1.3 预测</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-1-%E6%B5%8B%E8%AF%95%E9%9B%86%E9%A2%84%E6%B5%8B"><span class="toc-text">1.3.1 测试集预测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-2-%E9%A2%84%E6%B5%8B%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90"><span class="toc-text">1.3.2 预测结果分析</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E5%86%B3%E7%AD%96%E6%A0%91%E2%80%93rpart-%E2%80%93bodyfat"><span class="toc-text">2.决策树–rpart()–bodyfat</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E6%95%B0%E6%8D%AE"><span class="toc-text">2.1 数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-%E7%A8%8B%E5%BA%8F%E5%8C%85%E5%8A%A0%E8%BD%BD"><span class="toc-text">2.1.1 程序包加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-%E6%95%B0%E6%8D%AE%E9%9B%86%E6%8E%A2%E7%B4%A2"><span class="toc-text">2.1.2 数据集探索</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3-%E6%95%B0%E6%8D%AE%E9%9B%86%E6%8B%86%E5%88%86"><span class="toc-text">2.1.3 数据集拆分</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E8%AE%AD%E7%BB%83"><span class="toc-text">2.2 训练</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-%E8%AE%BE%E7%BD%AE%E5%9B%A0%E5%8F%98%E9%87%8F%E3%80%81%E8%87%AA%E5%8F%98%E9%87%8F"><span class="toc-text">2.2.1 设置因变量、自变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-%E5%86%B3%E7%AD%96%E6%A0%91%E5%BB%BA%E6%A8%A1"><span class="toc-text">2.2.2 决策树建模</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-3-%E6%9F%A5%E7%9C%8B%E8%AE%AD%E7%BB%83%E7%BB%93%E6%9E%9C"><span class="toc-text">2.2.3 查看训练结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-4-%E7%BB%98%E5%88%B6%E5%86%B3%E7%AD%96%E6%A0%91"><span class="toc-text">2.2.4 绘制决策树</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E4%BC%98%E5%8C%96"><span class="toc-text">2.3 优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1-%E4%BC%98%E5%8C%96%E6%A8%A1%E5%9E%8B%EF%BC%88%E5%89%AA%E6%9E%9D%EF%BC%89"><span class="toc-text">2.3.1 优化模型（剪枝）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-2-%E7%BB%98%E5%88%B6%E5%86%B3%E7%AD%96%E6%A0%91%EF%BC%88%E5%89%AA%E6%9E%9D%E5%90%8E%EF%BC%89"><span class="toc-text">2.3.2 绘制决策树（剪枝后）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E9%A2%84%E6%B5%8B"><span class="toc-text">2.4 预测</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-1-%E6%B5%8B%E8%AF%95%E9%9B%86%E9%A2%84%E6%B5%8B"><span class="toc-text">2.4.1 测试集预测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-2-%E9%A2%84%E6%B5%8B%E5%80%BC%E7%9A%84%E6%9E%81%E5%80%BC"><span class="toc-text">2.4.2 预测值的极值</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E2%80%93randomForest-%E2%80%93iris"><span class="toc-text">3.随机森林–randomForest()–iris</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E7%A8%8B%E5%BA%8F%E5%8C%85%E5%8A%A0%E8%BD%BD"><span class="toc-text">3.1 程序包加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%E6%95%B0%E6%8D%AE%E9%9B%86%E6%8B%86%E5%88%86"><span class="toc-text">3.2 数据集拆分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E5%BB%BA%E6%A8%A1"><span class="toc-text">3.3 随机森林建模</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-%E6%B5%8B%E8%AF%95%E9%9B%86%E9%A2%84%E6%B5%8B"><span class="toc-text">3.4 测试集预测</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-%E7%BB%98%E5%88%B6%E6%A6%82%E7%8E%87%E5%9B%BE"><span class="toc-text">3.5 绘制概率图</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%88%86%E6%9E%90"><span class="toc-text">实验分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B5%84%E6%96%99"><span class="toc-text">资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-text">Reference</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
-</div>
+  
+      <div id="container" class="container">
+        <article id="post-【R】【决策树】【随机森林】" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <header id="header" class="header">
+  <nav class="mobile-nav">
+    <h1 class="nickname">爱笑的冷面鬼7</h1>
+    <ul class="mobile-nav-menu">
+      <label for="mobile-menu-toggle"><a id="menu-button">&#9776; Menu</a></label>
+      <input type="checkbox" id="mobile-menu-toggle"/>
+      <ul class="mobile-nav-link">
+        
+        <a href="/">Home</a>
+        
+        <a href="/archives">Archives</a>
+        
+        <a href="/about">About</a>
+        
+      </ul>
+    </ul>
+  </nav>
+	
+		<nav id="main-nav" class="main-nav nav-left">
+	
+	
+	  <a class="main-nav-link" href="/">Home</a>
+	
+	  <a class="main-nav-link" href="/archives">Archives</a>
+	
+	  <a class="main-nav-link" href="/about">About</a>
+	
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
     
-</div>
 
-
-<div class="search-field" id="search-field">
-    <div class="search-bg" id="search-bg"></div>
-    <div class="search-container">
-        <div class="search-input">
-            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
-            <input id="search-input"/>
-            <span id="begin-search">搜索</span>
-        </div>
-        <div class="search-result-container" id="search-result-container">
-
-        </div>
-    </div>
-</div>
-
-        <div class="index-about-mobile">
-            <i>  </i>
-        </div>
-    </div>
     
-    <div class="index-middle">
-        <!-- Main Content -->
+      <header class="article-header">
         
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      【R】【决策树】【随机森林】
+    </h1>
+  
 
-
-<div class="post-container">
-    <div class="post-title">
-        【R】【决策树】【随机森林】
-    </div>
-
-    <div class="post-meta">
-        <span class="attr">发布于：<span>2022-04-19 16:45:44</span></span>
-        
-        <span class="attr">标签：/
-        
-        <a class="tag" href="/tags/#Data Mining" title="Data Mining">Data Mining</a>
-        <span>/</span>
-        
-        <a class="tag" href="/tags/#实验" title="实验">实验</a>
-        <span>/</span>
-        
-        
-        </span>
-        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
-</span>
-</span>
-    </div>
-    <div class="post-content ">
+      </header>
+    
+    <div class="e-content article-entry typo" itemprop="articleBody">
+      
         <h1 id="实验思维导图"><a href="#实验思维导图" class="headerlink" title="实验思维导图"></a>实验思维导图</h1><p><img src="https://img-blog.csdnimg.cn/808441d7c92d40d48204ccdc5b4438f3.png" alt="在这里插入图片描述"></p>
 <h1 id="1-决策树–ctree-–iris"><a href="#1-决策树–ctree-–iris" class="headerlink" title="1.决策树–ctree()–iris"></a>1.决策树–ctree()–iris</h1><h2 id="1-1-数据"><a href="#1-1-数据" class="headerlink" title="1.1 数据"></a>1.1 数据</h2><h3 id="1-1-1-程序包加载"><a href="#1-1-1-程序包加载" class="headerlink" title="1.1.1 程序包加载"></a>1.1.1 程序包加载</h3><p>简洁安装程序包：将提供的程序包手动复制到R的镜像下的library下：<br>例如我的路径：D:\R-4.1.3\library，将重复的程序包替换即可。<strong>底部提供资料</strong></p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">library(ISLR)</span><br><span class="line">library(TH.data)</span><br><span class="line">library(MASS)</span><br><span class="line">library(multcomp)</span><br><span class="line">library(matrixStats)</span><br><span class="line">library(libcoin)</span><br><span class="line">library(survival)</span><br><span class="line">library(coin)</span><br><span class="line">library(zoo)</span><br><span class="line">library(strucchange)</span><br><span class="line">library(modeltools)</span><br><span class="line">library(mvtnorm)</span><br><span class="line">library(party)</span><br><span class="line">library(grid)</span><br></pre></td></tr></table></figure>
@@ -286,65 +235,122 @@
 <li>技术社区<strong>常用技术</strong>水文较多，一错全错</li>
 </ul>
 
-        
-        <br />
-        <div id="comment-container">
-        </div>
-        <div id="disqus_thread"></div>
-        <div id="lv-container"></div>
-        <div class="giscus"></div>
+      
+      
     </div>
-</div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2022/04/19/%E3%80%90R%E3%80%91%E3%80%90%E5%86%B3%E7%AD%96%E6%A0%91%E3%80%91%E3%80%90%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E3%80%91/" class="article-date">
+  <time class="dt-published" datetime="2022-04-19T08:45:44.145Z" itemprop="datePublished">2022-04-19</time>
+</a>
 
-    </div>
-</div>
+        </li>
+        
+          <li>
+            <span class="label">Category:</span>
+            
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Data-Mining/">Data Mining</a>/<a class="article-category-link" href="/categories/Data-Mining/RStudio/">RStudio</a>
+  </div>
 
 
-<footer class="footer">
-    <ul class="list-inline text-center">
+          </li>
         
         
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Data-Mining/" rel="tag">Data Mining</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%9E%E9%AA%8C/" rel="tag">实验</a></li></ul>
 
+
+          </li>
         
-
-        
-
-        
-
-        
-
-    </ul>
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
     
-    <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
-</footer>
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2022/04/26/%E3%80%90Data%20Mining%E3%80%91%E3%80%90%E7%AC%AC%E4%B8%83%E7%AB%A0%E4%BD%9C%E4%B8%9A%E3%80%91/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          【Data Mining】【第七章作业】
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/04/18/%E3%80%90Machine%20Learning%20Projects%E3%80%91/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">【Machine Learning Projects】</div>
+    </a>
+  
+</nav>
 
 
-
-
-</body>
-
-<script>
-    // We expose some of the variables needed by the front end
-    window.hexo_search_path = "search.xml"
-    window.hexo_root = "/"
-    window.isPost = true
-</script>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-
-<script src="/js/index.js"></script>
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
+  
+</article>
 
 
 
 
 
+
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>ipsum dolor sit amet, <strong>consectetur adipiscing elit.</strong> Fusce eget urna vitae velit <em>eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque</em> penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/typing.js"></script>
+
+<!--[if lt IE 9]>
+<script src="https://cdn.jsdelivr.net/npm/html5shiv@3/dist/html5shiv.min.js"></script>
+<![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
 </html>

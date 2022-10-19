@@ -1,175 +1,112 @@
 <!DOCTYPE html>
-<html lang=zh-CN>
+<html lang="zh-CN">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta name="description" content="">
-    <meta name="keyword"  content="">
-    <link rel="shortcut icon" href="/img/favicon.ico">
+  <meta charset="utf-8">
+  
+  <title>【实验六】【为用户设置权限】 | AXDLMG7&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、在“安全性”里设置用户权限①打开“SQL Server Management Studio”的“对象资源管理器”窗口，即打开SSMS时自动连接的窗口。 ②选择“本地服务器”— “安全性”— “登录名”选项，鼠标右键单击登录名，在弹出的快捷键菜单里选择“新建登录名”选项。③在弹出的登录名对话框的常规页面，建立登录名“abc”。④在选中数据库前的复选框之后，“数据库角色成员身份”区域里的“publ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【实验六】【为用户设置权限】">
+<meta property="og:url" content="https://guairen-7.github.io/2022/05/17/%E3%80%90%E5%AE%9E%E9%AA%8C%E5%85%AD%E3%80%91%E3%80%90%E4%B8%BA%E7%94%A8%E6%88%B7%E8%AE%BE%E7%BD%AE%E6%9D%83%E9%99%90%E3%80%91/index.html">
+<meta property="og:site_name" content="AXDLMG7&#39;s Blog">
+<meta property="og:description" content="一、在“安全性”里设置用户权限①打开“SQL Server Management Studio”的“对象资源管理器”窗口，即打开SSMS时自动连接的窗口。 ②选择“本地服务器”— “安全性”— “登录名”选项，鼠标右键单击登录名，在弹出的快捷键菜单里选择“新建登录名”选项。③在弹出的登录名对话框的常规页面，建立登录名“abc”。④在选中数据库前的复选框之后，“数据库角色成员身份”区域里的“publ">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/0fe759ef2cc445f39e746a8ed4a69403.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/a75f29058d4540a08f47abf3ee2b52e6.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/266b2070d848427d9c30a76fcd27e0c3.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/983f0bd12de04d9d89cea5c4011b03af.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/f230a350ed274e5b8a70863c26ecfdfd.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/e5167b1fc78a4061ba7e72f2077d3cab.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/ace32042ee9a4c7796ac2f47b7b2115e.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/ed44070ef04d4bccba8ae63ef6a6ba31.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/eea1e6cdea634dac92b217af67e20c60.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/1722cd22edea426eacd7eefcc1fcd1e5.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/9e33e7b1c258493b97970e9f1d787b71.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2e950cea1fb449da98640189f7f173c1.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/8baa41d612b84b2da0488006c94b8995.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/820bbed9da324192a3b62cdf692b5367.png">
+<meta property="article:published_time" content="2022-05-17T01:49:55.536Z">
+<meta property="article:modified_time" content="2022-05-17T07:59:28.727Z">
+<meta property="article:author" content="AXDLMG7">
+<meta property="article:tag" content="T-SQL">
+<meta property="article:tag" content="SSMS">
+<meta property="article:tag" content="用户">
+<meta property="article:tag" content="权限">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/0fe759ef2cc445f39e746a8ed4a69403.png">
+  
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/typing.css">
 
-    <title>
-        
-        【实验六】【为用户设置权限】 - undefined
-        
-    </title>
+  
+<link rel="stylesheet" href="/css/donate.css">
 
-    <!-- Custom CSS -->
+  
+  
     
-<link rel="stylesheet" href="/css/aircloud.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
-    
-<link rel="stylesheet" href="/css/gitment.css">
-
-    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
-    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
-    <!-- ga & ba script hoook -->
-    <script></script>
-
-    
-
-
-
-
-
-
-
-
-
+  
 <meta name="generator" content="Hexo 5.4.1"></head>
 
-<body>
-
-<div class="site-nav-toggle" id="site-nav-toggle">
-    <button>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-    </button>
-</div>
-
-<div class="index-about">
-    <i>  </i>
-</div>
-
-<div class="index-container">
+  
     
-    <div class="index-left">
-        
-<div class="nav" id="nav">
-    <div class="avatar-name">
-        <div class="avatar ">
-            <img src="/" />
-        </div>
-        <div class="name">
-            <i>AXDLMG7</i>
-        </div>
-    </div>
-    <div class="contents" id="nav-content">
-        <ul>
-            <li >
-                <a href="/">
-                    <i class="iconfont icon-shouye1"></i>
-                    <span>主页</span>
-                </a>
-            </li>
-            <li >
-                <a href="/tags">
-                    <i class="iconfont icon-biaoqian1"></i>
-                    <span>标签</span>
-                </a>
-            </li>
-            <li >
-                <a href="/archives">
-                    <i class="iconfont icon-guidang2"></i>
-                    <span>存档</span>
-                </a>
-            </li>
-            <li >
-                <a href="/collect/">
-                    <i class="iconfont icon-shoucang1"></i>
-                    <span>收藏</span>
-                </a>
-            </li>
-            <li >
-                <a href="/about/">
-                    <i class="iconfont icon-guanyu2"></i>
-                    <span>关于</span>
-                </a>
-            </li>
-            
-            <li>
-                <a id="search">
-                    <i class="iconfont icon-sousuo1"></i>
-                    <span>搜索</span>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
+      <body>
     
-        <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%9C%A8%E2%80%9C%E5%AE%89%E5%85%A8%E6%80%A7%E2%80%9D%E9%87%8C%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90"><span class="toc-text">一、在“安全性”里设置用户权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%9C%A8%E6%95%B0%E6%8D%AE%E5%BA%93%E9%87%8C%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90"><span class="toc-text">二、在数据库里设置用户权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-text">Reference</span></a></li></ol>
-</div>
+  
+      <div id="container" class="container">
+        <article id="post-【实验六】【为用户设置权限】" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <header id="header" class="header">
+  <nav class="mobile-nav">
+    <h1 class="nickname">爱笑的冷面鬼7</h1>
+    <ul class="mobile-nav-menu">
+      <label for="mobile-menu-toggle"><a id="menu-button">&#9776; Menu</a></label>
+      <input type="checkbox" id="mobile-menu-toggle"/>
+      <ul class="mobile-nav-link">
+        
+        <a href="/">Home</a>
+        
+        <a href="/archives">Archives</a>
+        
+        <a href="/about">About</a>
+        
+      </ul>
+    </ul>
+  </nav>
+	
+		<nav id="main-nav" class="main-nav nav-left">
+	
+	
+	  <a class="main-nav-link" href="/">Home</a>
+	
+	  <a class="main-nav-link" href="/archives">Archives</a>
+	
+	  <a class="main-nav-link" href="/about">About</a>
+	
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
     
-</div>
 
-
-<div class="search-field" id="search-field">
-    <div class="search-bg" id="search-bg"></div>
-    <div class="search-container">
-        <div class="search-input">
-            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
-            <input id="search-input"/>
-            <span id="begin-search">搜索</span>
-        </div>
-        <div class="search-result-container" id="search-result-container">
-
-        </div>
-    </div>
-</div>
-
-        <div class="index-about-mobile">
-            <i>  </i>
-        </div>
-    </div>
     
-    <div class="index-middle">
-        <!-- Main Content -->
+      <header class="article-header">
         
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      【实验六】【为用户设置权限】
+    </h1>
+  
 
-
-<div class="post-container">
-    <div class="post-title">
-        【实验六】【为用户设置权限】
-    </div>
-
-    <div class="post-meta">
-        <span class="attr">发布于：<span>2022-05-17 09:49:55</span></span>
-        
-        <span class="attr">标签：/
-        
-        <a class="tag" href="/tags/#T-SQL" title="T-SQL">T-SQL</a>
-        <span>/</span>
-        
-        <a class="tag" href="/tags/#SSMS" title="SSMS">SSMS</a>
-        <span>/</span>
-        
-        <a class="tag" href="/tags/#用户" title="用户">用户</a>
-        <span>/</span>
-        
-        <a class="tag" href="/tags/#权限" title="权限">权限</a>
-        <span>/</span>
-        
-        
-        </span>
-        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
-</span>
-</span>
-    </div>
-    <div class="post-content ">
+      </header>
+    
+    <div class="e-content article-entry typo" itemprop="articleBody">
+      
         <h2 id="一、在“安全性”里设置用户权限"><a href="#一、在“安全性”里设置用户权限" class="headerlink" title="一、在“安全性”里设置用户权限"></a>一、在“安全性”里设置用户权限</h2><p>①打开“SQL Server Management Studio”的“对象资源管理器”窗口，即打开SSMS时自动连接的窗口。</p>
 <p>②选择“本地服务器”— “安全性”— “登录名”选项，<br>鼠标右键单击登录名，在弹出的快捷键菜单里选择“新建登录名”选项。<br><img src="https://img-blog.csdnimg.cn/0fe759ef2cc445f39e746a8ed4a69403.png" alt="在这里插入图片描述"><br>③在弹出的登录名对话框的常规页面，建立登录名“abc”。<br><img src="https://img-blog.csdnimg.cn/a75f29058d4540a08f47abf3ee2b52e6.png" alt="在这里插入图片描述"><br>④在选中数据库前的复选框之后，“数据库角色成员身份”区域里的“public”复选框里会被自动选择上。在每个数据库中，所有用户都会默认是public角色的成员，并且不能被删除。<br><img src="https://img-blog.csdnimg.cn/266b2070d848427d9c30a76fcd27e0c3.png" alt="在这里插入图片描述"><br>出现<strong>报错15407</strong>：<br><img src="https://img-blog.csdnimg.cn/983f0bd12de04d9d89cea5c4011b03af.png" alt="在这里插入图片描述"><br>身份验证选择“SQL Server 身份验证”并设置密码：<br><img src="https://img-blog.csdnimg.cn/f230a350ed274e5b8a70863c26ecfdfd.png" alt="在这里插入图片描述"></p>
 <h2 id="二、在数据库里设置用户权限"><a href="#二、在数据库里设置用户权限" class="headerlink" title="二、在数据库里设置用户权限"></a>二、在数据库里设置用户权限</h2><p><strong>sa用户与超级用户</strong>：<br>如果只启用了<strong>SQL身份验证模式</strong>，超级用户就是sa，密码是你安装时设的。<br>如果只启用了<strong>Windows集成验证模式</strong>，服务器上Administrators组的所有用户都是超级用户，即默认登录的用户即可。<br>如果启用了<strong>混合模式</strong>就包括了上面两种用户。</p>
@@ -180,65 +117,122 @@
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_46493091/article/details/105374496">sqlserver角色/用户创建，各种约束与权限/文CSDN@m0_46493091</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ren6370/article/details/73409989">SQL Server 如何启用sa账户/文CSDN@转身@未来</a></p>
 
-        
-        <br />
-        <div id="comment-container">
-        </div>
-        <div id="disqus_thread"></div>
-        <div id="lv-container"></div>
-        <div class="giscus"></div>
+      
+      
     </div>
-</div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2022/05/17/%E3%80%90%E5%AE%9E%E9%AA%8C%E5%85%AD%E3%80%91%E3%80%90%E4%B8%BA%E7%94%A8%E6%88%B7%E8%AE%BE%E7%BD%AE%E6%9D%83%E9%99%90%E3%80%91/" class="article-date">
+  <time class="dt-published" datetime="2022-05-17T01:49:55.536Z" itemprop="datePublished">2022-05-17</time>
+</a>
 
-    </div>
-</div>
+        </li>
+        
+          <li>
+            <span class="label">Category:</span>
+            
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/DataBase/">DataBase</a>/<a class="article-category-link" href="/categories/DataBase/Practice/">Practice</a>
+  </div>
 
 
-<footer class="footer">
-    <ul class="list-inline text-center">
+          </li>
         
         
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSMS/" rel="tag">SSMS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/T-SQL/" rel="tag">T-SQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9D%83%E9%99%90/" rel="tag">权限</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%A8%E6%88%B7/" rel="tag">用户</a></li></ul>
 
+
+          </li>
         
-
-        
-
-        
-
-        
-
-    </ul>
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
     
-    <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
-</footer>
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2022/05/17/%E3%80%90%E5%AE%9E%E9%AA%8C%E4%B8%83%E3%80%91%E3%80%90%E4%BD%BF%E7%94%A8%E8%A7%84%E5%88%99%E5%AE%9E%E7%8E%B0%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7%E3%80%91/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          【实验七】【使用规则实现数据完整性】
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/05/10/%E3%80%90%E5%AE%9E%E9%AA%8C%E4%BA%94%E3%80%91%E3%80%90%E5%88%9B%E5%BB%BA%E8%A7%86%E5%9B%BE%E5%B9%B6%E9%80%9A%E8%BF%87%E8%A7%86%E5%9B%BE%E6%93%8D%E4%BD%9C%E8%A1%A8%E6%95%B0%E6%8D%AE%E3%80%91/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">【实验五】【创建视图并通过视图操作表数据】</div>
+    </a>
+  
+</nav>
 
 
-
-
-</body>
-
-<script>
-    // We expose some of the variables needed by the front end
-    window.hexo_search_path = "search.xml"
-    window.hexo_root = "/"
-    window.isPost = true
-</script>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-
-<script src="/js/index.js"></script>
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
+  
+</article>
 
 
 
 
 
+
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>ipsum dolor sit amet, <strong>consectetur adipiscing elit.</strong> Fusce eget urna vitae velit <em>eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque</em> penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/typing.js"></script>
+
+<!--[if lt IE 9]>
+<script src="https://cdn.jsdelivr.net/npm/html5shiv@3/dist/html5shiv.min.js"></script>
+<![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
 </html>

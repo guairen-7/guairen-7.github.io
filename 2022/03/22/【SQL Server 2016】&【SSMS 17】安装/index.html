@@ -1,169 +1,122 @@
 <!DOCTYPE html>
-<html lang=zh-CN>
+<html lang="zh-CN">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta name="description" content="">
-    <meta name="keyword"  content="">
-    <link rel="shortcut icon" href="/img/favicon.ico">
+  <meta charset="utf-8">
+  
+  <title>【SQL Server 2016】&amp;【SSMS 17】安装 | AXDLMG7&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、SQL Server 2016安装1.1 光盘映像下载 SQL-Server-Downloads 1.2 安装光盘映像 首次安装点击“全新SQL Server独立安装或向现有安装添加功能” 产品密钥自动输入，下一步 勾选“我接受许可条款”，下一步 “使用Micrisoft Update检查更新（推荐）”无所谓勾选，下一步 默认下一步 默认下一步 “安装安装程序”完成后Windows防火墙警告可">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【SQL Server 2016】&amp;【SSMS 17】安装">
+<meta property="og:url" content="https://guairen-7.github.io/2022/03/22/%E3%80%90SQL%20Server%202016%E3%80%91&%E3%80%90SSMS%2017%E3%80%91%E5%AE%89%E8%A3%85/index.html">
+<meta property="og:site_name" content="AXDLMG7&#39;s Blog">
+<meta property="og:description" content="一、SQL Server 2016安装1.1 光盘映像下载 SQL-Server-Downloads 1.2 安装光盘映像 首次安装点击“全新SQL Server独立安装或向现有安装添加功能” 产品密钥自动输入，下一步 勾选“我接受许可条款”，下一步 “使用Micrisoft Update检查更新（推荐）”无所谓勾选，下一步 默认下一步 默认下一步 “安装安装程序”完成后Windows防火墙警告可">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/43e300c2e663485b8bb43d67be1cefc8.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/bc36163e37e24d7da42a93fbb5d0cfcb.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/a7a7baa380bf4d6cba94f21d7a64d349.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/a2a62ae6036c445da1e57fd864e7ce65.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/58f0144bf8e0411aa08290165ef9bd17.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/b6759e071ee24376b6b8412e879bd447.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/4345147e813a4eb59e33fcd40ac9111a.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/721c2cbb976c4b5788a251909b003950.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/ca65312e6a184090b5d4108a946f30f9.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/39bf5793d1d249538d5843fa437d7b1e.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/ee17bb5e5d504df29b865a66da91a270.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/dd34f92508ce4b77b08204fb7adef5c7.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/166a491a8dfd4109bba2804afc32b378.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/0624f264d20c4c97bbf9f1b9c338e3f4.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/1a9850ee6a4c49c3a4929c7325fe5135.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/99647a5527564cdaada97fdcf30458aa.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/326e041a32da4b62a4cdf393c3d75226.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/099a9bb7ec7444a98b559abef126a390.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/85a0579bb061411fb3afcd190c107a16.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/249c7af0ab9c40449431818f5b18998f.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/956f8fee58e4433a8a2b3e4d357bf682.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/d0425266e38e4514ab64ec8f63b530da.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/7dc9ca614b8348aea17f5bcd181063bf.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/f6e790436c664c31b67fcda959b449d9.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/5ed712a2f8274773bd7c7668e9d27ade.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/6fec134576c24ae1ac2e4bf51a53d86a.png">
+<meta property="article:published_time" content="2022-03-22T03:48:24.724Z">
+<meta property="article:modified_time" content="2022-04-07T08:23:54.257Z">
+<meta property="article:author" content="AXDLMG7">
+<meta property="article:tag" content="SQL Server 2016">
+<meta property="article:tag" content="SSMS 17">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/43e300c2e663485b8bb43d67be1cefc8.png">
+  
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/typing.css">
 
-    <title>
-        
-        【SQL Server 2016】&amp;【SSMS 17】安装 - undefined
-        
-    </title>
+  
+<link rel="stylesheet" href="/css/donate.css">
 
-    <!-- Custom CSS -->
+  
+  
     
-<link rel="stylesheet" href="/css/aircloud.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
-    
-<link rel="stylesheet" href="/css/gitment.css">
-
-    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
-    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
-    <!-- ga & ba script hoook -->
-    <script></script>
-
-    
-
-
-
-
-
-
-
-
-
+  
 <meta name="generator" content="Hexo 5.4.1"></head>
 
-<body>
-
-<div class="site-nav-toggle" id="site-nav-toggle">
-    <button>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-    </button>
-</div>
-
-<div class="index-about">
-    <i>  </i>
-</div>
-
-<div class="index-container">
+  
     
-    <div class="index-left">
-        
-<div class="nav" id="nav">
-    <div class="avatar-name">
-        <div class="avatar ">
-            <img src="/" />
-        </div>
-        <div class="name">
-            <i>AXDLMG7</i>
-        </div>
-    </div>
-    <div class="contents" id="nav-content">
-        <ul>
-            <li >
-                <a href="/">
-                    <i class="iconfont icon-shouye1"></i>
-                    <span>主页</span>
-                </a>
-            </li>
-            <li >
-                <a href="/tags">
-                    <i class="iconfont icon-biaoqian1"></i>
-                    <span>标签</span>
-                </a>
-            </li>
-            <li >
-                <a href="/archives">
-                    <i class="iconfont icon-guidang2"></i>
-                    <span>存档</span>
-                </a>
-            </li>
-            <li >
-                <a href="/collect/">
-                    <i class="iconfont icon-shoucang1"></i>
-                    <span>收藏</span>
-                </a>
-            </li>
-            <li >
-                <a href="/about/">
-                    <i class="iconfont icon-guanyu2"></i>
-                    <span>关于</span>
-                </a>
-            </li>
-            
-            <li>
-                <a id="search">
-                    <i class="iconfont icon-sousuo1"></i>
-                    <span>搜索</span>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
+      <body>
     
-        <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81SQL-Server-2016%E5%AE%89%E8%A3%85"><span class="toc-text">一、SQL Server 2016安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81SSMS%E5%AE%89%E8%A3%85"><span class="toc-text">二、SSMS安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81Reference"><span class="toc-text">三、Reference</span></a></li></ol>
-</div>
+  
+      <div id="container" class="container">
+        <article id="post-【SQL Server 2016】&amp;【SSMS 17】安装" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <header id="header" class="header">
+  <nav class="mobile-nav">
+    <h1 class="nickname">爱笑的冷面鬼7</h1>
+    <ul class="mobile-nav-menu">
+      <label for="mobile-menu-toggle"><a id="menu-button">&#9776; Menu</a></label>
+      <input type="checkbox" id="mobile-menu-toggle"/>
+      <ul class="mobile-nav-link">
+        
+        <a href="/">Home</a>
+        
+        <a href="/archives">Archives</a>
+        
+        <a href="/about">About</a>
+        
+      </ul>
+    </ul>
+  </nav>
+	
+		<nav id="main-nav" class="main-nav nav-left">
+	
+	
+	  <a class="main-nav-link" href="/">Home</a>
+	
+	  <a class="main-nav-link" href="/archives">Archives</a>
+	
+	  <a class="main-nav-link" href="/about">About</a>
+	
+  </nav>
+</header>
+
+  <hr/>
+  <div class="article-inner">
     
-</div>
 
-
-<div class="search-field" id="search-field">
-    <div class="search-bg" id="search-bg"></div>
-    <div class="search-container">
-        <div class="search-input">
-            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
-            <input id="search-input"/>
-            <span id="begin-search">搜索</span>
-        </div>
-        <div class="search-result-container" id="search-result-container">
-
-        </div>
-    </div>
-</div>
-
-        <div class="index-about-mobile">
-            <i>  </i>
-        </div>
-    </div>
     
-    <div class="index-middle">
-        <!-- Main Content -->
+      <header class="article-header">
         
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      【SQL Server 2016】&amp;【SSMS 17】安装
+    </h1>
+  
 
-
-<div class="post-container">
-    <div class="post-title">
-        【SQL Server 2016】&amp;【SSMS 17】安装
-    </div>
-
-    <div class="post-meta">
-        <span class="attr">发布于：<span>2022-03-22 11:48:24</span></span>
-        
-        <span class="attr">标签：/
-        
-        <a class="tag" href="/tags/#SQL Server 2016" title="SQL Server 2016">SQL Server 2016</a>
-        <span>/</span>
-        
-        <a class="tag" href="/tags/#SSMS 17" title="SSMS 17">SSMS 17</a>
-        <span>/</span>
-        
-        
-        </span>
-        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
-</span>
-</span>
-    </div>
-    <div class="post-content ">
+      </header>
+    
+    <div class="e-content article-entry typo" itemprop="articleBody">
+      
         <h1 id="一、SQL-Server-2016安装"><a href="#一、SQL-Server-2016安装" class="headerlink" title="一、SQL Server 2016安装"></a>一、SQL Server 2016安装</h1><p>1.1 光盘映像下载</p>
 <p><a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/sql-server/sql-server-downloads">SQL-Server-Downloads</a></p>
 <p>1.2 安装光盘映像</p>
@@ -196,65 +149,122 @@
 <p>ps：没太搞懂Developer版本与普通版本是否有区别</p>
 <p>SQL Server 2019 Developer的安装UI简洁，SQL Server2005到2019等核心功能一样，不必过分要求高版本，另外高版本对系统配置要求相对也高。</p>
 
-        
-        <br />
-        <div id="comment-container">
-        </div>
-        <div id="disqus_thread"></div>
-        <div id="lv-container"></div>
-        <div class="giscus"></div>
+      
+      
     </div>
-</div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2022/03/22/%E3%80%90SQL%20Server%202016%E3%80%91&%E3%80%90SSMS%2017%E3%80%91%E5%AE%89%E8%A3%85/" class="article-date">
+  <time class="dt-published" datetime="2022-03-22T03:48:24.724Z" itemprop="datePublished">2022-03-22</time>
+</a>
 
-    </div>
-</div>
+        </li>
+        
+          <li>
+            <span class="label">Category:</span>
+            
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/DataBase/">DataBase</a>/<a class="article-category-link" href="/categories/DataBase/Practice/">Practice</a>
+  </div>
 
 
-<footer class="footer">
-    <ul class="list-inline text-center">
+          </li>
         
         
+          <li>
+            <span class="label">Tag:</span>
+            
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL-Server-2016/" rel="tag">SQL Server 2016</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSMS-17/" rel="tag">SSMS 17</a></li></ul>
 
+
+          </li>
         
-
-        
-
-        
-
-        
-
-    </ul>
+        <hr/>
+      </ul>
+    </footer>
+  </div>
+  
     
-    <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
-</footer>
+<nav id="article-nav" class="article-nav">
+  
+    <a href="/2022/03/24/%E3%80%90R%E3%80%91%E3%80%90%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E3%80%81%E6%8A%BD%E6%A0%B7%E5%92%8C%E9%A2%84%E5%A4%84%E7%90%86%E5%AE%9E%E9%AA%8C%E3%80%91/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          【R】【数据采集、抽样和预处理实验】
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/03/21/%E3%80%90%E6%A1%86%E6%A1%86%E7%9A%84b%E7%AB%99%E5%A4%A7%E5%AD%A6%E3%80%91/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">【框框的b站大学】</div>
+    </a>
+  
+</nav>
 
 
-
-
-</body>
-
-<script>
-    // We expose some of the variables needed by the front end
-    window.hexo_search_path = "search.xml"
-    window.hexo_root = "/"
-    window.isPost = true
-</script>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-
-<script src="/js/index.js"></script>
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
+  
+</article>
 
 
 
 
 
+
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+      <hr/>
+      <div id="footerContent" class="footer-content">
+        <p>ipsum dolor sit amet, <strong>consectetur adipiscing elit.</strong> Fusce eget urna vitae velit <em>eleifend interdum at ac nisi. In nec ligula lacus. Cum sociis natoque</em> penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu cursus erat, ut dapibus quam. Post</p>
+
+
+      </div>
+    </footer>
+
+      
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/typing.js"></script>
+
+<!--[if lt IE 9]>
+<script src="https://cdn.jsdelivr.net/npm/html5shiv@3/dist/html5shiv.min.js"></script>
+<![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
 </html>
