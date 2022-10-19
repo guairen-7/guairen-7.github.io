@@ -1,20 +1,18 @@
-extends partial/layout
-
-block site_title
-    != page.title + " · " + config.title
-
-block description
-    - var desc = page.desc || page.title + ' - ' + config.author;
-    meta(name="description", content=desc)
-
-block container
-    include mixins/post
-    +post(page)
-
-block pagination
-    include mixins/paginator
-    +post()
-    include partial/comment
-
-block copyright
-    include partial/copyright
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>【数据库创建与管理】【基本操作】</title><link rel="stylesheet" href="/css/normalize.css"><link rel="stylesheet" href="/css/heti.min.css"><link rel="stylesheet" href="/css/hexo-theme-adoubi.css"><link rel="icon" href="/images/favicon.ico"><meta name="generator" content="Hexo 5.4.1"></head><body><div class="header"><a class="github-link"><img class="github-image" src="/images/Aquicon-Github-small.png"></a><a class="email-link" href="mailto:null"><img class="email-image" src="/images/email-small.png"></a><a class="subscribe-link" href="/atom.xml"><img class="subscribe-image" src="/images/subscribe-small.png"></a></div><div class="content"><div class="post-item"></div><h2 class="post-title-wrapper"><p class="post-title">【数据库创建与管理】【基本操作】</p></h2><div class="post-date"><time datetime="2022-03-29T01:38:24.475Z">2022-03-29</time></div><div class="post-content"><h1 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h1><h2 id="使用Studio创建"><a href="#使用Studio创建" class="headerlink" title="使用Studio创建"></a>使用Studio创建</h2><p>右键‘数据库’–&gt;新建数据库<br><img src="https://img-blog.csdnimg.cn/9097c8561b7a4435b6e8dad47df327a1.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/fe1737c61130477b891b4a5ac8b027e1.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/5af0f285e330400e823c6dc7d1782147.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/6afadffcc2e24ff8b0d5d76a882f5df1.png" alt="在这里插入图片描述"></p>
+<h2 id="使用T-SQL语言创建"><a href="#使用T-SQL语言创建" class="headerlink" title="使用T-SQL语言创建"></a>使用T-SQL语言创建</h2><p><img src="https://img-blog.csdnimg.cn/aacbffe9b23c415ba7015ceb6d140783.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/dd0962f36a804b8bbe190e48909f54a7.png" alt="在这里插入图片描述"></p>
+<h1 id="管理数据库"><a href="#管理数据库" class="headerlink" title="管理数据库"></a>管理数据库</h1><h2 id="使用SSMS"><a href="#使用SSMS" class="headerlink" title="使用SSMS"></a>使用SSMS</h2><h3 id="修改数据库存储容量"><a href="#修改数据库存储容量" class="headerlink" title="修改数据库存储容量"></a>修改数据库存储容量</h3><p>右键‘TEST（目标数据库）’–&gt;属性<br><img src="https://img-blog.csdnimg.cn/2c87ff46cb61464d9b478b1acd2b55dc.png" alt="在这里插入图片描述"></p>
+<p>右键‘TEST（目标数据库）’–&gt;任务–&gt;收缩–&gt;数据库<br><img src="https://img-blog.csdnimg.cn/361df599788944a9b97aa99041e26c5c.png" alt="在这里插入图片描述"></p>
+<h3 id="改名"><a href="#改名" class="headerlink" title="改名"></a>改名</h3><p><img src="https://img-blog.csdnimg.cn/b967667bf3ab423cb2bb643156f00980.png" alt="在这里插入图片描述"><br>右键‘目标数据库’–&gt;重命名–&gt;改为原来的限制user（这里使用查询语句）<br><img src="https://img-blog.csdnimg.cn/d677bad18d494b4eb85b73297932c334.png" alt="在这里插入图片描述"></p>
+<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><p>右键‘TEST2（目标数据库）’–&gt;删除–&gt;确定<br>ps：注意删除时关闭不必要的查询语句</p>
+<h3 id="分离-amp-附加"><a href="#分离-amp-附加" class="headerlink" title="分离&amp;附加"></a>分离&amp;附加</h3><p>右键‘Student（目标数据库）’–&gt;任务–&gt;分离–&gt;确定<br>右键‘数据库’–&gt;附加–&gt;添加–&gt;选择刚刚分离的数据库文件–&gt;确定–&gt;确定<br>我的数据库存储位置：D:\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\DATA<br><img src="https://img-blog.csdnimg.cn/8de728fda55c4ddc9b8b7cfce6816227.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/25c585ac8261463782ed6ad6d4810dd6.png" alt="在这里插入图片描述"></p>
+<h2 id="使用T-SQL"><a href="#使用T-SQL" class="headerlink" title="使用T-SQL"></a>使用T-SQL</h2><h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><p><img src="https://img-blog.csdnimg.cn/345d9c63def04dea9dc76046e05478bc.png" alt="在这里插入图片描述"></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> DATABASE Student</span><br><span class="line">MODIFY FILE ( NAME <span class="operator">=</span> <span class="string">&#x27;Student&#x27;</span>,</span><br><span class="line">SIZE <span class="operator">=</span> <span class="number">50</span>MB)</span><br><span class="line">GO</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/edc9cfdc11a349e2bc207709bc5846cf.png" alt="在这里插入图片描述"><br>这里想要同时运行几个操作的命令，需注意不能重复运行已运行命令<br>因此我把“SampleData1”先手动删除<br><img src="https://img-blog.csdnimg.cn/826a845e0ff643b383aa2126b43866e1.png" alt="在这里插入图片描述"><br>“Sample1.ndf”辅助文件也手动删除<br><img src="https://img-blog.csdnimg.cn/b01fc7a8837d47dcbb5a6371246fd3d7.png" alt="在这里插入图片描述"><br>我的数据库存储位置：D:\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\DATA</p>
+<p>重新运行命令：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> DATABASE Student</span><br><span class="line">MODIFY FILE ( NAME <span class="operator">=</span> <span class="string">&#x27;Student&#x27;</span>,</span><br><span class="line">SIZE <span class="operator">=</span> <span class="number">50</span>MB)</span><br><span class="line">GO</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> DATABASE Student</span><br><span class="line"><span class="keyword">ADD</span> FILE</span><br><span class="line">(NAME <span class="operator">=</span> SampleData1,</span><br><span class="line">FILENAME<span class="operator">=</span><span class="string">&#x27;D:\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\DATA\Sample1.ndf&#x27;</span>,</span><br><span class="line">SIZE<span class="operator">=</span><span class="number">15</span>MB,</span><br><span class="line">MAXSIZE<span class="operator">=</span><span class="number">20</span>MB)</span><br><span class="line">GO</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/ab17b452385f49179fe53dd67a4dea4d.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/9e4f0413967f47b496972bad6dbac9f4.png" alt="在这里插入图片描述"></p>
+<h3 id="删除-1"><a href="#删除-1" class="headerlink" title="删除"></a>删除</h3><p><img src="https://img-blog.csdnimg.cn/0cf54a8ce9f44fc7b781a9228f6234d4.png" alt="在这里插入图片描述"></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> DATABASE Student</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/15b01a135f3a4784ad7111291ff435cc.png" alt="在这里插入图片描述"><br>ps：注意查询语言的目录，在master中新建查询语句<br><img src="https://img-blog.csdnimg.cn/a1af44454fc74298814c176911369ba7.png" alt="在这里插入图片描述"></p>
+<h3 id="分离-amp-附加-1"><a href="#分离-amp-附加-1" class="headerlink" title="分离&amp;附加"></a>分离&amp;附加</h3><p>暂无</p>
+</div></div><div class="footer"><div class="footer-copyright">Theme By <a target="_blank" rel="noopener" href="https://github.com/shinux/hexo-theme-adoubi">Adoubi</a> , Powered By Hexo.</div></div></body></html>

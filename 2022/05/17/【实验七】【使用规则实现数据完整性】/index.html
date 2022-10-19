@@ -1,20 +1,126 @@
-extends partial/layout
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>【实验七】【使用规则实现数据完整性】</title><link rel="stylesheet" href="/css/normalize.css"><link rel="stylesheet" href="/css/heti.min.css"><link rel="stylesheet" href="/css/hexo-theme-adoubi.css"><link rel="icon" href="/images/favicon.ico"><meta name="generator" content="Hexo 5.4.1"></head><body><div class="header"><a class="github-link"><img class="github-image" src="/images/Aquicon-Github-small.png"></a><a class="email-link" href="mailto:null"><img class="email-image" src="/images/email-small.png"></a><a class="subscribe-link" href="/atom.xml"><img class="subscribe-image" src="/images/subscribe-small.png"></a></div><div class="content"><div class="post-item"></div><h2 class="post-title-wrapper"><p class="post-title">【实验七】【使用规则实现数据完整性】</p></h2><div class="post-date"><time datetime="2022-05-17T03:48:07.711Z">2022-05-17</time></div><div class="post-content"><h2 id="数据完整性"><a href="#数据完整性" class="headerlink" title="数据完整性"></a>数据完整性</h2><h3 id="约束的形式"><a href="#约束的形式" class="headerlink" title="约束的形式"></a>约束的形式</h3><p>下边通过一个总体说明约束怎样保证数据完整性的：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>作用</th>
+<th>体现的完整性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Primary key</td>
+<td>定义外键，保证被设定的列内不出现重复值</td>
+<td>实体完整性</td>
+</tr>
+<tr>
+<td>Unique</td>
+<td>不出现重复</td>
+<td>实体完整性</td>
+</tr>
+<tr>
+<td>Foreign key</td>
+<td>定义外键，保证表和表之间的一致性</td>
+<td>参照完整性</td>
+</tr>
+<tr>
+<td>Check</td>
+<td>定义列中数据的范围</td>
+<td>自定义完整性</td>
+</tr>
+<tr>
+<td>default</td>
+<td>为列的数据设定默认值</td>
+<td>自定义完整性</td>
+</tr>
+</tbody></table>
+<p>1.主键<br>一个表中只能有<strong>一个主键</strong>，定义主键可以设定，也可以在代码中需要的时候加在相应的字段</p>
+<p>2.unique（不重复）<br>数据表中非主键列在各行记录中<strong>不能出现相同的非空值</strong>，这时就需要有unique的特性，用法和主键一样</p>
+<p>3.外键<br>是<strong>不同的表之间的关系</strong>，当其中有一些数据存在关系是可以建立外键，（可以避免出错）</p>
+<p>用法：[constraint 约束名] foreign key (列名)   reference 表名（列名）</p>
+<p>4.check<br><strong>限定列之间数据的参照关系</strong> ，比如一个表中包含学生的“出生日期”和“入校日期”，入校日期肯定要晚于出生日期，这个时候可以用check来限定</p>
+<p>用法：[constraint 约束名]  check  (关系式)</p>
+<p>5.default（默认值）<br>当有非常多的相同数据要输入到数据表中的时候，可以设定一个<strong>默认值</strong>，这样减少工作量</p>
+<p>用法：[constraint 约束名]  default 常量表达式    for   字段名</p>
+<p>说明：<strong>在没有单独拿出定义约束的时候可以省略“[constraint  约束名]”</strong></p>
+<h3 id="规则与默认值的SQL语句"><a href="#规则与默认值的SQL语句" class="headerlink" title="规则与默认值的SQL语句"></a>规则与默认值的SQL语句</h3><p>1.规则</p>
+<p>规则的用途：验证数据的值是否处于一定的范围内，是否和特定格式相匹配   是否与制定列表中的输入相匹配</p>
+<ul>
+<li><p>创建规则：create  rule 　规则名　as   规则的表达式（如果表达式中含有参数要加上@）</p>
+</li>
+<li><p>使用规则：sp_bindrule   规则名, ‘表名.列名’</p>
+</li>
+<li><p>查看规则：sp_helptext  规则名</p>
+</li>
+<li><p>解除规则: sp_unbindrule  规则名, ‘表名.列名’</p>
+</li>
+<li><p>删除规则：drop rule  规则名组</p>
+</li>
+</ul>
+<p>2.默认值</p>
+<ul>
+<li><p>创建默认值：create default  默认名  as   表达式</p>
+</li>
+<li><p>使用默认值：sp_bindefault  默认名, ‘表名.列名’（注意英文字符）</p>
+</li>
+<li><p>查看默认值：sp_helpconstraint  表名</p>
+</li>
+<li><p>解除默认值：sp_unbindefault  默认名, ‘表名.列名’</p>
+</li>
+<li><p>删除默认值：drop_default   默认值名</p>
+</li>
+</ul>
+<h2 id="一、创建一个关于开课学期的规则"><a href="#一、创建一个关于开课学期的规则" class="headerlink" title="一、创建一个关于开课学期的规则"></a>一、创建一个关于开课学期的规则</h2><p><strong>每次设置规则前需要在对象资源管理器中选中“XSCJ”为当前数据库。</strong></p>
+<p>①打开“SQL Server Management Studio”窗口。</p>
+<p>②单击“标准”工具栏上的“新建查询”按钮，打开“查询编辑器”窗口。</p>
+<p>③在窗口内直接输入以下语句，创建规则，将“开课学期”列的值约束在1-8之间。</p>
+<p>在<a href="https://guairen-7.github.io/2022/04/12/%E3%80%90%E5%AE%9E%E9%AA%8C%E4%BA%8C%E3%80%91%E3%80%90%E5%88%9B%E5%BB%BA%E8%A1%A8%E5%B9%B6%E8%BE%93%E5%85%A5%E6%95%B0%E6%8D%AE%E3%80%91/">【实验二】【创建表并输入数据】</a>中可以看到当时通过SSMS设置过CHECK约束：<br><img src="https://img-blog.csdnimg.cn/1b45b3a3f0bd432b8093980057b725c2.png" alt="在这里插入图片描述"></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span>  RULE  kkxq_rule  </span><br><span class="line"><span class="keyword">AS</span> @开课学期<span class="operator">&gt;=</span><span class="number">1</span> <span class="keyword">AND</span> @开课学期<span class="operator">&lt;=</span><span class="number">8</span></span><br><span class="line">GO</span><br></pre></td></tr></table></figure>
 
-block site_title
-    != page.title + " · " + config.title
+<p>④单击“SQL编辑器”工具栏上的“分析”按钮，检查输入的T-SQL语句是否有语法错误。如果有语法错误，则进行修改。</p>
+<p>⑤确保无语法错误后，单击“SQL编辑器”工具栏上的“执行”按钮。<br><img src="https://img-blog.csdnimg.cn/2199353fb4f141fa906b5fed3cf4c078.png" alt="在这里插入图片描述"></p>
+<p>⑥在“查询编辑器”窗口内输入以下语句，将所创建的规则绑定到“开课学期”列。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">EXEC</span>  Sp_bindrule  <span class="string">&#x27;kkxq_rule&#x27;</span>, <span class="string">&#x27;KC.开课学期&#x27;</span></span><br><span class="line">GO</span><br></pre></td></tr></table></figure>
 
-block description
-    - var desc = page.desc || page.title + ' - ' + config.author;
-    meta(name="description", content=desc)
+<p>⑦单击“SQL编辑器”工具栏上的“执行”按钮。<br><img src="https://img-blog.csdnimg.cn/3cdcea5fce5646b2a9c075642abde344.png" alt="在这里插入图片描述"></p>
+<p>⑧在“对象资源管理器”中，展开目标数据库中的“表”节点，鼠标右键单击目标表“KC”，在弹出的快捷菜单中选择“编辑前200行”命令，输入一行新记录，检验“开课学期”列值的约束情况。</p>
+<p>查看约束：<br><img src="https://img-blog.csdnimg.cn/7b47d219b085412fa2accba92acfda54.png" alt="在这里插入图片描述"></p>
+<p>因为在<a href="https://guairen-7.github.io/2022/04/12/%E3%80%90%E5%AE%9E%E9%AA%8C%E4%BA%8C%E3%80%91%E3%80%90%E5%88%9B%E5%BB%BA%E8%A1%A8%E5%B9%B6%E8%BE%93%E5%85%A5%E6%95%B0%E6%8D%AE%E3%80%91/">【实验二】【创建表并输入数据】</a>中曾经设置过“开课学期”的约束，这里的效果不明显，<strong>添加数据检查约束</strong>：</p>
+<p><img src="https://img-blog.csdnimg.cn/79c599c2d5db4b54af21ac68330b0c41.png" alt="在这里插入图片描述"></p>
+<p><strong>注意数据中不要出现空格。</strong></p>
+<p>⑨使用SQL语句查看规则：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">EXECUTE</span> sp_helptext kkxq_rule</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/7edbbc6fd2174d018b93e6f227f1a846.png" alt="在这里插入图片描述"></p>
+<h2 id="二、创建一个关于性别的规则"><a href="#二、创建一个关于性别的规则" class="headerlink" title="二、创建一个关于性别的规则"></a>二、创建一个关于性别的规则</h2><p>①在“查询编辑器”窗口内直接输入以下语句，为XSQK表的“性别”列创建规则，约束其值只能是“男”或“女”。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span>  RULE  sex_rule  </span><br><span class="line"><span class="keyword">AS</span> @性别 <span class="keyword">in</span>(<span class="string">&#x27;男&#x27;</span>,<span class="string">&#x27;女&#x27;</span>)</span><br><span class="line">GO</span><br></pre></td></tr></table></figure>
 
-block container
-    include mixins/post
-    +post(page)
+<p>②单击“SQL编辑器”工具栏上的“执行”按钮。<br><img src="https://img-blog.csdnimg.cn/a781845424bd463f99c57d61dd2f19df.png" alt="在这里插入图片描述"></p>
+<p>③在“查询编辑器”窗口内输入以下语句，将所创建的规则绑定到“性别”列。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">EXEC</span>  Sp_bindrule  <span class="string">&#x27;sex_rule&#x27;</span>,<span class="string">&#x27;XSQK.性别&#x27;</span></span><br></pre></td></tr></table></figure>
 
-block pagination
-    include mixins/paginator
-    +post()
-    include partial/comment
+<p>④单击“SQL编辑器”工具栏上的“执行”按钮。<br><img src="https://img-blog.csdnimg.cn/429f672ceea84580a9ab737fa0204f24.png" alt="在这里插入图片描述"></p>
+<p>⑤在“对象资源管理器”中，展开目标数据库中的“表”节点，鼠标右键单击目标表“XSQK”,在弹出的快捷菜单中选择“编辑前200行”命令，输入一行新记录，检验“性别”列值的约束情况。</p>
+<p>这里查看<a href="https://guairen-7.github.io/2022/04/12/%E3%80%90%E5%AE%9E%E9%AA%8C%E4%BA%8C%E3%80%91%E3%80%90%E5%88%9B%E5%BB%BA%E8%A1%A8%E5%B9%B6%E8%BE%93%E5%85%A5%E6%95%B0%E6%8D%AE%E3%80%91/">【实验二】【创建表并输入数据】</a>，当时并没有对性别进行约束。所以这里通过查看性别的属性进行检验：<br><img src="https://img-blog.csdnimg.cn/3c7b631efe224492b89230dbe9bd2724.png" alt="在这里插入图片描述"><br>在“常规”与“CHECK约束”并不能看到创建的规则，说明上面的查看方式也不对。这里依然通过<strong>添加数据检查约束</strong>：<br><img src="https://img-blog.csdnimg.cn/2d1633d5fe0140ddbb388502eaba3a64.png" alt="在这里插入图片描述"><br>⑥使用SQL语句查看规则：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">EXECUTE</span> sp_helptext sex_rule</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/7ccb7c4da92240e783d01d4d7a059a95.png" alt="在这里插入图片描述"></p>
+<h2 id="三、创建一个关于学分的规则"><a href="#三、创建一个关于学分的规则" class="headerlink" title="三、创建一个关于学分的规则"></a>三、创建一个关于学分的规则</h2><p>①在“查询编辑器”窗口内直接输入以下语句，创建规则，要求“学分”列的值只能输入1-6之间的数字。实现步骤如下所述。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span>  RULE  xf_rule  </span><br><span class="line"><span class="keyword">AS</span> @学分 <span class="keyword">like</span>  <span class="string">&#x27;[1-6]&#x27;</span></span><br><span class="line">GO</span><br></pre></td></tr></table></figure>
 
-block copyright
-    include partial/copyright
+<p>②单击“SQL编辑器”工具栏上的“执行”按钮。<br><img src="https://img-blog.csdnimg.cn/4c5e24a6457d45a6a268256597e1990d.png" alt="在这里插入图片描述"></p>
+<p>③在“查询编辑器”窗口内输入以下语句，将所创建的规则绑定到“学分”列。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">EXEC</span>  sp_bindrule  <span class="string">&#x27;xf_rule&#x27;</span>,<span class="string">&#x27;KC.学分&#x27;</span></span><br><span class="line">GO</span><br></pre></td></tr></table></figure>
+
+<p>④单击” 执行”按钮。<br><img src="https://img-blog.csdnimg.cn/45dba45d74434adc84fd519563a56885.png" alt="在这里插入图片描述"></p>
+<p>⑤在“对象资源管理器”中，展开目标数据库中的“表”节点，鼠标右键单击目标表“KC”，在弹出的快捷菜单中选择“编辑前200行或者打开表”菜单项，输入一行新记录，检验“学分”列值的约束情况。</p>
+<p>通过<strong>添加数据检查约束</strong>：<br><img src="https://img-blog.csdnimg.cn/4261c2874ec44e0ca21d404fabc7c265.png" alt="在这里插入图片描述"><br>这里因为前五条数据是以前创建的，不受新规则影响。从“107”课程的“70”学分可以看出约束生效。<br>改进：针对实验五创建的数据将SQL语言改为如下，显示效果更佳。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span>  RULE  xf_rule  </span><br><span class="line"><span class="keyword">AS</span> @学分 <span class="keyword">like</span>  <span class="string">&#x27;[10-60]&#x27;</span></span><br><span class="line">GO</span><br></pre></td></tr></table></figure>
+<p>⑥使用SQL语句查看规则：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">EXECUTE</span> sp_helptext xf_rule</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/9add1639ebb4487a9a262360e737816e.png" alt="在这里插入图片描述"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>规则和约束都可以保证数据完整性，二者的区别：</p>
+<p>1：约束是<strong>基于表</strong>的操作<br>规则和默认值在创建了以后，他不属于某个表，只有在<strong>绑定了命令了以后</strong>才会发生关系。</p>
+<p>2：一个约束只能对<strong>一个表的一个列</strong>产生作用，<br>规则和默认值可以绑定到多个表多个列中。</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40951833/article/details/80718519">SQL Server学习进程（六）–数据完整性（规则、默认、完整性约束）/文CSDN@f斗牛士</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/tk55/p/6084045.html">数据库SQL server规则的创建、查看、修改和规则的绑定与松绑、删除/文博客园@Stay Hungry, Stay Foolish</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/doumengyuancsdn/article/details/46391107">数据库——怎样实现数据完整性/文CSDN@窦孟园</a></p>
+</div></div><div class="footer"><div class="footer-copyright">Theme By <a target="_blank" rel="noopener" href="https://github.com/shinux/hexo-theme-adoubi">Adoubi</a> , Powered By Hexo.</div></div></body></html>

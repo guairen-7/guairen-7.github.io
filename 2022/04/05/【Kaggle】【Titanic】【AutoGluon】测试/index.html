@@ -1,20 +1,31 @@
-extends partial/layout
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>【Kaggle】【Titanic】【AutoGluon】测试</title><link rel="stylesheet" href="/css/normalize.css"><link rel="stylesheet" href="/css/heti.min.css"><link rel="stylesheet" href="/css/hexo-theme-adoubi.css"><link rel="icon" href="/images/favicon.ico"><meta name="generator" content="Hexo 5.4.1"></head><body><div class="header"><a class="github-link"><img class="github-image" src="/images/Aquicon-Github-small.png"></a><a class="email-link" href="mailto:null"><img class="email-image" src="/images/email-small.png"></a><a class="subscribe-link" href="/atom.xml"><img class="subscribe-image" src="/images/subscribe-small.png"></a></div><div class="content"><div class="post-item"></div><h2 class="post-title-wrapper"><p class="post-title">【Kaggle】【Titanic】【AutoGluon】测试</p></h2><div class="post-date"><time datetime="2022-04-05T07:48:00.838Z">2022-04-05</time></div><div class="post-content"><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!pip install autogluon</span><br><span class="line"><span class="comment">#安装autogluon</span></span><br></pre></td></tr></table></figure>
+<h1 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> autogluon.tabular <span class="keyword">import</span> TabularDataset,TabularPredictor</span><br><span class="line"><span class="comment">#训练</span></span><br><span class="line">train_data = TabularDataset(<span class="string">&#x27;../input/titanic/train.csv&#x27;</span>)</span><br><span class="line"><span class="built_in">id</span>,label = <span class="string">&#x27;PassengerId&#x27;</span>,<span class="string">&#x27;Survived&#x27;</span></span><br><span class="line">predictor = TabularPredictor(label=label).fit(train_data.drop(columns=[<span class="built_in">id</span>]))</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/28ce70e9c67047728b402b947eee86d1.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/f4cccabb546943598b8723339531b1b7.png" alt="在这里插入图片描述"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看训练数据</span></span><br><span class="line">train_data.head(<span class="number">30</span>)</span><br><span class="line"><span class="built_in">print</span>(train_data.shape)</span><br></pre></td></tr></table></figure>
 
-block site_title
-    != page.title + " · " + config.title
-
-block description
-    - var desc = page.desc || page.title + ' - ' + config.author;
-    meta(name="description", content=desc)
-
-block container
-    include mixins/post
-    +post(page)
-
-block pagination
-    include mixins/paginator
-    +post()
-    include partial/comment
-
-block copyright
-    include partial/copyright
+<p><img src="https://img-blog.csdnimg.cn/a4ac17b900004b2bbd3f92f8671fc7d3.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/9f155a96df99420fafa8052588eb7fbe.png" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>TabularDataset读取训练数据<br>提取’PassengerId’,’Survived’分别作为”id”,”label”<br>TabularPredictor对“Survived”进行预测，fit除了“id”列的train_data</p>
+</blockquote>
+<h1 id="预测"><a href="#预测" class="headerlink" title="预测"></a>预测</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="comment">#预测</span></span><br><span class="line">test_data = TabularDataset(<span class="string">&#x27;../input/titanic/test.csv&#x27;</span>)</span><br><span class="line">preds = predictor.predict(test_data.drop(columns=[<span class="built_in">id</span>]))</span><br><span class="line">submission = pd.DataFrame(&#123;<span class="built_in">id</span>:test_data[<span class="built_in">id</span>],label:preds&#125;)</span><br><span class="line">submission.to_csv(<span class="string">&#x27;submission.csv&#x27;</span>,index=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#查看测试数据</span></span><br><span class="line">test_data.head(<span class="number">30</span>)</span><br><span class="line"><span class="built_in">print</span>(test_data.shape)</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/0b7164c4091c4500877255e6069ba4cb.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2d40b29971e74ba39d5f66e4d1554400.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/c3217842b4324771a47491bd9357a559.png" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>TabularDataset读取测试数据<br>predictor.predict预测除了“id”列的test_data<br>pandas合并test_data的”id”列与预测值<br>to_csv导出结果</p>
+</blockquote>
+<h1 id="提交方式"><a href="#提交方式" class="headerlink" title="提交方式"></a>提交方式</h1><h2 id="Competition首页"><a href="#Competition首页" class="headerlink" title="Competition首页"></a>Competition首页</h2><p><img src="https://img-blog.csdnimg.cn/2b22af5988fc4289944ed6d6ef6922e5.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/349599b9ad914f5689448e0604920a38.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/4f852377dedd44529b4e9640752015e4.png" alt="在这里插入图片描述"></p>
+<h2 id="Notebook首页"><a href="#Notebook首页" class="headerlink" title="Notebook首页"></a>Notebook首页</h2><p><img src="https://img-blog.csdnimg.cn/bb3d3d2a4ec143148191a6aaa47ec250.png" alt="在这里插入图片描述"></p>
+<h1 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h1><p><img src="https://img-blog.csdnimg.cn/89d5b74c7beb44b9bca2c92072843fce.png" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>这里排名动态变化</p>
+</blockquote>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><iframe 
+    src="//player.bilibili.com/player.html?aid=205400661&bvid=BV1rh411m7Hb&cid=335992837&page=1" 
+    scrolling="no" 
+    border="0" 
+    frameborder="no" 
+    framespacing="0" 
+    allowfullscreen="true"
+    width="100%" 
+    height="500">
+ </iframe></div></div><div class="footer"><div class="footer-copyright">Theme By <a target="_blank" rel="noopener" href="https://github.com/shinux/hexo-theme-adoubi">Adoubi</a> , Powered By Hexo.</div></div></body></html>

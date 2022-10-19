@@ -1,20 +1,26 @@
-extends partial/layout
-
-block site_title
-    != page.title + " · " + config.title
-
-block description
-    - var desc = page.desc || page.title + ' - ' + config.author;
-    meta(name="description", content=desc)
-
-block container
-    include mixins/post
-    +post(page)
-
-block pagination
-    include mixins/paginator
-    +post()
-    include partial/comment
-
-block copyright
-    include partial/copyright
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>【AutoGluon】原理</title><link rel="stylesheet" href="/css/normalize.css"><link rel="stylesheet" href="/css/heti.min.css"><link rel="stylesheet" href="/css/hexo-theme-adoubi.css"><link rel="icon" href="/images/favicon.ico"><meta name="generator" content="Hexo 5.4.1"></head><body><div class="header"><a class="github-link"><img class="github-image" src="/images/Aquicon-Github-small.png"></a><a class="email-link" href="mailto:null"><img class="email-image" src="/images/email-small.png"></a><a class="subscribe-link" href="/atom.xml"><img class="subscribe-image" src="/images/subscribe-small.png"></a></div><div class="content"><div class="post-item"></div><h2 class="post-title-wrapper"><p class="post-title">【AutoGluon】原理</p></h2><div class="post-date"><time datetime="2022-04-05T16:36:51.725Z">2022-04-06</time></div><div class="post-content"><h1 id="Automl"><a href="#Automl" class="headerlink" title="Automl"></a>Automl</h1><p>Automl：自动对数据抽取特征并进行模型训练</p>
+<p>大部分automl框架是基于<strong>超参数搜索技术</strong></p>
+<p>超参数搜索技术：在数十甚至数百个超参数的候选中选取一个比较好的参数</p>
+<p>Autogluon则依赖于融合多个“无需超参数搜索”的模型</p>
+<p>在相同的时间内训练多个不一样的模型<br><img src="https://img-blog.csdnimg.cn/283c8ce1c7384c858ef792ccfb8f76c6.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQVhETE1H,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>Autogluon如何融合这些模型的：</p>
+<h2 id="技术一：stacking"><a href="#技术一：stacking" class="headerlink" title="技术一：stacking"></a>技术一：stacking</h2><p>在同一个数据上独立训练出多个不一样的模型，这些模型可以是简单的KNN、树模型、和方法，或者是复杂的神经网络。<br>这些模型的输出进入一个线性模型，得到最终的输出，也就是对这些输出做加权和，这里的权重是通过训练得到的。<br>这就是调用fit函数的时候，Autogluon默认使用的模型融合方法。<br>通过训练打印的信息或者leaderboard来查看具体尝试了哪些模型。<br><img src="https://img-blog.csdnimg.cn/e4898fe3426c4405ae2ca69cb194fa79.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQVhETE1H,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<h2 id="技术二：k-则交叉bagging"><a href="#技术二：k-则交叉bagging" class="headerlink" title="技术二：k-则交叉bagging"></a>技术二：k-则交叉bagging</h2><p>bagging是指训练多个同类型的模型，它们可能使用不同的初始权重或者不同的数据块，最后将这些模型的输出做平均来降低预测的方差。<br>k-则交叉bagging源自于k-则交叉验证，这里用三则bagging来举例<br>首先将数据分成三块：<br>第一则：前两块数据做训练，最后一块做验证评估模型的好坏<br>第二则：第一第三块数据做训练<br>第三则：后两块数据做训练<br>在最后的预测的时候用这三个模型的输出去平均得到最终的输出。<br><img src="https://img-blog.csdnimg.cn/36e1e7d7ef9d4bfa893545bdc06ff079.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQVhETE1H,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fit(..., num_bag_folds=<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<p>如果在调用fit的时候指定num_bag_folds=3，对stacking中的每一个模型都做三则交叉bagging</p>
+<h2 id="技术三：多层stacking"><a href="#技术三：多层stacking" class="headerlink" title="技术三：多层stacking"></a>技术三：多层stacking</h2><p>原理是将各个模型的输出跟数据合并起来再做一次stacking，也就是在上面再训练多个模型，最后用一个线性模型做输出。<br><img src="https://img-blog.csdnimg.cn/e3a0223eac2841e8b122418f8ff9b82a.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQVhETE1H,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>当然也可以这样重复多次，为了避免后面的层过度拟合数据，多层stacking通常是要配合k-则交叉bagging使用。也就是说，这里的每一个模型是k个模型的bagging，它给下一层stacking的输出是指，每个bagging模型它对应的验证集上输出的合并。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fit(..., num_stack_levels=<span class="number">1</span>,</span><br><span class="line">	num_bag_folds=<span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p>在Autogluon中，可以使用num_stack_levels=1,num_bag_folds=3来选择额外使用一层stacking，而且每个模型使用三则交叉bagging。<br>因为这两个选项都会成倍地增加计算开销，所以需要用户在计算资源充分而且需要高精度模型的时候手动指定。</p>
+<h1 id="结果对比"><a href="#结果对比" class="headerlink" title="结果对比"></a>结果对比</h1><p>对比AutoGluon和其他Automl框架地性能：<br>使用种类多样的50个数据集<br>每个框架限制4小时运行时间<br><img src="https://img-blog.csdnimg.cn/38c1aa1de7e14117aa5b744cf1d5a1d8.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQVhETE1H,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述">意味着在给定资源的情况下，通过尽量多的训练各种不一样的模型，并有效地将它们融合到一起，是个有效的策略</p>
+<h1 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h1><p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2003.06505">Paper</a></p>
+<h1 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h1><p><a target="_blank" rel="noopener" href="https://auto.gluon.ai/">Documentation</a></p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p><a target="_blank" rel="noopener" href="https://github.com/awslabs/autogluon">Code</a></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><iframe 
+    src="//player.bilibili.com/player.html?aid=630666219&bvid=BV1F84y1F7Ps&cid=339759580&page=1" 
+    scrolling="no" 
+    border="0" 
+    frameborder="no" 
+    framespacing="0" 
+    allowfullscreen="true"
+    width="100%" 
+    height="500"> 
+</iframe></div></div><div class="footer"><div class="footer-copyright">Theme By <a target="_blank" rel="noopener" href="https://github.com/shinux/hexo-theme-adoubi">Adoubi</a> , Powered By Hexo.</div></div></body></html>

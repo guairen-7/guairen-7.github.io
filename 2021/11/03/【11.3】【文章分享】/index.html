@@ -1,20 +1,13 @@
-extends partial/layout
-
-block site_title
-    != page.title + " · " + config.title
-
-block description
-    - var desc = page.desc || page.title + ' - ' + config.author;
-    meta(name="description", content=desc)
-
-block container
-    include mixins/post
-    +post(page)
-
-block pagination
-    include mixins/paginator
-    +post()
-    include partial/comment
-
-block copyright
-    include partial/copyright
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>【11.3】【文章分享】</title><link rel="stylesheet" href="/css/normalize.css"><link rel="stylesheet" href="/css/heti.min.css"><link rel="stylesheet" href="/css/hexo-theme-adoubi.css"><link rel="icon" href="/images/favicon.ico"><meta name="generator" content="Hexo 5.4.1"></head><body><div class="header"><a class="github-link"><img class="github-image" src="/images/Aquicon-Github-small.png"></a><a class="email-link" href="mailto:null"><img class="email-image" src="/images/email-small.png"></a><a class="subscribe-link" href="/atom.xml"><img class="subscribe-image" src="/images/subscribe-small.png"></a></div><div class="content"><div class="post-item"></div><h2 class="post-title-wrapper"><p class="post-title">【11.3】【文章分享】</p></h2><div class="post-date"><time datetime="2021-11-03T10:46:55.096Z">2021-11-03</time></div><div class="post-content"><h1 id="1-演讲"><a href="#1-演讲" class="headerlink" title="1.演讲"></a>1.演讲</h1><h2 id="1-1-John-Edward-Hopcroft-《开放科学：科学传播与人才培养》"><a href="#1-1-John-Edward-Hopcroft-《开放科学：科学传播与人才培养》" class="headerlink" title="1.1 John Edward Hopcroft 《开放科学：科学传播与人才培养》"></a>1.1 John Edward Hopcroft 《开放科学：科学传播与人才培养》</h2><p><a target="_blank" rel="noopener" href="https://new.qq.com/omn/20211102/20211102A02F6400.html">图灵奖得主：中国应该重视本科教育质量，而不是研究经费和论文数量-腾讯网</a></p>
+<h1 id="2-人物"><a href="#2-人物" class="headerlink" title="2.人物"></a>2.人物</h1><h2 id="2-1-John-Edward-Hopcroft："><a href="#2-1-John-Edward-Hopcroft：" class="headerlink" title="2.1 John Edward Hopcroft："></a>2.1 John Edward Hopcroft：</h2><p><a target="_blank" rel="noopener" href="https://news.sjtu.edu.cn/mtjj/20180405/67002.html">图灵奖获得者约翰·霍普克罗夫特：中国高校必须教会学生提问—上海交通大学新闻学术网</a></p>
+<p><a target="_blank" rel="noopener" href="http://zqb.cyol.com/html/2012-02/09/nw.D110000zgqnb_20120209_3-03.htm">中国高校必须教会学生提问—中国青年报</a></p>
+<h2 id="2-2-吴天齐"><a href="#2-2-吴天齐" class="headerlink" title="2.2 吴天齐"></a>2.2 吴天齐</h2><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/TzkUvWwksCjQcvmRYh8Odw">吴齐天的科研思考—DataWhale</a></p>
+<p><a target="_blank" rel="noopener" href="https://thinklab.sjtu.edu.cn/">SJTU-ThinkLab官网</a></p>
+<h2 id="2-3-Johnson-Kuan"><a href="#2-3-Johnson-Kuan" class="headerlink" title="2.3 Johnson Kuan"></a>2.3 Johnson Kuan</h2><p><a target="_blank" rel="noopener" href="https://towardsdatascience.com/how-i-won-andrew-ngs-very-first-data-centric-ai-competition-e02001268bda">Johnson Kuan：How I Won Andrew Ng’s First Data-Centric AI Competition</a></p>
+<h2 id="2-4-陶中恺"><a href="#2-4-陶中恺" class="headerlink" title="2.4 陶中恺"></a>2.4 陶中恺</h2><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/5245h0CMA45h8ONNflzb6Q">阿里数学竞赛最年轻金奖得主陶中恺：“学数学还是要自信”</a></p>
+<h1 id="3-新闻"><a href="#3-新闻" class="headerlink" title="3.新闻"></a>3.新闻</h1><h2 id="3-1-VMware-与戴尔正式“分手”"><a href="#3-1-VMware-与戴尔正式“分手”" class="headerlink" title="3.1 VMware 与戴尔正式“分手”"></a>3.1 VMware 与戴尔正式“分手”</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_14921509/article/details/121097972?spm=1000.2115.3001.5927">VMware 与戴尔正式“分手”—苏小宓的CSDN</a></p>
+<p><a target="_blank" rel="noopener" href="https://news.vmware.com/leadership/ceo-raghu-raghuram-spin-off-complete">The Start of a New Era for VMware</a></p>
+<h2 id="3-2-ReSkin"><a href="#3-2-ReSkin" class="headerlink" title="3.2 ReSkin"></a>3.2 ReSkin</h2><p><a target="_blank" rel="noopener" href="https://ai.facebook.com/blog/reskin-a-versatile-replaceable-low-cost-skin-for-ai-research-on-tactile-perception/">ReSkin: a versatile, replaceable, low-cost skin for AI research on tactile perception</a></p>
+<h1 id="4-实用网站"><a href="#4-实用网站" class="headerlink" title="4.实用网站"></a>4.实用网站</h1><h2 id="4-1-GitHub最大的开源算法库—The-Algorithms"><a href="#4-1-GitHub最大的开源算法库—The-Algorithms" class="headerlink" title="4.1 GitHub最大的开源算法库—The Algorithms"></a>4.1 GitHub最大的开源算法库—The Algorithms</h2><p><a target="_blank" rel="noopener" href="https://the-algorithms.com/">The Algorithms</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/TheAlgorithms">The Algorithms’s GitHub</a></p>
+</div></div><div class="footer"><div class="footer-copyright">Theme By <a target="_blank" rel="noopener" href="https://github.com/shinux/hexo-theme-adoubi">Adoubi</a> , Powered By Hexo.</div></div></body></html>

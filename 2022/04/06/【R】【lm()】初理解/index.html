@@ -1,20 +1,25 @@
-extends partial/layout
-
-block site_title
-    != page.title + " · " + config.title
-
-block description
-    - var desc = page.desc || page.title + ' - ' + config.author;
-    meta(name="description", content=desc)
-
-block container
-    include mixins/post
-    +post(page)
-
-block pagination
-    include mixins/paginator
-    +post()
-    include partial/comment
-
-block copyright
-    include partial/copyright
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>【R】【lm()】初理解</title><link rel="stylesheet" href="/css/normalize.css"><link rel="stylesheet" href="/css/heti.min.css"><link rel="stylesheet" href="/css/hexo-theme-adoubi.css"><link rel="icon" href="/images/favicon.ico"><meta name="generator" content="Hexo 5.4.1"></head><body><div class="header"><a class="github-link"><img class="github-image" src="/images/Aquicon-Github-small.png"></a><a class="email-link" href="mailto:null"><img class="email-image" src="/images/email-small.png"></a><a class="subscribe-link" href="/atom.xml"><img class="subscribe-image" src="/images/subscribe-small.png"></a></div><div class="content"><div class="post-item"></div><h2 class="post-title-wrapper"><p class="post-title">【R】【lm()】初理解</p></h2><div class="post-date"><time datetime="2022-04-05T16:28:43.594Z">2022-04-06</time></div><div class="post-content"><h1 id="浅试lm"><a href="#浅试lm" class="headerlink" title="浅试lm()"></a>浅试lm()</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a&lt;-<span class="built_in">c</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br><span class="line">b&lt;-<span class="built_in">c</span>(<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">10</span>)</span><br><span class="line">mydata&lt;-data.frame(a,b)</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/c46b16ecf0b04690b9aa5b257918172f.png" alt="在这里插入图片描述"></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">myfit&lt;-lm(a~b,mydata)</span><br><span class="line"><span class="comment">#myfit&lt;-lm(formula,data)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">summary.lm(myfit)</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/7325ea4723314f469067456331773515.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQVhETE1H,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>Coefficients部分：</p>
+<p>Estimate：估值<br>Std. Error：标准误差<br>t value：T值<br>Pr(&gt;|t|)：P值</p>
+<p>通过P值与预设的0.05进行比较，来判定对应的解释变量的显著性（检验的原假设是，该系数是否显著为0，P&lt;0.05则拒绝原假设，即对应的变量显著不为0）<br>截距Intercept=0.144<br>b&lt;2的负16次方<br>认为在P为0.05的水平下显著不为0，通过显著性检验</p>
+<p>Multiple R-squared：拟合优度<br>Adjusted R-squared：修正的拟合优度<br>是指回归方程对样本的拟合程度几何<br>这里修正的拟合优度=1，拟合程度很好<br>这个值越高越好，提升拟合优度的方法很多</p>
+<p>F-statistic：F统计量，也称为F检验，常常用于判断方程整体的显著性检验<br>P值=2.2的负16次方&lt;0.05<br>认为方程在P=0.05的水平上通过显著性检验</p>
+<p>总结：<br>T检验：检验解释变量的显著性<br>R-squared：查看方程拟合程度<br>F检验：检验方程整体显著性</p>
+<h1 id="警告"><a href="#警告" class="headerlink" title="警告"></a>警告</h1><blockquote>
+<p>In summary.lm(myfit) : essentially perfect fit: summary may be unreliable</p>
+</blockquote>
+<blockquote>
+<p>msgid “essentially perfect fit: summary may be unreliable”<br>msgstr “对几乎是完全拟合进行ANOVA F-检验的结果不会可靠”</p>
+</blockquote>
+<blockquote>
+<p>可能存在的问题数据格式符合但不足以拟合导致结果不够理想</p>
+</blockquote>
+<h1 id="文档示例（暂未精读）"><a href="#文档示例（暂未精读）" class="headerlink" title="文档示例（暂未精读）"></a>文档示例（暂未精读）</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ctl &lt;- <span class="built_in">c</span>(<span class="number">4.17</span>,<span class="number">5.58</span>,<span class="number">5.18</span>,<span class="number">6.11</span>,<span class="number">4.50</span>,<span class="number">4.61</span>,<span class="number">5.17</span>,<span class="number">4.53</span>,<span class="number">5.33</span>,<span class="number">5.14</span>)</span><br><span class="line">trt &lt;- <span class="built_in">c</span>(<span class="number">4.81</span>,<span class="number">4.17</span>,<span class="number">4.41</span>,<span class="number">3.59</span>,<span class="number">5.87</span>,<span class="number">3.83</span>,<span class="number">6.03</span>,<span class="number">4.89</span>,<span class="number">4.32</span>,<span class="number">4.69</span>)</span><br><span class="line">group &lt;- gl(<span class="number">2</span>, <span class="number">10</span>, <span class="number">20</span>, labels = <span class="built_in">c</span>(<span class="string">&quot;Ctl&quot;</span>,<span class="string">&quot;Trt&quot;</span>))</span><br><span class="line">weight &lt;- <span class="built_in">c</span>(ctl, trt)</span><br><span class="line">lm.D9 &lt;- lm(weight ~ group)</span><br><span class="line">lm.D90 &lt;- lm(weight ~ group - <span class="number">1</span>) <span class="comment"># omitting intercept</span></span><br><span class="line"></span><br><span class="line">anova(lm.D9)</span><br><span class="line">summary(lm.D90)</span><br><span class="line"></span><br><span class="line">opar &lt;- par(mfrow = <span class="built_in">c</span>(<span class="number">2</span>,<span class="number">2</span>), oma = <span class="built_in">c</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">1.1</span>, <span class="number">0</span>))</span><br><span class="line">plot(lm.D9, las = <span class="number">1</span>)      <span class="comment"># Residuals, Fitted, ...</span></span><br><span class="line">par(opar)</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/9401842ea15441e4aa9e9bc114efbbce.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAQVhETE1H,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/bahui7562/article/details/102195341">R语言错误的提示（中英文翻译）–bahui7562–CSDN</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43544188/article/details/105448380?spm=1001.2014.3001.5502">R语言填坑–丶L–CSDN</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yhb315279058/article/details/49430189">【[R] 【教程】教你如何读懂线性回归lm的结果summary（判断显著性）[转]】</a></p>
+</div></div><div class="footer"><div class="footer-copyright">Theme By <a target="_blank" rel="noopener" href="https://github.com/shinux/hexo-theme-adoubi">Adoubi</a> , Powered By Hexo.</div></div></body></html>

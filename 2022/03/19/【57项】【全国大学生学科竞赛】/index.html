@@ -1,20 +1,63 @@
-extends partial/layout
-
-block site_title
-    != page.title + " · " + config.title
-
-block description
-    - var desc = page.desc || page.title + ' - ' + config.author;
-    meta(name="description", content=desc)
-
-block container
-    include mixins/post
-    +post(page)
-
-block pagination
-    include mixins/paginator
-    +post()
-    include partial/comment
-
-block copyright
-    include partial/copyright
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>【57项】【全国大学生学科竞赛】</title><link rel="stylesheet" href="/css/normalize.css"><link rel="stylesheet" href="/css/heti.min.css"><link rel="stylesheet" href="/css/hexo-theme-adoubi.css"><link rel="icon" href="/images/favicon.ico"><meta name="generator" content="Hexo 5.4.1"></head><body><div class="header"><a class="github-link"><img class="github-image" src="/images/Aquicon-Github-small.png"></a><a class="email-link" href="mailto:null"><img class="email-image" src="/images/email-small.png"></a><a class="subscribe-link" href="/atom.xml"><img class="subscribe-image" src="/images/subscribe-small.png"></a></div><div class="content"><div class="post-item"></div><h2 class="post-title-wrapper"><p class="post-title">【57项】【全国大学生学科竞赛】</p></h2><div class="post-date"><time datetime="2022-03-19T00:02:46.023Z">2022-03-19</time></div><div class="post-content"><p>01.<a target="_blank" rel="noopener" href="https://cy.ncss.org.cn/">中国“互联网+”大学生创新创业大赛</a></p>
+<p>02.<a target="_blank" rel="noopener" href="http://www.tiaozhanbei.net/">“挑战杯”全国大学生课外学术科技作品竞赛</a></p>
+<p>03.<a target="_blank" rel="noopener" href="http://www.chuangqingchun.net/">“挑战杯”中国大学生创业计划大赛</a><br>备注：无法访问，相关资讯由微信公众号“创青春”获取</p>
+<p>04.<a target="_blank" rel="noopener" href="http://acm.cumt.edu.cn/">ACM-ICPC国际大学生程序设计竞赛</a><br>备注：官网、访问慢</p>
+<p>05.<a target="_blank" rel="noopener" href="http://www.mcm.edu.cn/">全国大学生数学建模竞赛</a></p>
+<p>06.<a target="_blank" rel="noopener" href="http://www.nuedcchina.com/">全国大学生电子设计竞赛</a></p>
+<p>07.<a target="_blank" rel="noopener" href="http://nuclt.fzu.edu.cn/html/sy/1.html">全国大学生化学实验邀请赛</a><br>备注：第十一届、高校邀请赛，2021年退出榜单</p>
+<p>08.<a target="_blank" rel="noopener" href="http://www.kmmc.cn/list1779.aspx">全国高等医学院校大学生临床技能竞赛</a><br>备注：高校轮流举办、旧</p>
+<p>09.<a target="_blank" rel="noopener" href="http://umic.ckcest.cn/">全国大学生机械创新设计大赛</a></p>
+<p>10.<a target="_blank" rel="noopener" href="http://www.ccea.zju.edu.cn/structure/">全国大学生结构设计竞赛</a><br>备注：高校轮流举办、链接失效</p>
+<p>11.<a target="_blank" rel="noopener" href="http://www.sun-ada.net/">全国大学生广告艺术大赛</a></p>
+<p>12.<a target="_blank" rel="noopener" href="https://smartcar.cdstm.cn/index">全国大学生智能汽车竞赛</a></p>
+<p>13.<a target="_blank" rel="noopener" href="http://www.nactrans.com.cn/">全国大学生交通科技大赛</a></p>
+<p>14.<a target="_blank" rel="noopener" href="http://www.3chuang.net/">全国大学生电子商务“创新、创意及创业”挑战赛</a></p>
+<p>15.<a target="_blank" rel="noopener" href="http://www.jienengjianpai.org/Default.asp">全国大学生节能减排社会实践与科技竞赛</a></p>
+<p>16.<a target="_blank" rel="noopener" href="http://www.gcxl.edu.cn/">全国大学生工程训练综合能力竞赛</a></p>
+<p>17.<a target="_blank" rel="noopener" href="http://47.103.191.18/">全国大学生物流设计大赛</a></p>
+<p>18.<a target="_blank" rel="noopener" href="http://uchallenge.unipus.cn/">外研社全国大学生英语系列赛-英语演讲、英语辩论、英语写作、英语阅读</a></p>
+<p>19、<a target="_blank" rel="noopener" href="http://www.chinaskills-jsw.org/">全国职业院校技能大赛</a></p>
+<p>20.<a target="_blank" rel="noopener" href="http://gjcxcy.bjtu.edu.cn/Index.aspx">全国大学生创新创业训练计划年会展示</a></p>
+<p>21.全国大学生机器人大赛-RoboMaster、RoboCon</p>
+<p><a target="_blank" rel="noopener" href="https://www.robomaster.com/zh-CN">全国大学生机器人大赛-RoboMaster</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.cnrobocon.net/">全国大学生机器人大赛-RoboCon</a></p>
+<p>22.<a target="_blank" rel="noopener" href="http://www.siemenscup-cimc.org.cn/">“西门子杯”中国智能制造挑战赛</a></p>
+<p>23.<a target="_blank" rel="noopener" href="http://iche.zju.edu.cn/">全国大学生化工设计竞赛</a></p>
+<p>24.<a target="_blank" rel="noopener" href="http://www.dxsgraphics.cn/Default.aspx">全国大学生先进成图技术与产品信息建模创新大赛</a><br>备注：链接失效</p>
+<p>25.<a target="_blank" rel="noopener" href="http://jsjds.ruc.edu.cn/Index.asp">中国大学生计算机设计大赛</a></p>
+<p>26.<a target="_blank" rel="noopener" href="http://www.china-cssc.org/list-52-1.html">全国大学生市场调查与分析大赛</a></p>
+<p>27.<a target="_blank" rel="noopener" href="http://www.fwwb.org.cn/">中国大学生服务外包创新创业大赛</a></p>
+<p>28.<a target="_blank" rel="noopener" href="http://www.huacanjiang.com/">两岸新锐设计竞赛“华灿奖”</a></p>
+<p>29.<a target="_blank" rel="noopener" href="http://www.c4best.cn/">中国高校计算机大赛-大数据挑战赛、团体程序设计天梯赛、移动应用创新赛、网络技术挑战赛</a></p>
+<p>30.<a target="_blank" rel="noopener" href="https://worldskills.org/">世界技能大赛</a></p>
+<p>31、[世界技能大赛中国选拔赛]</p>
+<p>备注：<a target="_blank" rel="noopener" href="http://worldskillschina.mohrss.gov.cn/">世界技能大赛中国组委会</a></p>
+<p>32.<a target="_blank" rel="noopener" href="http://robocup.drct-caa.org.cn/index.php">中国机器人大赛暨RoboCup机器人世界杯中国赛</a></p>
+<p>33.<a target="_blank" rel="noopener" href="http://www.ciscn.cn/">全国大学生信息安全竞赛</a></p>
+<p>34.<a target="_blank" rel="noopener" href="http://zpy.cstam.org.cn/index.aspx">全国周培源大学生力学竞赛</a></p>
+<p>35.<a target="_blank" rel="noopener" href="http://cmes-imic.org.cn/">中国大学生机械工程创新创意大赛-过程装备实践与创新赛、铸造工艺设计赛、材料热处理创新创业赛、起重机创意赛</a></p>
+<p>36.<a target="_blank" rel="noopener" href="http://dasai.lanqiao.cn/">蓝桥杯全国软件和信息技术专业人才大赛</a></p>
+<p>37.<a target="_blank" rel="noopener" href="http://www.mse-cn.com/">全国大学生金相技能大赛</a></p>
+<p>38.<a target="_blank" rel="noopener" href="http://www.cnsoftbei.com/">“中国软件杯”大学生软件设计大赛</a></p>
+<p>39.<a target="_blank" rel="noopener" href="http://opt.zju.edu.cn/gdjs/">全国大学生光电设计竞赛</a></p>
+<p>40.<a target="_blank" rel="noopener" href="http://www.ncda.org.cn/">全国高校数字艺术设计大赛</a></p>
+<p>41.<a target="_blank" rel="noopener" href="http://www.chinaus-maker.org/">中美青年创客大赛</a><br>备注：链接失效</p>
+<p>42.<a target="_blank" rel="noopener" href="https://yuanxi.cugb.edu.cn/competition/">全国大学生地质技能竞赛</a><br>备注：高校轮流举办、每两年一届</p>
+<p>43.<a target="_blank" rel="noopener" href="https://dandad.cn/">米兰设计周–中国高校设计学科师生优秀作品展</a></p>
+<p>44.<a target="_blank" rel="noopener" href="http://univ.ciciec.com/">全国大学生集成电路创新创业大赛</a></p>
+<p>45.<a target="_blank" rel="noopener" href="http://www.caairobot.com/">中国机器人及人工智能大赛</a></p>
+<p>46.<a target="_blank" rel="noopener" href="http://www.ccpitedu.org/">全国高校商业精英挑战赛</a></p>
+<p>47.<a target="_blank" rel="noopener" href="http://cdec.org.cn/">中国好创意暨全国数字艺术设计大赛</a></p>
+<p>48.<a target="_blank" rel="noopener" href="https://3dds.3ddl.net/">全国三维数字化创新设计大赛</a></p>
+<p>49.<a target="_blank" rel="noopener" href="http://cyds.monilab.com/">“学创杯”全国大学生创业综合模拟大赛</a></p>
+<p>50.<a target="_blank" rel="noopener" href="http://dtcup.dtxiaotangren.com/">“大唐杯”全国大学生移动通信5G技术大赛</a></p>
+<p>51.[全国大学生物理实验竞赛]</p>
+<p>China Undergraduate Physics Experiment Competition(CUPEC)</p>
+<p>备注：高校轮流举办、每两年一届</p>
+<p>52.<a target="_blank" rel="noopener" href="http://gxbsxs.glodonedu.com/">全国高校BIM毕业设计创新大赛官网</a></p>
+<p>53.<a target="_blank" rel="noopener" href="https://www.robocom.com.cn/">RoboCom机器人开发者大赛</a></p>
+<p>54.<a target="_blank" rel="noopener" href="https://www.culsc.cn/">全国大学生生命科学竞赛（CULSC)</a></p>
+<p>55.<a target="_blank" rel="noopener" href="https://e.huawei.com/cn/talent/#/ict/contest?compId=&navType=talentAlliance">华为ICT大赛</a></p>
+<p>56.<a target="_blank" rel="noopener" href="http://www.socchina.net/">全国大学生嵌入式芯片与系统设计竞赛</a></p>
+<p>57.<a target="_blank" rel="noopener" href="http://www.robotcontest.cn/">中国高校智能机器人创意大赛</a></p>
+</div></div><div class="footer"><div class="footer-copyright">Theme By <a target="_blank" rel="noopener" href="https://github.com/shinux/hexo-theme-adoubi">Adoubi</a> , Powered By Hexo.</div></div></body></html>
