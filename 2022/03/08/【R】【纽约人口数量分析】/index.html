@@ -1,4 +1,49 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>【R】【纽约人口数量分析】</title><link rel="stylesheet" href="/css/normalize.css"><link rel="stylesheet" href="/css/heti.min.css"><link rel="stylesheet" href="/css/hexo-theme-adoubi.css"><link rel="icon" href="/images/favicon.ico"><meta name="generator" content="Hexo 5.4.1"></head><body><div class="header"><a class="github-link"><img class="github-image" src="/images/Aquicon-Github-small.png"></a><a class="email-link" href="mailto:null"><img class="email-image" src="/images/email-small.png"></a><a class="subscribe-link" href="/atom.xml"><img class="subscribe-image" src="/images/subscribe-small.png"></a></div><div class="content"><div class="post-item"></div><h2 class="post-title-wrapper"><p class="post-title">【R】【纽约人口数量分析】</p></h2><div class="post-date"><time datetime="2022-03-08T15:06:26.199Z">2022-03-08</time></div><div class="post-content"><h1 id="1）实验说明"><a href="#1）实验说明" class="headerlink" title="1）实验说明"></a>1）实验说明</h1><p>从网址<a target="_blank" rel="noopener" href="http://robjhyndman.com/tsdldata/data/nybirths.dat">bank-additional-full.csv</a><br>中下载数据到指定位置（D:\），然后解压到当前文件夹。</p>
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <link rel="alternate icon" type="image/png" href="/img/favicon.png">
+    <title>AXDLMG7&#39;s Blog | </title>
+    
+<link rel="stylesheet" href="/css/reset.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/markdown.css">
+
+    
+<link rel="stylesheet" href="/css/fonts.css">
+
+<meta name="generator" content="Hexo 5.4.1"></head>
+    <body>
+        <div class="paper">
+            <div class="paper-main">
+                
+                    <div class="post-header">
+    <a class="logo" href="/">AXDLMG7&#39;s Blog</a>
+    <a class="go-home" href="/">
+        <svg width="8" height="14" viewBox="0 0 8 14">
+            <path d="M7 1L1 7l6 6" stroke="#000" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+</div>
+                
+                <div class="post-main">
+
+    
+        <div class="post-main-title">
+            【R】【纽约人口数量分析】
+        </div>
+        <div class="post-meta">
+            2022-03-08
+        </div>
+    
+
+    <div class="post-md">
+        <h1 id="1）实验说明"><a href="#1）实验说明" class="headerlink" title="1）实验说明"></a>1）实验说明</h1><p>从网址<a target="_blank" rel="noopener" href="http://robjhyndman.com/tsdldata/data/nybirths.dat">bank-additional-full.csv</a><br>中下载数据到指定位置（D:\），然后解压到当前文件夹。</p>
 <p>导入下载的数据 bank-additional-full.csv 到 R 软件。</p>
 <p>通过时间序列分析方法对 1946 年 1 月到 1959 年 12 月的纽约每月出生人口数量进行时间序列分析，预测纽约每月人口数量的影响因素及相关规律。</p>
 <h1 id="2）实验环境"><a href="#2）实验环境" class="headerlink" title="2）实验环境"></a>2）实验环境</h1><p>R-3.6.0</p>
@@ -27,4 +72,31 @@
 <h1 id="6）实验分析"><a href="#6）实验分析" class="headerlink" title="6）实验分析"></a>6）实验分析</h1><p>一个季节性时间序列包含趋势部分、季节性部分和不规则部分。分解时间序列是要把时间序列分解成这三个部分，并进行估计。若时间序列是相加模型，在 R 语言中使用 decompose()函数，可以达到估计的目的。通过本次实验，得出了纽约人口数量分析的相关规律，随季节性波动，并呈现上升趋势。也可以将本实验在其他的数据集上进行相关的时间序列分析。</p>
 <p>本实验主要对时间序列数据进行了季节调整分析，运用 decompose 函数将数据分成趋势、季节、不规则波动三部分观察，并进一步对数据进行修正，剔除季节影响，以便更好地揭示数据本身的基本趋势，发现数据中隐藏的信息。</p>
 <h1 id="7）ps"><a href="#7）ps" class="headerlink" title="7）ps"></a>7）ps</h1><p>因数据丢失，该实验暂未复现，暂未精读</p>
-</div></div><div class="footer"><div class="footer-copyright">Theme By <a target="_blank" rel="noopener" href="https://github.com/shinux/hexo-theme-adoubi">Adoubi</a> , Powered By Hexo.</div></div></body></html>
+
+    </div>
+
+</div>
+                <div class="footer">
+    <span>Copyright © 2022 AXDLMG7&#39;s Blog</span>
+    <span>Theme Designed By <a target="_blank" href="https://zheli.design/one-paper">這Li</a></span>
+</div>
+
+
+<link rel="stylesheet" href="/css/a11y-dark.min.css">
+
+
+<script src="/js/highlight.min.js"></script>
+
+
+<script src="/js/highlightjs-line-numbers.js"></script>
+
+
+<script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+</script>
+
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,4 +1,49 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>【数据库创建与管理】【基本操作】</title><link rel="stylesheet" href="/css/normalize.css"><link rel="stylesheet" href="/css/heti.min.css"><link rel="stylesheet" href="/css/hexo-theme-adoubi.css"><link rel="icon" href="/images/favicon.ico"><meta name="generator" content="Hexo 5.4.1"></head><body><div class="header"><a class="github-link"><img class="github-image" src="/images/Aquicon-Github-small.png"></a><a class="email-link" href="mailto:null"><img class="email-image" src="/images/email-small.png"></a><a class="subscribe-link" href="/atom.xml"><img class="subscribe-image" src="/images/subscribe-small.png"></a></div><div class="content"><div class="post-item"></div><h2 class="post-title-wrapper"><p class="post-title">【数据库创建与管理】【基本操作】</p></h2><div class="post-date"><time datetime="2022-03-29T01:38:24.475Z">2022-03-29</time></div><div class="post-content"><h1 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h1><h2 id="使用Studio创建"><a href="#使用Studio创建" class="headerlink" title="使用Studio创建"></a>使用Studio创建</h2><p>右键‘数据库’–&gt;新建数据库<br><img src="https://img-blog.csdnimg.cn/9097c8561b7a4435b6e8dad47df327a1.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/fe1737c61130477b891b4a5ac8b027e1.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/5af0f285e330400e823c6dc7d1782147.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/6afadffcc2e24ff8b0d5d76a882f5df1.png" alt="在这里插入图片描述"></p>
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <link rel="alternate icon" type="image/png" href="/img/favicon.png">
+    <title>AXDLMG7&#39;s Blog | </title>
+    
+<link rel="stylesheet" href="/css/reset.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/markdown.css">
+
+    
+<link rel="stylesheet" href="/css/fonts.css">
+
+<meta name="generator" content="Hexo 5.4.1"></head>
+    <body>
+        <div class="paper">
+            <div class="paper-main">
+                
+                    <div class="post-header">
+    <a class="logo" href="/">AXDLMG7&#39;s Blog</a>
+    <a class="go-home" href="/">
+        <svg width="8" height="14" viewBox="0 0 8 14">
+            <path d="M7 1L1 7l6 6" stroke="#000" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+</div>
+                
+                <div class="post-main">
+
+    
+        <div class="post-main-title">
+            【数据库创建与管理】【基本操作】
+        </div>
+        <div class="post-meta">
+            2022-03-29
+        </div>
+    
+
+    <div class="post-md">
+        <h1 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h1><h2 id="使用Studio创建"><a href="#使用Studio创建" class="headerlink" title="使用Studio创建"></a>使用Studio创建</h2><p>右键‘数据库’–&gt;新建数据库<br><img src="https://img-blog.csdnimg.cn/9097c8561b7a4435b6e8dad47df327a1.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/fe1737c61130477b891b4a5ac8b027e1.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/5af0f285e330400e823c6dc7d1782147.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/6afadffcc2e24ff8b0d5d76a882f5df1.png" alt="在这里插入图片描述"></p>
 <h2 id="使用T-SQL语言创建"><a href="#使用T-SQL语言创建" class="headerlink" title="使用T-SQL语言创建"></a>使用T-SQL语言创建</h2><p><img src="https://img-blog.csdnimg.cn/aacbffe9b23c415ba7015ceb6d140783.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/dd0962f36a804b8bbe190e48909f54a7.png" alt="在这里插入图片描述"></p>
 <h1 id="管理数据库"><a href="#管理数据库" class="headerlink" title="管理数据库"></a>管理数据库</h1><h2 id="使用SSMS"><a href="#使用SSMS" class="headerlink" title="使用SSMS"></a>使用SSMS</h2><h3 id="修改数据库存储容量"><a href="#修改数据库存储容量" class="headerlink" title="修改数据库存储容量"></a>修改数据库存储容量</h3><p>右键‘TEST（目标数据库）’–&gt;属性<br><img src="https://img-blog.csdnimg.cn/2c87ff46cb61464d9b478b1acd2b55dc.png" alt="在这里插入图片描述"></p>
 <p>右键‘TEST（目标数据库）’–&gt;任务–&gt;收缩–&gt;数据库<br><img src="https://img-blog.csdnimg.cn/361df599788944a9b97aa99041e26c5c.png" alt="在这里插入图片描述"></p>
@@ -15,4 +60,31 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> DATABASE Student</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/15b01a135f3a4784ad7111291ff435cc.png" alt="在这里插入图片描述"><br>ps：注意查询语言的目录，在master中新建查询语句<br><img src="https://img-blog.csdnimg.cn/a1af44454fc74298814c176911369ba7.png" alt="在这里插入图片描述"></p>
 <h3 id="分离-amp-附加-1"><a href="#分离-amp-附加-1" class="headerlink" title="分离&amp;附加"></a>分离&amp;附加</h3><p>暂无</p>
-</div></div><div class="footer"><div class="footer-copyright">Theme By <a target="_blank" rel="noopener" href="https://github.com/shinux/hexo-theme-adoubi">Adoubi</a> , Powered By Hexo.</div></div></body></html>
+
+    </div>
+
+</div>
+                <div class="footer">
+    <span>Copyright © 2022 AXDLMG7&#39;s Blog</span>
+    <span>Theme Designed By <a target="_blank" href="https://zheli.design/one-paper">這Li</a></span>
+</div>
+
+
+<link rel="stylesheet" href="/css/a11y-dark.min.css">
+
+
+<script src="/js/highlight.min.js"></script>
+
+
+<script src="/js/highlightjs-line-numbers.js"></script>
+
+
+<script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+</script>
+
+            </div>
+        </div>
+    </body>
+</html>

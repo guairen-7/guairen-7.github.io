@@ -1,4 +1,49 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>【R】【决策树】【随机森林】</title><link rel="stylesheet" href="/css/normalize.css"><link rel="stylesheet" href="/css/heti.min.css"><link rel="stylesheet" href="/css/hexo-theme-adoubi.css"><link rel="icon" href="/images/favicon.ico"><meta name="generator" content="Hexo 5.4.1"></head><body><div class="header"><a class="github-link"><img class="github-image" src="/images/Aquicon-Github-small.png"></a><a class="email-link" href="mailto:null"><img class="email-image" src="/images/email-small.png"></a><a class="subscribe-link" href="/atom.xml"><img class="subscribe-image" src="/images/subscribe-small.png"></a></div><div class="content"><div class="post-item"></div><h2 class="post-title-wrapper"><p class="post-title">【R】【决策树】【随机森林】</p></h2><div class="post-date"><time datetime="2022-04-19T08:45:44.145Z">2022-04-19</time></div><div class="post-content"><h1 id="实验思维导图"><a href="#实验思维导图" class="headerlink" title="实验思维导图"></a>实验思维导图</h1><p><img src="https://img-blog.csdnimg.cn/808441d7c92d40d48204ccdc5b4438f3.png" alt="在这里插入图片描述"></p>
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <link rel="alternate icon" type="image/png" href="/img/favicon.png">
+    <title>AXDLMG7&#39;s Blog | </title>
+    
+<link rel="stylesheet" href="/css/reset.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/markdown.css">
+
+    
+<link rel="stylesheet" href="/css/fonts.css">
+
+<meta name="generator" content="Hexo 5.4.1"></head>
+    <body>
+        <div class="paper">
+            <div class="paper-main">
+                
+                    <div class="post-header">
+    <a class="logo" href="/">AXDLMG7&#39;s Blog</a>
+    <a class="go-home" href="/">
+        <svg width="8" height="14" viewBox="0 0 8 14">
+            <path d="M7 1L1 7l6 6" stroke="#000" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+</div>
+                
+                <div class="post-main">
+
+    
+        <div class="post-main-title">
+            【R】【决策树】【随机森林】
+        </div>
+        <div class="post-meta">
+            2022-04-19
+        </div>
+    
+
+    <div class="post-md">
+        <h1 id="实验思维导图"><a href="#实验思维导图" class="headerlink" title="实验思维导图"></a>实验思维导图</h1><p><img src="https://img-blog.csdnimg.cn/808441d7c92d40d48204ccdc5b4438f3.png" alt="在这里插入图片描述"></p>
 <h1 id="1-决策树–ctree-–iris"><a href="#1-决策树–ctree-–iris" class="headerlink" title="1.决策树–ctree()–iris"></a>1.决策树–ctree()–iris</h1><h2 id="1-1-数据"><a href="#1-1-数据" class="headerlink" title="1.1 数据"></a>1.1 数据</h2><h3 id="1-1-1-程序包加载"><a href="#1-1-1-程序包加载" class="headerlink" title="1.1.1 程序包加载"></a>1.1.1 程序包加载</h3><p>简洁安装程序包：将提供的程序包手动复制到R的镜像下的library下：<br>例如我的路径：D:\R-4.1.3\library，将重复的程序包替换即可。<strong>底部提供资料</strong></p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">library(ISLR)</span><br><span class="line">library(TH.data)</span><br><span class="line">library(MASS)</span><br><span class="line">library(multcomp)</span><br><span class="line">library(matrixStats)</span><br><span class="line">library(libcoin)</span><br><span class="line">library(survival)</span><br><span class="line">library(coin)</span><br><span class="line">library(zoo)</span><br><span class="line">library(strucchange)</span><br><span class="line">library(modeltools)</span><br><span class="line">library(mvtnorm)</span><br><span class="line">library(party)</span><br><span class="line">library(grid)</span><br></pre></td></tr></table></figure>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#party包中的ctree()：</span></span><br><span class="line"><span class="comment">#1.用于创建决策树</span></span><br><span class="line"><span class="comment">#2.提供用于控制决策树训练的几个参数，例如 midSplit、Min Busket、MaxSurrogate 和 MaxDepth</span></span><br></pre></td></tr></table></figure>
@@ -119,4 +164,31 @@
 <li>个人感觉<strong>函数直接看官方文档效率会高一些</strong>，技术社区里常用的函数会有些人写一下注释，冷门函数看官方文档比较好</li>
 <li>技术社区<strong>常用技术</strong>水文较多，一错全错</li>
 </ul>
-</div></div><div class="footer"><div class="footer-copyright">Theme By <a target="_blank" rel="noopener" href="https://github.com/shinux/hexo-theme-adoubi">Adoubi</a> , Powered By Hexo.</div></div></body></html>
+
+    </div>
+
+</div>
+                <div class="footer">
+    <span>Copyright © 2022 AXDLMG7&#39;s Blog</span>
+    <span>Theme Designed By <a target="_blank" href="https://zheli.design/one-paper">這Li</a></span>
+</div>
+
+
+<link rel="stylesheet" href="/css/a11y-dark.min.css">
+
+
+<script src="/js/highlight.min.js"></script>
+
+
+<script src="/js/highlightjs-line-numbers.js"></script>
+
+
+<script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+</script>
+
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,4 +1,49 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>【R】【频繁模式挖掘Apriori算法实验】</title><link rel="stylesheet" href="/css/normalize.css"><link rel="stylesheet" href="/css/heti.min.css"><link rel="stylesheet" href="/css/hexo-theme-adoubi.css"><link rel="icon" href="/images/favicon.ico"><meta name="generator" content="Hexo 5.4.1"></head><body><div class="header"><a class="github-link"><img class="github-image" src="/images/Aquicon-Github-small.png"></a><a class="email-link" href="mailto:null"><img class="email-image" src="/images/email-small.png"></a><a class="subscribe-link" href="/atom.xml"><img class="subscribe-image" src="/images/subscribe-small.png"></a></div><div class="content"><div class="post-item"></div><h2 class="post-title-wrapper"><p class="post-title">【R】【频繁模式挖掘Apriori算法实验】</p></h2><div class="post-date"><time datetime="2022-04-14T06:11:05.333Z">2022-04-14</time></div><div class="post-content"><h1 id="实验描述"><a href="#实验描述" class="headerlink" title="实验描述"></a>实验描述</h1><h2 id="数据集介绍"><a href="#数据集介绍" class="headerlink" title="数据集介绍"></a>数据集介绍</h2><p>使用 arnles 软件包中的 Groceries 数据集进行算法演示<br>该数据集是某一食品杂货店一个月的真实交易数据，每一行数据记录一个交易，每个交易中记录了当次交易的商品名称。</p>
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <link rel="alternate icon" type="image/png" href="/img/favicon.png">
+    <title>AXDLMG7&#39;s Blog | </title>
+    
+<link rel="stylesheet" href="/css/reset.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/markdown.css">
+
+    
+<link rel="stylesheet" href="/css/fonts.css">
+
+<meta name="generator" content="Hexo 5.4.1"></head>
+    <body>
+        <div class="paper">
+            <div class="paper-main">
+                
+                    <div class="post-header">
+    <a class="logo" href="/">AXDLMG7&#39;s Blog</a>
+    <a class="go-home" href="/">
+        <svg width="8" height="14" viewBox="0 0 8 14">
+            <path d="M7 1L1 7l6 6" stroke="#000" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+</div>
+                
+                <div class="post-main">
+
+    
+        <div class="post-main-title">
+            【R】【频繁模式挖掘Apriori算法实验】
+        </div>
+        <div class="post-meta">
+            2022-04-14
+        </div>
+    
+
+    <div class="post-md">
+        <h1 id="实验描述"><a href="#实验描述" class="headerlink" title="实验描述"></a>实验描述</h1><h2 id="数据集介绍"><a href="#数据集介绍" class="headerlink" title="数据集介绍"></a>数据集介绍</h2><p>使用 arnles 软件包中的 Groceries 数据集进行算法演示<br>该数据集是某一食品杂货店一个月的真实交易数据，每一行数据记录一个交易，每个交易中记录了当次交易的商品名称。</p>
 <h2 id="重点程序包"><a href="#重点程序包" class="headerlink" title="重点程序包"></a>重点程序包</h2><p>Apriori 关联规则算法借助 arules 中的一系列函数实现<br>arulesViz 包可以实现关联规则的可视化</p>
 <h2 id="关联规则分析"><a href="#关联规则分析" class="headerlink" title="关联规则分析"></a>关联规则分析</h2><p>关联规则分析主要包括对频繁数据集的探索、关联规则的建立、查看和分析过程<br>通过 Apriori 关联规则中 apriori 方法和 Eclat 方法实现为例</p>
 <h1 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h1><p><img src="https://img-blog.csdnimg.cn/ec401413a7df4f709ccececb5365e1b8.png" alt="在这里插入图片描述"></p>
@@ -49,4 +94,31 @@
 <p><img src="https://img-blog.csdnimg.cn/bffbd52d2a73418683a046b5e8a615e4.png" alt="在这里插入图片描述"></p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#按照 lift 参数来看，关联性最强（圆点颜色最深）的两种商品为硬奶酪黄油（hard cheese，butter)与生/酸奶油（whipped/sourcream)；</span></span><br><span class="line"><span class="comment">#以 support 参数来看（圆点尺寸最大）关联性最强</span></span><br></pre></td></tr></table></figure>
 <h1 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h1><p><a target="_blank" rel="noopener" href="https://www.aliyundrive.com/s/kdRAkimfxjo">实验资料</a></p>
-</div></div><div class="footer"><div class="footer-copyright">Theme By <a target="_blank" rel="noopener" href="https://github.com/shinux/hexo-theme-adoubi">Adoubi</a> , Powered By Hexo.</div></div></body></html>
+
+    </div>
+
+</div>
+                <div class="footer">
+    <span>Copyright © 2022 AXDLMG7&#39;s Blog</span>
+    <span>Theme Designed By <a target="_blank" href="https://zheli.design/one-paper">這Li</a></span>
+</div>
+
+
+<link rel="stylesheet" href="/css/a11y-dark.min.css">
+
+
+<script src="/js/highlight.min.js"></script>
+
+
+<script src="/js/highlightjs-line-numbers.js"></script>
+
+
+<script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+</script>
+
+            </div>
+        </div>
+    </body>
+</html>

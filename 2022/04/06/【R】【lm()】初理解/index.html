@@ -1,4 +1,49 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>【R】【lm()】初理解</title><link rel="stylesheet" href="/css/normalize.css"><link rel="stylesheet" href="/css/heti.min.css"><link rel="stylesheet" href="/css/hexo-theme-adoubi.css"><link rel="icon" href="/images/favicon.ico"><meta name="generator" content="Hexo 5.4.1"></head><body><div class="header"><a class="github-link"><img class="github-image" src="/images/Aquicon-Github-small.png"></a><a class="email-link" href="mailto:null"><img class="email-image" src="/images/email-small.png"></a><a class="subscribe-link" href="/atom.xml"><img class="subscribe-image" src="/images/subscribe-small.png"></a></div><div class="content"><div class="post-item"></div><h2 class="post-title-wrapper"><p class="post-title">【R】【lm()】初理解</p></h2><div class="post-date"><time datetime="2022-04-05T16:28:43.594Z">2022-04-06</time></div><div class="post-content"><h1 id="浅试lm"><a href="#浅试lm" class="headerlink" title="浅试lm()"></a>浅试lm()</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a&lt;-<span class="built_in">c</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br><span class="line">b&lt;-<span class="built_in">c</span>(<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">10</span>)</span><br><span class="line">mydata&lt;-data.frame(a,b)</span><br></pre></td></tr></table></figure>
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <link rel="alternate icon" type="image/png" href="/img/favicon.png">
+    <title>AXDLMG7&#39;s Blog | </title>
+    
+<link rel="stylesheet" href="/css/reset.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/markdown.css">
+
+    
+<link rel="stylesheet" href="/css/fonts.css">
+
+<meta name="generator" content="Hexo 5.4.1"></head>
+    <body>
+        <div class="paper">
+            <div class="paper-main">
+                
+                    <div class="post-header">
+    <a class="logo" href="/">AXDLMG7&#39;s Blog</a>
+    <a class="go-home" href="/">
+        <svg width="8" height="14" viewBox="0 0 8 14">
+            <path d="M7 1L1 7l6 6" stroke="#000" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+</div>
+                
+                <div class="post-main">
+
+    
+        <div class="post-main-title">
+            【R】【lm()】初理解
+        </div>
+        <div class="post-meta">
+            2022-04-06
+        </div>
+    
+
+    <div class="post-md">
+        <h1 id="浅试lm"><a href="#浅试lm" class="headerlink" title="浅试lm()"></a>浅试lm()</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a&lt;-<span class="built_in">c</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br><span class="line">b&lt;-<span class="built_in">c</span>(<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">10</span>)</span><br><span class="line">mydata&lt;-data.frame(a,b)</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/c46b16ecf0b04690b9aa5b257918172f.png" alt="在这里插入图片描述"></p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">myfit&lt;-lm(a~b,mydata)</span><br><span class="line"><span class="comment">#myfit&lt;-lm(formula,data)</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">summary.lm(myfit)</span><br></pre></td></tr></table></figure>
@@ -22,4 +67,31 @@
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/bahui7562/article/details/102195341">R语言错误的提示（中英文翻译）–bahui7562–CSDN</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43544188/article/details/105448380?spm=1001.2014.3001.5502">R语言填坑–丶L–CSDN</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yhb315279058/article/details/49430189">【[R] 【教程】教你如何读懂线性回归lm的结果summary（判断显著性）[转]】</a></p>
-</div></div><div class="footer"><div class="footer-copyright">Theme By <a target="_blank" rel="noopener" href="https://github.com/shinux/hexo-theme-adoubi">Adoubi</a> , Powered By Hexo.</div></div></body></html>
+
+    </div>
+
+</div>
+                <div class="footer">
+    <span>Copyright © 2022 AXDLMG7&#39;s Blog</span>
+    <span>Theme Designed By <a target="_blank" href="https://zheli.design/one-paper">這Li</a></span>
+</div>
+
+
+<link rel="stylesheet" href="/css/a11y-dark.min.css">
+
+
+<script src="/js/highlight.min.js"></script>
+
+
+<script src="/js/highlightjs-line-numbers.js"></script>
+
+
+<script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+</script>
+
+            </div>
+        </div>
+    </body>
+</html>

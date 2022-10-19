@@ -1,4 +1,49 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><title>【实验一】【创建并管理数据库】</title><link rel="stylesheet" href="/css/normalize.css"><link rel="stylesheet" href="/css/heti.min.css"><link rel="stylesheet" href="/css/hexo-theme-adoubi.css"><link rel="icon" href="/images/favicon.ico"><meta name="generator" content="Hexo 5.4.1"></head><body><div class="header"><a class="github-link"><img class="github-image" src="/images/Aquicon-Github-small.png"></a><a class="email-link" href="mailto:null"><img class="email-image" src="/images/email-small.png"></a><a class="subscribe-link" href="/atom.xml"><img class="subscribe-image" src="/images/subscribe-small.png"></a></div><div class="content"><div class="post-item"></div><h2 class="post-title-wrapper"><p class="post-title">【实验一】【创建并管理数据库】</p></h2><div class="post-date"><time datetime="2022-04-04T12:47:28.502Z">2022-04-04</time></div><div class="post-content"><h2 id="一、使用SSMS创建管理数据库"><a href="#一、使用SSMS创建管理数据库" class="headerlink" title="一、使用SSMS创建管理数据库"></a>一、使用SSMS创建管理数据库</h2><h3 id="1-创建"><a href="#1-创建" class="headerlink" title="1.创建"></a>1.创建</h3><p>右键“数据库” $\rightarrow$“新建数据库”    $\rightarrow$输入数据库名称<br><img src="https://img-blog.csdnimg.cn/e7073dde75d549b1bd1f25a1494f8326.png" alt="在这里插入图片描述"></p>
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <link rel="alternate icon" type="image/png" href="/img/favicon.png">
+    <title>AXDLMG7&#39;s Blog | </title>
+    
+<link rel="stylesheet" href="/css/reset.css">
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/markdown.css">
+
+    
+<link rel="stylesheet" href="/css/fonts.css">
+
+<meta name="generator" content="Hexo 5.4.1"></head>
+    <body>
+        <div class="paper">
+            <div class="paper-main">
+                
+                    <div class="post-header">
+    <a class="logo" href="/">AXDLMG7&#39;s Blog</a>
+    <a class="go-home" href="/">
+        <svg width="8" height="14" viewBox="0 0 8 14">
+            <path d="M7 1L1 7l6 6" stroke="#000" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+</div>
+                
+                <div class="post-main">
+
+    
+        <div class="post-main-title">
+            【实验一】【创建并管理数据库】
+        </div>
+        <div class="post-meta">
+            2022-04-04
+        </div>
+    
+
+    <div class="post-md">
+        <h2 id="一、使用SSMS创建管理数据库"><a href="#一、使用SSMS创建管理数据库" class="headerlink" title="一、使用SSMS创建管理数据库"></a>一、使用SSMS创建管理数据库</h2><h3 id="1-创建"><a href="#1-创建" class="headerlink" title="1.创建"></a>1.创建</h3><p>右键“数据库” $\rightarrow$“新建数据库”    $\rightarrow$输入数据库名称<br><img src="https://img-blog.csdnimg.cn/e7073dde75d549b1bd1f25a1494f8326.png" alt="在这里插入图片描述"></p>
 <h3 id="2-修改"><a href="#2-修改" class="headerlink" title="2.修改"></a>2.修改</h3><p>右键“XSCJ”    $\rightarrow$“属性”   $\rightarrow$“文件”   $\rightarrow$“初始大小”由8MB改为20MB<br><img src="https://img-blog.csdnimg.cn/dfaf487a152546a9a5bcafb1ae87794c.png" alt="在这里插入图片描述"><br>右键“XSCJ”    $\rightarrow$“任务”   $\rightarrow$“收缩”   $\rightarrow$“数据库”勾选收缩及百分比<br><img src="https://img-blog.csdnimg.cn/8f80627db3e2411daf0184aded12f468.png" alt="在这里插入图片描述"></p>
 <p>右键“XSCJ”    $\rightarrow$“属性”   $\rightarrow$“选项”   $\rightarrow$“状态”   $\rightarrow$“限制访问”由“MULTI_USER”改为“SINGLE_USER”<br><img src="https://img-blog.csdnimg.cn/26f8379fd5e14974b4dac9ddc58271de.png" alt="在这里插入图片描述"><br>右键“XSCJ”    $\rightarrow$“重命名”</p>
 <h3 id="3-分离"><a href="#3-分离" class="headerlink" title="3.分离"></a>3.分离</h3><p>右键“XSCJ”    $\rightarrow$“任务”   $\rightarrow$“分离”   $\rightarrow$“确定”</p>
@@ -12,4 +57,31 @@
 <p><img src="https://img-blog.csdnimg.cn/19c019be5c4b49d1a2d7025e4cc75407.png" alt="在这里插入图片描述"></p>
 <h2 id="暂未解决"><a href="#暂未解决" class="headerlink" title="暂未解决"></a>暂未解决</h2><p>1.数据库与数据库文件的关系<br>2.T-SQL是否有分离与附加数据库的操作语句</p>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/gengkui9897/article/details/89323457">SQL Server 2012 数据库扩充与收缩–柚子君.–CSDN</a>      </p>
-</div></div><div class="footer"><div class="footer-copyright">Theme By <a target="_blank" rel="noopener" href="https://github.com/shinux/hexo-theme-adoubi">Adoubi</a> , Powered By Hexo.</div></div></body></html>
+
+    </div>
+
+</div>
+                <div class="footer">
+    <span>Copyright © 2022 AXDLMG7&#39;s Blog</span>
+    <span>Theme Designed By <a target="_blank" href="https://zheli.design/one-paper">這Li</a></span>
+</div>
+
+
+<link rel="stylesheet" href="/css/a11y-dark.min.css">
+
+
+<script src="/js/highlight.min.js"></script>
+
+
+<script src="/js/highlightjs-line-numbers.js"></script>
+
+
+<script>
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();
+</script>
+
+            </div>
+        </div>
+    </body>
+</html>
