@@ -1,205 +1,170 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-
+<html lang=zh-CN>
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
 
-  <!-- Minima -->
-  <!-- Hexo theme created by @adisaktijrs -->
+    <title>
+        
+        【数据库原理及应用教程(第4版|微课版)陈志泊】【SQLServer2012综合练习】 - undefined
+        
+    </title>
 
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
 
-  
-  <title>【数据库原理及应用教程(第4版|微课版)陈志泊】【SQLServer2012综合练习】</title>
-  
-  <link rel="canonical" href="https://guairen-7.github.io/2022/06/20/%E3%80%90%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8%E6%95%99%E7%A8%8B(%E7%AC%AC4%E7%89%88%E5%BE%AE%E8%AF%BE%E7%89%88)%E9%99%88%E5%BF%97%E6%B3%8A%E3%80%91%E3%80%90SQLServer2012%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0%E3%80%91/">
-  
-  <meta name="description" content="0．本实验环境①SQL Server 2016②SSMS 17 1．创建数据库和数据表（1）利用资源管理器，在 D 盘建立以自己的姓名为名称的文件夹，以便保存数据库。 （2）登录并连接到 SQL Server 2012 服务器。 （3）利用对象资源管理器建立名称为 Study 的数据库文件，主文件名">
-  
-  
-  <meta name="author" content="AXDLMG7">
-  
-  
-  
-  <meta property="og:site_name" content="AXDLMG7&#39;s Blog" />
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="【数据库原理及应用教程(第4版|微课版)陈志泊】【SQLServer2012综合练习】" />
-  
-  <meta property="og:description" content="0．本实验环境①SQL Server 2016②SSMS 17 1．创建数据库和数据表（1）利用资源管理器，在 D 盘建立以自己的姓名为名称的文件夹，以便保存数据库。 （2）登录并连接到 SQL Server 2012 服务器。 （3）利用对象资源管理器建立名称为 Study 的数据库文件，主文件名">
-  
-  <meta property="og:url" content="https://guairen-7.github.io/2022/06/20/%E3%80%90%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8%E6%95%99%E7%A8%8B(%E7%AC%AC4%E7%89%88%E5%BE%AE%E8%AF%BE%E7%89%88)%E9%99%88%E5%BF%97%E6%B3%8A%E3%80%91%E3%80%90SQLServer2012%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0%E3%80%91/" />
+    
+<link rel="stylesheet" href="/css/gitment.css">
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="【数据库原理及应用教程(第4版|微课版)陈志泊】【SQLServer2012综合练习】">
-  
-  <meta name="twitter:description" content="0．本实验环境①SQL Server 2016②SSMS 17 1．创建数据库和数据表（1）利用资源管理器，在 D 盘建立以自己的姓名为名称的文件夹，以便保存数据库。 （2）登录并连接到 SQL Server 2012 服务器。 （3）利用对象资源管理器建立名称为 Study 的数据库文件，主文件名">
-  
-  
-  
-  
-  <meta name="twitter:url" content="https://guairen-7.github.io/2022/06/20/%E3%80%90%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8%E6%95%99%E7%A8%8B(%E7%AC%AC4%E7%89%88%E5%BE%AE%E8%AF%BE%E7%89%88)%E9%99%88%E5%BF%97%E6%B3%8A%E3%80%91%E3%80%90SQLServer2012%E7%BB%BC%E5%90%88%E7%BB%83%E4%B9%A0%E3%80%91/" />
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
 
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    
 
-  <!-- Preload fonts
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="preload" href="/fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  
-<link rel="stylesheet" href="/css/normalize.css">
 
-  
-<link rel="stylesheet" href="/css/skeleton.css">
 
-  
-<link rel="stylesheet" href="/css/custom.css">
 
-  
-<link rel="stylesheet" href="/css/prism-dark.css">
 
-  
-<link rel="stylesheet" href="/css/prism-line-numbers.css">
 
-  <!-- User css -->
-  
-  
-<link rel="stylesheet" href="/css/user.css">
 
-  
-
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="/images/favicon.jpg">
-
-  <!-- Custom Theme Color Style
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <style>
-  a:not(.icon) {
-    text-decoration-color: #0;
-    background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0) 50%,
-      #0 50%
-    );
-  }
-  blockquote {
-    border-left: 8px solid #0;
-  }
-  .nanobar .bar {
-    background: #0;
-  }
-  .button.button-primary:hover,
-  button.button-primary:hover,
-  input[type="submit"].button-primary:hover,
-  input[type="reset"].button-primary:hover,
-  input[type="button"].button-primary:hover,
-  .button.button-primary:focus,
-  button.button-primary:focus,
-  input[type="submit"].button-primary:focus,
-  input[type="reset"].button-primary:focus,
-  input[type="button"].button-primary:focus {
-    background-color: #0;
-    border-color: #0;
-  }
-  input[type="email"]:focus,
-  input[type="number"]:focus,
-  input[type="search"]:focus,
-  input[type="text"]:focus,
-  input[type="tel"]:focus,
-  input[type="url"]:focus,
-  input[type="password"]:focus,
-  textarea:focus,
-  select:focus {
-    border: 1px solid #0;
-  }
-</style>
-
-  <!-- Google Analytics (With Privacy Settings On)
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  
-
-  
-  <script src="/js/pic.min.js" defer></script>
-  
-
-  
-  <script src="/js/search.min.js" defer></script>
-  
 
 <meta name="generator" content="Hexo 5.4.1"></head>
 
 <body>
-  <div class="container">
-    <div class="row">
-      <div>
 
-        <div class="row">
-  <div class="two columns" style="max-width: 50px">
-    <h1 class="mt-2 mode">
-      <div onclick=setDarkMode(true) id="darkBtn">🌚</div>
-      <div onclick=setDarkMode(false) id="lightBtn" class=hidden>🌝</div>
-      <script >
-        if (localStorage.getItem('preferredTheme') == 'dark') {
-          setDarkMode(true)
-        }
-        function setDarkMode(isDark) {
-          var darkBtn = document.getElementById('darkBtn')
-          var lightBtn = document.getElementById('lightBtn')
-          if (isDark) {
-            lightBtn.style.display = "block"
-            darkBtn.style.display = "none"
-            localStorage.setItem('preferredTheme', 'dark');
-          } else {
-            lightBtn.style.display = "none"
-            darkBtn.style.display = "block"
-            localStorage.removeItem('preferredTheme');
-          }
-          document.body.classList.toggle("darkmode");
-        }
-      </script>
-    </h1>
-  </div>
-
-  <div class="six columns ml-1">
-    <h1 class="mt-2">
-      爱笑的冷面鬼7
-    </h1>
-  </div>
-
-  <div class="twelve columns">
-    <div class="row">
-      <div class="nine columns left">
-        <a href="/">Home</a>
-        
-          
-          <a href="/Works" class="ml">Works</a>
-          
-        
-          
-          <a href="/About" class="ml">About</a>
-          
-        
-        
-          
-            <a href="mailto:test@test.test" target="_blank" class="ml">Email</a>
-          
-        
-      </div>
-    </div>
-    <hr style="margin-bottom: 2.6rem">
-  </div>
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
 </div>
 
-        <div class="trans">
-            <h2>【数据库原理及应用教程(第4版|微课版)陈志泊】【SQLServer2012综合练习】</h2>
+<div class="index-about">
+    <i>  </i>
+</div>
 
-  <h1 id="0．本实验环境"><a href="#0．本实验环境" class="headerlink" title="0．本实验环境"></a>0．本实验环境</h1><p><strong>①SQL Server 2016<br>②SSMS 17</strong></p>
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/" />
+        </div>
+        <div class="name">
+            <i>AXDLMG7</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0%EF%BC%8E%E6%9C%AC%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83"><span class="toc-text">0．本实验环境</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1%EF%BC%8E%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8C%E6%95%B0%E6%8D%AE%E8%A1%A8"><span class="toc-text">1．创建数据库和数据表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%EF%BC%8E%E7%AE%80%E5%8D%95%E7%9A%84%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2"><span class="toc-text">2．简单的数据查询</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%EF%BC%8E%E5%A4%8D%E6%9D%82%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2"><span class="toc-text">3．复杂数据查询</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4%EF%BC%8E%E7%94%A8-Transact-SQL-%E8%AF%AD%E5%8F%A5%E5%AE%9A%E4%B9%89%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B"><span class="toc-text">4．用 Transact-SQL 语句定义存储过程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5%EF%BC%8ETransact-SQL-%E8%AF%AD%E5%8F%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-text">5．Transact-SQL 语句自定义触发器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-text">Reference</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        【数据库原理及应用教程(第4版|微课版)陈志泊】【SQLServer2012综合练习】
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2022-06-20 22:17:48</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#作业" title="作业">作业</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#DataBase" title="DataBase">DataBase</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h1 id="0．本实验环境"><a href="#0．本实验环境" class="headerlink" title="0．本实验环境"></a>0．本实验环境</h1><p><strong>①SQL Server 2016<br>②SSMS 17</strong></p>
 <h1 id="1．创建数据库和数据表"><a href="#1．创建数据库和数据表" class="headerlink" title="1．创建数据库和数据表"></a>1．创建数据库和数据表</h1><p>（1）利用资源管理器，在 D 盘建立以自己的姓名为名称的文件夹，以便保存数据库。</p>
 <p>（2）登录并连接到 SQL Server 2012 服务器。</p>
 <p>（3）利用对象资源管理器建立名称为 Study 的数据库文件，主文件名为 Study.mdf，日志文件名<br>为 Study.ldf，它们的保存路径在第（1）步中建立的文件夹。<br><img src="https://img-blog.csdnimg.cn/919d8d3e9f454656ada8c7a19432090d.png" alt="在这里插入图片描述"><br>（4）利用对象资源管理器在已经建立的 Study 数据库中分别建立以下六个数据表。</p>
@@ -365,40 +330,65 @@
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a target="_blank" rel="noopener" href="https://wenku.baidu.com/view/44976523cf1755270722192e453610661ed95adf.html?fr=income2-doc-search">数据库原理及应用教程（第4版微课版）陈志泊-SQLServer2012综合练习/文百度文库@</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_58138734/article/details/124560796">数据库原理及安全技术教学实验报告SQL实践（四）/文CSDN@王陈锋</a></p>
 
-  <p><a class="classtest-link" href="/tags/DataBase/" rel="tag">DataBase</a>, <a class="classtest-link" href="/tags/%E4%BD%9C%E4%B8%9A/" rel="tag">作业</a> — 2022年6月20日</p>
-  
-
-
+        
+        <br />
+        <div id="comment-container">
         </div>
-        <div class="row mt-2">
-  <h3>Search</h3>
-  <div><input id="search-text" title="search" class="search-text" type="text" placeholder="search......"></div>
-  <div style="margin-top: 1.5rem;">
-    <ul id="result"></ul>
-  </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
 </div>
-        <div class="row mt-2">
-  
-</div>
-
-      </div>
 
     </div>
+</div>
 
-  </div>
-  <script src="/js/nanobar.min.js"></script>
 
-  <script>
-    var options = {
-      classname: 'nanobar',
-      id: 'myNanobar'
-    };
-    var nanobar = new Nanobar(options);
-    nanobar.go(30);
-    nanobar.go(76);
-    nanobar.go(100);
-  </script>
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
 
 </body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.xml"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
 
 </html>

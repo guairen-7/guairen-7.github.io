@@ -1,205 +1,167 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-
+<html lang=zh-CN>
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
 
-  <!-- Minima -->
-  <!-- Hexo theme created by @adisaktijrs -->
+    <title>
+        
+        【大数据采集技术与应用】【第一章】【大数据采集技术与应用概述】 - undefined
+        
+    </title>
 
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
 
-  
-  <title>【大数据采集技术与应用】【第一章】【大数据采集技术与应用概述】</title>
-  
-  <link rel="canonical" href="https://guairen-7.github.io/2022/06/30/%E3%80%90%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8%E3%80%91%E3%80%90%E7%AC%AC%E4%B8%80%E7%AB%A0%E3%80%91%E3%80%90%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8%E6%A6%82%E8%BF%B0%E3%80%91/">
-  
-  <meta name="description" content="1.1 大数据概述1.1.1 大数据时代 1.第三次信息化浪潮   IBM前首席执行官郭士纳的观点，IT领域每隔15年就会迎来一次重大变革。    信息化浪潮 发生时间 标志 解决的问题 代表企业    第一次浪潮 1980年前后 个人计算机 信息处理 Intel、AMD、IBM、苹果、微软、联想、">
-  
-  
-  <meta name="author" content="AXDLMG7">
-  
-  
-  
-  <meta property="og:site_name" content="AXDLMG7&#39;s Blog" />
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="【大数据采集技术与应用】【第一章】【大数据采集技术与应用概述】" />
-  
-  <meta property="og:description" content="1.1 大数据概述1.1.1 大数据时代 1.第三次信息化浪潮   IBM前首席执行官郭士纳的观点，IT领域每隔15年就会迎来一次重大变革。    信息化浪潮 发生时间 标志 解决的问题 代表企业    第一次浪潮 1980年前后 个人计算机 信息处理 Intel、AMD、IBM、苹果、微软、联想、">
-  
-  <meta property="og:url" content="https://guairen-7.github.io/2022/06/30/%E3%80%90%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8%E3%80%91%E3%80%90%E7%AC%AC%E4%B8%80%E7%AB%A0%E3%80%91%E3%80%90%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8%E6%A6%82%E8%BF%B0%E3%80%91/" />
+    
+<link rel="stylesheet" href="/css/gitment.css">
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="【大数据采集技术与应用】【第一章】【大数据采集技术与应用概述】">
-  
-  <meta name="twitter:description" content="1.1 大数据概述1.1.1 大数据时代 1.第三次信息化浪潮   IBM前首席执行官郭士纳的观点，IT领域每隔15年就会迎来一次重大变革。    信息化浪潮 发生时间 标志 解决的问题 代表企业    第一次浪潮 1980年前后 个人计算机 信息处理 Intel、AMD、IBM、苹果、微软、联想、">
-  
-  
-  
-  
-  <meta name="twitter:url" content="https://guairen-7.github.io/2022/06/30/%E3%80%90%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8%E3%80%91%E3%80%90%E7%AC%AC%E4%B8%80%E7%AB%A0%E3%80%91%E3%80%90%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%BA%94%E7%94%A8%E6%A6%82%E8%BF%B0%E3%80%91/" />
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
 
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    
 
-  <!-- Preload fonts
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="preload" href="/fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  
-<link rel="stylesheet" href="/css/normalize.css">
 
-  
-<link rel="stylesheet" href="/css/skeleton.css">
 
-  
-<link rel="stylesheet" href="/css/custom.css">
 
-  
-<link rel="stylesheet" href="/css/prism-dark.css">
 
-  
-<link rel="stylesheet" href="/css/prism-line-numbers.css">
 
-  <!-- User css -->
-  
-  
-<link rel="stylesheet" href="/css/user.css">
 
-  
-
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="/images/favicon.jpg">
-
-  <!-- Custom Theme Color Style
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <style>
-  a:not(.icon) {
-    text-decoration-color: #0;
-    background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0) 50%,
-      #0 50%
-    );
-  }
-  blockquote {
-    border-left: 8px solid #0;
-  }
-  .nanobar .bar {
-    background: #0;
-  }
-  .button.button-primary:hover,
-  button.button-primary:hover,
-  input[type="submit"].button-primary:hover,
-  input[type="reset"].button-primary:hover,
-  input[type="button"].button-primary:hover,
-  .button.button-primary:focus,
-  button.button-primary:focus,
-  input[type="submit"].button-primary:focus,
-  input[type="reset"].button-primary:focus,
-  input[type="button"].button-primary:focus {
-    background-color: #0;
-    border-color: #0;
-  }
-  input[type="email"]:focus,
-  input[type="number"]:focus,
-  input[type="search"]:focus,
-  input[type="text"]:focus,
-  input[type="tel"]:focus,
-  input[type="url"]:focus,
-  input[type="password"]:focus,
-  textarea:focus,
-  select:focus {
-    border: 1px solid #0;
-  }
-</style>
-
-  <!-- Google Analytics (With Privacy Settings On)
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  
-
-  
-  <script src="/js/pic.min.js" defer></script>
-  
-
-  
-  <script src="/js/search.min.js" defer></script>
-  
 
 <meta name="generator" content="Hexo 5.4.1"></head>
 
 <body>
-  <div class="container">
-    <div class="row">
-      <div>
 
-        <div class="row">
-  <div class="two columns" style="max-width: 50px">
-    <h1 class="mt-2 mode">
-      <div onclick=setDarkMode(true) id="darkBtn">🌚</div>
-      <div onclick=setDarkMode(false) id="lightBtn" class=hidden>🌝</div>
-      <script >
-        if (localStorage.getItem('preferredTheme') == 'dark') {
-          setDarkMode(true)
-        }
-        function setDarkMode(isDark) {
-          var darkBtn = document.getElementById('darkBtn')
-          var lightBtn = document.getElementById('lightBtn')
-          if (isDark) {
-            lightBtn.style.display = "block"
-            darkBtn.style.display = "none"
-            localStorage.setItem('preferredTheme', 'dark');
-          } else {
-            lightBtn.style.display = "none"
-            darkBtn.style.display = "block"
-            localStorage.removeItem('preferredTheme');
-          }
-          document.body.classList.toggle("darkmode");
-        }
-      </script>
-    </h1>
-  </div>
-
-  <div class="six columns ml-1">
-    <h1 class="mt-2">
-      爱笑的冷面鬼7
-    </h1>
-  </div>
-
-  <div class="twelve columns">
-    <div class="row">
-      <div class="nine columns left">
-        <a href="/">Home</a>
-        
-          
-          <a href="/Works" class="ml">Works</a>
-          
-        
-          
-          <a href="/About" class="ml">About</a>
-          
-        
-        
-          
-            <a href="mailto:test@test.test" target="_blank" class="ml">Email</a>
-          
-        
-      </div>
-    </div>
-    <hr style="margin-bottom: 2.6rem">
-  </div>
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
 </div>
 
-        <div class="trans">
-            <h2>【大数据采集技术与应用】【第一章】【大数据采集技术与应用概述】</h2>
+<div class="index-about">
+    <i>  </i>
+</div>
 
-  <h1 id="1-1-大数据概述"><a href="#1-1-大数据概述" class="headerlink" title="1.1 大数据概述"></a>1.1 大数据概述</h1><h2 id="1-1-1-大数据时代"><a href="#1-1-1-大数据时代" class="headerlink" title="1.1.1 大数据时代"></a>1.1.1 大数据时代</h2><ul>
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/" />
+        </div>
+        <div class="name">
+            <i>AXDLMG7</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-1-%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%A6%82%E8%BF%B0"><span class="toc-text">1.1 大数据概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-1-%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%97%B6%E4%BB%A3"><span class="toc-text">1.1.1 大数据时代</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-2-%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-text">1.1.2 大数据的概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-3-%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%9A%84%E7%89%B9%E5%BE%81"><span class="toc-text">1.1.3 大数据的特征</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-4-%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">1.1.4 大数据的应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-5-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF"><span class="toc-text">1.1.5 大数据关键技术</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-6-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B"><span class="toc-text">1.1.6 大数据处理流程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-2-%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E6%8A%80%E6%9C%AF%E6%A6%82%E8%BF%B0"><span class="toc-text">1.2 大数据采集技术概述</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-1-%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E4%B8%8E%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86"><span class="toc-text">1.2.1 数据采集与大数据采集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-2-%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E6%B5%81%E7%A8%8B"><span class="toc-text">1.2.2 大数据采集流程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-3%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E6%8A%80%E6%9C%AF%E5%BA%94%E7%94%A8"><span class="toc-text">1.3大数据采集技术应用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-1-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%B9%B3%E5%8F%B0%E4%BB%8B%E7%BB%8D"><span class="toc-text">1.3.1 大数据处理平台介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%95%B0%E6%8D%AE%E9%9B%86%E6%88%90%E6%9C%8D%E5%8A%A1"><span class="toc-text">1.数据集成服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%95%B0%E6%8D%AE%E5%BA%93%E6%9C%8D%E5%8A%A1"><span class="toc-text">2.数据库服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%AD%98%E5%82%A8%E6%9C%8D%E5%8A%A1"><span class="toc-text">3.存储服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%9C%8D%E5%8A%A1"><span class="toc-text">4.大数据处理服务</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%BE%E5%90%8E%E4%BD%9C%E4%B8%9A"><span class="toc-text">课后作业</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="toc-text">一、名词解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%AE%80%E7%AD%94%E9%A2%98"><span class="toc-text">二、简答题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7"><span class="toc-text">常用工具</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        【大数据采集技术与应用】【第一章】【大数据采集技术与应用概述】
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2022-06-30 12:36:13</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#Data Acquisition" title="Data Acquisition">Data Acquisition</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h1 id="1-1-大数据概述"><a href="#1-1-大数据概述" class="headerlink" title="1.1 大数据概述"></a>1.1 大数据概述</h1><h2 id="1-1-1-大数据时代"><a href="#1-1-1-大数据时代" class="headerlink" title="1.1.1 大数据时代"></a>1.1.1 大数据时代</h2><ul>
 <li><strong>1.第三次信息化浪潮</strong></li>
 </ul>
 <p> IBM前首席执行官郭士纳的观点，IT领域每隔15年就会迎来一次重大变革。</p>
@@ -565,40 +527,65 @@
 <h1 id="常用工具"><a href="#常用工具" class="headerlink" title="常用工具"></a>常用工具</h1><p>日志采集工具：Flume、Kafka<br>关系数据库：MySQL、Oracle、Postgres<br>NoSQL：Redis、MongoDB<br>数据预处理：Sqoop、Flume<br>数据统计分析：Hadoop<br>数据挖掘：Hadoop的Mahout<br>日志采集系统：Flume（Apache Flume）、Scribe<br>网页爬虫系统、框架：Apache Nutch、Crawler4j、Scrapy<br>大数据采集分析技术：Hive<br>数据转换：Sqoop（Apache Sqoop）<br>HDFS（Hadoop Distributed File System）：Hadoop分布式文件系统<br>MapReduce：一个分布式运算程序的编程框架<br>HQL（Hive Query Language）：Hive的SQL语言</p>
 <p><strong>PS:仅供参考，因个人能力有限，如有错误，请不吝赐教~</strong></p>
 
-  <p><a class="classtest-link" href="/tags/Data-Acquisition/" rel="tag">Data Acquisition</a> — 2022年6月30日</p>
-  
-
-
+        
+        <br />
+        <div id="comment-container">
         </div>
-        <div class="row mt-2">
-  <h3>Search</h3>
-  <div><input id="search-text" title="search" class="search-text" type="text" placeholder="search......"></div>
-  <div style="margin-top: 1.5rem;">
-    <ul id="result"></ul>
-  </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
 </div>
-        <div class="row mt-2">
-  
-</div>
-
-      </div>
 
     </div>
+</div>
 
-  </div>
-  <script src="/js/nanobar.min.js"></script>
 
-  <script>
-    var options = {
-      classname: 'nanobar',
-      id: 'myNanobar'
-    };
-    var nanobar = new Nanobar(options);
-    nanobar.go(30);
-    nanobar.go(76);
-    nanobar.go(100);
-  </script>
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
 
 </body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.xml"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
 
 </html>

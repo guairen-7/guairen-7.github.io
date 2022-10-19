@@ -1,205 +1,170 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-
+<html lang=zh-CN>
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
 
-  <!-- Minima -->
-  <!-- Hexo theme created by @adisaktijrs -->
+    <title>
+        
+        【数据库原理复习题】 - undefined
+        
+    </title>
 
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
 
-  
-  <title>【数据库原理复习题】</title>
-  
-  <link rel="canonical" href="https://guairen-7.github.io/2022/06/18/%E3%80%90%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E9%A2%98%E3%80%91/">
-  
-  <meta name="description" content="一. 单选题1.数据库(DB)、数据库系统(DBS)、数据库管理系统(DBMS)之间的关系是( )。A. DB包含DBS和DBMSB. DBMS包含DB和DBSC. DBS包含DB和DBMSD. 没有任何关系正确答案: C 2.数据库系统的核心是( )。A. 数据模型B. 数据库管理系统C. 数据库">
-  
-  
-  <meta name="author" content="AXDLMG7">
-  
-  
-  
-  <meta property="og:site_name" content="AXDLMG7&#39;s Blog" />
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="【数据库原理复习题】" />
-  
-  <meta property="og:description" content="一. 单选题1.数据库(DB)、数据库系统(DBS)、数据库管理系统(DBMS)之间的关系是( )。A. DB包含DBS和DBMSB. DBMS包含DB和DBSC. DBS包含DB和DBMSD. 没有任何关系正确答案: C 2.数据库系统的核心是( )。A. 数据模型B. 数据库管理系统C. 数据库">
-  
-  <meta property="og:url" content="https://guairen-7.github.io/2022/06/18/%E3%80%90%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E9%A2%98%E3%80%91/" />
+    
+<link rel="stylesheet" href="/css/gitment.css">
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="【数据库原理复习题】">
-  
-  <meta name="twitter:description" content="一. 单选题1.数据库(DB)、数据库系统(DBS)、数据库管理系统(DBMS)之间的关系是( )。A. DB包含DBS和DBMSB. DBMS包含DB和DBSC. DBS包含DB和DBMSD. 没有任何关系正确答案: C 2.数据库系统的核心是( )。A. 数据模型B. 数据库管理系统C. 数据库">
-  
-  
-  
-  
-  <meta name="twitter:url" content="https://guairen-7.github.io/2022/06/18/%E3%80%90%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E5%A4%8D%E4%B9%A0%E9%A2%98%E3%80%91/" />
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
 
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    
 
-  <!-- Preload fonts
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="preload" href="/fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  
-<link rel="stylesheet" href="/css/normalize.css">
 
-  
-<link rel="stylesheet" href="/css/skeleton.css">
 
-  
-<link rel="stylesheet" href="/css/custom.css">
 
-  
-<link rel="stylesheet" href="/css/prism-dark.css">
 
-  
-<link rel="stylesheet" href="/css/prism-line-numbers.css">
 
-  <!-- User css -->
-  
-  
-<link rel="stylesheet" href="/css/user.css">
 
-  
-
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="/images/favicon.jpg">
-
-  <!-- Custom Theme Color Style
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <style>
-  a:not(.icon) {
-    text-decoration-color: #0;
-    background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0) 50%,
-      #0 50%
-    );
-  }
-  blockquote {
-    border-left: 8px solid #0;
-  }
-  .nanobar .bar {
-    background: #0;
-  }
-  .button.button-primary:hover,
-  button.button-primary:hover,
-  input[type="submit"].button-primary:hover,
-  input[type="reset"].button-primary:hover,
-  input[type="button"].button-primary:hover,
-  .button.button-primary:focus,
-  button.button-primary:focus,
-  input[type="submit"].button-primary:focus,
-  input[type="reset"].button-primary:focus,
-  input[type="button"].button-primary:focus {
-    background-color: #0;
-    border-color: #0;
-  }
-  input[type="email"]:focus,
-  input[type="number"]:focus,
-  input[type="search"]:focus,
-  input[type="text"]:focus,
-  input[type="tel"]:focus,
-  input[type="url"]:focus,
-  input[type="password"]:focus,
-  textarea:focus,
-  select:focus {
-    border: 1px solid #0;
-  }
-</style>
-
-  <!-- Google Analytics (With Privacy Settings On)
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  
-
-  
-  <script src="/js/pic.min.js" defer></script>
-  
-
-  
-  <script src="/js/search.min.js" defer></script>
-  
 
 <meta name="generator" content="Hexo 5.4.1"></head>
 
 <body>
-  <div class="container">
-    <div class="row">
-      <div>
 
-        <div class="row">
-  <div class="two columns" style="max-width: 50px">
-    <h1 class="mt-2 mode">
-      <div onclick=setDarkMode(true) id="darkBtn">🌚</div>
-      <div onclick=setDarkMode(false) id="lightBtn" class=hidden>🌝</div>
-      <script >
-        if (localStorage.getItem('preferredTheme') == 'dark') {
-          setDarkMode(true)
-        }
-        function setDarkMode(isDark) {
-          var darkBtn = document.getElementById('darkBtn')
-          var lightBtn = document.getElementById('lightBtn')
-          if (isDark) {
-            lightBtn.style.display = "block"
-            darkBtn.style.display = "none"
-            localStorage.setItem('preferredTheme', 'dark');
-          } else {
-            lightBtn.style.display = "none"
-            darkBtn.style.display = "block"
-            localStorage.removeItem('preferredTheme');
-          }
-          document.body.classList.toggle("darkmode");
-        }
-      </script>
-    </h1>
-  </div>
-
-  <div class="six columns ml-1">
-    <h1 class="mt-2">
-      爱笑的冷面鬼7
-    </h1>
-  </div>
-
-  <div class="twelve columns">
-    <div class="row">
-      <div class="nine columns left">
-        <a href="/">Home</a>
-        
-          
-          <a href="/Works" class="ml">Works</a>
-          
-        
-          
-          <a href="/About" class="ml">About</a>
-          
-        
-        
-          
-            <a href="mailto:test@test.test" target="_blank" class="ml">Email</a>
-          
-        
-      </div>
-    </div>
-    <hr style="margin-bottom: 2.6rem">
-  </div>
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
 </div>
 
-        <div class="trans">
-            <h2>【数据库原理复习题】</h2>
+<div class="index-about">
+    <i>  </i>
+</div>
 
-  <h1 id="一-单选题"><a href="#一-单选题" class="headerlink" title="一. 单选题"></a>一. 单选题</h1><p>1.数据库(DB)、数据库系统(DBS)、数据库管理系统(DBMS)之间的关系是( )。<br>A. DB包含DBS和DBMS<br>B. DBMS包含DB和DBS<br>C. DBS包含DB和DBMS<br>D. 没有任何关系<br>正确答案: C</p>
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/" />
+        </div>
+        <div class="name">
+            <i>AXDLMG7</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E5%8D%95%E9%80%89%E9%A2%98"><span class="toc-text">一. 单选题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E5%A1%AB%E7%A9%BA%E9%A2%98"><span class="toc-text">二. 填空题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-%E5%88%A4%E6%96%AD%E9%A2%98"><span class="toc-text">三. 判断题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B-%E7%AE%80%E7%AD%94%E9%A2%98"><span class="toc-text">四. 简答题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94-%E7%BB%BC%E5%90%88%E9%A2%98"><span class="toc-text">五. 综合题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-%E5%B1%9E%E6%80%A7%E9%9B%86%E5%90%88%E7%9A%84%E9%97%AD%E5%8C%85%E8%AE%A1%E7%AE%97"><span class="toc-text">5.1 属性集合的闭包计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-%E7%A1%AE%E5%AE%9A%E5%80%99%E9%80%89%E7%A0%81%E5%B9%B6%E8%BF%9B%E8%A1%8C%E8%8C%83%E5%BC%8F%E7%BA%A7%E5%88%AB%E7%9A%84%E5%88%A4%E6%96%AD"><span class="toc-text">5.2 确定候选码并进行范式级别的判断</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-1-%E7%A1%AE%E5%AE%9A%E5%80%99%E9%80%89%E7%A0%81%E8%AE%B2%E8%A7%A3"><span class="toc-text">5.2.1 确定候选码讲解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-2-%E8%8C%83%E5%BC%8F%E7%BA%A7%E5%88%AB%E7%9A%84%E5%88%A4%E6%96%AD%E8%AE%B2%E8%A7%A3"><span class="toc-text">5.2.2 范式级别的判断讲解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3-%E6%A0%B9%E6%8D%AE%E8%A6%81%E6%B1%82%E5%86%99SQL%E8%AF%AD%E5%8F%A5"><span class="toc-text">5.3 根据要求写SQL语句</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-1%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2"><span class="toc-text">5.3.1数据查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-2-%E6%95%B0%E6%8D%AE%E6%9B%B4%E6%96%B0"><span class="toc-text">5.3.2 数据更新</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-4%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0%E8%BF%90%E7%AE%97%E5%92%8C%E7%94%BBE-R%E5%9B%BE%E5%B9%B6%E8%BF%9B%E8%A1%8C%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%BC%8F%E8%BD%AC%E6%8D%A2"><span class="toc-text">5.4关系代数运算和画E-R图并进行关系模式转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-1-%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0%E8%BF%90%E7%AE%97"><span class="toc-text">5.4.1 关系代数运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-2-E-R%E5%9B%BE%E5%90%91%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%BC%8F%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="toc-text">5.4.2 E-R图向关系模式的转换</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        【数据库原理复习题】
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2022-06-18 21:14:13</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#作业" title="作业">作业</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#DataBase" title="DataBase">DataBase</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h1 id="一-单选题"><a href="#一-单选题" class="headerlink" title="一. 单选题"></a>一. 单选题</h1><p>1.数据库(DB)、数据库系统(DBS)、数据库管理系统(DBMS)之间的关系是( )。<br>A. DB包含DBS和DBMS<br>B. DBMS包含DB和DBS<br>C. DBS包含DB和DBMS<br>D. 没有任何关系<br>正确答案: C</p>
 <p>2.数据库系统的核心是( )。<br>A. 数据模型<br>B. 数据库管理系统<br>C. 数据库<br>D. 数据库管理员<br>正确答案: B</p>
 <p>3.数据独立性是数据库技术的重要特点之一，所谓数据独立性是指( )。<br>A. 数据与程序独立存放<br>B. 不同的数据被存放在不同的文件中<br>C. 不同的数据只能被对应的应用程序所使用<br>D. 以上三种说法都不对<br>正确答案: D</p>
 <p>4.下列关于数据库的正确叙述是( )。<br>A. 数据库中只存在数据项之间的联系<br>B. 数据库的数据项之间和记录之间都存在联系<br>C. 数据库的数据项之间无联系,记录之间存在联系<br>D. 数据库的数据项之间和记录之间都不存在联系<br>正确答案: B</p>
@@ -583,40 +548,65 @@ ORDER  BY：称为“排序子句”，作用是对检索到的元组进行排�
 <p>正确答案：<br>商店（<u>商店编号</u> ，商店名，地址，电话）<br>顾客（<u>顾客编号</u> ，姓名，地址，年龄，性别）<br>消费（<u>商店编号，顾客编号</u> ，消费金额，日期）</p>
 <p>一般实体以编号为主码（能唯一确定实体）</p>
 
-  <p><a class="classtest-link" href="/tags/DataBase/" rel="tag">DataBase</a>, <a class="classtest-link" href="/tags/%E4%BD%9C%E4%B8%9A/" rel="tag">作业</a> — 2022年6月18日</p>
-  
-
-
+        
+        <br />
+        <div id="comment-container">
         </div>
-        <div class="row mt-2">
-  <h3>Search</h3>
-  <div><input id="search-text" title="search" class="search-text" type="text" placeholder="search......"></div>
-  <div style="margin-top: 1.5rem;">
-    <ul id="result"></ul>
-  </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
 </div>
-        <div class="row mt-2">
-  
-</div>
-
-      </div>
 
     </div>
+</div>
 
-  </div>
-  <script src="/js/nanobar.min.js"></script>
 
-  <script>
-    var options = {
-      classname: 'nanobar',
-      id: 'myNanobar'
-    };
-    var nanobar = new Nanobar(options);
-    nanobar.go(30);
-    nanobar.go(76);
-    nanobar.go(100);
-  </script>
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
 
 </body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.xml"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
 
 </html>

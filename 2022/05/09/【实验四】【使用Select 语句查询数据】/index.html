@@ -1,205 +1,173 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-
+<html lang=zh-CN>
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
 
-  <!-- Minima -->
-  <!-- Hexo theme created by @adisaktijrs -->
+    <title>
+        
+        【实验四】【使用Select 语句查询数据】 - undefined
+        
+    </title>
 
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
 
-  
-  <title>【实验四】【使用Select 语句查询数据】</title>
-  
-  <link rel="canonical" href="https://guairen-7.github.io/2022/05/09/%E3%80%90%E5%AE%9E%E9%AA%8C%E5%9B%9B%E3%80%91%E3%80%90%E4%BD%BF%E7%94%A8Select%20%E8%AF%AD%E5%8F%A5%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E3%80%91/">
-  
-  <meta name="description" content="数据这里为了体现查询语句的效果，下面根据查询语句的要求设计数据，结果如下： KC表： XSQK表： XS_KC表：  打开“SQL Server Management Studio”窗口。 单击“标准”工具栏的“新建查询”按钮，打开“查询编辑器”窗口 在窗口中输入以下SQL查询命令并执行：一、简单查">
-  
-  
-  <meta name="author" content="AXDLMG7">
-  
-  
-  
-  <meta property="og:site_name" content="AXDLMG7&#39;s Blog" />
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="【实验四】【使用Select 语句查询数据】" />
-  
-  <meta property="og:description" content="数据这里为了体现查询语句的效果，下面根据查询语句的要求设计数据，结果如下： KC表： XSQK表： XS_KC表：  打开“SQL Server Management Studio”窗口。 单击“标准”工具栏的“新建查询”按钮，打开“查询编辑器”窗口 在窗口中输入以下SQL查询命令并执行：一、简单查">
-  
-  <meta property="og:url" content="https://guairen-7.github.io/2022/05/09/%E3%80%90%E5%AE%9E%E9%AA%8C%E5%9B%9B%E3%80%91%E3%80%90%E4%BD%BF%E7%94%A8Select%20%E8%AF%AD%E5%8F%A5%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E3%80%91/" />
+    
+<link rel="stylesheet" href="/css/gitment.css">
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="【实验四】【使用Select 语句查询数据】">
-  
-  <meta name="twitter:description" content="数据这里为了体现查询语句的效果，下面根据查询语句的要求设计数据，结果如下： KC表： XSQK表： XS_KC表：  打开“SQL Server Management Studio”窗口。 单击“标准”工具栏的“新建查询”按钮，打开“查询编辑器”窗口 在窗口中输入以下SQL查询命令并执行：一、简单查">
-  
-  
-  
-  
-  <meta name="twitter:url" content="https://guairen-7.github.io/2022/05/09/%E3%80%90%E5%AE%9E%E9%AA%8C%E5%9B%9B%E3%80%91%E3%80%90%E4%BD%BF%E7%94%A8Select%20%E8%AF%AD%E5%8F%A5%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E3%80%91/" />
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
 
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    
 
-  <!-- Preload fonts
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="preload" href="/fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  
-<link rel="stylesheet" href="/css/normalize.css">
 
-  
-<link rel="stylesheet" href="/css/skeleton.css">
 
-  
-<link rel="stylesheet" href="/css/custom.css">
 
-  
-<link rel="stylesheet" href="/css/prism-dark.css">
 
-  
-<link rel="stylesheet" href="/css/prism-line-numbers.css">
 
-  <!-- User css -->
-  
-  
-<link rel="stylesheet" href="/css/user.css">
 
-  
-
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="/images/favicon.jpg">
-
-  <!-- Custom Theme Color Style
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <style>
-  a:not(.icon) {
-    text-decoration-color: #0;
-    background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0) 50%,
-      #0 50%
-    );
-  }
-  blockquote {
-    border-left: 8px solid #0;
-  }
-  .nanobar .bar {
-    background: #0;
-  }
-  .button.button-primary:hover,
-  button.button-primary:hover,
-  input[type="submit"].button-primary:hover,
-  input[type="reset"].button-primary:hover,
-  input[type="button"].button-primary:hover,
-  .button.button-primary:focus,
-  button.button-primary:focus,
-  input[type="submit"].button-primary:focus,
-  input[type="reset"].button-primary:focus,
-  input[type="button"].button-primary:focus {
-    background-color: #0;
-    border-color: #0;
-  }
-  input[type="email"]:focus,
-  input[type="number"]:focus,
-  input[type="search"]:focus,
-  input[type="text"]:focus,
-  input[type="tel"]:focus,
-  input[type="url"]:focus,
-  input[type="password"]:focus,
-  textarea:focus,
-  select:focus {
-    border: 1px solid #0;
-  }
-</style>
-
-  <!-- Google Analytics (With Privacy Settings On)
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  
-
-  
-  <script src="/js/pic.min.js" defer></script>
-  
-
-  
-  <script src="/js/search.min.js" defer></script>
-  
 
 <meta name="generator" content="Hexo 5.4.1"></head>
 
 <body>
-  <div class="container">
-    <div class="row">
-      <div>
 
-        <div class="row">
-  <div class="two columns" style="max-width: 50px">
-    <h1 class="mt-2 mode">
-      <div onclick=setDarkMode(true) id="darkBtn">🌚</div>
-      <div onclick=setDarkMode(false) id="lightBtn" class=hidden>🌝</div>
-      <script >
-        if (localStorage.getItem('preferredTheme') == 'dark') {
-          setDarkMode(true)
-        }
-        function setDarkMode(isDark) {
-          var darkBtn = document.getElementById('darkBtn')
-          var lightBtn = document.getElementById('lightBtn')
-          if (isDark) {
-            lightBtn.style.display = "block"
-            darkBtn.style.display = "none"
-            localStorage.setItem('preferredTheme', 'dark');
-          } else {
-            lightBtn.style.display = "none"
-            darkBtn.style.display = "block"
-            localStorage.removeItem('preferredTheme');
-          }
-          document.body.classList.toggle("darkmode");
-        }
-      </script>
-    </h1>
-  </div>
-
-  <div class="six columns ml-1">
-    <h1 class="mt-2">
-      爱笑的冷面鬼7
-    </h1>
-  </div>
-
-  <div class="twelve columns">
-    <div class="row">
-      <div class="nine columns left">
-        <a href="/">Home</a>
-        
-          
-          <a href="/Works" class="ml">Works</a>
-          
-        
-          
-          <a href="/About" class="ml">About</a>
-          
-        
-        
-          
-            <a href="mailto:test@test.test" target="_blank" class="ml">Email</a>
-          
-        
-      </div>
-    </div>
-    <hr style="margin-bottom: 2.6rem">
-  </div>
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
 </div>
 
-        <div class="trans">
-            <h2>【实验四】【使用Select 语句查询数据】</h2>
+<div class="index-about">
+    <i>  </i>
+</div>
 
-  <h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><p>这里为了体现查询语句的效果，下面根据查询语句的要求设计数据，结果如下：</p>
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/" />
+        </div>
+        <div class="name">
+            <i>AXDLMG7</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE"><span class="toc-text">数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E5%8D%95%E6%9F%A5%E8%AF%A2"><span class="toc-text">一、简单查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%B1%87%E6%80%BB%E6%9F%A5%E8%AF%A2"><span class="toc-text">二、汇总查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2%E5%92%8C%E5%AD%90%E6%9F%A5%E8%AF%A2"><span class="toc-text">三、连接查询和子查询</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        【实验四】【使用Select 语句查询数据】
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2022-05-09 12:25:24</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#T-SQL" title="T-SQL">T-SQL</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#SSMS" title="SSMS">SSMS</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#查询语句" title="查询语句">查询语句</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><p>这里为了体现查询语句的效果，下面根据查询语句的要求设计数据，结果如下：</p>
 <p>KC表：<br><img src="https://img-blog.csdnimg.cn/fc6a4d265ebd44019ce0e03c1888ab80.png" alt="在这里插入图片描述"></p>
 <p>XSQK表：<br><img src="https://img-blog.csdnimg.cn/5717881a16c74156b5022b9b7108014e.png" alt="在这里插入图片描述"></p>
 <p>XS_KC表：<br><img src="https://img-blog.csdnimg.cn/4675f71999244586a8797e3d2951a128.png" alt="在这里插入图片描述"></p>
@@ -276,40 +244,65 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span>  xs_kc  a</span><br><span class="line"><span class="keyword">where</span> 成绩<span class="operator">=</span>(<span class="keyword">select</span>  <span class="built_in">min</span>(成绩)</span><br><span class="line"><span class="keyword">from</span>  xs_kc  b</span><br><span class="line"><span class="keyword">where</span>  b.学号<span class="operator">=</span>a.学号)</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdnimg.cn/7d967cb09c09421a8a65d825202467e0.png" alt="在这里插入图片描述"></p>
 
-  <p><a class="classtest-link" href="/tags/SSMS/" rel="tag">SSMS</a>, <a class="classtest-link" href="/tags/T-SQL/" rel="tag">T-SQL</a>, <a class="classtest-link" href="/tags/%E6%9F%A5%E8%AF%A2%E8%AF%AD%E5%8F%A5/" rel="tag">查询语句</a> — 2022年5月9日</p>
-  
-
-
+        
+        <br />
+        <div id="comment-container">
         </div>
-        <div class="row mt-2">
-  <h3>Search</h3>
-  <div><input id="search-text" title="search" class="search-text" type="text" placeholder="search......"></div>
-  <div style="margin-top: 1.5rem;">
-    <ul id="result"></ul>
-  </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
 </div>
-        <div class="row mt-2">
-  
-</div>
-
-      </div>
 
     </div>
+</div>
 
-  </div>
-  <script src="/js/nanobar.min.js"></script>
 
-  <script>
-    var options = {
-      classname: 'nanobar',
-      id: 'myNanobar'
-    };
-    var nanobar = new Nanobar(options);
-    nanobar.go(30);
-    nanobar.go(76);
-    nanobar.go(100);
-  </script>
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
 
 </body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.xml"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
 
 </html>

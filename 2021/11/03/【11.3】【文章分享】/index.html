@@ -1,205 +1,161 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-
+<html lang=zh-CN>
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
 
-  <!-- Minima -->
-  <!-- Hexo theme created by @adisaktijrs -->
+    <title>
+        
+        【11.3】【文章分享】 - undefined
+        
+    </title>
 
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
 
-  
-  <title>【11.3】【文章分享】</title>
-  
-  <link rel="canonical" href="https://guairen-7.github.io/2021/11/03/%E3%80%9011.3%E3%80%91%E3%80%90%E6%96%87%E7%AB%A0%E5%88%86%E4%BA%AB%E3%80%91/">
-  
-  <meta name="description" content="1.演讲1.1 John Edward Hopcroft 《开放科学：科学传播与人才培养》图灵奖得主：中国应该重视本科教育质量，而不是研究经费和论文数量-腾讯网 2.人物2.1 John Edward Hopcroft：图灵奖获得者约翰·霍普克罗夫特：中国高校必须教会学生提问—上海交通大学新闻学术网">
-  
-  
-  <meta name="author" content="AXDLMG7">
-  
-  
-  
-  <meta property="og:site_name" content="AXDLMG7&#39;s Blog" />
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="【11.3】【文章分享】" />
-  
-  <meta property="og:description" content="1.演讲1.1 John Edward Hopcroft 《开放科学：科学传播与人才培养》图灵奖得主：中国应该重视本科教育质量，而不是研究经费和论文数量-腾讯网 2.人物2.1 John Edward Hopcroft：图灵奖获得者约翰·霍普克罗夫特：中国高校必须教会学生提问—上海交通大学新闻学术网">
-  
-  <meta property="og:url" content="https://guairen-7.github.io/2021/11/03/%E3%80%9011.3%E3%80%91%E3%80%90%E6%96%87%E7%AB%A0%E5%88%86%E4%BA%AB%E3%80%91/" />
+    
+<link rel="stylesheet" href="/css/gitment.css">
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="【11.3】【文章分享】">
-  
-  <meta name="twitter:description" content="1.演讲1.1 John Edward Hopcroft 《开放科学：科学传播与人才培养》图灵奖得主：中国应该重视本科教育质量，而不是研究经费和论文数量-腾讯网 2.人物2.1 John Edward Hopcroft：图灵奖获得者约翰·霍普克罗夫特：中国高校必须教会学生提问—上海交通大学新闻学术网">
-  
-  
-  
-  
-  <meta name="twitter:url" content="https://guairen-7.github.io/2021/11/03/%E3%80%9011.3%E3%80%91%E3%80%90%E6%96%87%E7%AB%A0%E5%88%86%E4%BA%AB%E3%80%91/" />
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
 
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    
 
-  <!-- Preload fonts
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="preload" href="/fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  
-<link rel="stylesheet" href="/css/normalize.css">
 
-  
-<link rel="stylesheet" href="/css/skeleton.css">
 
-  
-<link rel="stylesheet" href="/css/custom.css">
 
-  
-<link rel="stylesheet" href="/css/prism-dark.css">
 
-  
-<link rel="stylesheet" href="/css/prism-line-numbers.css">
 
-  <!-- User css -->
-  
-  
-<link rel="stylesheet" href="/css/user.css">
 
-  
-
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="/images/favicon.jpg">
-
-  <!-- Custom Theme Color Style
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <style>
-  a:not(.icon) {
-    text-decoration-color: #0;
-    background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0) 50%,
-      #0 50%
-    );
-  }
-  blockquote {
-    border-left: 8px solid #0;
-  }
-  .nanobar .bar {
-    background: #0;
-  }
-  .button.button-primary:hover,
-  button.button-primary:hover,
-  input[type="submit"].button-primary:hover,
-  input[type="reset"].button-primary:hover,
-  input[type="button"].button-primary:hover,
-  .button.button-primary:focus,
-  button.button-primary:focus,
-  input[type="submit"].button-primary:focus,
-  input[type="reset"].button-primary:focus,
-  input[type="button"].button-primary:focus {
-    background-color: #0;
-    border-color: #0;
-  }
-  input[type="email"]:focus,
-  input[type="number"]:focus,
-  input[type="search"]:focus,
-  input[type="text"]:focus,
-  input[type="tel"]:focus,
-  input[type="url"]:focus,
-  input[type="password"]:focus,
-  textarea:focus,
-  select:focus {
-    border: 1px solid #0;
-  }
-</style>
-
-  <!-- Google Analytics (With Privacy Settings On)
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  
-
-  
-  <script src="/js/pic.min.js" defer></script>
-  
-
-  
-  <script src="/js/search.min.js" defer></script>
-  
 
 <meta name="generator" content="Hexo 5.4.1"></head>
 
 <body>
-  <div class="container">
-    <div class="row">
-      <div>
 
-        <div class="row">
-  <div class="two columns" style="max-width: 50px">
-    <h1 class="mt-2 mode">
-      <div onclick=setDarkMode(true) id="darkBtn">🌚</div>
-      <div onclick=setDarkMode(false) id="lightBtn" class=hidden>🌝</div>
-      <script >
-        if (localStorage.getItem('preferredTheme') == 'dark') {
-          setDarkMode(true)
-        }
-        function setDarkMode(isDark) {
-          var darkBtn = document.getElementById('darkBtn')
-          var lightBtn = document.getElementById('lightBtn')
-          if (isDark) {
-            lightBtn.style.display = "block"
-            darkBtn.style.display = "none"
-            localStorage.setItem('preferredTheme', 'dark');
-          } else {
-            lightBtn.style.display = "none"
-            darkBtn.style.display = "block"
-            localStorage.removeItem('preferredTheme');
-          }
-          document.body.classList.toggle("darkmode");
-        }
-      </script>
-    </h1>
-  </div>
-
-  <div class="six columns ml-1">
-    <h1 class="mt-2">
-      爱笑的冷面鬼7
-    </h1>
-  </div>
-
-  <div class="twelve columns">
-    <div class="row">
-      <div class="nine columns left">
-        <a href="/">Home</a>
-        
-          
-          <a href="/Works" class="ml">Works</a>
-          
-        
-          
-          <a href="/About" class="ml">About</a>
-          
-        
-        
-          
-            <a href="mailto:test@test.test" target="_blank" class="ml">Email</a>
-          
-        
-      </div>
-    </div>
-    <hr style="margin-bottom: 2.6rem">
-  </div>
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
 </div>
 
-        <div class="trans">
-            <h2>【11.3】【文章分享】</h2>
+<div class="index-about">
+    <i>  </i>
+</div>
 
-  <h1 id="1-演讲"><a href="#1-演讲" class="headerlink" title="1.演讲"></a>1.演讲</h1><h2 id="1-1-John-Edward-Hopcroft-《开放科学：科学传播与人才培养》"><a href="#1-1-John-Edward-Hopcroft-《开放科学：科学传播与人才培养》" class="headerlink" title="1.1 John Edward Hopcroft 《开放科学：科学传播与人才培养》"></a>1.1 John Edward Hopcroft 《开放科学：科学传播与人才培养》</h2><p><a target="_blank" rel="noopener" href="https://new.qq.com/omn/20211102/20211102A02F6400.html">图灵奖得主：中国应该重视本科教育质量，而不是研究经费和论文数量-腾讯网</a></p>
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/" />
+        </div>
+        <div class="name">
+            <i>AXDLMG7</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E6%BC%94%E8%AE%B2"><span class="toc-text">1.演讲</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-John-Edward-Hopcroft-%E3%80%8A%E5%BC%80%E6%94%BE%E7%A7%91%E5%AD%A6%EF%BC%9A%E7%A7%91%E5%AD%A6%E4%BC%A0%E6%92%AD%E4%B8%8E%E4%BA%BA%E6%89%8D%E5%9F%B9%E5%85%BB%E3%80%8B"><span class="toc-text">1.1 John Edward Hopcroft 《开放科学：科学传播与人才培养》</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E4%BA%BA%E7%89%A9"><span class="toc-text">2.人物</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-John-Edward-Hopcroft%EF%BC%9A"><span class="toc-text">2.1 John Edward Hopcroft：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E5%90%B4%E5%A4%A9%E9%BD%90"><span class="toc-text">2.2 吴天齐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-Johnson-Kuan"><span class="toc-text">2.3 Johnson Kuan</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E9%99%B6%E4%B8%AD%E6%81%BA"><span class="toc-text">2.4 陶中恺</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E6%96%B0%E9%97%BB"><span class="toc-text">3.新闻</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-VMware-%E4%B8%8E%E6%88%B4%E5%B0%94%E6%AD%A3%E5%BC%8F%E2%80%9C%E5%88%86%E6%89%8B%E2%80%9D"><span class="toc-text">3.1 VMware 与戴尔正式“分手”</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-ReSkin"><span class="toc-text">3.2 ReSkin</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E5%AE%9E%E7%94%A8%E7%BD%91%E7%AB%99"><span class="toc-text">4.实用网站</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-GitHub%E6%9C%80%E5%A4%A7%E7%9A%84%E5%BC%80%E6%BA%90%E7%AE%97%E6%B3%95%E5%BA%93%E2%80%94The-Algorithms"><span class="toc-text">4.1 GitHub最大的开源算法库—The Algorithms</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        【11.3】【文章分享】
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2021-11-03 18:46:55</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h1 id="1-演讲"><a href="#1-演讲" class="headerlink" title="1.演讲"></a>1.演讲</h1><h2 id="1-1-John-Edward-Hopcroft-《开放科学：科学传播与人才培养》"><a href="#1-1-John-Edward-Hopcroft-《开放科学：科学传播与人才培养》" class="headerlink" title="1.1 John Edward Hopcroft 《开放科学：科学传播与人才培养》"></a>1.1 John Edward Hopcroft 《开放科学：科学传播与人才培养》</h2><p><a target="_blank" rel="noopener" href="https://new.qq.com/omn/20211102/20211102A02F6400.html">图灵奖得主：中国应该重视本科教育质量，而不是研究经费和论文数量-腾讯网</a></p>
 <h1 id="2-人物"><a href="#2-人物" class="headerlink" title="2.人物"></a>2.人物</h1><h2 id="2-1-John-Edward-Hopcroft："><a href="#2-1-John-Edward-Hopcroft：" class="headerlink" title="2.1 John Edward Hopcroft："></a>2.1 John Edward Hopcroft：</h2><p><a target="_blank" rel="noopener" href="https://news.sjtu.edu.cn/mtjj/20180405/67002.html">图灵奖获得者约翰·霍普克罗夫特：中国高校必须教会学生提问—上海交通大学新闻学术网</a></p>
 <p><a target="_blank" rel="noopener" href="http://zqb.cyol.com/html/2012-02/09/nw.D110000zgqnb_20120209_3-03.htm">中国高校必须教会学生提问—中国青年报</a></p>
 <h2 id="2-2-吴天齐"><a href="#2-2-吴天齐" class="headerlink" title="2.2 吴天齐"></a>2.2 吴天齐</h2><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/TzkUvWwksCjQcvmRYh8Odw">吴齐天的科研思考—DataWhale</a></p>
@@ -212,40 +168,65 @@
 <h1 id="4-实用网站"><a href="#4-实用网站" class="headerlink" title="4.实用网站"></a>4.实用网站</h1><h2 id="4-1-GitHub最大的开源算法库—The-Algorithms"><a href="#4-1-GitHub最大的开源算法库—The-Algorithms" class="headerlink" title="4.1 GitHub最大的开源算法库—The Algorithms"></a>4.1 GitHub最大的开源算法库—The Algorithms</h2><p><a target="_blank" rel="noopener" href="https://the-algorithms.com/">The Algorithms</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/TheAlgorithms">The Algorithms’s GitHub</a></p>
 
-  <p> — 2021年11月3日</p>
-  
-
-
+        
+        <br />
+        <div id="comment-container">
         </div>
-        <div class="row mt-2">
-  <h3>Search</h3>
-  <div><input id="search-text" title="search" class="search-text" type="text" placeholder="search......"></div>
-  <div style="margin-top: 1.5rem;">
-    <ul id="result"></ul>
-  </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
 </div>
-        <div class="row mt-2">
-  
-</div>
-
-      </div>
 
     </div>
+</div>
 
-  </div>
-  <script src="/js/nanobar.min.js"></script>
 
-  <script>
-    var options = {
-      classname: 'nanobar',
-      id: 'myNanobar'
-    };
-    var nanobar = new Nanobar(options);
-    nanobar.go(30);
-    nanobar.go(76);
-    nanobar.go(100);
-  </script>
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
 
 </body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.xml"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
 
 </html>

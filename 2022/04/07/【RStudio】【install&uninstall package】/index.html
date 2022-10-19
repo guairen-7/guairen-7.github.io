@@ -1,205 +1,173 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-
+<html lang=zh-CN>
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
 
-  <!-- Minima -->
-  <!-- Hexo theme created by @adisaktijrs -->
+    <title>
+        
+        【RStudio】【install&amp;uninstall package】 - undefined
+        
+    </title>
 
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
 
-  
-  <title>【RStudio】【install&amp;uninstall package】</title>
-  
-  <link rel="canonical" href="https://guairen-7.github.io/2022/04/07/%E3%80%90RStudio%E3%80%91%E3%80%90install&amp;uninstall%20package%E3%80%91/">
-  
-  <meta name="description" content="以下操作以‘h2o’程序包为例子：查看是否安装了‘h2o’程序包： 123library()  #查看当前镜像下的所有程序包library(h2o)  #也可以通过加载h2o程序包检验是否安装#可以在代码区域也可以在控制台输入代码  1.代码12install.packages(&amp;quot;h2o&amp;">
-  
-  
-  <meta name="author" content="AXDLMG7">
-  
-  
-  
-  <meta property="og:site_name" content="AXDLMG7&#39;s Blog" />
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="【RStudio】【install&amp;uninstall package】" />
-  
-  <meta property="og:description" content="以下操作以‘h2o’程序包为例子：查看是否安装了‘h2o’程序包： 123library()  #查看当前镜像下的所有程序包library(h2o)  #也可以通过加载h2o程序包检验是否安装#可以在代码区域也可以在控制台输入代码  1.代码12install.packages(&amp;quot;h2o&amp;">
-  
-  <meta property="og:url" content="https://guairen-7.github.io/2022/04/07/%E3%80%90RStudio%E3%80%91%E3%80%90install&amp;uninstall%20package%E3%80%91/" />
+    
+<link rel="stylesheet" href="/css/gitment.css">
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="【RStudio】【install&amp;uninstall package】">
-  
-  <meta name="twitter:description" content="以下操作以‘h2o’程序包为例子：查看是否安装了‘h2o’程序包： 123library()  #查看当前镜像下的所有程序包library(h2o)  #也可以通过加载h2o程序包检验是否安装#可以在代码区域也可以在控制台输入代码  1.代码12install.packages(&amp;quot;h2o&amp;">
-  
-  
-  
-  
-  <meta name="twitter:url" content="https://guairen-7.github.io/2022/04/07/%E3%80%90RStudio%E3%80%91%E3%80%90install&amp;uninstall%20package%E3%80%91/" />
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
 
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    
 
-  <!-- Preload fonts
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="preload" href="/fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  
-<link rel="stylesheet" href="/css/normalize.css">
 
-  
-<link rel="stylesheet" href="/css/skeleton.css">
 
-  
-<link rel="stylesheet" href="/css/custom.css">
 
-  
-<link rel="stylesheet" href="/css/prism-dark.css">
 
-  
-<link rel="stylesheet" href="/css/prism-line-numbers.css">
 
-  <!-- User css -->
-  
-  
-<link rel="stylesheet" href="/css/user.css">
 
-  
-
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="/images/favicon.jpg">
-
-  <!-- Custom Theme Color Style
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <style>
-  a:not(.icon) {
-    text-decoration-color: #0;
-    background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0) 50%,
-      #0 50%
-    );
-  }
-  blockquote {
-    border-left: 8px solid #0;
-  }
-  .nanobar .bar {
-    background: #0;
-  }
-  .button.button-primary:hover,
-  button.button-primary:hover,
-  input[type="submit"].button-primary:hover,
-  input[type="reset"].button-primary:hover,
-  input[type="button"].button-primary:hover,
-  .button.button-primary:focus,
-  button.button-primary:focus,
-  input[type="submit"].button-primary:focus,
-  input[type="reset"].button-primary:focus,
-  input[type="button"].button-primary:focus {
-    background-color: #0;
-    border-color: #0;
-  }
-  input[type="email"]:focus,
-  input[type="number"]:focus,
-  input[type="search"]:focus,
-  input[type="text"]:focus,
-  input[type="tel"]:focus,
-  input[type="url"]:focus,
-  input[type="password"]:focus,
-  textarea:focus,
-  select:focus {
-    border: 1px solid #0;
-  }
-</style>
-
-  <!-- Google Analytics (With Privacy Settings On)
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  
-
-  
-  <script src="/js/pic.min.js" defer></script>
-  
-
-  
-  <script src="/js/search.min.js" defer></script>
-  
 
 <meta name="generator" content="Hexo 5.4.1"></head>
 
 <body>
-  <div class="container">
-    <div class="row">
-      <div>
 
-        <div class="row">
-  <div class="two columns" style="max-width: 50px">
-    <h1 class="mt-2 mode">
-      <div onclick=setDarkMode(true) id="darkBtn">🌚</div>
-      <div onclick=setDarkMode(false) id="lightBtn" class=hidden>🌝</div>
-      <script >
-        if (localStorage.getItem('preferredTheme') == 'dark') {
-          setDarkMode(true)
-        }
-        function setDarkMode(isDark) {
-          var darkBtn = document.getElementById('darkBtn')
-          var lightBtn = document.getElementById('lightBtn')
-          if (isDark) {
-            lightBtn.style.display = "block"
-            darkBtn.style.display = "none"
-            localStorage.setItem('preferredTheme', 'dark');
-          } else {
-            lightBtn.style.display = "none"
-            darkBtn.style.display = "block"
-            localStorage.removeItem('preferredTheme');
-          }
-          document.body.classList.toggle("darkmode");
-        }
-      </script>
-    </h1>
-  </div>
-
-  <div class="six columns ml-1">
-    <h1 class="mt-2">
-      爱笑的冷面鬼7
-    </h1>
-  </div>
-
-  <div class="twelve columns">
-    <div class="row">
-      <div class="nine columns left">
-        <a href="/">Home</a>
-        
-          
-          <a href="/Works" class="ml">Works</a>
-          
-        
-          
-          <a href="/About" class="ml">About</a>
-          
-        
-        
-          
-            <a href="mailto:test@test.test" target="_blank" class="ml">Email</a>
-          
-        
-      </div>
-    </div>
-    <hr style="margin-bottom: 2.6rem">
-  </div>
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
 </div>
 
-        <div class="trans">
-            <h2>【RStudio】【install&uninstall package】</h2>
+<div class="index-about">
+    <i>  </i>
+</div>
 
-  <p>以下操作以‘h2o’程序包为例子：<br>查看是否安装了‘h2o’程序包：</p>
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/" />
+        </div>
+        <div class="name">
+            <i>AXDLMG7</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E4%BB%A3%E7%A0%81"><span class="toc-text">1.代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E2%80%98Install-Packages%E2%80%99"><span class="toc-text">2.‘Install Packages’</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="toc-text">3.手动安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E7%A8%8B%E5%BA%8F%E5%8C%85%E4%B8%BB%E9%A1%B5"><span class="toc-text">4.程序包主页</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%AE%89%E8%A3%85%E5%8C%85%EF%BC%88%E4%BB%A5%E2%80%98h2o%E2%80%99%E7%A4%BA%E4%BE%8B%EF%BC%89"><span class="toc-text">删除安装包（以‘h2o’示例）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%88%A0%E9%99%A4%E4%BB%A5%E5%89%8D%E7%89%88%E6%9C%AC"><span class="toc-text">1.删除以前版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96%E7%9A%84%E5%BA%93"><span class="toc-text">2.安装依赖的库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%AE%89%E8%A3%85h2o"><span class="toc-text">3.下载及安装h2o</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%94%A8%E4%B8%8B%E8%BD%BD%E8%BD%AF%E4%BB%B6%EF%BC%88%E5%A6%82%E8%BF%85%E9%9B%B7%EF%BC%89%E5%88%B0%E6%9C%AC%E5%9C%B0"><span class="toc-text">4.用下载软件（如迅雷）到本地</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%A3%80%E9%AA%8C"><span class="toc-text">5.检验</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-text">Reference</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        【RStudio】【install&amp;uninstall package】
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2022-04-07 22:14:43</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#install" title="install">install</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#uninstall" title="uninstall">uninstall</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#package" title="package">package</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p>以下操作以‘h2o’程序包为例子：<br>查看是否安装了‘h2o’程序包：</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">library()  <span class="comment">#查看当前镜像下的所有程序包</span></span><br><span class="line">library(h2o)  <span class="comment">#也可以通过加载h2o程序包检验是否安装</span></span><br><span class="line"><span class="comment">#可以在代码区域也可以在控制台输入代码</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="1-代码"><a href="#1-代码" class="headerlink" title="1.代码"></a>1.代码</h1><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">install.packages(<span class="string">&quot;h2o&quot;</span>)</span><br><span class="line">library(h2o)  <span class="comment">#加载程序包</span></span><br></pre></td></tr></table></figure>
@@ -224,40 +192,65 @@
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ARPOSPF/article/details/84997200">【R语言】4种R包安装方式–镰刀韭菜–CSDN</a></p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/137665344">[R]R中安装h2o的方法–johnmy–知乎</a></p>
 
-  <p><a class="classtest-link" href="/tags/install/" rel="tag">install</a>, <a class="classtest-link" href="/tags/package/" rel="tag">package</a>, <a class="classtest-link" href="/tags/uninstall/" rel="tag">uninstall</a> — 2022年4月7日</p>
-  
-
-
+        
+        <br />
+        <div id="comment-container">
         </div>
-        <div class="row mt-2">
-  <h3>Search</h3>
-  <div><input id="search-text" title="search" class="search-text" type="text" placeholder="search......"></div>
-  <div style="margin-top: 1.5rem;">
-    <ul id="result"></ul>
-  </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
 </div>
-        <div class="row mt-2">
-  
-</div>
-
-      </div>
 
     </div>
+</div>
 
-  </div>
-  <script src="/js/nanobar.min.js"></script>
 
-  <script>
-    var options = {
-      classname: 'nanobar',
-      id: 'myNanobar'
-    };
-    var nanobar = new Nanobar(options);
-    nanobar.go(30);
-    nanobar.go(76);
-    nanobar.go(100);
-  </script>
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
 
 </body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.xml"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
 
 </html>

@@ -1,205 +1,170 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-
+<html lang=zh-CN>
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
 
-  <!-- Minima -->
-  <!-- Hexo theme created by @adisaktijrs -->
+    <title>
+        
+        【R】【决策树】【随机森林】 - undefined
+        
+    </title>
 
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
 
-  
-  <title>【R】【决策树】【随机森林】</title>
-  
-  <link rel="canonical" href="https://guairen-7.github.io/2022/04/19/%E3%80%90R%E3%80%91%E3%80%90%E5%86%B3%E7%AD%96%E6%A0%91%E3%80%91%E3%80%90%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E3%80%91/">
-  
-  <meta name="description" content="实验思维导图 1.决策树–ctree()–iris1.1 数据1.1.1 程序包加载简洁安装程序包：将提供的程序包手动复制到R的镜像下的library下：例如我的路径：D:\R-4.1.3\library，将重复的程序包替换即可。底部提供资料 1234567891011121314library(I">
-  
-  
-  <meta name="author" content="AXDLMG7">
-  
-  
-  
-  <meta property="og:site_name" content="AXDLMG7&#39;s Blog" />
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="【R】【决策树】【随机森林】" />
-  
-  <meta property="og:description" content="实验思维导图 1.决策树–ctree()–iris1.1 数据1.1.1 程序包加载简洁安装程序包：将提供的程序包手动复制到R的镜像下的library下：例如我的路径：D:\R-4.1.3\library，将重复的程序包替换即可。底部提供资料 1234567891011121314library(I">
-  
-  <meta property="og:url" content="https://guairen-7.github.io/2022/04/19/%E3%80%90R%E3%80%91%E3%80%90%E5%86%B3%E7%AD%96%E6%A0%91%E3%80%91%E3%80%90%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E3%80%91/" />
+    
+<link rel="stylesheet" href="/css/gitment.css">
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="【R】【决策树】【随机森林】">
-  
-  <meta name="twitter:description" content="实验思维导图 1.决策树–ctree()–iris1.1 数据1.1.1 程序包加载简洁安装程序包：将提供的程序包手动复制到R的镜像下的library下：例如我的路径：D:\R-4.1.3\library，将重复的程序包替换即可。底部提供资料 1234567891011121314library(I">
-  
-  
-  
-  
-  <meta name="twitter:url" content="https://guairen-7.github.io/2022/04/19/%E3%80%90R%E3%80%91%E3%80%90%E5%86%B3%E7%AD%96%E6%A0%91%E3%80%91%E3%80%90%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E3%80%91/" />
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
 
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    
 
-  <!-- Preload fonts
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="preload" href="/fonts/dm-serif-display-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/inter-v2-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  
-<link rel="stylesheet" href="/css/normalize.css">
 
-  
-<link rel="stylesheet" href="/css/skeleton.css">
 
-  
-<link rel="stylesheet" href="/css/custom.css">
 
-  
-<link rel="stylesheet" href="/css/prism-dark.css">
 
-  
-<link rel="stylesheet" href="/css/prism-line-numbers.css">
 
-  <!-- User css -->
-  
-  
-<link rel="stylesheet" href="/css/user.css">
 
-  
-
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="/images/favicon.jpg">
-
-  <!-- Custom Theme Color Style
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <style>
-  a:not(.icon) {
-    text-decoration-color: #0;
-    background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0) 50%,
-      #0 50%
-    );
-  }
-  blockquote {
-    border-left: 8px solid #0;
-  }
-  .nanobar .bar {
-    background: #0;
-  }
-  .button.button-primary:hover,
-  button.button-primary:hover,
-  input[type="submit"].button-primary:hover,
-  input[type="reset"].button-primary:hover,
-  input[type="button"].button-primary:hover,
-  .button.button-primary:focus,
-  button.button-primary:focus,
-  input[type="submit"].button-primary:focus,
-  input[type="reset"].button-primary:focus,
-  input[type="button"].button-primary:focus {
-    background-color: #0;
-    border-color: #0;
-  }
-  input[type="email"]:focus,
-  input[type="number"]:focus,
-  input[type="search"]:focus,
-  input[type="text"]:focus,
-  input[type="tel"]:focus,
-  input[type="url"]:focus,
-  input[type="password"]:focus,
-  textarea:focus,
-  select:focus {
-    border: 1px solid #0;
-  }
-</style>
-
-  <!-- Google Analytics (With Privacy Settings On)
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  
-
-  
-  <script src="/js/pic.min.js" defer></script>
-  
-
-  
-  <script src="/js/search.min.js" defer></script>
-  
 
 <meta name="generator" content="Hexo 5.4.1"></head>
 
 <body>
-  <div class="container">
-    <div class="row">
-      <div>
 
-        <div class="row">
-  <div class="two columns" style="max-width: 50px">
-    <h1 class="mt-2 mode">
-      <div onclick=setDarkMode(true) id="darkBtn">🌚</div>
-      <div onclick=setDarkMode(false) id="lightBtn" class=hidden>🌝</div>
-      <script >
-        if (localStorage.getItem('preferredTheme') == 'dark') {
-          setDarkMode(true)
-        }
-        function setDarkMode(isDark) {
-          var darkBtn = document.getElementById('darkBtn')
-          var lightBtn = document.getElementById('lightBtn')
-          if (isDark) {
-            lightBtn.style.display = "block"
-            darkBtn.style.display = "none"
-            localStorage.setItem('preferredTheme', 'dark');
-          } else {
-            lightBtn.style.display = "none"
-            darkBtn.style.display = "block"
-            localStorage.removeItem('preferredTheme');
-          }
-          document.body.classList.toggle("darkmode");
-        }
-      </script>
-    </h1>
-  </div>
-
-  <div class="six columns ml-1">
-    <h1 class="mt-2">
-      爱笑的冷面鬼7
-    </h1>
-  </div>
-
-  <div class="twelve columns">
-    <div class="row">
-      <div class="nine columns left">
-        <a href="/">Home</a>
-        
-          
-          <a href="/Works" class="ml">Works</a>
-          
-        
-          
-          <a href="/About" class="ml">About</a>
-          
-        
-        
-          
-            <a href="mailto:test@test.test" target="_blank" class="ml">Email</a>
-          
-        
-      </div>
-    </div>
-    <hr style="margin-bottom: 2.6rem">
-  </div>
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
 </div>
 
-        <div class="trans">
-            <h2>【R】【决策树】【随机森林】</h2>
+<div class="index-about">
+    <i>  </i>
+</div>
 
-  <h1 id="实验思维导图"><a href="#实验思维导图" class="headerlink" title="实验思维导图"></a>实验思维导图</h1><p><img src="https://img-blog.csdnimg.cn/808441d7c92d40d48204ccdc5b4438f3.png" alt="在这里插入图片描述"></p>
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/" />
+        </div>
+        <div class="name">
+            <i>AXDLMG7</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE"><span class="toc-text">实验思维导图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%86%B3%E7%AD%96%E6%A0%91%E2%80%93ctree-%E2%80%93iris"><span class="toc-text">1.决策树–ctree()–iris</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E6%95%B0%E6%8D%AE"><span class="toc-text">1.1 数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1-%E7%A8%8B%E5%BA%8F%E5%8C%85%E5%8A%A0%E8%BD%BD"><span class="toc-text">1.1.1 程序包加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2-%E6%95%B0%E6%8D%AE%E9%9B%86%E6%8E%A2%E7%B4%A2"><span class="toc-text">1.1.2 数据集探索</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-3-%E6%95%B0%E6%8D%AE%E9%9B%86%E6%8B%86%E5%88%86"><span class="toc-text">1.1.3 数据集拆分</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E8%AE%AD%E7%BB%83"><span class="toc-text">1.2 训练</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1-%E8%AE%BE%E7%BD%AE%E5%9B%A0%E5%8F%98%E9%87%8F%E3%80%81%E8%87%AA%E5%8F%98%E9%87%8F"><span class="toc-text">1.2.1 设置因变量、自变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-2-%E5%86%B3%E7%AD%96%E6%A0%91%E5%BB%BA%E6%A8%A1"><span class="toc-text">1.2.2 决策树建模</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-3-%E6%9F%A5%E7%9C%8B%E8%AE%AD%E7%BB%83%E7%BB%93%E6%9E%9C"><span class="toc-text">1.2.3 查看训练结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-4-%E7%BB%98%E5%88%B6%E5%86%B3%E7%AD%96%E6%A0%91"><span class="toc-text">1.2.4 绘制决策树</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%E9%A2%84%E6%B5%8B"><span class="toc-text">1.3 预测</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-1-%E6%B5%8B%E8%AF%95%E9%9B%86%E9%A2%84%E6%B5%8B"><span class="toc-text">1.3.1 测试集预测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-2-%E9%A2%84%E6%B5%8B%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90"><span class="toc-text">1.3.2 预测结果分析</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E5%86%B3%E7%AD%96%E6%A0%91%E2%80%93rpart-%E2%80%93bodyfat"><span class="toc-text">2.决策树–rpart()–bodyfat</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E6%95%B0%E6%8D%AE"><span class="toc-text">2.1 数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-%E7%A8%8B%E5%BA%8F%E5%8C%85%E5%8A%A0%E8%BD%BD"><span class="toc-text">2.1.1 程序包加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-%E6%95%B0%E6%8D%AE%E9%9B%86%E6%8E%A2%E7%B4%A2"><span class="toc-text">2.1.2 数据集探索</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3-%E6%95%B0%E6%8D%AE%E9%9B%86%E6%8B%86%E5%88%86"><span class="toc-text">2.1.3 数据集拆分</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E8%AE%AD%E7%BB%83"><span class="toc-text">2.2 训练</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-%E8%AE%BE%E7%BD%AE%E5%9B%A0%E5%8F%98%E9%87%8F%E3%80%81%E8%87%AA%E5%8F%98%E9%87%8F"><span class="toc-text">2.2.1 设置因变量、自变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-%E5%86%B3%E7%AD%96%E6%A0%91%E5%BB%BA%E6%A8%A1"><span class="toc-text">2.2.2 决策树建模</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-3-%E6%9F%A5%E7%9C%8B%E8%AE%AD%E7%BB%83%E7%BB%93%E6%9E%9C"><span class="toc-text">2.2.3 查看训练结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-4-%E7%BB%98%E5%88%B6%E5%86%B3%E7%AD%96%E6%A0%91"><span class="toc-text">2.2.4 绘制决策树</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E4%BC%98%E5%8C%96"><span class="toc-text">2.3 优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1-%E4%BC%98%E5%8C%96%E6%A8%A1%E5%9E%8B%EF%BC%88%E5%89%AA%E6%9E%9D%EF%BC%89"><span class="toc-text">2.3.1 优化模型（剪枝）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-2-%E7%BB%98%E5%88%B6%E5%86%B3%E7%AD%96%E6%A0%91%EF%BC%88%E5%89%AA%E6%9E%9D%E5%90%8E%EF%BC%89"><span class="toc-text">2.3.2 绘制决策树（剪枝后）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E9%A2%84%E6%B5%8B"><span class="toc-text">2.4 预测</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-1-%E6%B5%8B%E8%AF%95%E9%9B%86%E9%A2%84%E6%B5%8B"><span class="toc-text">2.4.1 测试集预测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-2-%E9%A2%84%E6%B5%8B%E5%80%BC%E7%9A%84%E6%9E%81%E5%80%BC"><span class="toc-text">2.4.2 预测值的极值</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E2%80%93randomForest-%E2%80%93iris"><span class="toc-text">3.随机森林–randomForest()–iris</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E7%A8%8B%E5%BA%8F%E5%8C%85%E5%8A%A0%E8%BD%BD"><span class="toc-text">3.1 程序包加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%E6%95%B0%E6%8D%AE%E9%9B%86%E6%8B%86%E5%88%86"><span class="toc-text">3.2 数据集拆分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E5%BB%BA%E6%A8%A1"><span class="toc-text">3.3 随机森林建模</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-%E6%B5%8B%E8%AF%95%E9%9B%86%E9%A2%84%E6%B5%8B"><span class="toc-text">3.4 测试集预测</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-%E7%BB%98%E5%88%B6%E6%A6%82%E7%8E%87%E5%9B%BE"><span class="toc-text">3.5 绘制概率图</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%88%86%E6%9E%90"><span class="toc-text">实验分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B5%84%E6%96%99"><span class="toc-text">资料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-text">Reference</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        【R】【决策树】【随机森林】
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2022-04-19 16:45:44</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#Data Mining" title="Data Mining">Data Mining</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#实验" title="实验">实验</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h1 id="实验思维导图"><a href="#实验思维导图" class="headerlink" title="实验思维导图"></a>实验思维导图</h1><p><img src="https://img-blog.csdnimg.cn/808441d7c92d40d48204ccdc5b4438f3.png" alt="在这里插入图片描述"></p>
 <h1 id="1-决策树–ctree-–iris"><a href="#1-决策树–ctree-–iris" class="headerlink" title="1.决策树–ctree()–iris"></a>1.决策树–ctree()–iris</h1><h2 id="1-1-数据"><a href="#1-1-数据" class="headerlink" title="1.1 数据"></a>1.1 数据</h2><h3 id="1-1-1-程序包加载"><a href="#1-1-1-程序包加载" class="headerlink" title="1.1.1 程序包加载"></a>1.1.1 程序包加载</h3><p>简洁安装程序包：将提供的程序包手动复制到R的镜像下的library下：<br>例如我的路径：D:\R-4.1.3\library，将重复的程序包替换即可。<strong>底部提供资料</strong></p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">library(ISLR)</span><br><span class="line">library(TH.data)</span><br><span class="line">library(MASS)</span><br><span class="line">library(multcomp)</span><br><span class="line">library(matrixStats)</span><br><span class="line">library(libcoin)</span><br><span class="line">library(survival)</span><br><span class="line">library(coin)</span><br><span class="line">library(zoo)</span><br><span class="line">library(strucchange)</span><br><span class="line">library(modeltools)</span><br><span class="line">library(mvtnorm)</span><br><span class="line">library(party)</span><br><span class="line">library(grid)</span><br></pre></td></tr></table></figure>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#party包中的ctree()：</span></span><br><span class="line"><span class="comment">#1.用于创建决策树</span></span><br><span class="line"><span class="comment">#2.提供用于控制决策树训练的几个参数，例如 midSplit、Min Busket、MaxSurrogate 和 MaxDepth</span></span><br></pre></td></tr></table></figure>
@@ -321,40 +286,65 @@
 <li>技术社区<strong>常用技术</strong>水文较多，一错全错</li>
 </ul>
 
-  <p><a class="classtest-link" href="/tags/Data-Mining/" rel="tag">Data Mining</a>, <a class="classtest-link" href="/tags/%E5%AE%9E%E9%AA%8C/" rel="tag">实验</a> — 2022年4月19日</p>
-  
-
-
+        
+        <br />
+        <div id="comment-container">
         </div>
-        <div class="row mt-2">
-  <h3>Search</h3>
-  <div><input id="search-text" title="search" class="search-text" type="text" placeholder="search......"></div>
-  <div style="margin-top: 1.5rem;">
-    <ul id="result"></ul>
-  </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
 </div>
-        <div class="row mt-2">
-  
-</div>
-
-      </div>
 
     </div>
+</div>
 
-  </div>
-  <script src="/js/nanobar.min.js"></script>
 
-  <script>
-    var options = {
-      classname: 'nanobar',
-      id: 'myNanobar'
-    };
-    var nanobar = new Nanobar(options);
-    nanobar.go(30);
-    nanobar.go(76);
-    nanobar.go(100);
-  </script>
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
 
 </body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.xml"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
 
 </html>
