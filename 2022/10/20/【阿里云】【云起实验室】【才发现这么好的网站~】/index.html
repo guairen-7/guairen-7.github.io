@@ -48,7 +48,7 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/85e1df0c0d5a48199da366bb45ec74d1.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/0991b6822319428bb0183213a04819e6.png">
 <meta property="article:published_time" content="2022-10-20T00:38:42.454Z">
-<meta property="article:modified_time" content="2022-10-20T02:25:58.035Z">
+<meta property="article:modified_time" content="2022-10-20T02:51:07.902Z">
 <meta property="article:author" content="AXDLMG7">
 <meta property="article:tag" content="阿里云">
 <meta property="article:tag" content="云起实验室">
@@ -131,71 +131,37 @@
 <p>2022/10/20实验：<a target="_blank" rel="noopener" href="https://developer.aliyun.com/adc/scenario/7e075169268c476a82a3519c128dc958?spm=a2c6h.14164896.0.0.465973b7IirWyp">MySQL基础-学生管理系统数据库设计</a></p>
 <h1 id="1-创建资源"><a href="#1-创建资源" class="headerlink" title="1. 创建资源"></a>1. 创建资源</h1><p>单击屏幕右侧 创建资源 按钮，免费创建当前实验所需云产品资源。</p>
 <p>说明：<br>资源创建过程需要1~3分钟。完成实验资源的创建后，您可以在 云产品资源 列表查看已创建的资源信息，例如：IP地址、子用户名称和子用户密码等。<br><img src="https://img-blog.csdnimg.cn/51520d3a3c2244c38fb8ddc02712ca36.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/bb9174dae2654ebebf80c87e171bb09d.png" alt="在这里插入图片描述"></p>
-<h1 id="2-登录RDS控制台"><a href="#2-登录RDS控制台" class="headerlink" title="2. 登录RDS控制台"></a>2. 登录RDS控制台</h1><ol>
-<li><p>点击右侧图标切换到远程桌面操作界面，双击打开桌面 FireFox浏览器，在RAM用户登录框中点击“下一步”，复制上面的“子用户密码” ，按CTRL + V把密码粘贴到密码输区登陆子账户（后续在远程桌面里的粘贴操作均使用CTRL + V快捷键）。</p>
-</li>
-<li><p>在阿里云管理控制台，点击顶部【产品与服务】 ，然后点击 【数据库】条目下的 【云数据库RDS版】 ，进入RDS数据库的管理页面。<br><img src="https://img-blog.csdnimg.cn/c4151cb30d6540ab8b51d6933db3ed68.png" alt="在这里插入图片描述"></p>
-</li>
-<li><p>在【实例列表】页面中，选择 云产品资源 中提供的 地域，然后查看已创建的RDS实例。<br><img src="https://img-blog.csdnimg.cn/ba3e593a8b1646b59e8ba3a5b601dbd3.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/c4f430dd071d43909df9a04591977188.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/bf53ed2ac3c24ba98368a5b1f21696a7.png" alt="在这里插入图片描述"></p>
-<h1 id="3-创建数据库账号"><a href="#3-创建数据库账号" class="headerlink" title="3. 创建数据库账号"></a>3. 创建数据库账号</h1></li>
-<li><p>单击已创建的RDS实例ID，进入数据库管理页面。<br><img src="https://img-blog.csdnimg.cn/d8bfb65e3229425eaf1e05b7b695da0a.png" alt="在这里插入图片描述"></p>
-</li>
-<li><p> 在实例详情页，单击左侧导航栏的【账号管理】，然后单击【创建账号】。<br><img src="https://img-blog.csdnimg.cn/2f8c4be3937943d89359b84a7aa66ee1.png" alt="在这里插入图片描述"></p>
-</li>
-<li><p> 参考说明配置账号信息，然后单击【确定】。<br>数据库账号：输入数据库账号名称，例如super_user。<br>账号类型：选择高权限账号。<br>密码：设置账号密码。<br>确认密码：再次输入密码。<br><img src="https://img-blog.csdnimg.cn/7338f1072f20445799c8595d017a135c.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/55542e266e7640ea837f9a0eba0d80b9.png" alt="在这里插入图片描述"></p>
-<h1 id="4-连接DMS控制台"><a href="#4-连接DMS控制台" class="headerlink" title="4. 连接DMS控制台"></a>4. 连接DMS控制台</h1></li>
-<li><p>在数据库管理页面，单击页面右上方的【登录数据库】。<br><img src="https://img-blog.csdnimg.cn/4ff9a7a4aafa4737b866ec4c64a9d00c.png" alt="在这里插入图片描述"></p>
-</li>
-<li><p>在输入框中，输入刚才创建的用户名和密码，单击【登录】。<br><img src="https://img-blog.csdnimg.cn/8298e27048fc453288c60ac2770ebe8f.png" alt="在这里插入图片描述"><br>登录成功，进入数据管理服务系统DMS。<br><img src="https://img-blog.csdnimg.cn/ba3958b9dd574d36831edbc741fa4dcc.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/da5c36b0aef041bba724077428e97a20.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/fd91e50d7cc7435c9dd4026589f14071.png" alt="在这里插入图片描述"></p>
-<h1 id="5-创建数据库"><a href="#5-创建数据库" class="headerlink" title="5. 创建数据库"></a>5. 创建数据库</h1></li>
-<li><p>在DMS控制台左侧实例列表，单击<img src="https://img-blog.csdnimg.cn/804b4da3c6544ddca610743c0854f8ff.png" alt="在这里插入图片描述">图标。</p>
-</li>
-<li><p>在DMS控制台左侧实例列表，右键单击【实例名称】，然后单击【数据库管理】。<br><img src="https://img-blog.csdnimg.cn/6492910dc6c241a5aeae1d5e533c56c8.png" alt="在这里插入图片描述"></p>
-</li>
-<li><p>在数据库管理页面，单击【创建库】。<br><img src="https://img-blog.csdnimg.cn/9f97653b371a4b63a4de0fc9cb90e4a3.png" alt="在这里插入图片描述"></p>
-</li>
-<li><p>输入数据库名stu_coutse_sc，字符集utf8，校验规则utf8_general_ci。<br><img src="https://img-blog.csdnimg.cn/ba728bf7afec45978b4f7da0d34e4d10.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/ac471ef260f948cea0cb5c6997a0a7b4.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/e1eee848530b45c68b5a606bb42e641c.png" alt="在这里插入图片描述"></p>
-<h1 id="6-创建数据表"><a href="#6-创建数据表" class="headerlink" title="6. 创建数据表"></a>6. 创建数据表</h1></li>
-<li><p>在左侧实例列表单击【刷新】按钮，然后双击切换数据库为为上一小节创建的stu_coutse_sc。<br><img src="https://img-blog.csdnimg.cn/880ed04b4c0e4263a3c28e54b053c084.png" alt="在这里插入图片描述"></p>
-</li>
-<li><p>单击左侧“点击这里开始建表吧”，创建表。<br><img src="https://img-blog.csdnimg.cn/9d03b69811a542038cb229ec3c366c80.png" alt="在这里插入图片描述"></p>
-</li>
-<li><p>创建student学生表。</p>
-</li>
-</ol>
+<h1 id="2-登录RDS控制台"><a href="#2-登录RDS控制台" class="headerlink" title="2. 登录RDS控制台"></a>2. 登录RDS控制台</h1><p>1.点击右侧图标切换到远程桌面操作界面，双击打开桌面 FireFox浏览器，在RAM用户登录框中点击“下一步”，复制上面的“子用户密码” ，按CTRL + V把密码粘贴到密码输区登陆子账户（后续在远程桌面里的粘贴操作均使用CTRL + V快捷键）。</p>
+<p>2.在阿里云管理控制台，点击顶部【产品与服务】 ，然后点击 【数据库】条目下的 【云数据库RDS版】 ，进入RDS数据库的管理页面。<br><img src="https://img-blog.csdnimg.cn/c4151cb30d6540ab8b51d6933db3ed68.png" alt="在这里插入图片描述"></p>
+<p>3.在【实例列表】页面中，选择 云产品资源 中提供的 地域，然后查看已创建的RDS实例。<br><img src="https://img-blog.csdnimg.cn/ba3e593a8b1646b59e8ba3a5b601dbd3.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/c4f430dd071d43909df9a04591977188.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/bf53ed2ac3c24ba98368a5b1f21696a7.png" alt="在这里插入图片描述"></p>
+<h1 id="3-创建数据库账号"><a href="#3-创建数据库账号" class="headerlink" title="3. 创建数据库账号"></a>3. 创建数据库账号</h1><p>1.单击已创建的RDS实例ID，进入数据库管理页面。<br><img src="https://img-blog.csdnimg.cn/d8bfb65e3229425eaf1e05b7b695da0a.png" alt="在这里插入图片描述"></p>
+<p>2.在实例详情页，单击左侧导航栏的【账号管理】，然后单击【创建账号】。<br><img src="https://img-blog.csdnimg.cn/2f8c4be3937943d89359b84a7aa66ee1.png" alt="在这里插入图片描述"></p>
+<p>3.参考说明配置账号信息，然后单击【确定】。<br>数据库账号：输入数据库账号名称，例如super_user。<br>账号类型：选择高权限账号。<br>密码：设置账号密码。<br>确认密码：再次输入密码。<br><img src="https://img-blog.csdnimg.cn/7338f1072f20445799c8595d017a135c.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/55542e266e7640ea837f9a0eba0d80b9.png" alt="在这里插入图片描述"></p>
+<h1 id="4-连接DMS控制台"><a href="#4-连接DMS控制台" class="headerlink" title="4. 连接DMS控制台"></a>4. 连接DMS控制台</h1><p>1.在数据库管理页面，单击页面右上方的【登录数据库】。<br><img src="https://img-blog.csdnimg.cn/4ff9a7a4aafa4737b866ec4c64a9d00c.png" alt="在这里插入图片描述"><br>2.在输入框中，输入刚才创建的用户名和密码，单击【登录】。<br><img src="https://img-blog.csdnimg.cn/8298e27048fc453288c60ac2770ebe8f.png" alt="在这里插入图片描述"><br>登录成功，进入数据管理服务系统DMS。<br><img src="https://img-blog.csdnimg.cn/ba3958b9dd574d36831edbc741fa4dcc.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/da5c36b0aef041bba724077428e97a20.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/fd91e50d7cc7435c9dd4026589f14071.png" alt="在这里插入图片描述"></p>
+<h1 id="5-创建数据库"><a href="#5-创建数据库" class="headerlink" title="5. 创建数据库"></a>5. 创建数据库</h1><p>1.在DMS控制台左侧实例列表，单击<img src="https://img-blog.csdnimg.cn/804b4da3c6544ddca610743c0854f8ff.png" alt="在这里插入图片描述">图标。</p>
+<p>2.在DMS控制台左侧实例列表，右键单击【实例名称】，然后单击【数据库管理】。<br><img src="https://img-blog.csdnimg.cn/6492910dc6c241a5aeae1d5e533c56c8.png" alt="在这里插入图片描述"><br>3.在数据库管理页面，单击【创建库】。<br><img src="https://img-blog.csdnimg.cn/9f97653b371a4b63a4de0fc9cb90e4a3.png" alt="在这里插入图片描述"><br>4.输入数据库名stu_coutse_sc，字符集utf8，校验规则utf8_general_ci。<br><img src="https://img-blog.csdnimg.cn/ba728bf7afec45978b4f7da0d34e4d10.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/ac471ef260f948cea0cb5c6997a0a7b4.png" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/e1eee848530b45c68b5a606bb42e641c.png" alt="在这里插入图片描述"></p>
+<h1 id="6-创建数据表"><a href="#6-创建数据表" class="headerlink" title="6. 创建数据表"></a>6. 创建数据表</h1><p>1.在左侧实例列表单击【刷新】按钮，然后双击切换数据库为为上一小节创建的stu_coutse_sc。<br><img src="https://img-blog.csdnimg.cn/880ed04b4c0e4263a3c28e54b053c084.png" alt="在这里插入图片描述"><br>2.单击左侧“点击这里开始建表吧”，创建表。<br><img src="https://img-blog.csdnimg.cn/9d03b69811a542038cb229ec3c366c80.png" alt="在这里插入图片描述"><br>3.创建student学生表。</p>
 <p>a. 在【基本信息】页面填写表名student。 b. 在左侧导航栏选择【列信息】。 c. 在功能栏单击【新增】来增加一列，参照下方学生表结构创建列。</p>
 <p>学生表结构如下：<br><img src="https://img-blog.csdnimg.cn/d2c70f27a003487b9fe50e0c37446580.png" alt="在这里插入图片描述"><br>d. 单击下方【保存变更】，在弹出的对话框中单击【直接执行】，完成student表的创建。</p>
-<ol start="4">
-<li>创建teacher教师表。<br>a. 右键单击左侧student表，然后单击【创建表】。<br><img src="https://img-blog.csdnimg.cn/6c5b8de9b72a4fdd94043e41dbc6d1dd.png" alt="在这里插入图片描述"><br>b. 在【基本信息】页面填写表名teacher。 c. 在左侧导航栏选择【列信息】。 d. 在功能栏单击【新增】来增加一列。</li>
-</ol>
+<p>4.创建teacher教师表。<br>a. 右键单击左侧student表，然后单击【创建表】。<br><img src="https://img-blog.csdnimg.cn/6c5b8de9b72a4fdd94043e41dbc6d1dd.png" alt="在这里插入图片描述"><br>b. 在【基本信息】页面填写表名teacher。 c. 在左侧导航栏选择【列信息】。 d. 在功能栏单击【新增】来增加一列。</p>
 <p>教师表结构如下：<br><img src="https://img-blog.csdnimg.cn/44f394960e8c411dab05984864aa07ef.png" alt="在这里插入图片描述"><br>e. 单击下方【保存变更】，在弹出的对话框中单击【直接执行】，完成teacher表的创建。</p>
-<ol start="5">
-<li>创建course课程表。 a. 右键单击左侧已创建的表，然后单击【创建表】。<br><img src="https://img-blog.csdnimg.cn/0fab85b0b6764d35bc320ea9be73b5a6.png" alt="在这里插入图片描述"><br>b. 在【基本信息】页面填写表名course。 c. 在左侧导航栏选择【列信息】。 d. 在功能栏单击【新增】来增加一列，参照下方课程表结构创建列。</li>
-</ol>
+<p>5.创建course课程表。 a. 右键单击左侧已创建的表，然后单击【创建表】。<br><img src="https://img-blog.csdnimg.cn/0fab85b0b6764d35bc320ea9be73b5a6.png" alt="在这里插入图片描述"><br>b. 在【基本信息】页面填写表名course。 c. 在左侧导航栏选择【列信息】。 d. 在功能栏单击【新增】来增加一列，参照下方课程表结构创建列。</p>
 <p>课程表结构如下：<br><img src="https://img-blog.csdnimg.cn/98ecddab8bba49eb8640ca5f4bab12f6.png" alt="在这里插入图片描述"><br>e. 单击下方【保存变更】，在弹出的对话框中单击【直接执行】，完成course表的创建。</p>
-<ol start="6">
-<li>创建sc成绩表。 a. 右键单击左侧已创建的表，然后单击【创建表】。<br><img src="https://img-blog.csdnimg.cn/b847b7a275514cdb803d599de4a5dd6a.png" alt="在这里插入图片描述"><br>b. 在【基本信息】页面填写表名sc。 c. 在左侧导航栏选择【列信息】。 d. 在功能栏单击【新增】来增加一列。</li>
-</ol>
+<p>6.创建sc成绩表。 a. 右键单击左侧已创建的表，然后单击【创建表】。<br><img src="https://img-blog.csdnimg.cn/b847b7a275514cdb803d599de4a5dd6a.png" alt="在这里插入图片描述"><br>b. 在【基本信息】页面填写表名sc。 c. 在左侧导航栏选择【列信息】。 d. 在功能栏单击【新增】来增加一列。</p>
 <p>成绩表结构如下：<br><img src="https://img-blog.csdnimg.cn/60a8d6bba6c64b73bbd3090e1c393e5f.png" alt="在这里插入图片描述"><br>e. 单击下方【保存变更】，在弹出的对话框中单击【直接执行】，完成sc表的创建。</p>
-<h1 id="7-编辑表关系"><a href="#7-编辑表关系" class="headerlink" title="7. 编辑表关系"></a>7. 编辑表关系</h1><ol>
-<li>设置成绩表sc与课程表course之间、成绩表sc与学生表student之间的关系。</li>
-</ol>
+<h1 id="7-编辑表关系"><a href="#7-编辑表关系" class="headerlink" title="7. 编辑表关系"></a>7. 编辑表关系</h1><p>1.设置成绩表sc与课程表course之间、成绩表sc与学生表student之间的关系。</p>
 <p>a. 右键单击表sc，然后单击【新开SQL窗口】。<br><img src="https://img-blog.csdnimg.cn/9d10a73a415b4f8cb0ab17a2ca4c1846.png" alt="在这里插入图片描述"><br>b. 在SQL窗口中，执行以下SQL语句。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> sc <span class="keyword">add</span> <span class="keyword">constraint</span> fk_cid <span class="keyword">foreign</span> key(cid) <span class="keyword">references</span> course(cid) ;</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> sc <span class="keyword">add</span> <span class="keyword">constraint</span> fk_sid <span class="keyword">foreign</span> key(sid) <span class="keyword">references</span> student(sid) ;</span><br></pre></td></tr></table></figure>
 
-<ol start="2">
-<li>设置教师表teacher和课程表course之间的关系。</li>
-</ol>
+<p>2.设置教师表teacher和课程表course之间的关系。</p>
 <p>在SQL窗口中，执行以下SQL语句。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> course <span class="keyword">add</span> <span class="keyword">constraint</span> fk_tid <span class="keyword">foreign</span> key(tid) <span class="keyword">references</span> teacher(tid) ;</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://img-blog.csdnimg.cn/fbc8b40352544287996376b14e98eae4.png" alt="在这里插入图片描述"><br>点击==执行(F8)==</p>
-<h1 id="8-测试"><a href="#8-测试" class="headerlink" title="8. 测试"></a>8. 测试</h1><ol>
-<li>为数据表插入模拟数据。</li>
-</ol>
-<p>在DMS控制台左侧实例列表，右键单击数据库名称stu_coutse_sc，然后单击【查询】。<br><img src="https://img-blog.csdnimg.cn/d4cdb1cd13da4e249598f49722a957d6.png" alt="在这里插入图片描述"><br>在打开的 SQL Console 页面，输入以下SQL语句，然后单击【执行】。</p>
+<p><img src="https://img-blog.csdnimg.cn/fbc8b40352544287996376b14e98eae4.png" alt="在这里插入图片描述"><br>点击执行(F8)</p>
+<h1 id="8-测试"><a href="#8-测试" class="headerlink" title="8. 测试"></a>8. 测试</h1><p>1.为数据表插入模拟数据。</p>
+<p>在DMS控制台左侧实例列表，右键单击数据库名称stu_coutse_sc，然后单击【查询】。<br><img src="https://img-blog.csdnimg.cn/d4cdb1cd13da4e249598f49722a957d6.png" alt="在这里插入图片描述"><br>2.在打开的 SQL Console 页面，输入以下SQL语句，然后单击【执行】。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> `teacher`(`tid`,`tname`) <span class="keyword">values</span></span><br><span class="line">(<span class="number">2</span>,<span class="string">&#x27;T Liu&#x27;</span>),</span><br><span class="line">(<span class="number">1</span>,<span class="string">&#x27;T Wang&#x27;</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> `course`(`cid`,`cname`,`tid`) <span class="keyword">values</span></span><br><span class="line">(<span class="number">102</span>,<span class="string">&#x27;Maths&#x27;</span>,<span class="number">2</span>),</span><br><span class="line">(<span class="number">101</span>,<span class="string">&#x27;English&#x27;</span>,<span class="number">1</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> `student`(`sid`,`sname`,`sage`,`ssex`) <span class="keyword">values</span></span><br><span class="line">(<span class="number">1005</span>,<span class="string">&#x27;Peter&#x27;</span>,<span class="number">19</span>,<span class="string">&#x27;0&#x27;</span>),</span><br><span class="line">(<span class="number">1004</span>,<span class="string">&#x27;Han Meimei&#x27;</span>,<span class="number">18</span>,<span class="string">&#x27;0&#x27;</span>),</span><br><span class="line">(<span class="number">1003</span>,<span class="string">&#x27;Li Lei&#x27;</span>,<span class="number">18</span>,<span class="string">&#x27;1&#x27;</span>),</span><br><span class="line">(<span class="number">1002</span>,<span class="string">&#x27;Lucy&#x27;</span>,<span class="number">17</span>,<span class="string">&#x27;1&#x27;</span>),</span><br><span class="line">(<span class="number">1001</span>,<span class="string">&#x27;Lily&#x27;</span>,<span class="number">18</span>,<span class="string">&#x27;1&#x27;</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> `sc`(`sid`,`cid`,`score`) <span class="keyword">values</span></span><br><span class="line">(<span class="number">1001</span>,<span class="number">101</span>,<span class="number">75</span>),</span><br><span class="line">(<span class="number">1001</span>,<span class="number">102</span>,<span class="number">85</span>),</span><br><span class="line">(<span class="number">1002</span>,<span class="number">101</span>,<span class="number">65</span>),</span><br><span class="line">(<span class="number">1002</span>,<span class="number">102</span>,<span class="number">95</span>),</span><br><span class="line">(<span class="number">1003</span>,<span class="number">101</span>,<span class="number">65</span>),</span><br><span class="line">(<span class="number">1003</span>,<span class="number">102</span>,<span class="number">95</span>),</span><br><span class="line">(<span class="number">1004</span>,<span class="number">101</span>,<span class="number">80</span>),</span><br><span class="line">(<span class="number">1004</span>,<span class="number">102</span>,<span class="number">80</span>),</span><br><span class="line">(<span class="number">1005</span>,<span class="number">101</span>,<span class="number">75</span>),</span><br><span class="line">(<span class="number">1005</span>,<span class="number">102</span>,<span class="number">85</span>);</span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/85e1df0c0d5a48199da366bb45ec74d1.png" alt="在这里插入图片描述"><br>3. 依次单击已创建的数据表&gt;打开表查看表中数据。<br><img src="https://img-blog.csdnimg.cn/0991b6822319428bb0183213a04819e6.png" alt="在这里插入图片描述"><br>PS：最开始sc表设置、设置主键外键出了些问题，插入数据时报错，重新建表即可</p>
+<p><img src="https://img-blog.csdnimg.cn/85e1df0c0d5a48199da366bb45ec74d1.png" alt="在这里插入图片描述"><br>3.依次单击已创建的数据表&gt;打开表查看表中数据。<br><img src="https://img-blog.csdnimg.cn/0991b6822319428bb0183213a04819e6.png" alt="在这里插入图片描述"><br>PS：最开始sc表设置、设置主键外键出了些问题，插入数据时报错，重新建表即可</p>
 <h1 id="体验"><a href="#体验" class="headerlink" title="体验"></a>体验</h1><p>可视化创建表、自动生成SQL语言执行</p>
 
       
@@ -238,7 +204,14 @@
     
 <nav id="article-nav" class="article-nav">
   
-    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+    <a href="/2022/10/20/%E3%80%90%E6%B5%8B%E8%AF%95%E9%A1%B5%E3%80%91/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          【测试页】
+        
+      </div>
+    </a>
   
   
     <a href="/2022/10/17/%E3%80%90Kaggle%E3%80%91%E3%80%90Spaceship%20Titanic%E3%80%91/" id="article-nav-older" class="article-nav-link-wrap older">
