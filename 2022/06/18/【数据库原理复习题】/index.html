@@ -562,6 +562,10 @@ ORDER  BY：称为“排序子句”，作用是对检索到的元组进行排�
 
 
 
+  <section id="comments" class="comments">
+    <div id="valine_container"></div>
+  </section>
+
 
 
       </div>
@@ -582,6 +586,33 @@ ORDER  BY：称为“排序子句”，作用是对检索到的元组进行排�
 
 
 
+
+
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage@3/dist/av-min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js"></script>
+
+  <script>
+      var GUEST_INFO = ['nick','mail','link'];
+      var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+      });
+      var notify = 'false' == true;
+      var verify = 'false' == true;
+      var valine = new Valine();
+      valine.init({
+          el: '#valine_container',
+          notify: notify,
+          verify: verify,
+          appId: "t2L9tK0bfB3s1tlFgPtvIitX-gzGzoHsz",
+          appKey: "zOpQrQLyVGI1LstQwfLznswE",
+          placeholder: "欢迎交流~",
+          pageSize:'5',
+          avatar:'retro',
+          lang:'zh-cn'
+      })
+  </script>
 
 
 
